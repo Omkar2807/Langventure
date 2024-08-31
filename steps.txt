@@ -1,0 +1,35 @@
+Database Neon and drizzle Orm
+
+1.Creat project on Neon
+2.Copy link of database (PostgreSql) and paste it in .env
+3. Goto Drizzle Orm (https://orm.drizzle.team/docs/get-started-postgresql)  cloase the running site and run the codes
+    npm i drizzle-orm @neondatabase/serverless      
+                if it gives error run   npm i drizzle-orm @neondatabase/serverless --legacy-peer-deps
+    npm i -D drizzle-kit
+4. Now open package.json and enter 
+    "db:studio": "npx drizzle-kit studio",
+    "db:push": "npx drizzle-kit push:pg"
+so that we wont need to write the entire commands instead we will only write "npm run db:studio"
+
+5. create a database folder in this case "db" and add drizzle db connection file and schema file in this case drizzle.ts and schema.ts
+6. Create a drizzle.config.ts file in the root of the project and run the comand 
+                npm i dotenv
+    Once packages are installed write your code in the file 
+
+/* Some changes are made in the code in file drizzle.config.ts    video time 2:11*/
+
+
+
+Neon is used for console purpose
+to add data in the tables use " npm run db:studio " this will give a url where you can add data
+
+
+
+
+
+
+
+
+Documentation
+next.js 
+drizzle.com
