@@ -6,6 +6,13 @@ export const courses = pgTable("courses", {
     title: text("title").notNull(),
     imageSrc: text("image_src").notNull(),
 });
+
+export const basicsdb = pgTable("basicdb", {
+    id: serial("id").primaryKey(),
+    imageSrc: text("image_src").notNull(),
+    title: text("title").notNull(),
+});
+
     
 export const coursesRelations = relations(courses, ({ many }) => ({
     userProgress: many(userProgress),

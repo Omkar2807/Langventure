@@ -29,7 +29,7 @@ export const Promo = () => {
                     size="lg"
                 >
                     <Link href="/shop">
-                        Upgrde today
+                        Upgrade today
                     </Link>
                 </Button>
         </div>

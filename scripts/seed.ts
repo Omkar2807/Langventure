@@ -48,6 +48,128 @@ const main = async () => {
             order: 1,
         }
     ]);
+   
+    const basicsData = [
+        
+        { imageSrc: "https://example.com/apple.jpg", title: "Apple" },
+        { imageSrc: "https://example.com/ant.jpg", title: "Ant" },
+        { imageSrc: "https://example.com/arrow.jpg", title: "Arrow" },
+        { imageSrc: "https://example.com/airplane.jpg", title: "Airplane" },
+        { imageSrc: "https://example.com/alarm.jpg", title: "Alarm" },
+      
+        { imageSrc: "https://example.com/bike.jpg", title: "Bike" },
+        { imageSrc: "https://example.com/banana.jpg", title: "Banana" },
+        { imageSrc: "https://example.com/basket.jpg", title: "Basket" },
+        { imageSrc: "https://example.com/bottle.jpg", title: "Bottle" },
+        { imageSrc: "https://example.com/butterfly.jpg", title: "Butterfly" },
+      
+        { imageSrc: "https://example.com/car.jpg", title: "Car" },
+        { imageSrc: "https://example.com/cat.jpg", title: "Cat" },
+        { imageSrc: "https://example.com/camera.jpg", title: "Camera" },
+        { imageSrc: "https://example.com/candle.jpg", title: "Candle" },
+        { imageSrc: "https://example.com/crown.jpg", title: "Crown" },
+      
+        { imageSrc: "https://example.com/dog.jpg", title: "Dog" },
+        { imageSrc: "https://example.com/door.jpg", title: "Door" },
+        { imageSrc: "https://example.com/dragon.jpg", title: "Dragon" },
+        { imageSrc: "https://example.com/dice.jpg", title: "Dice" },
+        { imageSrc: "https://example.com/drum.jpg", title: "Drum" },
+      
+        { imageSrc: "https://example.com/elephant.jpg", title: "Elephant" },
+        { imageSrc: "https://example.com/egg.jpg", title: "Egg" },
+        { imageSrc: "https://example.com/engine.jpg", title: "Engine" },
+        { imageSrc: "https://example.com/earphone.jpg", title: "Earphone" },
+        { imageSrc: "https://example.com/envelope.jpg", title: "Envelope" },
+      
+        { imageSrc: "https://example.com/fish.jpg", title: "Fish" },
+        { imageSrc: "https://example.com/flower.jpg", title: "Flower" },
+        { imageSrc: "https://example.com/flag.jpg", title: "Flag" },
+        { imageSrc: "https://example.com/fire.jpg", title: "Fire" },
+        { imageSrc: "https://example.com/fan.jpg", title: "Fan" },
+      
+        { imageSrc: "https://example.com/guitar.jpg", title: "Guitar" },
+        { imageSrc: "https://example.com/glass.jpg", title: "Glass" },
+        { imageSrc: "https://example.com/grape.jpg", title: "Grape" },
+        { imageSrc: "https://example.com/giraffe.jpg", title: "Giraffe" },
+        { imageSrc: "https://example.com/gift.jpg", title: "Gift" },
+      
+        { imageSrc: "https://example.com/hat.jpg", title: "Hat" },
+        { imageSrc: "https://example.com/horse.jpg", title: "Horse" },
+        { imageSrc: "https://example.com/house.jpg", title: "House" },
+        { imageSrc: "https://example.com/heart.jpg", title: "Heart" },
+        { imageSrc: "https://example.com/helicopter.jpg", title: "Helicopter" },
+      
+        { imageSrc: "https://example.com/icecream.jpg", title: "Ice Cream" },
+        { imageSrc: "https://example.com/iron.jpg", title: "Iron" },
+        { imageSrc: "https://example.com/ink.jpg", title: "Ink" },
+        { imageSrc: "https://example.com/iguana.jpg", title: "Iguana" },
+        { imageSrc: "https://example.com/island.jpg", title: "Island" },
+      
+        { imageSrc: "https://example.com/jacket.jpg", title: "Jacket" },
+        { imageSrc: "https://example.com/jellyfish.jpg", title: "Jellyfish" },
+        { imageSrc: "https://example.com/jump.jpg", title: "Jump" },
+        { imageSrc: "https://example.com/jar.jpg", title: "Jar" },
+        { imageSrc: "https://example.com/joker.jpg", title: "Joker" },
+      
+        { imageSrc: "https://example.com/kite.jpg", title: "Kite" },
+        { imageSrc: "https://example.com/kangaroo.jpg", title: "Kangaroo" },
+        { imageSrc: "https://example.com/keyboard.jpg", title: "Keyboard" },
+        { imageSrc: "https://example.com/key.jpg", title: "Key" },
+        { imageSrc: "https://example.com/king.jpg", title: "King" },
+      
+        { imageSrc: "https://example.com/lion.jpg", title: "Lion" },
+        { imageSrc: "https://example.com/ladder.jpg", title: "Ladder" },
+        { imageSrc: "https://example.com/lamp.jpg", title: "Lamp" },
+        { imageSrc: "https://example.com/leaf.jpg", title: "Leaf" },
+        { imageSrc: "https://example.com/lollipop.jpg", title: "Lollipop" },
+      
+        { imageSrc: "https://example.com/monkey.jpg", title: "Monkey" },
+        { imageSrc: "https://example.com/mirror.jpg", title: "Mirror" },
+        { imageSrc: "https://example.com/mountain.jpg", title: "Mountain" },
+        { imageSrc: "https://example.com/mango.jpg", title: "Mango" },
+        { imageSrc: "https://example.com/map.jpg", title: "Map" },
+      
+        { imageSrc: "https://example.com/nest.jpg", title: "Nest" },
+        { imageSrc: "https://example.com/nose.jpg", title: "Nose" },
+        { imageSrc: "https://example.com/nail.jpg", title: "Nail" },
+        { imageSrc: "https://example.com/needle.jpg", title: "Needle" },
+        { imageSrc: "https://example.com/notebook.jpg", title: "Notebook" },
+      
+        { imageSrc: "https://example.com/orange.jpg", title: "Orange" },
+        { imageSrc: "https://example.com/ostrich.jpg", title: "Ostrich" },
+        { imageSrc: "https://example.com/oven.jpg", title: "Oven" },
+        { imageSrc: "https://example.com/octopus.jpg", title: "Octopus" },
+        { imageSrc: "https://example.com/onion.jpg", title: "Onion" },
+      
+        { imageSrc: "https://example.com/parrot.jpg", title: "Parrot" },
+        { imageSrc: "https://example.com/pencil.jpg", title: "Pencil" },
+        { imageSrc: "https://example.com/pineapple.jpg", title: "Pineapple" },
+        { imageSrc: "https://example.com/pizza.jpg", title: "Pizza" },
+        { imageSrc: "https://example.com/peacock.jpg", title: "Peacock" },
+      
+        { imageSrc: "https://example.com/queen.jpg", title: "Queen" },
+        { imageSrc: "https://example.com/quilt.jpg", title: "Quilt" },
+        { imageSrc: "https://example.com/quill.jpg", title: "Quill" },
+        { imageSrc: "https://example.com/question.jpg", title: "Question" },
+        { imageSrc: "https://example.com/quarter.jpg", title: "Quarter" },
+      
+        { imageSrc: "https://example.com/robot.jpg", title: "Robot" },
+        { imageSrc: "https://example.com/rain.jpg", title: "Rain" },
+        { imageSrc: "https://example.com/rose.jpg", title: "Rose" },
+        { imageSrc: "https://example.com/river.jpg", title: "River" },
+        { imageSrc: "https://example.com/rabbit.jpg", title: "Rabbit" },
+      
+        { imageSrc: "https://example.com/zebra.jpg", title: "Zebra" },
+        { imageSrc: "https://example.com/zipper.jpg", title: "Zipper" },
+        { imageSrc: "https://example.com/zoo.jpg", title: "Zoo" },
+        { imageSrc: "https://example.com/zodiac.jpg", title: "Zodiac" },
+        { imageSrc: "https://example.com/zeppelin.jpg", title: "Zeppelin" },
+            ];
+
+    
+      await db.insert(schema.basicsdb).values(basicsData);
+        
+      
 
     await db.insert(schema.lessons).values([
         {
