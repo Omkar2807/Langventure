@@ -3,15 +3,17 @@ import React from "react";
 interface CardProps {
   img: string;
   name: string;
+  title: string;
 }
 
-const Card: React.FC<CardProps> = ({ img, name }) => {
+const Card: React.FC<CardProps> = ({ img, name,title }) => {
   return (
-    <div className="flex bg-yellow-600 border border-gray-500 justify-center align-middle flex-col h-32 min-w-24 py-3 rounded-md p-2 hover:animate-bounce ">
+    <div className="h-full border-2 rounded-xl border-b-4 hover:bg-black/5 p-4 lg:p-6 cursor-pointer active:border-b-2 ">
       <div className="flex justify-center">
-        <img src={img} alt={name} className="h-12 w-12 object-cover" />
+        <img src={img} alt={name} className="h-40 w-32 object-contain" />
       </div>
       <div className="flex justify-center">{name}</div>
+      <div className="flex justify-center">({title})</div>
     </div>
   );
 };

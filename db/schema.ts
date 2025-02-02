@@ -11,6 +11,8 @@ export const basicsdb = pgTable("basicdb", {
     id: serial("id").primaryKey(),
     imageSrc: text("image_src").notNull(),
     title: text("title").notNull(),
+    nativenm: text("nativename").notNull(),
+    audioSrc: text("audio_src"),
 });
 
     

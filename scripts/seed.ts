@@ -49,122 +49,252 @@ const main = async () => {
         }
     ]);
    
-    const basicsData = [
+     const basicsData = [
+        // A
         
-        { imageSrc: "https://example.com/apple.jpg", title: "Apple" },
-        { imageSrc: "https://example.com/ant.jpg", title: "Ant" },
-        { imageSrc: "https://example.com/arrow.jpg", title: "Arrow" },
-        { imageSrc: "https://example.com/airplane.jpg", title: "Airplane" },
-        { imageSrc: "https://example.com/alarm.jpg", title: "Alarm" },
+            // A
+{ imageSrc: "/apple.webp", title: "Apple", nativenm: "Manzana", audioSrc: null },
+{ imageSrc: "/ant.webp", title: "Ant", nativenm: "Hormiga", audioSrc: null },
+{ imageSrc: "/arm.webp", title: "Arm", nativenm: "Brazo", audioSrc: null },
+{ imageSrc: "/airplane.webp", title: "Airplane", nativenm: "Avión", audioSrc: null },
+{ imageSrc: "/arrow.webp", title: "Arrow", nativenm: "Flecha", audioSrc: null },
+{ imageSrc: "/anchor.webp", title: "Anchor", nativenm: "Ancla", audioSrc: null },
+{ imageSrc: "/alligator.webp", title: "Alligator", nativenm: "Caimán", audioSrc: null },
+{ imageSrc: "/alarm.webp", title: "Alarm", nativenm: "Alarma", audioSrc: null },
+{ imageSrc: "/actor.webp", title: "Actor", nativenm: "Actor", audioSrc: null },
+{ imageSrc: "/art.webp", title: "Art", nativenm: "Arte", audioSrc: null },
+
+// B
+{ imageSrc: "/ball.webp", title: "Ball", nativenm: "Pelota", audioSrc: null },
+{ imageSrc: "/bear.webp", title: "Bear", nativenm: "Oso", audioSrc: null },
+{ imageSrc: "/bird.webp", title: "Bird", nativenm: "Pájaro", audioSrc: null },
+{ imageSrc: "/butterfly.webp", title: "Butterfly", nativenm: "Mariposa", audioSrc: null },
+{ imageSrc: "/banana.webp", title: "Banana", nativenm: "Plátano", audioSrc: null },
+{ imageSrc: "/boat.webp", title: "Boat", nativenm: "Barco", audioSrc: null },
+{ imageSrc: "/box.webp", title: "Box", nativenm: "Caja", audioSrc: null },
+{ imageSrc: "/book.webp", title: "Book", nativenm: "Libro", audioSrc: null },
+{ imageSrc: "/bench.webp", title: "Bench", nativenm: "Banco", audioSrc: null },
+{ imageSrc: "/bell.webp", title: "Bell", nativenm: "Campana", audioSrc: null },
+
+// C
+{ imageSrc: "/cat.webp", title: "Cat", nativenm: "Gato", audioSrc: null },
+{ imageSrc: "/cake.webp", title: "Cake", nativenm: "Pastel", audioSrc: null },
+{ imageSrc: "/candle.webp", title: "Candle", nativenm: "Vela", audioSrc: null },
+{ imageSrc: "/cow.webp", title: "Cow", nativenm: "Vaca", audioSrc: null },
+{ imageSrc: "/car.webp", title: "Car", nativenm: "Coche", audioSrc: null },
+{ imageSrc: "/coin.webp", title: "Coin", nativenm: "Moneda", audioSrc: null },
+{ imageSrc: "/crown.webp", title: "Crown", nativenm: "Corona", audioSrc: null },
+{ imageSrc: "/cactus.webp", title: "Cactus", nativenm: "Cacto", audioSrc: null },
+{ imageSrc: "/clock.webp", title: "Clock", nativenm: "Reloj", audioSrc: null },
+{ imageSrc: "/cloud.webp", title: "Cloud", nativenm: "Nube", audioSrc: null },
+
+// D
+{ imageSrc: "/dog.webp", title: "Dog", nativenm: "Perro", audioSrc: null },
+{ imageSrc: "/duck.webp", title: "Duck", nativenm: "Pato", audioSrc: null },
+{ imageSrc: "/dress.webp", title: "Dress", nativenm: "Vestido", audioSrc: null },
+{ imageSrc: "/door.webp", title: "Door", nativenm: "Puerta", audioSrc: null },
+{ imageSrc: "/diamond.webp", title: "Diamond", nativenm: "Diamante", audioSrc: null },
+{ imageSrc: "/dolphin.webp", title: "Dolphin", nativenm: "Delfín", audioSrc: null },
+{ imageSrc: "/donkey.webp", title: "Donkey", nativenm: "Burro", audioSrc: null },
+{ imageSrc: "/dice.webp", title: "Dice", nativenm: "Dado", audioSrc: null },
+{ imageSrc: "/drum.webp", title: "Drum", nativenm: "Tambor", audioSrc: null },
+{ imageSrc: "/drop.webp", title: "Drop", nativenm: "Gota", audioSrc: null },
+
+// E
+{ imageSrc: "/elephant.webp", title: "Elephant", nativenm: "Elefante", audioSrc: null },
+{ imageSrc: "/egg.webp", title: "Egg", nativenm: "Huevo", audioSrc: null },
+{ imageSrc: "/engine.webp", title: "Engine", nativenm: "Motor", audioSrc: null },
+{ imageSrc: "/envelope.webp", title: "Envelope", nativenm: "Sobre", audioSrc: null },
+{ imageSrc: "/ear.webp", title: "Ear", nativenm: "Oreja", audioSrc: null },
+{ imageSrc: "/eagle.webp", title: "Eagle", nativenm: "Águila", audioSrc: null },
+{ imageSrc: "/earth.webp", title: "Earth", nativenm: "Tierra", audioSrc: null },
+{ imageSrc: "/eye.webp", title: "Eye", nativenm: "Ojo", audioSrc: null },
+{ imageSrc: "/elf.webp", title: "Elf", nativenm: "Elfo", audioSrc: null },
+{ imageSrc: "/elevator.webp", title: "Elevator", nativenm: "Ascensor", audioSrc: null },
+
+// F
+{ imageSrc: "/fish.webp", title: "Fish", nativenm: "Pescado", audioSrc: null },
+{ imageSrc: "/flower.webp", title: "Flower", nativenm: "Flor", audioSrc: null },
+{ imageSrc: "/fork.webp", title: "Fork", nativenm: "Tenedor", audioSrc: null },
+{ imageSrc: "/fire.webp", title: "Fire", nativenm: "Fuego", audioSrc: null },
+{ imageSrc: "/fox.webp", title: "Fox", nativenm: "Zorro", audioSrc: null },
+{ imageSrc: "/fence.webp", title: "Fence", nativenm: "Valla", audioSrc: null },
+
+// G
+{ imageSrc: "/guitar.webp", title: "Guitar", nativenm: "Guitarra", audioSrc: null },
+{ imageSrc: "/grapes.webp", title: "Grapes", nativenm: "Uvas", audioSrc: null },
+{ imageSrc: "/giraffe.webp", title: "Giraffe", nativenm: "Jirafa", audioSrc: null },
+{ imageSrc: "/goat.webp", title: "Goat", nativenm: "Cabra", audioSrc: null },
+{ imageSrc: "/glove.webp", title: "Glove", nativenm: "Guante", audioSrc: null },
+{ imageSrc: "/garden.webp", title: "Garden", nativenm: "Jardín", audioSrc: null },
+
+// H
+{ imageSrc: "/hat.webp", title: "Hat", nativenm: "Sombrero", audioSrc: null },
+{ imageSrc: "/house.webp", title: "House", nativenm: "Casa", audioSrc: null },
+{ imageSrc: "/horse.webp", title: "Horse", nativenm: "Caballo", audioSrc: null },
+{ imageSrc: "/hammer.webp", title: "Hammer", nativenm: "Martillo", audioSrc: null },
+{ imageSrc: "/hand.webp", title: "Hand", nativenm: "Mano", audioSrc: null },
+{ imageSrc: "/heart.webp", title: "Heart", nativenm: "Corazón", audioSrc: null },
+
+        
+          
       
-        { imageSrc: "https://example.com/bike.jpg", title: "Bike" },
-        { imageSrc: "https://example.com/banana.jpg", title: "Banana" },
-        { imageSrc: "https://example.com/basket.jpg", title: "Basket" },
-        { imageSrc: "https://example.com/bottle.jpg", title: "Bottle" },
-        { imageSrc: "https://example.com/butterfly.jpg", title: "Butterfly" },
+        // I
+        { imageSrc: "https://example.com/ice.jpg", title: "Ice", nativenm: "Hielo", audioSrc: null },
+        { imageSrc: "https://example.com/iron.jpg", title: "Iron", nativenm: "Hierro", audioSrc: null },
+        { imageSrc: "https://example.com/iguana.jpg", title: "Iguana", nativenm: "Iguana", audioSrc: null },
+        { imageSrc: "https://example.com/insect.jpg", title: "Insect", nativenm: "Insecto", audioSrc: null },
+        { imageSrc: "https://example.com/ink.jpg", title: "Ink", nativenm: "Tinta", audioSrc: null },
+        { imageSrc: "https://example.com/icecream.jpg", title: "Ice Cream", nativenm: "Helado", audioSrc: null },
       
-        { imageSrc: "https://example.com/car.jpg", title: "Car" },
-        { imageSrc: "https://example.com/cat.jpg", title: "Cat" },
-        { imageSrc: "https://example.com/camera.jpg", title: "Camera" },
-        { imageSrc: "https://example.com/candle.jpg", title: "Candle" },
-        { imageSrc: "https://example.com/crown.jpg", title: "Crown" },
+        // J
+        { imageSrc: "https://example.com/jacket.jpg", title: "Jacket", nativenm: "Chaqueta", audioSrc: null },
+        { imageSrc: "https://example.com/jungle.jpg", title: "Jungle", nativenm: "Selva", audioSrc: null },
+        { imageSrc: "https://example.com/jump.jpg", title: "Jump", nativenm: "Saltar", audioSrc: null },
+        { imageSrc: "https://example.com/jar.jpg", title: "Jar", nativenm: "Tarro", audioSrc: null },
+        { imageSrc: "https://example.com/jellyfish.jpg", title: "Jellyfish", nativenm: "Medusa", audioSrc: null },
       
-        { imageSrc: "https://example.com/dog.jpg", title: "Dog" },
-        { imageSrc: "https://example.com/door.jpg", title: "Door" },
-        { imageSrc: "https://example.com/dragon.jpg", title: "Dragon" },
-        { imageSrc: "https://example.com/dice.jpg", title: "Dice" },
-        { imageSrc: "https://example.com/drum.jpg", title: "Drum" },
+        // K
+        { imageSrc: "https://example.com/kiwi.jpg", title: "Kiwi", nativenm: "Kiwi", audioSrc: null },
+        { imageSrc: "https://example.com/kangaroo.jpg", title: "Kangaroo", nativenm: "Canguro", audioSrc: null },
+        { imageSrc: "https://example.com/kettle.jpg", title: "Kettle", nativenm: "Tetera", audioSrc: null },
+        { imageSrc: "https://example.com/key.jpg", title: "Key", nativenm: "Llave", audioSrc: null },
+        { imageSrc: "https://example.com/king.jpg", title: "King", nativenm: "Rey", audioSrc: null },
       
-        { imageSrc: "https://example.com/elephant.jpg", title: "Elephant" },
-        { imageSrc: "https://example.com/egg.jpg", title: "Egg" },
-        { imageSrc: "https://example.com/engine.jpg", title: "Engine" },
-        { imageSrc: "https://example.com/earphone.jpg", title: "Earphone" },
-        { imageSrc: "https://example.com/envelope.jpg", title: "Envelope" },
+        // L
+        { imageSrc: "https://example.com/lion.jpg", title: "Lion", nativenm: "León", audioSrc: null },
+        { imageSrc: "https://example.com/lamp.jpg", title: "Lamp", nativenm: "Lámpara", audioSrc: null },
+        { imageSrc: "https://example.com/lemon.jpg", title: "Lemon", nativenm: "Limón", audioSrc: null },
+        { imageSrc: "https://example.com/ladder.jpg", title: "Ladder", nativenm: "Escalera", audioSrc: null },
+        { imageSrc: "https://example.com/leaf.jpg", title: "Leaf", nativenm: "Hoja", audioSrc: null },
       
-        { imageSrc: "https://example.com/fish.jpg", title: "Fish" },
-        { imageSrc: "https://example.com/flower.jpg", title: "Flower" },
-        { imageSrc: "https://example.com/flag.jpg", title: "Flag" },
-        { imageSrc: "https://example.com/fire.jpg", title: "Fire" },
-        { imageSrc: "https://example.com/fan.jpg", title: "Fan" },
+        // M
+        { imageSrc: "https://example.com/mouse.jpg", title: "Mouse", nativenm: "Rata", audioSrc: null },
+        { imageSrc: "https://example.com/monkey.jpg", title: "Monkey", nativenm: "Mono", audioSrc: null },
+        { imageSrc: "https://example.com/mountain.jpg", title: "Mountain", nativenm: "Montaña", audioSrc: null },
+        { imageSrc: "https://example.com/milk.jpg", title: "Milk", nativenm: "Leche", audioSrc: null },
+        { imageSrc: "https://example.com/mirror.jpg", title: "Mirror", nativenm: "Espejo", audioSrc: null },
       
-        { imageSrc: "https://example.com/guitar.jpg", title: "Guitar" },
-        { imageSrc: "https://example.com/glass.jpg", title: "Glass" },
-        { imageSrc: "https://example.com/grape.jpg", title: "Grape" },
-        { imageSrc: "https://example.com/giraffe.jpg", title: "Giraffe" },
-        { imageSrc: "https://example.com/gift.jpg", title: "Gift" },
+        // N
+        { imageSrc: "https://example.com/net.jpg", title: "Net", nativenm: "Red", audioSrc: null },
+        { imageSrc: "https://example.com/nose.jpg", title: "Nose", nativenm: "Nariz", audioSrc: null },
+        { imageSrc: "https://example.com/night.jpg", title: "Night", nativenm: "Noche", audioSrc: null },
+        { imageSrc: "https://example.com/nose.jpg", title: "Nose", nativenm: "Nariz", audioSrc: null },
+        { imageSrc: "https://example.com/nut.jpg", title: "Nut", nativenm: "Nuez", audioSrc: null },
       
-        { imageSrc: "https://example.com/hat.jpg", title: "Hat" },
-        { imageSrc: "https://example.com/horse.jpg", title: "Horse" },
-        { imageSrc: "https://example.com/house.jpg", title: "House" },
-        { imageSrc: "https://example.com/heart.jpg", title: "Heart" },
-        { imageSrc: "https://example.com/helicopter.jpg", title: "Helicopter" },
+        // O
+        { imageSrc: "https://example.com/ostrich.jpg", title: "Ostrich", nativenm: "Ostrero", audioSrc: null },
+        { imageSrc: "https://example.com/octopus.jpg", title: "Octopus", nativenm: "Pulpo", audioSrc: null },
+        { imageSrc: "https://example.com/owl.jpg", title: "Owl", nativenm: "Búho", audioSrc: null },
+        { imageSrc: "https://example.com/olive.jpg", title: "Olive", nativenm: "Aceituna", audioSrc: null },
+        { imageSrc: "https://example.com/oxygen.jpg", title: "Oxygen", nativenm: "Oxígeno", audioSrc: null },
       
-        { imageSrc: "https://example.com/icecream.jpg", title: "Ice Cream" },
-        { imageSrc: "https://example.com/iron.jpg", title: "Iron" },
-        { imageSrc: "https://example.com/ink.jpg", title: "Ink" },
-        { imageSrc: "https://example.com/iguana.jpg", title: "Iguana" },
-        { imageSrc: "https://example.com/island.jpg", title: "Island" },
+        // P
+        { imageSrc: "https://example.com/pen.jpg", title: "Pen", nativenm: "Pluma", audioSrc: null },
+        { imageSrc: "https://example.com/pineapple.jpg", title: "Pineapple", nativenm: "Piña", audioSrc: null },
+        { imageSrc: "https://example.com/panda.jpg", title: "Panda", nativenm: "Panda", audioSrc: null },
+        { imageSrc: "https://example.com/pencil.jpg", title: "Pencil", nativenm: "Lápiz", audioSrc: null },
+        { imageSrc: "https://example.com/plane.jpg", title: "Plane", nativenm: "Avión", audioSrc: null },
       
-        { imageSrc: "https://example.com/jacket.jpg", title: "Jacket" },
-        { imageSrc: "https://example.com/jellyfish.jpg", title: "Jellyfish" },
-        { imageSrc: "https://example.com/jump.jpg", title: "Jump" },
-        { imageSrc: "https://example.com/jar.jpg", title: "Jar" },
-        { imageSrc: "https://example.com/joker.jpg", title: "Joker" },
+        // Q
+        { imageSrc: "https://example.com/quilt.jpg", title: "Quilt", nativenm: "Colcha", audioSrc: null },
+        { imageSrc: "https://example.com/queen.jpg", title: "Queen", nativenm: "Reina", audioSrc: null },
       
-        { imageSrc: "https://example.com/kite.jpg", title: "Kite" },
-        { imageSrc: "https://example.com/kangaroo.jpg", title: "Kangaroo" },
-        { imageSrc: "https://example.com/keyboard.jpg", title: "Keyboard" },
-        { imageSrc: "https://example.com/key.jpg", title: "Key" },
-        { imageSrc: "https://example.com/king.jpg", title: "King" },
+        // R
+        { imageSrc: "https://example.com/rabbit.jpg", title: "Rabbit", nativenm: "Conejo", audioSrc: null },
+        { imageSrc: "https://example.com/rain.jpg", title: "Rain", nativenm: "Lluvia", audioSrc: null },
+        { imageSrc: "https://example.com/ring.jpg", title: "Ring", nativenm: "Anillo", audioSrc: null },
+        { imageSrc: "https://example.com/rose.jpg", title: "Rose", nativenm: "Rosa", audioSrc: null },
+        { imageSrc: "https://example.com/robot.jpg", title: "Robot", nativenm: "Robot", audioSrc: null },
       
-        { imageSrc: "https://example.com/lion.jpg", title: "Lion" },
-        { imageSrc: "https://example.com/ladder.jpg", title: "Ladder" },
-        { imageSrc: "https://example.com/lamp.jpg", title: "Lamp" },
-        { imageSrc: "https://example.com/leaf.jpg", title: "Leaf" },
-        { imageSrc: "https://example.com/lollipop.jpg", title: "Lollipop" },
+        // S
+        { imageSrc: "https://example.com/sun.jpg", title: "Sun", nativenm: "Sol", audioSrc: null },
+        { imageSrc: "https://example.com/snake.jpg", title: "Snake", nativenm: "Serpiente", audioSrc: null },
+        { imageSrc: "https://example.com/star.jpg", title: "Star", nativenm: "Estrella", audioSrc: null },
+        { imageSrc: "https://example.com/socks.jpg", title: "Socks", nativenm: "Calcetines", audioSrc: null },
+        { imageSrc: "https://example.com/sand.jpg", title: "Sand", nativenm: "Arena", audioSrc: null },
       
-        { imageSrc: "https://example.com/monkey.jpg", title: "Monkey" },
-        { imageSrc: "https://example.com/mirror.jpg", title: "Mirror" },
-        { imageSrc: "https://example.com/mountain.jpg", title: "Mountain" },
-        { imageSrc: "https://example.com/mango.jpg", title: "Mango" },
-        { imageSrc: "https://example.com/map.jpg", title: "Map" },
+        // T
+        { imageSrc: "https://example.com/tiger.jpg", title: "Tiger", nativenm: "Tigre", audioSrc: null },
+        { imageSrc: "https://example.com/tree.jpg", title: "Tree", nativenm: "Árbol", audioSrc: null },
+        { imageSrc: "https://example.com/table.jpg", title: "Table", nativenm: "Mesa", audioSrc: null },
+        { imageSrc: "https://example.com/television.jpg", title: "Television", nativenm: "Televisión", audioSrc: null },
+        { imageSrc: "https://example.com/tooth.jpg", title: "Tooth", nativenm: "Diente", audioSrc: null },
       
-        { imageSrc: "https://example.com/nest.jpg", title: "Nest" },
-        { imageSrc: "https://example.com/nose.jpg", title: "Nose" },
-        { imageSrc: "https://example.com/nail.jpg", title: "Nail" },
-        { imageSrc: "https://example.com/needle.jpg", title: "Needle" },
-        { imageSrc: "https://example.com/notebook.jpg", title: "Notebook" },
+        // U
+{ imageSrc: "https://example.com/umbrella.jpg", title: "Umbrella", nativenm: "Paraguas", audioSrc: null },
+{ imageSrc: "https://example.com/urn.jpg", title: "Urn", nativenm: "Urna", audioSrc: null },
+{ imageSrc: "https://example.com/uncle.jpg", title: "Uncle", nativenm: "Tío", audioSrc: null },
+{ imageSrc: "https://example.com/unicorn.jpg", title: "Unicorn", nativenm: "Unicornio", audioSrc: null },
+{ imageSrc: "https://example.com/underwear.jpg", title: "Underwear", nativenm: "Ropa interior", audioSrc: null },
+{ imageSrc: "https://example.com/undertaker.jpg", title: "Undertaker", nativenm: "Sepulturero", audioSrc: null },
+{ imageSrc: "https://example.com/utility.jpg", title: "Utility", nativenm: "Utilidad", audioSrc: null },
+{ imageSrc: "https://example.com/urgent.jpg", title: "Urgent", nativenm: "Urgente", audioSrc: null },
+{ imageSrc: "https://example.com/universe.jpg", title: "Universe", nativenm: "Universo", audioSrc: null },
+{ imageSrc: "https://example.com/utensil.jpg", title: "Utensil", nativenm: "Utensilio", audioSrc: null },
+
+// V
+{ imageSrc: "https://example.com/van.jpg", title: "Van", nativenm: "Furgoneta", audioSrc: null },
+{ imageSrc: "https://example.com/vulture.jpg", title: "Vulture", nativenm: "Buitre", audioSrc: null },
+{ imageSrc: "https://example.com/vacuum.jpg", title: "Vacuum", nativenm: "Aspiradora", audioSrc: null },
+{ imageSrc: "https://example.com/violet.jpg", title: "Violet", nativenm: "Violeta", audioSrc: null },
+{ imageSrc: "https://example.com/victim.jpg", title: "Victim", nativenm: "Víctima", audioSrc: null },
+{ imageSrc: "https://example.com/vegetable.jpg", title: "Vegetable", nativenm: "Verdura", audioSrc: null },
+{ imageSrc: "https://example.com/volcano.jpg", title: "Volcano", nativenm: "Volcán", audioSrc: null },
+{ imageSrc: "https://example.com/vacation.jpg", title: "Vacation", nativenm: "Vacaciones", audioSrc: null },
+{ imageSrc: "https://example.com/vanity.jpg", title: "Vanity", nativenm: "Vanidad", audioSrc: null },
+{ imageSrc: "https://example.com/vampire.jpg", title: "Vampire", nativenm: "Vampiro", audioSrc: null },
+
+// W
+{ imageSrc: "https://example.com/wolf.jpg", title: "Wolf", nativenm: "Lobo", audioSrc: null },
+{ imageSrc: "https://example.com/watermelon.jpg", title: "Watermelon", nativenm: "Sandía", audioSrc: null },
+{ imageSrc: "https://example.com/window.jpg", title: "Window", nativenm: "Ventana", audioSrc: null },
+{ imageSrc: "https://example.com/wagon.jpg", title: "Wagon", nativenm: "Vagón", audioSrc: null },
+{ imageSrc: "https://example.com/waterfall.jpg", title: "Waterfall", nativenm: "Cascada", audioSrc: null },
+{ imageSrc: "https://example.com/watch.jpg", title: "Watch", nativenm: "Reloj", audioSrc: null },
+{ imageSrc: "https://example.com/whale.jpg", title: "Whale", nativenm: "Ballena", audioSrc: null },
+{ imageSrc: "https://example.com/winter.jpg", title: "Winter", nativenm: "Invierno", audioSrc: null },
+{ imageSrc: "https://example.com/wrist.jpg", title: "Wrist", nativenm: "Muñeca", audioSrc: null },
+{ imageSrc: "https://example.com/whistle.jpg", title: "Whistle", nativenm: "Silbato", audioSrc: null },
+
+// X
+{ imageSrc: "https://example.com/xylophone.jpg", title: "Xylophone", nativenm: "Xilófono", audioSrc: null },
+{ imageSrc: "https://example.com/x-ray.jpg", title: "X-ray", nativenm: "Radiografía", audioSrc: null },
+{ imageSrc: "https://example.com/xenon.jpg", title: "Xenon", nativenm: "Xenón", audioSrc: null },
+{ imageSrc: "https://example.com/xmas.jpg", title: "Xmas", nativenm: "Navidad", audioSrc: null },
+{ imageSrc: "https://example.com/xenophobia.jpg", title: "Xenophobia", nativenm: "Xenofobia", audioSrc: null },
+{ imageSrc: "https://example.com/xenial.jpg", title: "Xenial", nativenm: "Xenial", audioSrc: null },
+{ imageSrc: "https://example.com/xeon.jpg", title: "Xeon", nativenm: "Xeón", audioSrc: null },
+{ imageSrc: "https://example.com/examine.jpg", title: "Examine", nativenm: "Examinar", audioSrc: null },
+{ imageSrc: "https://example.com/explode.jpg", title: "Explode", nativenm: "Explotar", audioSrc: null },
+{ imageSrc: "https://example.com/exile.jpg", title: "Exile", nativenm: "Exilio", audioSrc: null },
+
+// Y
+{ imageSrc: "https://example.com/yak.jpg", title: "Yak", nativenm: "Yak", audioSrc: null },
+{ imageSrc: "https://example.com/yellow.jpg", title: "Yellow", nativenm: "Amarillo", audioSrc: null },
+{ imageSrc: "https://example.com/yogurt.jpg", title: "Yogurt", nativenm: "Yogur", audioSrc: null },
+{ imageSrc: "https://example.com/yarn.jpg", title: "Yarn", nativenm: "Hilo", audioSrc: null },
+{ imageSrc: "https://example.com/yes.jpg", title: "Yes", nativenm: "Sí", audioSrc: null },
+{ imageSrc: "https://example.com/yoga.jpg", title: "Yoga", nativenm: "Yoga", audioSrc: null },
+{ imageSrc: "https://example.com/youth.jpg", title: "Youth", nativenm: "Juventud", audioSrc: null },
+{ imageSrc: "https://example.com/yawn.jpg", title: "Yawn", nativenm: "Bostezo", audioSrc: null },
+{ imageSrc: "https://example.com/yard.jpg", title: "Yard", nativenm: "Jardín", audioSrc: null },
+{ imageSrc: "https://example.com/yell.jpg", title: "Yell", nativenm: "Gritar", audioSrc: null },
+
+// Z
+{ imageSrc: "https://example.com/zebra.jpg", title: "Zebra", nativenm: "Cebra", audioSrc: null },
+{ imageSrc: "https://example.com/zoo.jpg", title: "Zoo", nativenm: "Zoológico", audioSrc: null },
+{ imageSrc: "https://example.com/zenith.jpg", title: "Zenith", nativenm: "Cenit", audioSrc: null },
+{ imageSrc: "https://example.com/zero.jpg", title: "Zero", nativenm: "Cero", audioSrc: null },
+{ imageSrc: "https://example.com/zigzag.jpg", title: "Zigzag", nativenm: "Zigzag", audioSrc: null },
+{ imageSrc: "https://example.com/zeppelin.jpg", title: "Zeppelin", nativenm: "Zeppelin", audioSrc: null },
+{ imageSrc: "https://example.com/zombie.jpg", title: "Zombie", nativenm: "Zombi", audioSrc: null },
+{ imageSrc: "https://example.com/zone.jpg", title: "Zone", nativenm: "Zona", audioSrc: null },
+{ imageSrc: "https://example.com/zodiac.jpg", title: "Zodiac", nativenm: "Zodiaco", audioSrc: null },
+{ imageSrc: "https://example.com/zoom.jpg", title: "Zoom", nativenm: "Zoom", audioSrc: null },
+
+      ];
       
-        { imageSrc: "https://example.com/orange.jpg", title: "Orange" },
-        { imageSrc: "https://example.com/ostrich.jpg", title: "Ostrich" },
-        { imageSrc: "https://example.com/oven.jpg", title: "Oven" },
-        { imageSrc: "https://example.com/octopus.jpg", title: "Octopus" },
-        { imageSrc: "https://example.com/onion.jpg", title: "Onion" },
-      
-        { imageSrc: "https://example.com/parrot.jpg", title: "Parrot" },
-        { imageSrc: "https://example.com/pencil.jpg", title: "Pencil" },
-        { imageSrc: "https://example.com/pineapple.jpg", title: "Pineapple" },
-        { imageSrc: "https://example.com/pizza.jpg", title: "Pizza" },
-        { imageSrc: "https://example.com/peacock.jpg", title: "Peacock" },
-      
-        { imageSrc: "https://example.com/queen.jpg", title: "Queen" },
-        { imageSrc: "https://example.com/quilt.jpg", title: "Quilt" },
-        { imageSrc: "https://example.com/quill.jpg", title: "Quill" },
-        { imageSrc: "https://example.com/question.jpg", title: "Question" },
-        { imageSrc: "https://example.com/quarter.jpg", title: "Quarter" },
-      
-        { imageSrc: "https://example.com/robot.jpg", title: "Robot" },
-        { imageSrc: "https://example.com/rain.jpg", title: "Rain" },
-        { imageSrc: "https://example.com/rose.jpg", title: "Rose" },
-        { imageSrc: "https://example.com/river.jpg", title: "River" },
-        { imageSrc: "https://example.com/rabbit.jpg", title: "Rabbit" },
-      
-        { imageSrc: "https://example.com/zebra.jpg", title: "Zebra" },
-        { imageSrc: "https://example.com/zipper.jpg", title: "Zipper" },
-        { imageSrc: "https://example.com/zoo.jpg", title: "Zoo" },
-        { imageSrc: "https://example.com/zodiac.jpg", title: "Zodiac" },
-        { imageSrc: "https://example.com/zeppelin.jpg", title: "Zeppelin" },
-            ];
 
     
       await db.insert(schema.basicsdb).values(basicsData);
