@@ -96,6 +96,13 @@ export const getBasicsdb = cache(async () => {
     return data;
 });
 
+export const getBasicsdbcore = cache(async () => {
+    const data = await db.query.basicsdbcore.findMany();
+    
+    return data;
+});
+
+
 export const getCoursesById = cache(async (courseId: number)=> {
     const data = await db.query.courses.findFirst({
         where: eq(courses.id, courseId),

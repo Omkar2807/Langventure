@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import Cardchart from "./cardchart";
-import { basicsdb,lessons, units as unitsSchema } from "@/db/schema";
+import { basicsdb,basicsdbcore,lessons, units as unitsSchema } from "@/db/schema";
 import { Promo } from "@/components/promo";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
@@ -11,7 +11,8 @@ import {
     getUnits,
     getUserProgress,
     getUserSubscription,
-    getBasicsdb
+    getBasicsdb,
+    getBasicsdbcore
 } from "@/db/queries";
 
 import { Header } from "./header";
@@ -25,6 +26,7 @@ const LearnPage = async () => {
     const unitsData = getUnits();
     const userSubscriptionData = getUserSubscription();
     const BasicsVocabdata =  getBasicsdb();
+    const BasicsCoredata = getBasicsdbcore();
     
     const[        
         userProgress,
@@ -40,16 +42,18 @@ const LearnPage = async () => {
         userSubscriptionData 
     ]);
 
-    // for vocab retrival 
+    // for vocab retrival and Basicscore 
         const[
             Basicvovabdata,
+            Basiccore
            
         ] = await Promise.all([
             BasicsVocabdata,
+            BasicsCoredata
         ]);
 
         // console.log(Basicvovabdata);
-        console.log(typeof BasicsVocabdata);
+        // console.log(typeof BasicsVocabdata);
 
     if (!userProgress || !userProgress.activeCourse){
         redirect("/courses");
@@ -66,7 +70,8 @@ const LearnPage = async () => {
             
             <FeedWrapper>
                 <Header title={userProgress.activeCourse.title} />
-                <Cardchart Basicvovabdata={Basicvovabdata}/>
+                
+                <Cardchart Basicvovabdata={Basicvovabdata} Basiccore={Basiccore}/>
                 
             </FeedWrapper>
             
