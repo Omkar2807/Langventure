@@ -1,4 +1,4 @@
-export const spanishAlphabetSeed = [
+export const SpanishAlphabetSeed = [
     { pronunciation: "ah", nativenm: "A", courseId: 1, order: 1, type: "alphabet", audioSrc: "/audio/spanish/A.mp3" },
     { pronunciation: "beh", nativenm: "B", courseId: 1, order: 2, type: "alphabet", audioSrc: "/audio/spanish/B.mp3" },
     { pronunciation: "seh", nativenm: "C", courseId: 1, order: 3, type: "alphabet", audioSrc: "/audio/spanish/C.mp3" },

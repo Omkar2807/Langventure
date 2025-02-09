@@ -12,6 +12,7 @@ export const basicsdb = pgTable("basicdb", {
     imageSrc: text("image_src").notNull(),
     title: text("title").notNull(),
     nativenm: text("nativename").notNull(),
+    courseId: integer("course_id").references(() => courses.id, { onDelete: "cascade" }).notNull(),
     audioSrc: text("audio_src"),
 });
 
