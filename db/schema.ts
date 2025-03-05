@@ -37,6 +37,7 @@ export const units = pgTable("units", {
     id: serial("id").primaryKey(),
     title: text("title").notNull(),
     description: text("description").notNull(),
+    imageSrc: text("imagesrc"),
     courseId: integer("course_id").references(() => courses.id, { onDelete:"cascade"}).notNull(),
     order: integer("order").notNull(),
 });
