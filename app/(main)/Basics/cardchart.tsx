@@ -47,6 +47,7 @@ export const List = ({ Basicvovabdata }: Props) => {
                 <Card key={index} img={item.img} name={item.name} title = {item.titlename}/>
               ))}
             </div>
+            <div>Categories</div>
           </div>
         ))}
     </div>
