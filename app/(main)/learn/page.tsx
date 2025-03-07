@@ -70,6 +70,7 @@ const LearnPage = async () => {
                       id={unit.id}
                       order={unit.order}
                       description={unit.description}
+                      imageSrc={unit.imageSrc}
                       title={unit.title}
                       lessons={unit.lessons}
                       activeLesson={courseProgress.activeLesson}

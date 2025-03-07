@@ -1,0 +1,28 @@
+import React from "react";
+
+interface CardProps {
+  nativenm: string;
+  pronounce: string;
+  soundSrc: string | null; // Add sound source
+}
+
+const Cardcore: React.FC<CardProps> = ({ nativenm, pronounce, soundSrc }) => {
+  const playSound = () => {
+    if (soundSrc) {
+      const audio = new Audio(soundSrc);
+      audio.play();
+    }
+  };
+
+  return (
+    <div
+      className="h-full border-2 rounded-xl border-b-4 hover:bg-black/5 hover:scale-110 p-4 lg:p-6 cursor-pointer active:border-b-2"
+      onClick={playSound} // Play sound when clicked
+    >
+      <div className="flex justify-center text-3xl p-2">{nativenm}</div>
+      <div className="flex justify-center">({pronounce})</div>
+    </div>
+  );
+};
+
+export default Cardcore;

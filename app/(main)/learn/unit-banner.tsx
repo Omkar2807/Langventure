@@ -5,14 +5,27 @@ import Link from "next/link";
 type Props = {
     title: string;
     description: string;
+    imageUrl: string |null ; // Optional prop for the image URL
 };
+
 
 export const UnitBanner = ({
     title,
     description,
+    imageUrl,
 }: Props) => {
+    console.log("hello"+ imageUrl)
     return (
-        <div className="w-full rounded-xl bg-green-500 p-5 text-white flex items-center justify-between">
+        <div 
+            className="w-full rounded-xl p-5 bg-green-100 flex items-center justify-between"
+            style={{
+                backgroundImage: imageUrl ? `url(${imageUrl})` : 'bg-green-500',
+                backgroundColor: !imageUrl ? 'bg-green-500' : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+            
+        >
             <div className="space-y-2.5">
                 <h3 className="text-2xl font-bold">  
                     {title}

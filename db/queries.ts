@@ -9,7 +9,9 @@ import {
     lessons, 
     units, 
     userProgress,
-    userSubscription 
+    userSubscription,
+    basicsdb,
+    basicsdbcore 
 } from "@/db/schema";
 
 export const getUserProgress = cache(async () =>{
@@ -90,11 +92,36 @@ export const getCourses = cache(async () => {
 });
 
   // here is basic db data
-export const getBasicsdb = cache(async () => {
-    const data = await db.query.basicsdb.findMany();
-    
+  export const getBasicsdb = cache(async () => {
+    const userProgress = await getUserProgress();
+
+    if (!userProgress || !userProgress.activeCourseId) {
+        return [];
+    }
+
+    const data = await db.query.basicsdb.findMany({
+        where: eq(basicsdb.courseId, userProgress.activeCourseId),
+    });
+
     return data;
 });
+
+export const getBasicsdbcore = cache(async () => {
+    const userProgress = await getUserProgress();
+
+    if (!userProgress || !userProgress.activeCourseId) {
+        return [];
+    }
+
+    const data = await db.query.basicsdbcore.findMany({
+        where: eq(basicsdbcore.courseId, userProgress.activeCourseId),
+    });
+
+    return data;
+});
+
+
+
 
 export const getCoursesById = cache(async (courseId: number)=> {
     const data = await db.query.courses.findFirst({
