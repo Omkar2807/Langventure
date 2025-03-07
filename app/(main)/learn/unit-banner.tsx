@@ -24,6 +24,7 @@ export const UnitBanner = ({
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
+            
         >
             <div className="space-y-2.5">
                 <h3 className="text-2xl font-bold">  

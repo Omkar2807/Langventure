@@ -852,7 +852,239 @@ const main = async () => {
         
             // Z
             { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "シマウマ", courseId: 3, audioSrc: "/Basics/audio/Zebra.mp3" },
-            { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "どうぶつえん", courseId: 3, audioSrc: "/Basics/audio/Zoo.mp3" }
+            { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "どうぶつえん", courseId: 3, audioSrc: "/Basics/audio/Zoo.mp3" },
+
+
+
+            //marathi data here
+            
+                { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "सफरचंद", courseId: 4, audioSrc: "Basics/audio/marathi/word/Apple.mp3" },
+                { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "मुंगी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ant.mp3" },
+                { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arm.mp3" },
+                { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Airplane.mp3" },
+                { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "बाण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arrow.mp3" },
+                { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "नांगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Anchor.mp3" },
+                { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "मगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alligator.mp3" },
+                { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "अलार्म", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alarm.mp3" },
+                { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "अभिनेता", courseId: 4, audioSrc: "Basics/audio/marathi/word/Actor.mp3" },
+                { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "कला", courseId: 4, audioSrc: "Basics/audio/marathi/word/Art.mp3" },
+            
+                // B
+                { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "चेंडू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ball.mp3" },
+                { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "अस्वल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bear.mp3" },
+                { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "पक्षी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bird.mp3" },
+                { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "फुलपाखरू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Butterfly.mp3" },
+                { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "केळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Banana.mp3" },
+                { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "बोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Boat.mp3" },
+                { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "पेटी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Box.mp3" },
+                { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "पुस्तक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Book.mp3" },
+                { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "बेंच", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bench.mp3" },
+                { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "घंटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bell.mp3" },
+            
+                // C
+                { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "मांजर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cat.mp3" },
+                { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "केक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cake.mp3" },
+                { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "मेणबत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Candle.mp3" },
+                { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "गाय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cow.mp3" },
+                { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "कार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Car.mp3" },
+                { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "नाणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Coin.mp3" },
+                { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "मुकुट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Crown.mp3" },
+                { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "कॅक्टस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cactus.mp3" },
+                { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Clock.mp3" },
+                { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "ढग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cloud.mp3" },
+            
+                // D
+                { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "कुत्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dog.mp3" },
+                { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "बदक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Duck.mp3" },
+                { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "ड्रेस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dress.mp3" },
+                { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "दरवाजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Door.mp3" },
+                { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "हिरा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Diamond.mp3" },
+                { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "डॉल्फिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dolphin.mp3" },
+                { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "गाढव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Donkey.mp3" },
+                { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "फासे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dice.mp3" },
+                { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "ड्रम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drum.mp3" },
+                { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "थेंब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drop.mp3" },
+            
+                // E
+                { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "हत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elephant.mp3" },
+                { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "अंडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Egg.mp3" },
+                { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "इंजिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Engine.mp3" },
+                { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "लिफाफा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Envelope.mp3" },
+                { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "कान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ear.mp3" },
+                { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "गरूड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eagle.mp3" },
+                { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "पृथ्वी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Earth.mp3" },
+                { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "डोळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eye.mp3" },
+                { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "एल्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elf.mp3" },
+                { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "लिफ्ट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elevator.mp3" },
+            
+                // F
+                { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "मासा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fish.mp3" },
+                { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "फूल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Flower.mp3" },
+                { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "काटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fork.mp3" },
+                { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "आग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fire.mp3" },
+                { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "कोल्हा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fox.mp3" },
+                { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "कुंपण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fence.mp3" },
+            
+                // G
+                { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "गिटार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Guitar.mp3" },
+                { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "द्राक्ष", courseId: 4, audioSrc: "Basics/audio/marathi/word/Grapes.mp3" },
+                { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "जिराफ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Giraffe.mp3" },
+                { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "शेळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Goat.mp3" },
+                { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "हातमोजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Glove.mp3" },
+                { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "बाग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Garden.mp3" },
+            
+                // H
+                { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "टोपी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hat.mp3" },
+                { imageSrc: "/Basics/House.png", title: "House", nativenm: "घर", courseId: 4, audioSrc: "Basics/audio/marathi/word/House.mp3" },
+                { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "घोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Horse.mp3" },
+                { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "हातोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hammer.mp3" },
+                { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hand.mp3" },
+                { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "हृदय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Heart.mp3" },
+            
+                // I
+    { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "बर्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice.mp3" },
+    { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "लोखंड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iron.mp3" },
+    { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "इगुआना", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iguana.mp3" },
+    { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "कीटक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Insect.mp3" },
+    { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "शाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ink.mp3" },
+    { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "आईस्क्रीम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice Cream.mp3" },
+
+    // J
+    { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "जाकीट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jacket.mp3" },
+    { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "जंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jungle.mp3" },
+    { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "उडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jump.mp3" },
+    { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "जार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jar.mp3" },
+    { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "जेलीफिश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jellyfish.mp3" },
+
+    // K
+    { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "किवी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kiwi.mp3" },
+    { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "कांगारू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kangaroo.mp3" },
+    { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "केतली", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kettle.mp3" },
+    { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "चावी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Key.mp3" },
+    { imageSrc: "/Basics/King.png", title: "King", nativenm: "राजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/King.mp3" },
+
+    // L
+    { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "सिंह", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lion.mp3" },
+    { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "दिवा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lamp.mp3" },
+    { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "लिंबू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lemon.mp3" },
+    { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "शिडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ladder.mp3" },
+    { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "पान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Leaf.mp3" },
+
+    // M
+    { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "उंदीर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mouse.mp3" },
+    { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "माकड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Monkey.mp3" },
+    { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "पर्वत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mountain.mp3" },
+    { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "दूध", courseId: 4, audioSrc: "Basics/audio/marathi/word/Milk.mp3" },
+    { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "आरसा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mirror.mp3" },
+
+    // N
+    { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "जाळे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Net.mp3" },
+    { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "नाक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nose.mp3" },
+    { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "रात्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Night.mp3" },
+    { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "काजू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nut.mp3" },
+
+    // O
+    { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "शहामृग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ostrich.mp3" },
+    { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "ऑक्टोपस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Octopus.mp3" },
+    { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "घुबड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Owl.mp3" },
+    { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "ऑलिव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Olive.mp3" },
+    { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "ऑक्सिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Oxygen.mp3" },
+
+    // P
+    { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "पेन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pen.mp3" },
+    { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "अननस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pineapple.mp3" },
+    { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "पांडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Panda.mp3" },
+    { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "पेन्सिल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pencil.mp3" },
+    { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Plane.mp3" },
+
+    // Q
+    { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "रजाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Quilt.mp3" },
+    { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "राणी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Queen.mp3" },
+
+    // R
+    { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "ससा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rabbit.mp3" },
+    { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "पाऊस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rain.mp3" },
+    { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "अंगठी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ring.mp3" },
+    { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "गुलाब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rose.mp3" },
+    { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "रोबोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Robot.mp3" },
+
+    // S
+    { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "सूर्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sun.mp3" },
+    { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "साप", courseId: 4, audioSrc: "Basics/audio/marathi/word/Snake.mp3" },
+    { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "तारा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Star.mp3" },
+    { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "मोजे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Socks.mp3" },
+    { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "वाळू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sand.mp3" },
+
+    // T
+    { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "वाघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tiger.mp3" },
+    { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "झाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tree.mp3" },
+    { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "टेबल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Table.mp3" },
+    { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "टेलिव्हिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Television.mp3" },
+    { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "दात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tooth.mp3" },
+
+    // U
+    { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "छत्री", courseId: 4, audioSrc: "Basics/audio/marathi/word/Umbrella.mp3" },
+    { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "कलश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Urn.mp3" },
+    { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "काका", courseId: 4, audioSrc: "Basics/audio/marathi/word/Uncle.mp3" },
+    { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "युनिकॉर्न", courseId: 4, audioSrc: "Basics/audio/marathi/word/Unicorn.mp3" },
+    { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "विश्व", courseId: 4, audioSrc: "Basics/audio/marathi/word/Universe.mp3" },
+    { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "भांडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Utensil.mp3" },
+
+    // V
+    { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "व्हॅन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Van.mp3" },
+    { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "गिधाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vulture.mp3" },
+    { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "व्हॅक्यूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacuum.mp3" },
+    { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "बळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Victim.mp3" },
+    { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "भाजी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vegetable.mp3" },
+    { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "ज्वालामुखी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Volcano.mp3" },
+    { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "सुट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacation.mp3" },
+    { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "व्हॅम्पायर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vampire.mp3" },
+
+    // W
+    { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "लांडगा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wolf.mp3" },
+    { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "कलिंगड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watermelon.mp3" },
+    { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "खिडकी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Window.mp3" },
+    { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "गाडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wagon.mp3" },
+    { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "धबधबा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Waterfall.mp3" },
+    { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watch.mp3" },
+    { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "तिमिंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whale.mp3" },
+    { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "हिवाळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Winter.mp3" },
+    { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "मनगट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wrist.mp3" },
+    { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "शिट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whistle.mp3" },
+
+    // X
+    { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "झायलोफोन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xylophone.mp3" },
+    { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "क्ष-किरण", courseId: 4, audioSrc: "Basics/audio/marathi/word/X-ray.mp3" },
+    { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "झेनॉन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenon.mp3" },
+    { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "ख्रिसमस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xmas.mp3" },
+    { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "परकीयभीती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenophobia.mp3" },
+    { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "मैत्रीपूर्ण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenial.mp3" },
+    { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "झिऑन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xeon.mp3" },
+    { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "परीक्षण करणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Examine.mp3" },
+    { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "स्फोट होणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Explode.mp3" },
+    { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "निर्वासन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Exile.mp3" },
+
+    // Y
+    { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "याक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yak.mp3" },
+    { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "पिवळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yellow.mp3" },
+    { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "दही", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yogurt.mp3" },
+    { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "सुत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yarn.mp3" },
+    { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "योग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yoga.mp3" },
+    { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "जांभई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yawn.mp3" },
+    { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "आंगण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yard.mp3" },
+    { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "आरडाओरडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yell.mp3" },
+
+    // Z
+    { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "झेब्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zebra.mp3" },
+    { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "प्राणीसंग्रहालय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoo.mp3" },
+    { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "परमोच्च बिंदू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zenith.mp3" },
+    { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "शून्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zero.mp3" },
+    { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "तिरपी रेघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zigzag.mp3" },
+    { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "झेपेलिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zeppelin.mp3" },
+    { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "झोंबी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zombie.mp3" },
+    { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "क्षेत्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zone.mp3" },
+    { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "राशीचक्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zodiac.mp3" },
+    { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "झूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoom.mp3" },
       
       
     
@@ -925,89 +1157,94 @@ const main = async () => {
 
     await db.insert(schema.challenges).values([
         // Spanish Challenges (Lesson 1-5)
-        { id: 1, lessonId: 1, type: "SELECT", order: 1, question: 'How do you say "the man" in Spanish?' },
-        { id: 2, lessonId: 1, type: "SELECT", order: 2, question: 'How do you say "the woman" in Spanish?' },
-        { id: 3, lessonId: 1, type: "SELECT", order: 3, question: 'How do you say "the robot" in Spanish?' },
+        
+            
+            { id: 1, lessonId: 1, type: "SELECT", order: 1, question: 'How do you say "the man" in Spanish?' },
+            { id: 2, lessonId: 1, type: "SELECT", order: 2, question: 'How do you say "the woman" in Spanish?' },
+            { id: 3, lessonId: 1, type: "SELECT", order: 3, question: 'How do you say "the robot" in Spanish?' },
+        
+            { id: 4, lessonId: 2, type: "SELECT", order: 1, question: 'How do you say "the car" in Spanish?' },
+            { id: 5, lessonId: 2, type: "ASSIST", order: 2, question: 'Complete the sentence in Spanish using the English sentence as a reference: "I am driving the car."" → "Estoy conduciendo __ carro."' },
+            { id: 6, lessonId: 2, type: "SELECT", order: 3, question: 'How do you say "the house" in Spanish?' },
+        
+            { id: 7, lessonId: 3, type: "SELECT", order: 1, question: 'How do you say "the book" in Spanish?' },
+            { id: 8, lessonId: 3, type: "ASSIST", order: 2, question: "Complete the sentence in Spanish using the English sentence as a reference: 'I am reading the book.' → 'Estoy leyendo __ libro.'" },
+            { id: 9, lessonId: 3, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Spanish?' },
+        
+            { id: 10, lessonId: 4, type: "SELECT", order: 1, question: 'How do you say "the pen" in Spanish?' },
+            { id: 11, lessonId: 4, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Spanish?' },
+            { id: 12, lessonId: 4, type: "SELECT", order: 3, question: 'How do you say "the chair" in Spanish?' },
+        
+            { id: 13, lessonId: 5, type: "SELECT", order: 1, question: 'How do you say "the computer" in Spanish?' },
+            { id: 14, lessonId: 5, type: "ASSIST", order: 2, question: "Complete the sentence in Spanish using the English sentence as a reference: 'I am using the computer.' → 'Estoy usando __ computadora.'" },
+            { id: 15, lessonId: 5, type: "SELECT", order: 3, question: 'How do you say "the phone" in Spanish?' },
+        
+            // French Challenges (Lesson 6-10)
+            { id: 16, lessonId: 6, type: "SELECT", order: 1, question: 'How do you say "the man" in French?' },
+            { id: 17, lessonId: 6, type: "SELECT", order: 2, question: 'How do you say "the woman" in French?' },
+            { id: 18, lessonId: 6, type: "SELECT", order: 3, question: 'How do you say "the robot" in French?' },
+        
+            { id: 19, lessonId: 7, type: "SELECT", order: 1, question: 'How do you say "the car" in French?' },
+            { id: 20, lessonId: 7, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am driving the car.' → 'Je conduis __ voiture.'" },
+            { id: 21, lessonId: 7, type: "SELECT", order: 3, question: 'How do you say "the house" in French?' },
+        
+            { id: 22, lessonId: 8, type: "SELECT", order: 1, question: 'How do you say "the book" in French?' },
+            { id: 23, lessonId: 8, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am reading the book.' → 'Je lis __ livre.'" },
+            { id: 24, lessonId: 8, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in French?' },
+        
+            { id: 25, lessonId: 9, type: "SELECT", order: 1, question: 'How do you say "the pen" in French?' },
+            { id: 26, lessonId: 9, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in French?' },
+            { id: 27, lessonId: 9, type: "SELECT", order: 3, question: 'How do you say "the chair" in French?' },
+        
+            { id: 28, lessonId: 10, type: "SELECT", order: 1, question: 'How do you say "the computer" in French?' },
+            { id: 29, lessonId: 10, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am using the computer.' → 'J’utilise __ ordinateur.'" },
+            { id: 30, lessonId: 10, type: "SELECT", order: 3, question: 'How do you say "the phone" in French?' },
+        
+            // Japanese Challenges (Lesson 11-15)
+            { id: 31, lessonId: 11, type: "SELECT", order: 1, question: 'How do you say "the man" in Japanese?' },
+            { id: 32, lessonId: 11, type: "SELECT", order: 2, question: 'How do you say "the woman" in Japanese?' },
+            { id: 33, lessonId: 11, type: "SELECT", order: 3, question: 'How do you say "the robot" in Japanese?' },
+        
+            { id: 34, lessonId: 12, type: "SELECT", order: 1, question: 'How do you say "the car" in Japanese?' },
+            { id: 35, lessonId: 12, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am driving the car.' → '私は __ 車を運転しています。'" },
+            { id: 36, lessonId: 12, type: "SELECT", order: 3, question: 'How do you say "the house" in Japanese?' },
+        
+            { id: 37, lessonId: 13, type: "SELECT", order: 1, question: 'How do you say "the book" in Japanese?' },
+            { id: 38, lessonId: 13, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am reading the book.' → '私は __ 本を読んでいます。'" },
+            { id: 39, lessonId: 13, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Japanese?' },
+        
+            { id: 40, lessonId: 14, type: "SELECT", order: 1, question: 'How do you say "the pen" in Japanese?' },
+            { id: 41, lessonId: 14, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Japanese?' },
+            { id: 42, lessonId: 14, type: "SELECT", order: 3, question: 'How do you say "the chair" in Japanese?' },
+        
+            { id: 43, lessonId: 15, type: "SELECT", order: 1, question: 'How do you say "the computer" in Japanese?' },
+            { id: 44, lessonId: 15, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am using the computer.' → '私は __ コンピューターを使っています。'" },
+            { id: 45, lessonId: 15, type: "SELECT", order: 3, question: 'How do you say "the phone" in Japanese?' },
     
-        { id: 4, lessonId: 2, type: "SELECT", order: 1, question: 'Which of these means "the car" in Spanish?' },
-        { id: 5, lessonId: 2, type: "ASSIST", order: 2, question: 'Complete the sentence: "I am driving ___ carro."' },
-        { id: 6, lessonId: 2, type: "SELECT", order: 3, question: 'Which of these means "the house" in Spanish?' },
+            // Marathi Challenges (Lesson 16-20)
+    { id: 46, lessonId: 16, type: "SELECT", order: 1, question: 'How do you say "the man" in Marathi?' },
+    { id: 47, lessonId: 16, type: "SELECT", order: 2, question: 'How do you say "the woman" in Marathi?' },
+    { id: 48, lessonId: 16, type: "SELECT", order: 3, question: 'How do you say "the robot" in Marathi?' },
     
-        { id: 7, lessonId: 3, type: "SELECT", order: 1, question: 'How do you say "the book" in Spanish?' },
-        { id: 8, lessonId: 3, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am reading ___ libro."' },
-        { id: 9, lessonId: 3, type: "SELECT", order: 3, question: 'Which of these means "the bicycle" in Spanish?' },
+    { id: 49, lessonId: 17, type: "SELECT", order: 1, question: 'How do you say "the car" in Marathi?' },
+    { id: 50, lessonId: 17, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am driving the car.' → 'मी __ गाडी चालवत आहे.'" },
+    { id: 51, lessonId: 17, type: "SELECT", order: 3, question: 'How do you say "the house" in Marathi?' },
     
-        { id: 10, lessonId: 4, type: "SELECT", order: 1, question: 'Which of these means "the pen" in Spanish?' },
-        { id: 11, lessonId: 4, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Spanish?' },
-        { id: 12, lessonId: 4, type: "SELECT", order: 3, question: 'Which of these means "the chair" in Spanish?' },
+    { id: 52, lessonId: 18, type: "SELECT", order: 1, question: 'How do you say "the book" in Marathi?' },
+    { id: 53, lessonId: 18, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am reading the book.' → 'मी __ पुस्तक वाचत आहे.'" },
+    { id: 54, lessonId: 18, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Marathi?' },
     
-        { id: 13, lessonId: 5, type: "SELECT", order: 1, question: 'Which of these means "the computer" in Spanish?' },
-        { id: 14, lessonId: 5, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am using ___ computadora."' },
-        { id: 15, lessonId: 5, type: "SELECT", order: 3, question: 'How do you say "the phone" in Spanish?' },
+    { id: 55, lessonId: 19, type: "SELECT", order: 1, question: 'How do you say "the pen" in Marathi?' },
+    { id: 56, lessonId: 19, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Marathi?' },
+    { id: 57, lessonId: 19, type: "SELECT", order: 3, question: 'How do you say "the chair" in Marathi?' },
     
-        // French Challenges (Lesson 6-10)
-        { id: 16, lessonId: 6, type: "SELECT", order: 1, question: 'How do you say "the man" in French?' },
-        { id: 17, lessonId: 6, type: "SELECT", order: 2, question: 'How do you say "the woman" in French?' },
-        { id: 18, lessonId: 6, type: "SELECT", order: 3, question: 'How do you say "the robot" in French?' },
+    { id: 58, lessonId: 20, type: "SELECT", order: 1, question: 'How do you say "the computer" in Marathi?' },
+    { id: 59, lessonId: 20, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am using the computer.' → 'मी __ संगणक वापरत आहे.'" },
+    { id: 60, lessonId: 20, type: "SELECT", order: 3, question: 'How do you say "the phone" in Marathi?' },
     
-        { id: 19, lessonId: 7, type: "SELECT", order: 1, question: 'Which of these means "the car" in French?' },
-        { id: 20, lessonId: 7, type: "ASSIST", order: 2, question: 'Complete the sentence: "I am driving ___ voiture."' },
-        { id: 21, lessonId: 7, type: "SELECT", order: 3, question: 'Which of these means "the house" in French?' },
     
-        { id: 22, lessonId: 8, type: "SELECT", order: 1, question: 'How do you say "the book" in French?' },
-        { id: 23, lessonId: 8, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am reading ___ livre."' },
-        { id: 24, lessonId: 8, type: "SELECT", order: 3, question: 'Which of these means "the bicycle" in French?' },
-    
-        { id: 25, lessonId: 9, type: "SELECT", order: 1, question: 'Which of these means "the pen" in French?' },
-        { id: 26, lessonId: 9, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in French?' },
-        { id: 27, lessonId: 9, type: "SELECT", order: 3, question: 'Which of these means "the chair" in French?' },
-    
-        { id: 28, lessonId: 10, type: "SELECT", order: 1, question: 'Which of these means "the computer" in French?' },
-        { id: 29, lessonId: 10, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am using ___ ordinateur."' },
-        { id: 30, lessonId: 10, type: "SELECT", order: 3, question: 'How do you say "the phone" in French?' },
-    
-        // Japanese Challenges (Lesson 11-15)
-        { id: 31, lessonId: 11, type: "SELECT", order: 1, question: 'How do you say "the man" in Japanese?' },
-        { id: 32, lessonId: 11, type: "SELECT", order: 2, question: 'How do you say "the woman" in Japanese?' },
-        { id: 33, lessonId: 11, type: "SELECT", order: 3, question: 'How do you say "the robot" in Japanese?' },
-    
-        { id: 34, lessonId: 12, type: "SELECT", order: 1, question: 'Which of these means "the car" in Japanese?' },
-        { id: 35, lessonId: 12, type: "ASSIST", order: 2, question: 'Complete the sentence: "I am driving ___ kuruma."' },
-        { id: 36, lessonId: 12, type: "SELECT", order: 3, question: 'Which of these means "the house" in Japanese?' },
-    
-        { id: 37, lessonId: 13, type: "SELECT", order: 1, question: 'How do you say "the book" in Japanese?' },
-        { id: 38, lessonId: 13, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am reading ___ hon."' },
-        { id: 39, lessonId: 13, type: "SELECT", order: 3, question: 'Which of these means "the bicycle" in Japanese?' },
-    
-        { id: 40, lessonId: 14, type: "SELECT", order: 1, question: 'Which of these means "the pen" in Japanese?' },
-        { id: 41, lessonId: 14, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Japanese?' },
-        { id: 42, lessonId: 14, type: "SELECT", order: 3, question: 'Which of these means "the chair" in Japanese?' },
-    
-        { id: 43, lessonId: 15, type: "SELECT", order: 1, question: 'Which of these means "the computer" in Japanese?' },
-        { id: 44, lessonId: 15, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am using ___ konpyuutaa."' },
-        { id: 45, lessonId: 15, type: "SELECT", order: 3, question: 'How do you say "the phone" in Japanese?' },
-
-        // Marathi Challenges (Lesson 16-20)
-{ id: 46, lessonId: 16, type: "SELECT", order: 1, question: 'How do you say "the man" in Marathi?' },
-{ id: 47, lessonId: 16, type: "SELECT", order: 2, question: 'How do you say "the woman" in Marathi?' },
-{ id: 48, lessonId: 16, type: "SELECT", order: 3, question: 'How do you say "the robot" in Marathi?' },
-
-{ id: 49, lessonId: 17, type: "SELECT", order: 1, question: 'Which of these means "the car" in Marathi?' },
-{ id: 50, lessonId: 17, type: "ASSIST", order: 2, question: 'Complete the sentence: "I am driving ___ गाडी."' },
-{ id: 51, lessonId: 17, type: "SELECT", order: 3, question: 'Which of these means "the house" in Marathi?' },
-
-{ id: 52, lessonId: 18, type: "SELECT", order: 1, question: 'How do you say "the book" in Marathi?' },
-{ id: 53, lessonId: 18, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am reading ___ पुस्तक."' },
-{ id: 54, lessonId: 18, type: "SELECT", order: 3, question: 'Which of these means "the bicycle" in Marathi?' },
-
-{ id: 55, lessonId: 19, type: "SELECT", order: 1, question: 'Which of these means "the pen" in Marathi?' },
-{ id: 56, lessonId: 19, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Marathi?' },
-{ id: 57, lessonId: 19, type: "SELECT", order: 3, question: 'Which of these means "the chair" in Marathi?' },
-
-{ id: 58, lessonId: 20, type: "SELECT", order: 1, question: 'Which of these means "the computer" in Marathi?' },
-{ id: 59, lessonId: 20, type: "ASSIST", order: 2, question: 'Complete the phrase: "I am using ___ संगणक."' },
-{ id: 60, lessonId: 20, type: "SELECT", order: 3, question: 'How do you say "the phone" in Marathi?' },
-
+            
+        
 
         
     ]);
