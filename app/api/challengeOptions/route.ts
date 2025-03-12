@@ -1,33 +1,35 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-import db from "@/db/drizzle";
-import { isAdmin } from "@/lib/admin";
-import { challengeOptions } from "@/db/schema";
+import db from '@/db/drizzle';
+import { isAdmin } from '@/lib/admin';
+import { challengeOptions } from '@/db/schema';
 
 export const GET = async () => {
-    if(!isAdmin()) {
-        return new NextResponse("Unauthorized", {status: 401 });
-    }
+  if (!isAdmin()) {
+    return new NextResponse('Unauthorized', { status: 401 });
+  }
 
-    const data = await db.query.challengeOptions.findMany();
+  const data = await db.query.challengeOptions.findMany();
 
-    return NextResponse.json(data);
+  return NextResponse.json(data);
 };
 
 export const POST = async (req: Request) => {
-    if(!isAdmin()) {
-        return new NextResponse("Unauthorized", {status: 401 });
-    }
+  if (!isAdmin()) {
+    return new NextResponse('Unauthorized', { status: 401 });
+  }
 
-    const body =await req.json();
-    console.log("Payload received:", body); // Log incoming payload
+  const body = await req.json();
+  console.log('Payload received:', body); // Log incoming payload
 
+  const data = await db
+    .insert(challengeOptions)
+    .values({
+      ...body,
+    })
+    .returning();
 
-    const data = await db.insert(challengeOptions).values({
-        ...body
-    }).returning();
+  console.log('Inserted data:', data); // Log the database result
 
-    console.log("Inserted data:", data); // Log the database result
-    
-    return NextResponse.json(data[0]);
+  return NextResponse.json(data[0]);
 };

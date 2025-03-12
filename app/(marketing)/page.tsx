@@ -1,15 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { 
-  ClerkLoaded, 
-  ClerkLoading, 
-  SignedIn, 
-  SignedOut, 
+import { Button } from '@/components/ui/button';
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignedIn,
+  SignedOut,
   SignUpButton,
-  SignInButton
-} from "@clerk/nextjs";
-import { Loader } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+  SignInButton,
+} from '@clerk/nextjs';
+import { Loader } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       <div className="flex flex-col items-center gap-y-8">
         {/* Heading with Typing Animation */}
         <h1 className="text-3xl lg:text-5xl font-bold text-neutral-800 max-w-[480px] text-center animate-fade-in">
-          Learn, Practice, and Master New Languages with{" "}
+          Learn, Practice, and Master New Languages with{' '}
           <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
             LangVenture
           </span>
@@ -52,7 +52,6 @@ export default function Home() {
               <SignInButton mode="modal">
                 <Button
                   size="lg"
-                 
                   className="w-full text-green-600 border-green-600 hover:bg-green-50 transition-all transform hover:scale-105 shadow-lg"
                 >
                   I already have an account
