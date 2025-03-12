@@ -96,7 +96,7 @@ export const List = ({ Basicvovabdata = [], Basiccore = [] }: Props) => {
       )}
 
       {/* this is for alphabets and numbers */}
-{check && Basiccore && (
+{check && !japaneseData.length&& Basiccore && (
   <>
   <div className="mt-10 text-xl">Aplhabet here</div>
   <div className="w-full bg-gray-500 h-0.5"></div>
