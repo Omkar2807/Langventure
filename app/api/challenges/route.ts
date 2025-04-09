@@ -12,7 +12,10 @@ export const GET = async () => {
     const data = await db.query.challenges.findMany({
         columns: {
             id: true,
-            question: true, // Include the `question` field for the dropdown
+            question: true,
+            type: true,
+            lessonId: true,
+            order: true, // Include the `question` field for the dropdown
         },
     });
 

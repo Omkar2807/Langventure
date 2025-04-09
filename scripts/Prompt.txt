@@ -1,0 +1,6 @@
+    Generate options for these questions.
+    Randomize the options for each question.
+    Automatically link the correct text and audio for each question.
+    Generate matching images/icons based on the text.
+    Directly map the challengeId without mistakes.
+    No imagesrc for assist questions

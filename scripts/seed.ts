@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
-import {SpanishAlphabetSeed} from "@/scripts/seeddata/spanish"
+//import {AlphabetSeed} from "@/scripts/seeddata/spanish"
 
 import * as schema from "../db/schema";
 
@@ -81,7 +81,7 @@ const main = async () => {
     ]);
     
     
-    
+    //Vocab
    
     const basicsData = [
         // A
@@ -1095,433 +1095,1851 @@ const main = async () => {
       await db.insert(schema.basicsdb).values(basicsData);
 
 
-      await db.insert(schema.basicsdbcore).values(SpanishAlphabetSeed);
+      await db.insert(schema.basicsdbcore).values([
+        
+    { pronunciation: "ah", nativenm: "A", courseId: 1, order: 1, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/A.mp3" },
+    { pronunciation: "beh", nativenm: "B", courseId: 1, order: 2, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/B.mp3" },
+    { pronunciation: "seh", nativenm: "C", courseId: 1, order: 3, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/C.mp3" },
+    { pronunciation: "deh", nativenm: "D", courseId: 1, order: 4, type: "alphabet", audioSrc: "BasicsBasics/audio/spanish/alpha/D.mp3" },
+    { pronunciation: "eh", nativenm: "E", courseId: 1, order: 5, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/E.mp3" },
+    { pronunciation: "efe", nativenm: "F", courseId: 1, order: 6, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/F.mp3" },
+    { pronunciation: "heh", nativenm: "G", courseId: 1, order: 7, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/G.mp3" },
+    { pronunciation: "ah-cheh", nativenm: "H", courseId: 1, order: 8, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/H.mp3" },
+    { pronunciation: "ee", nativenm: "I", courseId: 1, order: 9, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/I.mp3" },
+    { pronunciation: "ho-tah", nativenm: "J", courseId: 1, order: 10, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/J.mp3" },
+    { pronunciation: "kah", nativenm: "K", courseId: 1, order: 11, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/K.mp3" },
+    { pronunciation: "eh-leh", nativenm: "L", courseId: 1, order: 12, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/L.mp3" },
+    { pronunciation: "eh-meh", nativenm: "M", courseId: 1, order: 13, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/M.mp3" },
+    { pronunciation: "eh-neh", nativenm: "N", courseId: 1, order: 14, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/N.mp3" },
+    { pronunciation: "enyeh", nativenm: "Ñ", courseId: 1, order: 15, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/Ñ.mp3" },
+    { pronunciation: "oh", nativenm: "O", courseId: 1, order: 16, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/O.mp3" },
+    { pronunciation: "peh", nativenm: "P", courseId: 1, order: 17, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/P.mp3" },
+    { pronunciation: "koo", nativenm: "Q", courseId: 1, order: 18, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/Q.mp3" },
+    { pronunciation: "eh-reh", nativenm: "R", courseId: 1, order: 19, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/R.mp3" },
+    { pronunciation: "eh-seh", nativenm: "S", courseId: 1, order: 20, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/S.mp3" },
+    { pronunciation: "teh", nativenm: "T", courseId: 1, order: 21, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/T.mp3" },
+    { pronunciation: "oo", nativenm: "U", courseId: 1, order: 22, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/U.mp3" },
+    { pronunciation: "beh", nativenm: "V", courseId: 1, order: 23, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/V.mp3" },
+    { pronunciation: "doble veh", nativenm: "W", courseId: 1, order: 24, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/W.mp3" },
+    { pronunciation: "eh-kees", nativenm: "X", courseId: 1, order: 25, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/X.mp3" },
+    { pronunciation: "yeh", nativenm: "Y", courseId: 1, order: 26, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/Y.mp3" },
+    { pronunciation: "seh-tah", nativenm: "Z", courseId: 1, order: 27, type: "alphabet", audioSrc: "Basics/audio/spanish/alpha/Z.mp3" },
+
+
+    // french alphadet 26 
+ 
+      { pronunciation: "ah", nativenm: "A", courseId: 2, order: 1, type: "alphabet", audioSrc: "Basics/audio/french/alpha/A.mp3" },
+      { pronunciation: "beh", nativenm: "B", courseId: 2, order: 2, type: "alphabet", audioSrc: "Basics/audio/french/alpha/B.mp3" },
+      { pronunciation: "seh", nativenm: "C", courseId: 2, order: 3, type: "alphabet", audioSrc: "Basics/audio/french/alpha/C.mp3" },
+      { pronunciation: "deh", nativenm: "D", courseId: 2, order: 4, type: "alphabet", audioSrc: "Basics/audio/french/alpha/D.mp3" },
+      { pronunciation: "uh", nativenm: "E", courseId: 2, order: 5, type: "alphabet", audioSrc: "Basics/audio/french/alpha/E.mp3" },
+      { pronunciation: "eff", nativenm: "F", courseId: 2, order: 6, type: "alphabet", audioSrc: "Basics/audio/french/alpha/F.mp3" },
+      { pronunciation: "zheh", nativenm: "G", courseId: 2, order: 7, type: "alphabet", audioSrc: "Basics/audio/french/alpha/G.mp3" },
+      { pronunciation: "ahsh", nativenm: "H", courseId: 2, order: 8, type: "alphabet", audioSrc: "Basics/audio/french/alpha/H.mp3" },
+      { pronunciation: "ee", nativenm: "I", courseId: 2, order: 9, type: "alphabet", audioSrc: "Basics/audio/french/alpha/I.mp3" },
+      { pronunciation: "zhee", nativenm: "J", courseId: 2, order: 10, type: "alphabet", audioSrc: "Basics/audio/french/alpha/J.mp3" },
+      { pronunciation: "kah", nativenm: "K", courseId: 2, order: 11, type: "alphabet", audioSrc: "Basics/audio/french/alpha/K.mp3" },
+      { pronunciation: "ell", nativenm: "L", courseId: 2, order: 12, type: "alphabet", audioSrc: "Basics/audio/french/alpha/L.mp3" },
+      { pronunciation: "emm", nativenm: "M", courseId: 2, order: 13, type: "alphabet", audioSrc: "Basics/audio/french/alpha/M.mp3" },
+      { pronunciation: "enn", nativenm: "N", courseId: 2, order: 14, type: "alphabet", audioSrc: "Basics/audio/french/alpha/N.mp3" },
+      { pronunciation: "oh", nativenm: "O", courseId: 2, order: 15, type: "alphabet", audioSrc: "Basics/audio/french/alpha/O.mp3" },
+      { pronunciation: "peh", nativenm: "P", courseId: 2, order: 16, type: "alphabet", audioSrc: "Basics/audio/french/alpha/P.mp3" },
+      { pronunciation: "koo", nativenm: "Q", courseId: 2, order: 17, type: "alphabet", audioSrc: "Basics/audio/french/alpha/Q.mp3" },
+      { pronunciation: "err", nativenm: "R", courseId: 2, order: 18, type: "alphabet", audioSrc: "Basics/audio/french/alpha/R.mp3" },
+      { pronunciation: "ess", nativenm: "S", courseId: 2, order: 19, type: "alphabet", audioSrc: "Basics/audio/french/alpha/S.mp3" },
+      { pronunciation: "teh", nativenm: "T", courseId: 2, order: 20, type: "alphabet", audioSrc: "Basics/audio/french/alpha/T.mp3" },
+      { pronunciation: "oo", nativenm: "U", courseId: 2, order: 21, type: "alphabet", audioSrc: "Basics/audio/french/alpha/U.mp3" },
+      { pronunciation: "veh", nativenm: "V", courseId: 2, order: 22, type: "alphabet", audioSrc: "Basics/audio/french/alpha/V.mp3" },
+      { pronunciation: "doo-bluh-veh", nativenm: "W", courseId: 2, order: 23, type: "alphabet", audioSrc: "Basics/audio/french/alpha/W.mp3" },
+      { pronunciation: "eeks", nativenm: "X", courseId: 2, order: 24, type: "alphabet", audioSrc: "Basics/audio/french/alpha/X.mp3" },
+      { pronunciation: "ee-grek", nativenm: "Y", courseId: 2, order: 25, type: "alphabet", audioSrc: "Basics/audio/french/alpha/Y.mp3" },
+      { pronunciation: "zed", nativenm: "Z", courseId: 2, order: 26, type: "alphabet", audioSrc: "Basics/audio/french/alpha/Z.mp3" },
+
+
+
+      /// japnese
+     
+        // Hiragana (あ - ん)
+        { pronunciation: "a", nativenm: "H_あ", courseId: 3, order: 1, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/a.mp3" },
+        { pronunciation: "i", nativenm: "H_い", courseId: 3, order: 2, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/i.mp3" },
+        { pronunciation: "u", nativenm: "H_う", courseId: 3, order: 3, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/u.mp3" },
+        { pronunciation: "e", nativenm: "H_え", courseId: 3, order: 4, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/e.mp3" },
+        { pronunciation: "o", nativenm: "H_お", courseId: 3, order: 5, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/o.mp3" },
+        { pronunciation: "ka", nativenm: "H_か", courseId: 3, order: 6, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ka.mp3" },
+        { pronunciation: "ki", nativenm: "H_き", courseId: 3, order: 7, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ki.mp3" },
+        { pronunciation: "ku", nativenm: "H_く", courseId: 3, order: 8, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ku.mp3" },
+        { pronunciation: "ke", nativenm: "H_け", courseId: 3, order: 9, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ke.mp3" },
+        { pronunciation: "ko", nativenm: "H_こ", courseId: 3, order: 10, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ko.mp3" },
+        { pronunciation: "sa", nativenm: "H_さ", courseId: 3, order: 11, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/sa.mp3" },
+        { pronunciation: "shi", nativenm: "H_し", courseId: 3, order: 12, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/shi.mp3" },
+        { pronunciation: "su", nativenm: "H_す", courseId: 3, order: 13, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/su.mp3" },
+        { pronunciation: "se", nativenm: "H_せ", courseId: 3, order: 14, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/se.mp3" },
+        { pronunciation: "so", nativenm: "H_そ", courseId: 3, order: 15, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/so.mp3" },
+        { pronunciation: "ta", nativenm: "H_た", courseId: 3, order: 16, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ta.mp3" },
+        { pronunciation: "chi", nativenm: "H_ち", courseId: 3, order: 17, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/chi.mp3" },
+        { pronunciation: "tsu", nativenm: "H_つ", courseId: 3, order: 18, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/tsu.mp3" },
+        { pronunciation: "te", nativenm: "H_て", courseId: 3, order: 19, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/te.mp3" },
+        { pronunciation: "to", nativenm: "H_と", courseId: 3, order: 20, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/to.mp3" },
+        { pronunciation: "na", nativenm: "H_な", courseId: 3, order: 21, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/na.mp3" },
+        { pronunciation: "ni", nativenm: "H_に", courseId: 3, order: 22, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ni.mp3" },
+        { pronunciation: "nu", nativenm: "H_ぬ", courseId: 3, order: 23, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/nu.mp3" },
+        { pronunciation: "ne", nativenm: "H_ね", courseId: 3, order: 24, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ne.mp3" },
+        { pronunciation: "no", nativenm: "H_の", courseId: 3, order: 25, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/no.mp3" },
+        { pronunciation: "ha", nativenm: "H_は", courseId: 3, order: 26, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ha.mp3" },
+        { pronunciation: "hi", nativenm: "H_ひ", courseId: 3, order: 27, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/hi.mp3" },
+        { pronunciation: "fu", nativenm: "H_ふ", courseId: 3, order: 28, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/fu.mp3" },
+        { pronunciation: "he", nativenm: "H_へ", courseId: 3, order: 29, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/he.mp3" },
+        { pronunciation: "ho", nativenm: "H_ほ", courseId: 3, order: 30, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ho.mp3" },
+        { pronunciation: "ma", nativenm: "H_ま", courseId: 3, order: 31, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ma.mp3" },
+        { pronunciation: "mi", nativenm: "H_み", courseId: 3, order: 32, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/mi.mp3" },
+        { pronunciation: "mu", nativenm: "H_む", courseId: 3, order: 33, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/mu.mp3" },
+        { pronunciation: "me", nativenm: "H_め", courseId: 3, order: 34, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/me.mp3" },
+        { pronunciation: "mo", nativenm: "H_も", courseId: 3, order: 35, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/mo.mp3" },
+        { pronunciation: "ya", nativenm: "H_や", courseId: 3, order: 36, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ya.mp3" },
+        { pronunciation: "yu", nativenm: "H_ゆ", courseId: 3, order: 37, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/yu.mp3" },
+        { pronunciation: "yo", nativenm: "H_よ", courseId: 3, order: 38, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/yo.mp3" },
+        { pronunciation: "ra", nativenm: "H_ら", courseId: 3, order: 39, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ra.mp3" },
+        { pronunciation: "ri", nativenm: "H_り", courseId: 3, order: 40, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ri.mp3" },
+        { pronunciation: "ru", nativenm: "H_る", courseId: 3, order: 41, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ru.mp3" },
+        { pronunciation: "re", nativenm: "H_れ", courseId: 3, order: 42, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/re.mp3" },
+        { pronunciation: "ro", nativenm: "H_ろ", courseId: 3, order: 43, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/ro.mp3" },
+        { pronunciation: "wa", nativenm: "H_わ", courseId: 3, order: 44, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/wa.mp3" },
+        { pronunciation: "wo", nativenm: "H_を", courseId: 3, order: 45, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/wo.mp3" },
+        { pronunciation: "n", nativenm: "H_ん", courseId: 3, order: 46, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/hiragana/n.mp3" },
+    
+        // Katakana (ア - ン)
+        { pronunciation: "a", nativenm: "K_ア", courseId: 3, order: 1, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/a.mp3" },
+        { pronunciation: "i", nativenm: "K_イ", courseId: 3, order: 2, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/i.mp3" },
+        { pronunciation: "u", nativenm: "K_ウ", courseId: 3, order: 3, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/u.mp3" },
+        { pronunciation: "e", nativenm: "K_エ", courseId: 3, order: 4, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/e.mp3" },
+        { pronunciation: "o", nativenm: "K_オ", courseId: 3, order: 5, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/o.mp3" },
+        { pronunciation: "ka", nativenm: "K_カ", courseId: 3, order: 6, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ka.mp3" },
+        { pronunciation: "ki", nativenm: "K_キ", courseId: 3, order: 7, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ki.mp3" },
+        { pronunciation: "ku", nativenm: "K_ク", courseId: 3, order: 8, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ku.mp3" },
+        { pronunciation: "ke", nativenm: "K_ケ", courseId: 3, order: 9, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ke.mp3" },
+        { pronunciation: "ko", nativenm: "K_コ", courseId: 3, order: 10, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ko.mp3" },
+        { pronunciation: "sa", nativenm: "K_サ", courseId: 3, order: 11, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/sa.mp3" },
+        { pronunciation: "shi", nativenm: "K_シ", courseId: 3, order: 12, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/shi.mp3" },
+        { pronunciation: "su", nativenm: "K_ス", courseId: 3, order: 13, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/su.mp3" },
+        { pronunciation: "se", nativenm: "K_セ", courseId: 3, order: 14, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/se.mp3" },
+        { pronunciation: "so", nativenm: "K_ソ", courseId: 3, order: 15, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/so.mp3" },
+        { pronunciation: "ta", nativenm: "K_タ", courseId: 3, order: 16, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ta.mp3" },
+        { pronunciation: "chi", nativenm: "K_チ", courseId: 3, order: 17, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/chi.mp3" },
+        { pronunciation: "tsu", nativenm: "K_ツ", courseId: 3, order: 18, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/tsu.mp3" },
+        { pronunciation: "te", nativenm: "K_テ", courseId: 3, order: 19, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/te.mp3" },
+        { pronunciation: "to", nativenm: "K_ト", courseId: 3, order: 20, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/to.mp3" },
+        { pronunciation: "na", nativenm: "K_ナ", courseId: 3, order: 21, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/na.mp3" },
+        { pronunciation: "ni", nativenm: "K_ニ", courseId: 3, order: 22, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ni.mp3" },
+        { pronunciation: "nu", nativenm: "K_ヌ", courseId: 3, order: 23, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/nu.mp3" },
+        { pronunciation: "ne", nativenm: "K_ネ", courseId: 3, order: 24, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ne.mp3" },
+        { pronunciation: "no", nativenm: "K_ノ", courseId: 3, order: 25, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/no.mp3" },
+        { pronunciation: "ha", nativenm: "K_ハ", courseId: 3, order: 26, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ha.mp3" },
+        { pronunciation: "hi", nativenm: "K_ヒ", courseId: 3, order: 27, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/hi.mp3" },
+        { pronunciation: "fu", nativenm: "K_フ", courseId: 3, order: 28, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/fu.mp3" },
+        { pronunciation: "he", nativenm: "K_ヘ", courseId: 3, order: 29, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/he.mp3" },
+        { pronunciation: "ho", nativenm: "K_ホ", courseId: 3, order: 30, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ho.mp3" },
+        { pronunciation: "ma", nativenm: "K_マ", courseId: 3, order: 31, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ma.mp3" },
+        { pronunciation: "mi", nativenm: "K_ミ", courseId: 3, order: 32, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/mi.mp3" },
+        { pronunciation: "mu", nativenm: "K_ム", courseId: 3, order: 33, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/mu.mp3" },
+        { pronunciation: "me", nativenm: "K_メ", courseId: 3, order: 34, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/me.mp3" },
+        { pronunciation: "mo", nativenm: "K_モ", courseId: 3, order: 35, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/mo.mp3" },
+        { pronunciation: "ya", nativenm: "K_ヤ", courseId: 3, order: 36, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ya.mp3" },
+        { pronunciation: "yu", nativenm: "K_ユ", courseId: 3, order: 37, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/yu.mp3" },
+        { pronunciation: "yo", nativenm: "K_ヨ", courseId: 3, order: 38, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/yo.mp3" },
+        { pronunciation: "ra", nativenm: "K_ラ", courseId: 3, order: 39, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ra.mp3" },
+        { pronunciation: "ri", nativenm: "K_リ", courseId: 3, order: 40, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ri.mp3" },
+        { pronunciation: "ru", nativenm: "K_ル", courseId: 3, order: 41, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ru.mp3" },
+        { pronunciation: "re", nativenm: "K_レ", courseId: 3, order: 42, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/re.mp3" },
+        { pronunciation: "ro", nativenm: "K_ロ", courseId: 3, order: 43, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/ro.mp3" },
+        { pronunciation: "wa", nativenm: "K_ワ", courseId: 3, order: 44, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/wa.mp3" },
+        { pronunciation: "wo", nativenm: "K_ヲ", courseId: 3, order: 45, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/wo.mp3" },
+        { pronunciation: "n", nativenm: "K_ン", courseId: 3, order: 46, type: "alphabet", audioSrc: "Basics/audio/japanese/alpha/katakana/n.mp3" },
+
+
+
+        // marathi alpha
+        { pronunciation: "a", nativenm: "अ", courseId: 4, order: 1, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/अ.mp3" },
+        { pronunciation: "aa", nativenm: "आ", courseId: 4, order: 2, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/आ.mp3" },
+        { pronunciation: "i", nativenm: "इ", courseId: 4, order: 3, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/इ.mp3" },
+        { pronunciation: "ii", nativenm: "ई", courseId: 4, order: 4, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ई.mp3" },
+        { pronunciation: "u", nativenm: "उ", courseId: 4, order: 5, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/उ.mp3" },
+        { pronunciation: "uu", nativenm: "ऊ", courseId: 4, order: 6, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ऊ.mp3" },
+        { pronunciation: "ru", nativenm: "ऋ", courseId: 4, order: 7, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ऋ.mp3" },
+        { pronunciation: "e", nativenm: "ए", courseId: 4, order: 8, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ए.mp3" },
+        { pronunciation: "ai", nativenm: "ऐ", courseId: 4, order: 9, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ऐ.mp3" },
+        { pronunciation: "o", nativenm: "ओ", courseId: 4, order: 10, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ओ.mp3" },
+        { pronunciation: "au", nativenm: "औ", courseId: 4, order: 11, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/औ.mp3" },
+        { pronunciation: "an", nativenm: "अं", courseId: 4, order: 12, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/अं.mp3" },
+        { pronunciation: "ah", nativenm: "अः", courseId: 4, order: 13, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/अः.mp3" },
+        { pronunciation: "ka", nativenm: "क", courseId: 4, order: 14, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/क.mp3" },
+        { pronunciation: "kha", nativenm: "ख", courseId: 4, order: 15, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ख.mp3" },
+        { pronunciation: "ga", nativenm: "ग", courseId: 4, order: 16, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ग.mp3" },
+        { pronunciation: "gha", nativenm: "घ", courseId: 4, order: 17, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/घ.mp3" },
+        { pronunciation: "nga", nativenm: "ङ", courseId: 4, order: 18, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ङ.mp3" },
+        { pronunciation: "cha", nativenm: "च", courseId: 4, order: 19, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/च.mp3" },
+        { pronunciation: "chha", nativenm: "छ", courseId: 4, order: 20, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/छ.mp3" },
+        { pronunciation: "ja", nativenm: "ज", courseId: 4, order: 21, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ज.mp3" },
+        { pronunciation: "jha", nativenm: "झ", courseId: 4, order: 22, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/झ.mp3" },
+        { pronunciation: "nya", nativenm: "ञ", courseId: 4, order: 23, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ञ.mp3" },
+        { pronunciation: "ta", nativenm: "ट", courseId: 4, order: 24, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ट.mp3" },
+        { pronunciation: "tha", nativenm: "ठ", courseId: 4, order: 25, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ठ.mp3" },
+        { pronunciation: "da", nativenm: "ड", courseId: 4, order: 26, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ड.mp3" },
+        { pronunciation: "dha", nativenm: "ढ", courseId: 4, order: 27, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ढ.mp3" },
+        { pronunciation: "na", nativenm: "ण", courseId: 4, order: 28, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ण.mp3" },
+        { pronunciation: "ta", nativenm: "त", courseId: 4, order: 29, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/त.mp3" },
+        { pronunciation: "tha", nativenm: "थ", courseId: 4, order: 30, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/थ.mp3" },
+        { pronunciation: "da", nativenm: "द", courseId: 4, order: 31, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/द.mp3" },
+        { pronunciation: "dha", nativenm: "ध", courseId: 4, order: 32, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ध.mp3" },
+        { pronunciation: "na", nativenm: "न", courseId: 4, order: 33, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/न.mp3" },
+        { pronunciation: "pa", nativenm: "प", courseId: 4, order: 34, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/प.mp3" },
+        { pronunciation: "pha", nativenm: "फ", courseId: 4, order: 35, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/फ.mp3" },
+        { pronunciation: "ba", nativenm: "ब", courseId: 4, order: 36, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ब.mp3" },
+        { pronunciation: "bha", nativenm: "भ", courseId: 4, order: 37, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/भ.mp3" },
+        { pronunciation: "ma", nativenm: "म", courseId: 4, order: 38, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/म.mp3" },
+        { pronunciation: "ya", nativenm: "य", courseId: 4, order: 39, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/य.mp3" },
+        { pronunciation: "ra", nativenm: "र", courseId: 4, order: 40, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/र.mp3" },
+        { pronunciation: "la", nativenm: "ल", courseId: 4, order: 41, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ल.mp3" },
+        { pronunciation: "va", nativenm: "व", courseId: 4, order: 42, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/व.mp3" },
+        { pronunciation: "sha", nativenm: "श", courseId: 4, order: 43, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/श.mp3" },
+        { pronunciation: "shha", nativenm: "ष", courseId: 4, order: 44, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ष.mp3" },
+        { pronunciation: "sa", nativenm: "स", courseId: 4, order: 45, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/स.mp3" },
+        { pronunciation: "ha", nativenm: "ह", courseId: 4, order: 46, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ह.mp3" },
+        { pronunciation: "laa", nativenm: "ळ", courseId: 4, order: 47, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ळ.mp3" },
+        { pronunciation: "ksha", nativenm: "क्ष", courseId: 4, order: 48, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/क्ष.mp3" },
+        { pronunciation: "gya", nativenm: "ज्ञ", courseId: 4, order: 49, type: "alphabet", audioSrc: "/Basics/audio/marathi/alpha/ज्ञ.mp3" },
+      ]);
 
       
         
       
 
     await db.insert(schema.lessons).values([
-        {
-            id: 1,
-            unitId: 1,
-            order: 1,
-            title: "Nouns",
-        },
-        
-        { id: 2, unitId: 1, order: 2, title: "Verbs" },
-        { id: 3, unitId: 1, order: 3, title: "Adjectives" },
+        //Spanish
+        { id: 1, unitId: 1, order: 1, title: "Nouns" },
+        { id: 2, unitId: 1, order: 2, title: "Nouns" },
+        { id: 3, unitId: 1, order: 3, title: "Nouns" },
         { id: 4, unitId: 1, order: 4, title: "Pronouns" },
-        { id: 5, unitId: 1, order: 5, title: "Conjunctions"},
-
+        { id: 5, unitId: 1, order: 5, title: "Pronouns"},
+        { id: 6, unitId: 1, order: 6, title: "Pronouns"},
+        { id: 7, unitId: 1, order: 7, title: "Verbs"},
+        { id: 8, unitId: 1, order: 8, title: "Verbs"},
+        { id: 9, unitId: 1, order: 9, title: "Verbs"},
+        { id: 10, unitId: 1, order: 10, title: "Adjectives"},
+        { id: 11, unitId: 1, order: 11, title: "Adjectives"},
+        { id: 12, unitId: 1, order: 12, title: "Adjectives"},
+        { id: 13, unitId: 1, order: 13, title: "Easy Sentences"},
+        { id: 14, unitId: 1, order: 14, title: "Easy Sentences"},
+        { id: 15, unitId: 1, order: 15, title: "Easy Sentences"},
+        { id: 16, unitId: 1, order: 16, title: "Intermediate Sentences"},
+        { id: 17, unitId: 1, order: 17, title: "Intermediate Sentences"},
+        { id: 18, unitId: 1, order: 18, title: "Intermediate Sentences"},
+        { id: 19, unitId: 1, order: 19, title: "Difficult Sentences"},
+        { id: 20, unitId: 1, order: 20, title: "Difficult Sentences"},
+        { id: 21, unitId: 1, order: 21, title: "Difficult Sentences"},
         // french 
-        {
-            id: 6,
-            unitId: 2,
-            order: 1,
-            title: "Nouns",
-        },
-        
-        { id: 7, unitId: 2, order: 2, title: "Verbs" },
-        { id: 8, unitId: 2, order: 3, title: "Adjectives" },
-        { id: 9, unitId: 2, order: 4, title: "Pronouns" },
-        { id: 10, unitId: 2, order: 5, title: "Conjunctions" },
-
+        { id: 22, unitId: 2, order: 1, title: "Nouns" },
+        { id: 23, unitId: 2, order: 2, title: "Nouns" },
+        { id: 24, unitId: 2, order: 3, title: "Nouns" },
+        { id: 25, unitId: 2, order: 4, title: "Pronouns" },
+        { id: 26, unitId: 2, order: 5, title: "Pronouns"},
+        { id: 27, unitId: 2, order: 6, title: "Pronouns"},
+        { id: 28, unitId: 2, order: 7, title: "Verbs"},
+        { id: 29, unitId: 2, order: 8, title: "Verbs"},
+        { id: 30, unitId: 2, order: 9, title: "Verbs"},
+        { id: 31, unitId: 2, order: 10, title: "Adjectives"},
+        { id: 32, unitId: 2, order: 11, title: "Adjectives"},
+        { id: 33, unitId: 2, order: 12, title: "Adjectives"},
+        { id: 34, unitId: 2, order: 13, title: "Easy Sentences"},
+        { id: 35, unitId: 2, order: 14, title: "Easy Sentences"},
+        { id: 36, unitId: 2, order: 15, title: "Easy Sentences"},
+        { id: 37, unitId: 2, order: 16, title: "Intermediate Sentences"},
+        { id: 38, unitId: 2, order: 17, title: "Intermediate Sentences"},
+        { id: 39, unitId: 2, order: 18, title: "Intermediate Sentences"},
+        { id: 40, unitId: 2, order: 19, title: "Difficult Sentences"},
+        { id: 41, unitId: 2, order: 20, title: "Difficult Sentences"},
+        { id: 42, unitId: 2, order: 21, title: "Difficult Sentences"},
         //japnese
-        {
-            id: 11,
-            unitId: 3,
-            order: 1,
-            title: "Nouns",
-        },
-        
-        { id: 12, unitId: 3, order: 2, title: "Verbs" },
-        { id: 13, unitId: 3, order: 3, title: "Adjectives" },
-        { id: 14, unitId: 3, order: 4, title: "Pronouns" },
-        { id: 15, unitId: 3, order: 5, title: "Conjunctions" },
-
+        { id: 43, unitId: 3, order: 1, title: "Nouns" },
+        { id: 44, unitId: 3, order: 2, title: "Nouns" },
+        { id: 45, unitId: 3, order: 3, title: "Nouns" },
+        { id: 46, unitId: 3, order: 4, title: "Pronouns" },
+        { id: 47, unitId: 3, order: 5, title: "Pronouns"},
+        { id: 48, unitId: 3, order: 6, title: "Pronouns"},
+        { id: 49, unitId: 3, order: 7, title: "Verbs"},
+        { id: 50, unitId: 3, order: 8, title: "Verbs"},
+        { id: 51, unitId: 3, order: 9, title: "Verbs"},
+        { id: 52, unitId: 3, order: 10, title: "Adjectives"},
+        { id: 53, unitId: 3, order: 11, title: "Adjectives"},
+        { id: 54, unitId: 3, order: 12, title: "Adjectives"},
+        { id: 55, unitId: 3, order: 13, title: "Easy Sentences"},
+        { id: 56, unitId: 3, order: 14, title: "Easy Sentences"},
+        { id: 57, unitId: 3, order: 15, title: "Easy Sentences"},
+        { id: 58, unitId: 3, order: 16, title: "Intermediate Sentences"},
+        { id: 59, unitId: 3, order: 17, title: "Intermediate Sentences"},
+        { id: 60, unitId: 3, order: 18, title: "Intermediate Sentences"},
+        { id: 61, unitId: 3, order: 19, title: "Difficult Sentences"},
+        { id: 62, unitId: 3, order: 20, title: "Difficult Sentences"},
+        { id: 63, unitId: 3, order: 21, title: "Difficult Sentences"},
 
         //marathi
-        {
-            id: 16,
-            unitId: 4,
-            order: 1,
-            title: "Nouns",
-        },
-        
-        { id: 17, unitId: 4, order: 2, title: "Verbs" },
-        { id: 18, unitId: 4, order: 3, title: "Adjectives" },
-        { id: 19, unitId: 4, order: 4, title: "Pronouns" },
-        { id: 20, unitId: 4, order: 5, title: "Conjunctions" }
+        { id: 64, unitId: 4, order: 1, title: "Nouns" },
+        { id: 65, unitId: 4, order: 2, title: "Nouns" },
+        { id: 66, unitId: 4, order: 3, title: "Nouns" },
+        { id: 67, unitId: 4, order: 4, title: "Pronouns" },
+        { id: 68, unitId: 4, order: 5, title: "Pronouns"},
+        { id: 69, unitId: 4, order: 6, title: "Pronouns"},
+        { id: 70, unitId: 4, order: 7, title: "Verbs"},
+        { id: 71, unitId: 4, order: 8, title: "Verbs"},
+        { id: 72, unitId: 4, order: 9, title: "Verbs"},
+        { id: 73, unitId: 4, order: 10, title: "Adjectives"},
+        { id: 74, unitId: 4, order: 11, title: "Adjectives"},
+        { id: 75, unitId: 4, order: 12, title: "Adjectives"},
+        { id: 76, unitId: 4, order: 13, title: "Easy Sentences"},
+        { id: 77, unitId: 4, order: 14, title: "Easy Sentences"},
+        { id: 78, unitId: 4, order: 15, title: "Easy Sentences"},
+        { id: 79, unitId: 4, order: 16, title: "Intermediate Sentences"},
+        { id: 80, unitId: 4, order: 17, title: "Intermediate Sentences"},
+        { id: 81, unitId: 4, order: 18, title: "Intermediate Sentences"},
+        { id: 82, unitId: 4, order: 19, title: "Difficult Sentences"},
+        { id: 83, unitId: 4, order: 20, title: "Difficult Sentences"},
+        { id: 84, unitId: 4, order: 21, title: "Difficult Sentences"},
     ]);
 
     await db.insert(schema.challenges).values([
-        // Spanish Challenges (Lesson 1-5)
-        
-            
-            { id: 1, lessonId: 1, type: "SELECT", order: 1, question: 'How do you say "the man" in Spanish?' },
-            { id: 2, lessonId: 1, type: "SELECT", order: 2, question: 'How do you say "the woman" in Spanish?' },
-            { id: 3, lessonId: 1, type: "SELECT", order: 3, question: 'How do you say "the robot" in Spanish?' },
-        
-            { id: 4, lessonId: 2, type: "SELECT", order: 1, question: 'How do you say "the car" in Spanish?' },
-            { id: 5, lessonId: 2, type: "ASSIST", order: 2, question: 'Complete the sentence in Spanish using the English sentence as a reference: "I am driving the car."" → "Estoy conduciendo __ carro."' },
-            { id: 6, lessonId: 2, type: "SELECT", order: 3, question: 'How do you say "the house" in Spanish?' },
-        
-            { id: 7, lessonId: 3, type: "SELECT", order: 1, question: 'How do you say "the book" in Spanish?' },
-            { id: 8, lessonId: 3, type: "ASSIST", order: 2, question: "Complete the sentence in Spanish using the English sentence as a reference: 'I am reading the book.' → 'Estoy leyendo __ libro.'" },
-            { id: 9, lessonId: 3, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Spanish?' },
-        
-            { id: 10, lessonId: 4, type: "SELECT", order: 1, question: 'How do you say "the pen" in Spanish?' },
-            { id: 11, lessonId: 4, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Spanish?' },
-            { id: 12, lessonId: 4, type: "SELECT", order: 3, question: 'How do you say "the chair" in Spanish?' },
-        
-            { id: 13, lessonId: 5, type: "SELECT", order: 1, question: 'How do you say "the computer" in Spanish?' },
-            { id: 14, lessonId: 5, type: "ASSIST", order: 2, question: "Complete the sentence in Spanish using the English sentence as a reference: 'I am using the computer.' → 'Estoy usando __ computadora.'" },
-            { id: 15, lessonId: 5, type: "SELECT", order: 3, question: 'How do you say "the phone" in Spanish?' },
-        
-            // French Challenges (Lesson 6-10)
-            { id: 16, lessonId: 6, type: "SELECT", order: 1, question: 'How do you say "the man" in French?' },
-            { id: 17, lessonId: 6, type: "SELECT", order: 2, question: 'How do you say "the woman" in French?' },
-            { id: 18, lessonId: 6, type: "SELECT", order: 3, question: 'How do you say "the robot" in French?' },
-        
-            { id: 19, lessonId: 7, type: "SELECT", order: 1, question: 'How do you say "the car" in French?' },
-            { id: 20, lessonId: 7, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am driving the car.' → 'Je conduis __ voiture.'" },
-            { id: 21, lessonId: 7, type: "SELECT", order: 3, question: 'How do you say "the house" in French?' },
-        
-            { id: 22, lessonId: 8, type: "SELECT", order: 1, question: 'How do you say "the book" in French?' },
-            { id: 23, lessonId: 8, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am reading the book.' → 'Je lis __ livre.'" },
-            { id: 24, lessonId: 8, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in French?' },
-        
-            { id: 25, lessonId: 9, type: "SELECT", order: 1, question: 'How do you say "the pen" in French?' },
-            { id: 26, lessonId: 9, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in French?' },
-            { id: 27, lessonId: 9, type: "SELECT", order: 3, question: 'How do you say "the chair" in French?' },
-        
-            { id: 28, lessonId: 10, type: "SELECT", order: 1, question: 'How do you say "the computer" in French?' },
-            { id: 29, lessonId: 10, type: "ASSIST", order: 2, question: "Complete the sentence in French using the English sentence as a reference: 'I am using the computer.' → 'J’utilise __ ordinateur.'" },
-            { id: 30, lessonId: 10, type: "SELECT", order: 3, question: 'How do you say "the phone" in French?' },
-        
-            // Japanese Challenges (Lesson 11-15)
-            { id: 31, lessonId: 11, type: "SELECT", order: 1, question: 'How do you say "the man" in Japanese?' },
-            { id: 32, lessonId: 11, type: "SELECT", order: 2, question: 'How do you say "the woman" in Japanese?' },
-            { id: 33, lessonId: 11, type: "SELECT", order: 3, question: 'How do you say "the robot" in Japanese?' },
-        
-            { id: 34, lessonId: 12, type: "SELECT", order: 1, question: 'How do you say "the car" in Japanese?' },
-            { id: 35, lessonId: 12, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am driving the car.' → '私は __ 車を運転しています。'" },
-            { id: 36, lessonId: 12, type: "SELECT", order: 3, question: 'How do you say "the house" in Japanese?' },
-        
-            { id: 37, lessonId: 13, type: "SELECT", order: 1, question: 'How do you say "the book" in Japanese?' },
-            { id: 38, lessonId: 13, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am reading the book.' → '私は __ 本を読んでいます。'" },
-            { id: 39, lessonId: 13, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Japanese?' },
-        
-            { id: 40, lessonId: 14, type: "SELECT", order: 1, question: 'How do you say "the pen" in Japanese?' },
-            { id: 41, lessonId: 14, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Japanese?' },
-            { id: 42, lessonId: 14, type: "SELECT", order: 3, question: 'How do you say "the chair" in Japanese?' },
-        
-            { id: 43, lessonId: 15, type: "SELECT", order: 1, question: 'How do you say "the computer" in Japanese?' },
-            { id: 44, lessonId: 15, type: "ASSIST", order: 2, question: "Complete the sentence in Japanese using the English sentence as a reference: 'I am using the computer.' → '私は __ コンピューターを使っています。'" },
-            { id: 45, lessonId: 15, type: "SELECT", order: 3, question: 'How do you say "the phone" in Japanese?' },
-    
-            // Marathi Challenges (Lesson 16-20)
-    { id: 46, lessonId: 16, type: "SELECT", order: 1, question: 'How do you say "the man" in Marathi?' },
-    { id: 47, lessonId: 16, type: "SELECT", order: 2, question: 'How do you say "the woman" in Marathi?' },
-    { id: 48, lessonId: 16, type: "SELECT", order: 3, question: 'How do you say "the robot" in Marathi?' },
-    
-    { id: 49, lessonId: 17, type: "SELECT", order: 1, question: 'How do you say "the car" in Marathi?' },
-    { id: 50, lessonId: 17, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am driving the car.' → 'मी __ गाडी चालवत आहे.'" },
-    { id: 51, lessonId: 17, type: "SELECT", order: 3, question: 'How do you say "the house" in Marathi?' },
-    
-    { id: 52, lessonId: 18, type: "SELECT", order: 1, question: 'How do you say "the book" in Marathi?' },
-    { id: 53, lessonId: 18, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am reading the book.' → 'मी __ पुस्तक वाचत आहे.'" },
-    { id: 54, lessonId: 18, type: "SELECT", order: 3, question: 'How do you say "the bicycle" in Marathi?' },
-    
-    { id: 55, lessonId: 19, type: "SELECT", order: 1, question: 'How do you say "the pen" in Marathi?' },
-    { id: 56, lessonId: 19, type: "ASSIST", order: 2, question: 'How do you say "the pencil" in Marathi?' },
-    { id: 57, lessonId: 19, type: "SELECT", order: 3, question: 'How do you say "the chair" in Marathi?' },
-    
-    { id: 58, lessonId: 20, type: "SELECT", order: 1, question: 'How do you say "the computer" in Marathi?' },
-    { id: 59, lessonId: 20, type: "ASSIST", order: 2, question: "Complete the sentence in Marathi using the English sentence as a reference: 'I am using the computer.' → 'मी __ संगणक वापरत आहे.'" },
-    { id: 60, lessonId: 20, type: "SELECT", order: 3, question: 'How do you say "the phone" in Marathi?' },
-    
-    
-            
-        
+       //spanish
+   // Nouns
+{ id: 1, lessonId: 1, type: "SELECT", order: 1, question: "How do you say 'the man' in Spanish?" },
+{ id: 2, lessonId: 1, type: "SELECT", order: 2, question: "How do you say 'the woman' in Spanish?" },
+{ id: 3, lessonId: 1, type: "SELECT", order: 3, question: "How do you say 'the robot' in Spanish?" },
 
+{ id: 4, lessonId: 2, type: "SELECT", order: 1, question: "How do you say 'the car' in Spanish?" },
+{ id: 5, lessonId: 2, type: "SELECT", order: 2, question: "How do you say 'the house' in Spanish?" },
+{ id: 6, lessonId: 2, type: "SELECT", order: 3, question: "How do you say 'the book' in Spanish?" },
+
+{ id: 7, lessonId: 3, type: "SELECT", order: 1, question: "How do you say 'the tree' in Spanish?" },
+{ id: 8, lessonId: 3, type: "SELECT", order: 2, question: "How do you say 'the dog' in Spanish?" },
+{ id: 9, lessonId: 3, type: "SELECT", order: 3, question: "How do you say 'the cat' in Spanish?" },
+
+  // Pronouns
+{ id: 10, lessonId: 4, type: "ASSIST", order: 1, question: "How do you say 'I' in Spanish?" },
+{ id: 11, lessonId: 4, type: "ASSIST", order: 2, question: "How do you say 'you' in Spanish?" },
+{ id: 12, lessonId: 4, type: "ASSIST", order: 3, question: "How do you say 'he' in Spanish?" },
+
+{ id: 13, lessonId: 5, type: "ASSIST", order: 1, question: "How do you say 'she' in Spanish?" },
+{ id: 14, lessonId: 5, type: "ASSIST", order: 2, question: "How do you say 'they' in Spanish?" },
+{ id: 15, lessonId: 5, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ está corriendo.'" },
+
+{ id: 16, lessonId: 6, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → 'Ella __ comiendo.'" },
+{ id: 17, lessonId: 6, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → 'Nosotros __ jugando.'" },
+{ id: 18, lessonId: 6, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → 'Ellos __ estudiando.'" },
+
+  // Verbs
+{ id: 19, lessonId: 7, type: "SELECT", order: 1, question: "How do you say 'to eat' in Spanish?" },
+{ id: 20, lessonId: 7, type: "SELECT", order: 2, question: "How do you say 'to run' in Spanish?" },
+{ id: 21, lessonId: 7, type: "SELECT", order: 3, question: "How do you say 'to write' in Spanish?" },
+
+{ id: 22, lessonId: 8, type: "SELECT", order: 1, question: "How do you say 'to read' in Spanish?" },
+{ id: 23, lessonId: 8, type: "SELECT", order: 2, question: "How do you say 'to walk' in Spanish?" },
+{ id: 24, lessonId: 8, type: "SELECT", order: 3, question: "How do you say 'to speak' in Spanish?" },
+
+{ id: 25, lessonId: 9, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am reading the book.' → 'Yo estoy leyendo __.'" },
+{ id: 26, lessonId: 9, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am driving the car.' → 'Yo estoy conduciendo __.'" },
+{ id: 27, lessonId: 9, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is writing a letter.' → 'Ella está escribiendo __.'" },
+
+//Adjectives
+{ id: 28, lessonId: 10, type: "ASSIST", order: 1, question: "How do you say 'big' in Spanish?" },
+{ id: 29, lessonId: 10, type: "ASSIST", order: 2, question: "How do you say 'small' in Spanish?" },
+{ id: 30, lessonId: 10, type: "ASSIST", order: 3, question: "How do you say 'fast' in Spanish?" },
+
+{ id: 31, lessonId: 11, type: "ASSIST", order: 1, question: "How do you say 'slow' in Spanish?" },
+{ id: 32, lessonId: 11, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Spanish?" },
+{ id: 33, lessonId: 11, type: "ASSIST", order: 3, question: "How do you say 'strong' in Spanish?" },
+
+{ id: 34, lessonId: 12, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'El coche es __.'" },
+{ id: 35, lessonId: 12, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'La flor es __.'" },
+{ id: 36, lessonId: 12, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'El niño es __.'" },
+
+// Sentences
+// Easy Sentences
+{ id: 37, lessonId: 13, type: "ASSIST", order: 1, question: "Translate: This is a cat." },
+{ id: 38, lessonId: 13, type: "ASSIST", order: 2, question: "Translate: The sun is bright." },
+{ id: 39, lessonId: 13, type: "ASSIST", order: 3, question: "Translate: I have a book." },
+
+{ id: 40, lessonId: 14, type: "ASSIST", order: 1, question: "Translate: 'She is my sister." },
+{ id: 41, lessonId: 14, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → 'Somos amigos.'" },
+{ id: 42, lessonId: 14, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → 'El perro está corriendo.'" },
+
+{ id: 43, lessonId: 15, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → 'Él es un maestro.'" },
+{ id: 44, lessonId: 15, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'La manzana es roja.'" },
+{ id: 45, lessonId: 15, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → 'Me gustan los mangos.'" },
+{ id: 46, lessonId: 15, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → 'Ella está feliz.'" },
+
+// Intermediate Sentences
+{ id: 47, lessonId: 16, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Spanish book.'" },
+{ id: 48, lessonId: 16, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → 'Ella está cocinando comida.'" },
+{ id: 49, lessonId: 16, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → 'Los niños están jugando afuera.'" },
+
+{ id: 50, lessonId: 17, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → 'Vamos a la escuela todos los días.'" },
+{ id: 51, lessonId: 17, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → 'Le gusta tomar té.'" },
+{ id: 52, lessonId: 17, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → 'Los pájaros están volando en el cielo.'" },
+
+{ id: 53, lessonId: 18, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → 'Ella está usando un vestido azul.'" },
+{ id: 54, lessonId: 18, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'El autobús está tarde hoy.'" },
+{ id: 55, lessonId: 18, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → 'Ellos están viendo una película.'" },
+{ id: 56, lessonId: 18, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → 'El maestro está explicando la lección.'" },
+
+// Difficult Sentences
+{ id: 57, lessonId: 19, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → 'Si trabajas duro, tendrás éxito.'" },
+{ id: 58, lessonId: 19, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → 'Ella fue al mercado a comprar verduras.'" },
+{ id: 59, lessonId: 19, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → 'Aunque estaba lloviendo, ellos jugaron al fútbol.'" },
+
+{ id: 60, lessonId: 20, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → 'El maestro pidió a los estudiantes que entregaran sus tareas a tiempo.'" },
+{ id: 61, lessonId: 20, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → 'Él está leyendo un periódico mientras toma té.'" },
+{ id: 62, lessonId: 20, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → 'Ella estaba cansada, sin embargo, siguió trabajando.'" },
+
+{ id: 63, lessonId: 21, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → 'Para cuando llegamos, el tren ya se había ido.'" },
+{ id: 64, lessonId: 21, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → 'A menos que estudies, no aprobarás el examen.'" },
+{ id: 65, lessonId: 21, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → 'El doctor le aconsejó que tomara medicina regularmente.'" },
+{ id: 66, lessonId: 21, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → 'El anciano, que vivía solo, nos contó muchas historias de su pasado.'" },
+
+//French
+// Nouns
+{ id: 67, lessonId: 22, type: "SELECT", order: 1, question: "How do you say 'the man' in French?" },
+{ id: 68, lessonId: 22, type: "SELECT", order: 2, question: "How do you say 'the woman' in French?" },
+{ id: 69, lessonId: 22, type: "SELECT", order: 3, question: "How do you say 'the robot' in French?" },
+
+{ id: 70, lessonId: 23, type: "SELECT", order: 1, question: "How do you say 'the car' in French?" },
+{ id: 71, lessonId: 23, type: "SELECT", order: 2, question: "How do you say 'the house' in French?" },
+{ id: 72, lessonId: 23, type: "SELECT", order: 3, question: "How do you say 'the book' in French?" },
+
+{ id: 73, lessonId: 24, type: "SELECT", order: 1, question: "How do you say 'the tree' in French?" },
+{ id: 74, lessonId: 24, type: "SELECT", order: 2, question: "How do you say 'the dog' in French?" },
+{ id: 75, lessonId: 24, type: "SELECT", order: 3, question: "How do you say 'the cat' in French?" },
+
+// Pronouns
+{ id: 76, lessonId: 25, type: "ASSIST", order: 1, question: "How do you say 'I' in French?" },
+{ id: 77, lessonId: 25, type: "ASSIST", order: 2, question: "How do you say 'you' in French?" },
+{ id: 78, lessonId: 25, type: "ASSIST", order: 3, question: "How do you say 'he' in French?" },
+
+{ id: 79, lessonId: 26, type: "ASSIST", order: 1, question: "How do you say 'she' in French?" },
+{ id: 80, lessonId: 26, type: "ASSIST", order: 2, question: "How do you say 'they' in French?" },
+{ id: 81, lessonId: 26, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ court.'" },
+
+{ id: 82, lessonId: 27, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → 'Elle __ mange.'" },
+{ id: 83, lessonId: 27, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → 'Nous __ jouons.'" },
+{ id: 84, lessonId: 27, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → 'Ils __ étudient.'" },
+
+// Verbs
+{ id: 85, lessonId: 28, type: "SELECT", order: 1, question: "How do you say 'to eat' in French?" },
+{ id: 86, lessonId: 28, type: "SELECT", order: 2, question: "How do you say 'to run' in French?" },
+{ id: 87, lessonId: 28, type: "SELECT", order: 3, question: "How do you say 'to write' in French?" },
+
+{ id: 88, lessonId: 29, type: "SELECT", order: 1, question: "How do you say 'to read' in French?" },
+{ id: 89, lessonId: 29, type: "SELECT", order: 2, question: "How do you say 'to walk' in French?" },
+{ id: 90, lessonId: 29, type: "SELECT", order: 3, question: "How do you say 'to speak' in French?" },
+
+{ id: 91, lessonId: 30, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am reading the book.' → 'Je suis en train de lire __.'" },
+{ id: 92, lessonId: 30, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am driving the car.' → 'Je conduis __.'" },
+{ id: 93, lessonId: 30, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is writing a letter.' → 'Elle écrit __.'" },
+
+// Adjectives
+{ id: 94, lessonId: 31, type: "ASSIST", order: 1, question: "How do you say 'big' in French?" },
+{ id: 95, lessonId: 31, type: "ASSIST", order: 2, question: "How do you say 'small' in French?" },
+{ id: 96, lessonId: 31, type: "ASSIST", order: 3, question: "How do you say 'fast' in French?" },
+
+{ id: 97, lessonId: 32, type: "ASSIST", order: 1, question: "How do you say 'slow' in French?" },
+{ id: 98, lessonId: 32, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in French?" },
+{ id: 99, lessonId: 32, type: "ASSIST", order: 3, question: "How do you say 'strong' in French?" },
+
+{ id: 100, lessonId: 33, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'La voiture est __.'" },
+{ id: 101, lessonId: 33, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'La fleur est __.'" },
+{ id: 102, lessonId: 33, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'Le garçon est __.'" },
+
+// Sentences
+// Easy Sentences
+{ id: 103, lessonId: 34, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.' → 'C'est un chat.'" },
+{ id: 104, lessonId: 34, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.' → 'Le soleil est brillant.'" },
+{ id: 105, lessonId: 34, type: "ASSIST", order: 3, question: "Translate: 'I have a book.' → 'J'ai un livre.'" },
+
+{ id: 106, lessonId: 35, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.' → 'Elle est ma sœur.'" },
+{ id: 107, lessonId: 35, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → 'Nous sommes amis.'" },
+{ id: 108, lessonId: 35, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → 'Le chien court.'" },
+
+{ id: 109, lessonId: 36, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → 'Il est professeur.'" },
+{ id: 110, lessonId: 36, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'La pomme est rouge.'" },
+{ id: 111, lessonId: 36, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → 'J'aime les mangues.'" },
+{ id: 112, lessonId: 36, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → 'Elle est heureuse.'" },
+
+// Intermediate Sentences
+{ id: 113, lessonId: 37, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Spanish book.' → 'Je lis un livre en espagnol.'" },
+{ id: 114, lessonId: 37, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → 'Elle cuisine de la nourriture.'" },
+{ id: 115, lessonId: 37, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → 'Les enfants jouent dehors.'" },
+
+{ id: 116, lessonId: 38, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → 'Nous allons à l'école tous les jours.'" },
+{ id: 117, lessonId: 38, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → 'Il aime boire du thé.'" },
+{ id: 118, lessonId: 38, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → 'Les oiseaux volent dans le ciel.'" },
+
+{ id: 119, lessonId: 39, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → 'Elle porte une robe bleue.'" },
+{ id: 120, lessonId: 39, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'Le bus est en retard aujourd'hui.'" },
+{ id: 121, lessonId: 39, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → 'Ils regardent un film.'" },
+{ id: 122, lessonId: 39, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → 'Le professeur explique la leçon.'" },
+
+// Difficult Sentences
+{ id: 123, lessonId: 40, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → 'Si vous travaillez dur, vous réussirez.'" },
+{ id: 124, lessonId: 40, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → 'Elle est allée au marché pour acheter des légumes.'" },
+{ id: 125, lessonId: 40, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → 'Bien qu'il pleuvait, ils ont joué au football.'" },
+
+{ id: 126, lessonId: 41, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → 'Le professeur a demandé aux élèves de rendre leurs devoirs à temps.'" },
+{ id: 127, lessonId: 41, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → 'Il lit un journal en buvant du thé.'" },
+{ id: 128, lessonId: 41, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → 'Elle était fatiguée, mais elle a continué à travailler.'" },
+
+{ id: 129, lessonId: 42, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → 'Quand nous sommes arrivés, le train était déjà parti.'" },
+{ id: 130, lessonId: 42, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → 'À moins d'étudier, vous ne réussirez pas l'examen.'" },
+{ id: 131, lessonId: 42, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → 'Le médecin lui a conseillé de prendre des médicaments régulièrement.'" },
+{ id: 132, lessonId: 42, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → 'Le vieil homme, qui vivait seul, nous a raconté de nombreuses histoires de son passé.'" },
         
-    ]);
+// Japanese
+// Nouns
+{ id: 133, lessonId: 43, type: "SELECT", order: 1, question: "How do you say 'the man' in Japanese?" },
+{ id: 134, lessonId: 43, type: "SELECT", order: 2, question: "How do you say 'the woman' in Japanese?" },
+{ id: 135, lessonId: 43, type: "SELECT", order: 3, question: "How do you say 'the robot' in Japanese?" },
+    
+{ id: 136, lessonId: 44, type: "SELECT", order: 1, question: "How do you say 'the car' in Japanese?" },
+{ id: 137, lessonId: 44, type: "SELECT", order: 2, question: "How do you say 'the house' in Japanese?" },
+{ id: 138, lessonId: 44, type: "SELECT", order: 3, question: "How do you say 'the book' in Japanese?" },
+    
+{ id: 139, lessonId: 45, type: "SELECT", order: 1, question: "How do you say 'the tree' in Japanese?" },
+{ id: 140, lessonId: 45, type: "SELECT", order: 2, question: "How do you say 'the dog' in Japanese?" },
+{ id: 141, lessonId: 45, type: "SELECT", order: 3, question: "How do you say 'the cat' in Japanese?" },
+    
+// Pronouns
+{ id: 142, lessonId: 46, type: "ASSIST", order: 1, question: "How do you say 'I' in Japanese?" },
+{ id: 143, lessonId: 46, type: "ASSIST", order: 2, question: "How do you say 'you' in Japanese?" },
+{ id: 144, lessonId: 46, type: "ASSIST", order: 3, question: "How do you say 'he' in Japanese?" },
+    
+{ id: 145, lessonId: 47, type: "ASSIST", order: 1, question: "How do you say 'she' in Japanese?" },
+{ id: 146, lessonId: 47, type: "ASSIST", order: 2, question: "How do you say 'they' in Japanese?" },
+{ id: 147, lessonId: 47, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ は走っています。'" },
+    
+{ id: 148, lessonId: 48, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → '彼女は食べています。'" },
+{ id: 149, lessonId: 48, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → '私たちは遊んでいます。'" },
+{ id: 150, lessonId: 48, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → '彼らは勉強しています。'" },
+    
+// Verbs
+{ id: 151, lessonId: 49, type: "SELECT", order: 1, question: "How do you say 'to eat' in Japanese?" },
+{ id: 152, lessonId: 49, type: "SELECT", order: 2, question: "How do you say 'to run' in Japanese?" },
+{ id: 153, lessonId: 49, type: "SELECT", order: 3, question: "How do you say 'to write' in Japanese?" },
+    
+{ id: 154, lessonId: 50, type: "SELECT", order: 1, question: "How do you say 'to read' in Japanese?" },
+{ id: 155, lessonId: 50, type: "SELECT", order: 2, question: "How do you say 'to walk' in Japanese?" },
+{ id: 156, lessonId: 50, type: "SELECT", order: 3, question: "How do you say 'to speak' in Japanese?" },
+    
+{ id: 157, lessonId: 51, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am reading the book.' → '私は本を読んでいます。'" },
+{ id: 158, lessonId: 51, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am driving the car.' → '私は車を運転しています。'" },
+{ id: 159, lessonId: 51, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is writing a letter.' → '彼女は手紙を書いています。'" },
+    
+// Adjectives
+{ id: 160, lessonId: 52, type: "ASSIST", order: 1, question: "How do you say 'big' in Japanese?" },
+{ id: 161, lessonId: 52, type: "ASSIST", order: 2, question: "How do you say 'small' in Japanese?" },
+{ id: 162, lessonId: 52, type: "ASSIST", order: 3, question: "How do you say 'fast' in Japanese?" },
+    
+{ id: 163, lessonId: 53, type: "ASSIST", order: 1, question: "How do you say 'slow' in Japanese?" },
+{ id: 164, lessonId: 53, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Japanese?" },
+{ id: 165, lessonId: 53, type: "ASSIST", order: 3, question: "How do you say 'strong' in Japanese?" },
+    
+{ id: 166, lessonId: 54, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → '車は大きいです。'" },
+{ id: 167, lessonId: 54, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → '花は美しいです。'" },
+{ id: 168, lessonId: 54, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → '男の子は強いです。'" },
+    
+// Sentences
+// Easy Sentences (continued)
+{ id: 169, lessonId: 55, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.' → 'これは猫です。'" },
+{ id: 170, lessonId: 55, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.' → '太陽は明るいです。'" },
+{ id: 171, lessonId: 55, type: "ASSIST", order: 3, question: "Translate: 'I have a book.' → '私は本を持っています。'" },
+        
+{ id: 172, lessonId: 56, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.' → '彼女は私の妹です。'" },
+{ id: 173, lessonId: 56, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → '私たちは友達です。'" },
+{ id: 174, lessonId: 56, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → '犬は走っています。'" },
+        
+{ id: 175, lessonId: 57, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → '彼は先生です。'" },
+{ id: 176, lessonId: 57, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'りんごは赤いです。'" },
+{ id: 177, lessonId: 57, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → '私はマンゴーが好きです。'" },
+{ id: 178, lessonId: 57, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → '彼女は幸せです。'" },
+        
+// Intermediate Sentences
+{ id: 179, lessonId: 58, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Japanese book.' → '私は日本語の本を読んでいます。'" },
+{ id: 180, lessonId: 58, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → '彼女は料理を作っています。'" },
+{ id: 181, lessonId: 58, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → '子供たちは外で遊んでいます。'" },
+        
+{ id: 182, lessonId: 59, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → '私たちは毎日学校に行きます。'" },
+{ id: 183, lessonId: 59, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → '彼はお茶を飲むのが好きです。'" },
+{ id: 184, lessonId: 59, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → '鳥たちは空を飛んでいます。'" },
+        
+{ id: 185, lessonId: 60, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → '彼女は青いドレスを着ています。'" },
+{ id: 186, lessonId: 60, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'バスは今日遅れています。'" },
+{ id: 187, lessonId: 60, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → '彼らは映画を見ています。'" },
+{ id: 188, lessonId: 60, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → '先生は授業を説明しています。'" },
+        
+// Difficult Sentences
+{ id: 189, lessonId: 61, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → '一生懸命働けば、成功します。'" },
+{ id: 190, lessonId: 61, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → '彼女は野菜を買いに市場に行きました。'" },
+{ id: 191, lessonId: 61, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → '雨が降っていたけど、彼らはサッカーをしました。'" },
+        
+{ id: 192, lessonId: 62, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → '先生は生徒に課題を期限内に提出するように頼みました。'" },
+{ id: 193, lessonId: 62, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → '彼はお茶を飲みながら新聞を読んでいます。'" },
+{ id: 194, lessonId: 62, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → '彼女は疲れていましたが、働き続けました。'" },
+        
+{ id: 195, lessonId: 63, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → '私たちが着くまでに電車はすでに出発していました。'" },
+{ id: 196, lessonId: 63, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → '勉強しなければ、試験に合格しません。'" },
+{ id: 197, lessonId: 63, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → '医者は彼に定期的に薬を飲むように勧めました。'" },
+{ id: 198, lessonId: 63, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → '一人暮らしの老人は私たちに過去の多くの話をしてくれました。'" },
+
+//Marathi
+// Nouns
+{ id: 199, lessonId: 64, type: "SELECT", order: 1, question: "How do you say 'the man' in Marathi?" },
+{ id: 200, lessonId: 64, type: "SELECT", order: 2, question: "How do you say 'the woman' in Marathi?" },
+{ id: 201, lessonId: 64, type: "SELECT", order: 3, question: "How do you say 'the robot' in Marathi?" },
+        
+{ id: 202, lessonId: 65, type: "SELECT", order: 1, question: "How do you say 'the car' in Marathi?" },
+{ id: 203, lessonId: 65, type: "SELECT", order: 2, question: "How do you say 'the house' in Marathi?" },
+{ id: 204, lessonId: 65, type: "SELECT", order: 3, question: "How do you say 'the book' in Marathi?" },
+        
+{ id: 205, lessonId: 66, type: "SELECT", order: 1, question: "How do you say 'the tree' in Marathi?" },
+{ id: 206, lessonId: 66, type: "SELECT", order: 2, question: "How do you say 'the dog' in Marathi?" },
+{ id: 207, lessonId: 66, type: "SELECT", order: 3, question: "How do you say 'the cat' in Marathi?" },
+        
+// Pronouns
+{ id: 208, lessonId: 67, type: "ASSIST", order: 1, question: "How do you say 'I' in Marathi?" },
+{ id: 209, lessonId: 67, type: "ASSIST", order: 2, question: "How do you say 'you' in Marathi?" },
+{ id: 210, lessonId: 67, type: "ASSIST", order: 3, question: "How do you say 'he' in Marathi?" },
+        
+{ id: 211, lessonId: 68, type: "ASSIST", order: 1, question: "How do you say 'she' in Marathi?" },
+{ id: 212, lessonId: 68, type: "ASSIST", order: 2, question: "How do you say 'they' in Marathi?" },
+{ id: 213, lessonId: 68, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ धावत आहे.'" },
+        
+{ id: 214, lessonId: 69, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → 'ती __ खात आहे.'" },
+{ id: 215, lessonId: 69, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → 'आम्ही __ खेळत आहोत.'" },
+{ id: 216, lessonId: 69, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → 'ते __ शिकत आहेत.'" },
+        
+// Verbs
+{ id: 217, lessonId: 70, type: "SELECT", order: 1, question: "How do you say 'to eat' in Marathi?" },
+{ id: 218, lessonId: 70, type: "SELECT", order: 2, question: "How do you say 'to run' in Marathi?" },
+{ id: 219, lessonId: 70, type: "SELECT", order: 3, question: "How do you say 'to write' in Marathi?" },
+        
+{ id: 220, lessonId: 71, type: "SELECT", order: 1, question: "How do you say 'to read' in Marathi?" },
+{ id: 221, lessonId: 71, type: "SELECT", order: 2, question: "How do you say 'to walk' in Marathi?" },
+{ id: 222, lessonId: 71, type: "SELECT", order: 3, question: "How do you say 'to speak' in Marathi?" },
+        
+{ id: 223, lessonId: 72, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am reading the book.' → 'मी पुस्तक आहे.'" },
+{ id: 224, lessonId: 72, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am driving the car.' → 'मी गाडी आहे.'" },
+{ id: 225, lessonId: 72, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is writing a letter.' → 'ती पत्र आहे.'" },
+        
+// Adjectives
+{ id: 226, lessonId: 73, type: "ASSIST", order: 1, question: "How do you say 'big' in Marathi?" },
+{ id: 227, lessonId: 73, type: "ASSIST", order: 2, question: "How do you say 'small' in Marathi?" },
+{ id: 228, lessonId: 73, type: "ASSIST", order: 3, question: "How do you say 'fast' in Marathi?" },
+        
+{ id: 229, lessonId: 74, type: "ASSIST", order: 1, question: "How do you say 'slow' in Marathi?" },
+{ id: 230, lessonId: 74, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Marathi?" },
+{ id: 231, lessonId: 74, type: "ASSIST", order: 3, question: "How do you say 'strong' in Marathi?" },
+        
+{ id: 232, lessonId: 75, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'गाडी __ आहे.'" },
+{ id: 233, lessonId: 75, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'फूल __ आहे.'" },
+{ id: 234, lessonId: 75, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'मुलगा __ आहे.'" },
+    
+// Sentences
+// Easy Sentences
+{ id: 235, lessonId: 76, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.'" },
+{ id: 236, lessonId: 76, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.'" },
+{ id: 237, lessonId: 76, type: "ASSIST", order: 3, question: "Translate: 'I have a book.'" },
+    
+{ id: 238, lessonId: 77, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.'" },
+{ id: 239, lessonId: 77, type: "ASSIST", order: 2, question: "Translate: 'We are friends.'" },
+{ id: 240, lessonId: 77, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.'" },
+    
+{ id: 241, lessonId: 78, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.'" },
+{ id: 242, lessonId: 78, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.'" },
+{ id: 243, lessonId: 78, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.'" },
+{ id: 244, lessonId: 78, type: "ASSIST", order: 4, question: "Translate: 'She is happy.'" },
+    
+// Intermediate Sentences
+{ id: 245, lessonId: 79, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Marathi book.'" },
+{ id: 246, lessonId: 79, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.'" },
+{ id: 247, lessonId: 79, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.'" },
+    
+{ id: 248, lessonId: 80, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.'" },
+{ id: 249, lessonId: 80, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.'" },
+{ id: 250, lessonId: 80, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.'" },
+    
+{ id: 251, lessonId: 81, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.'" },
+{ id: 252, lessonId: 81, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.'" },
+{ id: 253, lessonId: 81, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.'" },
+{ id: 254, lessonId: 81, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.'" },
+    
+// Difficult Sentences
+{ id: 255, lessonId: 82, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.'" },
+{ id: 256, lessonId: 82, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.'" },
+{ id: 257, lessonId: 82, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.'" },
+    
+{ id: 258, lessonId: 83, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.'" },
+{ id: 259, lessonId: 83, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.'" },
+{ id: 260, lessonId: 83, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.'" },
+    
+{ id: 261, lessonId: 84, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.'" },
+{ id: 262, lessonId: 84, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.'" },
+{ id: 263, lessonId: 84, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.'" },
+{ id: 264, lessonId: 84, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.'" },
+]);
     
     
-    await db.insert(schema.challengeOptions).values([
-        
-            { challengeId: 1, imageSrc: "/man.svg", correct: true, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
-            { challengeId: 1, imageSrc: "/woman.svg", correct: false, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
-            { challengeId: 1, imageSrc: "/robot.svg", correct: false, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
-        
-            { challengeId: 2, imageSrc: "/man.svg", correct: false, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
-            { challengeId: 2, imageSrc: "/woman.svg", correct: true, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
-            { challengeId: 2, imageSrc: "/robot.svg", correct: false, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
-        
-            { challengeId: 3, imageSrc: "/robot.svg", correct: true, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
-            { challengeId: 3, imageSrc: "/man.svg", correct: false, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
-            { challengeId: 3, imageSrc: "/woman.svg", correct: false, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
-        
-            // Lesson 2 Challenge Options
-            { challengeId: 4, imageSrc: "/car.svg", correct: true, text: "el carro", audioSrc: "Basics/audio/spanish/option/es_car.mp3" },
-            { challengeId: 4, imageSrc: "/house.svg", correct: false, text: "la casa", audioSrc: "Basics/audio/spanish/option/es_house.mp3" },
-            { challengeId: 4, imageSrc: "/bicycle.svg", correct: false, text: "la bicicleta", audioSrc: "Basics/audio/spanish/option/es_bicycle.mp3" },
-        
-            { challengeId: 5, correct: true, text: "el", audioSrc: "Basics/audio/spanish/option/es_el.mp3" },
-            { challengeId: 5, correct: false, text: "la", audioSrc: "Basics/audio/spanish/option/es_la.mp3" },
-            { challengeId: 5, correct: false, text: "un", audioSrc: "Basics/audio/spanish/option/es_un.mp3" },
-        
-            { challengeId: 6, imageSrc: "/house.svg", correct: true, text: "la casa", audioSrc: "Basics/audio/spanish/option/es_house.mp3" },
-            { challengeId: 6, imageSrc: "/bicycle.svg", correct: false, text: "la bicicleta", audioSrc: "Basics/audio/spanish/option/es_bicycle.mp3" },
-            { challengeId: 6, imageSrc: "/car.svg", correct: false, text: "el carro", audioSrc: "Basics/audio/spanish/option/es_car.mp3" },
-        
-            // Lesson 3 Challenge Options
-            { challengeId: 7, imageSrc: "/book.svg", correct: true, text: "el libro", audioSrc: "Basics/audio/spanish/option/es_book.mp3" },
-            { challengeId: 7, imageSrc: "/pencil.png", correct: false, text: "el lápiz", audioSrc: "Basics/audio/spanish/option/es_pencil.mp3" },
-            { challengeId: 7, imageSrc: "/pen.svg", correct: false, text: "la pluma", audioSrc: "Basics/audio/spanish/option/es_pen.mp3" },
-        
-            { challengeId: 8, correct: true, text: "el", audioSrc: "Basics/audio/spanish/option/es_el.mp3" },
-            { challengeId: 8, correct: false, text: "la", audioSrc: "Basics/audio/spanish/option/es_la.mp3" },
-            { challengeId: 8, correct: false, text: "un", audioSrc: "Basics/audio/spanish/option/es_un.mp3" },
-        
-            { challengeId: 9, imageSrc: "/bicycle.svg", correct: true, text: "la bicicleta", audioSrc: "Basics/audio/spanish/option/es_bicycle.mp3" },
-            { challengeId: 9, imageSrc: "/book.svg", correct: false, text: "el libro", audioSrc: "Basics/audio/spanish/option/es_book.mp3" },
-            { challengeId: 9, imageSrc: "/pencil.svg", correct: false, text: "el lápiz", audioSrc: "Basics/audio/spanish/option/es_pencil.mp3" },
-        
-            // Lesson 4 Challenge Options
-            { challengeId: 10, imageSrc: "/pen.svg", correct: true, text: "la pluma", audioSrc: "Basics/audio/spanish/option/es_pen.mp3" },
-            { challengeId: 10, imageSrc: "/pencil.png", correct: false, text: "el lápiz", audioSrc: "Basics/audio/spanish/option/es_pencil.mp3" },
-            { challengeId: 10, imageSrc: "/chair.svg", correct: false, text: "la silla", audioSrc: "Basics/audio/spanish/option/es_chair.mp3" },
-        
-            { challengeId: 11, correct: true, text: "el lápiz", audioSrc: "Basics/audio/spanish/option/es_pencil.mp3" },
-            { challengeId: 11, correct: false, text: "la pluma", audioSrc: "Basics/audio/spanish/option/es_pen.mp3" },
-            { challengeId: 11, correct: false, text: "la silla", audioSrc: "Basics/audio/spanish/option/es_chair.mp3" },
-        
-            { challengeId: 12, imageSrc: "/chair.svg", correct: true, text: "la silla", audioSrc: "Basics/audio/spanish/option/es_chair.mp3" },
-            { challengeId: 12, imageSrc: "/pen.svg", correct: false, text: "la pluma", audioSrc: "Basics/audio/spanish/option/es_pen.mp3" },
-            { challengeId: 12, imageSrc: "/pencil.png", correct: false, text: "el lápiz", audioSrc: "Basics/audio/spanish/option/es_pencil.mp3" },
-        
-            // Lesson 5 Challenge Options
-            { challengeId: 13, imageSrc: "/computer.svg", correct: true, text: "la computadora", audioSrc: "Basics/audio/spanish/option/es_computer.mp3" },
-            { challengeId: 13, imageSrc: "/phone.svg", correct: false, text: "el teléfono", audioSrc: "Basics/audio/spanish/option/es_phone.mp3" },
-            { challengeId: 13, imageSrc: "/book.svg", correct: false, text: "el libro", audioSrc: "Basics/audio/spanish/option/es_book.mp3" },
-        
-            { challengeId: 14, correct: true, text: "la", audioSrc: "Basics/audio/spanish/option/es_la.mp3" },
-            { challengeId: 14, correct: false, text: "el", audioSrc: "Basics/audio/spanish/option/es_el.mp3" },
-            { challengeId: 14, correct: false, text: "un", audioSrc: "Basics/audio/spanish/option/es_un.mp3" },
-        
-            { challengeId: 15, imageSrc: "/phone.svg", correct: true, text: "el teléfono", audioSrc: "Basics/audio/spanish/option/es_phone.mp3" },
-            { challengeId: 15, imageSrc: "/computer.svg", correct: false, text: "la computadora", audioSrc: "Basics/audio/spanish/option/es_computer.mp3" },
-            { challengeId: 15, imageSrc: "/book.svg", correct: false, text: "el libro", audioSrc: "Basics/audio/spanish/option/es_book.mp3" },
-        
-    
-        // french
-        
-            { challengeId: 16, imageSrc: "/man.svg", correct: true, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
-            { challengeId: 16, imageSrc: "/woman.svg", correct: false, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
-            { challengeId: 16, imageSrc: "/robot.svg", correct: false, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
-        
-            { challengeId: 17, imageSrc: "/man.svg", correct: false, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
-            { challengeId: 17, imageSrc: "/woman.svg", correct: true, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
-            { challengeId: 17, imageSrc: "/robot.svg", correct: false, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
-        
-            { challengeId: 18, imageSrc: "/robot.svg", correct: true, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
-            { challengeId: 18, imageSrc: "/man.svg", correct: false, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
-            { challengeId: 18, imageSrc: "/woman.svg", correct: false, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
-        
-            // Lesson 7 Challenge Options (French)
-            { challengeId: 19, imageSrc: "/car.svg", correct: true, text: "la voiture", audioSrc: "Basics/audio/french/option/fr_car.mp3" },
-            { challengeId: 19, imageSrc: "/house.svg", correct: false, text: "la maison", audioSrc: "Basics/audio/french/option/fr_house.mp3" },
-            { challengeId: 19, imageSrc: "/bicycle.svg", correct: false, text: "le vélo", audioSrc: "Basics/audio/french/option/fr_bicycle.mp3" },
-        
-            { challengeId: 20, correct: true, text: "la", audioSrc: "Basics/audio/french/option/fr_la.mp3" },
-            { challengeId: 20, correct: false, text: "le", audioSrc: "Basics/audio/french/option/fr_le.mp3" },
-            { challengeId: 20, correct: false, text: "une", audioSrc: "Basics/audio/french/option/fr_une.mp3" },
-        
-            { challengeId: 21, imageSrc: "/house.svg", correct: true, text: "la maison", audioSrc: "Basics/audio/french/option/fr_house.mp3" },
-            { challengeId: 21, imageSrc: "/bicycle.svg", correct: false, text: "le vélo", audioSrc: "Basics/audio/french/option/fr_bicycle.mp3" },
-            { challengeId: 21, imageSrc: "/car.svg", correct: false, text: "la voiture", audioSrc: "Basics/audio/french/option/fr_car.mp3" },
-        
-            // Lesson 8 Challenge Options (French)
-            { challengeId: 22, imageSrc: "/book.svg", correct: true, text: "le livre", audioSrc: "Basics/audio/french/option/fr_book.mp3" },
-            { challengeId: 22, imageSrc: "/pencil.png", correct: false, text: "le crayon", audioSrc: "Basics/audio/french/option/fr_pencil.mp3" },
-            { challengeId: 22, imageSrc: "/pen.svg", correct: false, text: "le stylo", audioSrc: "Basics/audio/french/option/fr_pen.mp3" },
-        
-            { challengeId: 23, correct: true, text: "le", audioSrc: "Basics/audio/french/option/fr_le.mp3" },
-            { challengeId: 23, correct: false, text: "la", audioSrc: "Basics/audio/french/option/fr_la.mp3" },
-            { challengeId: 23, correct: false, text: "un", audioSrc: "Basics/audio/french/option/fr_un.mp3" },
-        
-            { challengeId: 24, imageSrc: "/bicycle.svg", correct: true, text: "le vélo", audioSrc: "Basics/audio/french/option/fr_bicycle.mp3" },
-            { challengeId: 24, imageSrc: "/book.svg", correct: false, text: "le livre", audioSrc: "Basics/audio/french/option/fr_book.mp3" },
-            { challengeId: 24, imageSrc: "/pencil.svg", correct: false, text: "le crayon", audioSrc: "Basics/audio/french/option/fr_pencil.mp3" },
-        
-            // Lesson 9 Challenge Options (French)
-            { challengeId: 25, imageSrc: "/pen.svg", correct: true, text: "le stylo", audioSrc: "Basics/audio/french/option/fr_pen.mp3" },
-            { challengeId: 25, imageSrc: "/pencil.png", correct: false, text: "le crayon", audioSrc: "Basics/audio/french/option/fr_pencil.mp3" },
-            { challengeId: 25, imageSrc: "/chair.svg", correct: false, text: "la chaise", audioSrc: "Basics/audio/french/option/fr_chair.mp3" },
-        
-            { challengeId: 26, correct: true, text: "le crayon", audioSrc: "Basics/audio/french/option/fr_pencil.mp3" },
-            { challengeId: 26, correct: false, text: "le stylo", audioSrc: "Basics/audio/french/option/fr_pen.mp3" },
-            { challengeId: 26, correct: false, text: "la chaise", audioSrc: "Basics/audio/french/option/fr_chair.mp3" },
-        
-            { challengeId: 27, imageSrc: "/chair.svg", correct: true, text: "la chaise", audioSrc: "Basics/audio/french/option/fr_chair.mp3" },
-            { challengeId: 27, imageSrc: "/pen.svg", correct: false, text: "le stylo", audioSrc: "Basics/audio/french/option/fr_pen.mp3" },
-            { challengeId: 27, imageSrc: "/pencil.png", correct: false, text: "le crayon", audioSrc: "Basics/audio/french/option/fr_pencil.mp3" },
-        
-            // Lesson 10 Challenge Options (French)
-            { challengeId: 28, imageSrc: "/computer.svg", correct: true, text: "l'ordinateur", audioSrc: "Basics/audio/french/option/fr_computer.mp3" },
-            { challengeId: 28, imageSrc: "/phone.svg", correct: false, text: "le téléphone", audioSrc: "Basics/audio/french/option/fr_phone.mp3" },
-            { challengeId: 28, imageSrc: "/book.svg", correct: false, text: "le livre", audioSrc: "Basics/audio/french/option/fr_book.mp3" },
-        
-            { challengeId: 29, correct: true, text: "l'", audioSrc: "Basics/audio/french/option/fr_l'.mp3" },
-            { challengeId: 29, correct: false, text: "le", audioSrc: "Basics/audio/french/option/fr_le.mp3" },
-            { challengeId: 29, correct: false, text: "la", audioSrc: "Basics/audio/french/option/fr_la.mp3" },
-        
-            { challengeId: 30, imageSrc: "/phone.svg", correct: true, text: "le téléphone", audioSrc: "Basics/audio/french/option/fr_phone.mp3" },
-            { challengeId: 30, imageSrc: "/computer.svg", correct: false, text: "l'ordinateur", audioSrc: "Basics/audio/french/option/fr_computer.mp3" },
-            { challengeId: 30, imageSrc: "/book.svg", correct: false, text: "le livre", audioSrc: "Basics/audio/french/option/fr_book.mp3" },
-        
-    
-    // japnese 
-    
-    
-        // Lesson 11 Challenge Options (Japanese)
-        { challengeId: 31, imageSrc: "/man.svg", correct: true, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
-        { challengeId: 31, imageSrc: "/woman.svg", correct: false, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
-        { challengeId: 31, imageSrc: "/robot.svg", correct: false, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
-    
-        { challengeId: 32, imageSrc: "/man.svg", correct: false, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
-        { challengeId: 32, imageSrc: "/woman.svg", correct: true, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
-        { challengeId: 32, imageSrc: "/robot.svg", correct: false, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
-    
-        { challengeId: 33, imageSrc: "/robot.svg", correct: true, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
-        { challengeId: 33, imageSrc: "/man.svg", correct: false, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
-        { challengeId: 33, imageSrc: "/woman.svg", correct: false, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
-    
-        // Lesson 12 Challenge Options (Japanese)
-        { challengeId: 34, imageSrc: "/car.svg", correct: true, text: "車", audioSrc: "Basics/audio/japanese/option/jp_car.mp3" },
-        { challengeId: 34, imageSrc: "/house.svg", correct: false, text: "家", audioSrc: "Basics/audio/japanese/option/jp_house.mp3" },
-        { challengeId: 34, imageSrc: "/bicycle.svg", correct: false, text: "自転車", audioSrc: "Basics/audio/japanese/option/jp_bicycle.mp3" },
-    
-        { challengeId: 35, correct: true, text: "を", audioSrc: "Basics/audio/japanese/option/jp_wo.mp3" },
-        { challengeId: 35, correct: false, text: "の", audioSrc: "Basics/audio/japanese/option/jp_no.mp3" },
-        { challengeId: 35, correct: false, text: "に", audioSrc: "Basics/audio/japanese/option/jp_ni.mp3" },
-    
-        { challengeId: 36, imageSrc: "/house.svg", correct: true, text: "家", audioSrc: "Basics/audio/japanese/option/jp_house.mp3" },
-        { challengeId: 36, imageSrc: "/bicycle.svg", correct: false, text: "自転車", audioSrc: "Basics/audio/japanese/option/jp_bicycle.mp3" },
-        { challengeId: 36, imageSrc: "/car.svg", correct: false, text: "車", audioSrc: "Basics/audio/japanese/option/jp_car.mp3" },
-    
-        // Lesson 13 Challenge Options (Japanese)
-        { challengeId: 37, imageSrc: "/book.svg", correct: true, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
-        { challengeId: 37, imageSrc: "/pencil.png", correct: false, text: "鉛筆", audioSrc: "Basics/audio/japanese/option/jp_pencil.mp3" },
-        { challengeId: 37, imageSrc: "/pen.svg", correct: false, text: "ペン", audioSrc: "Basics/audio/japanese/option/jp_pen.mp3" },
-    
-        { challengeId: 38, correct: true, text: "を", audioSrc: "Basics/audio/japanese/option/jp_wo.mp3" },
-        { challengeId: 38, correct: false, text: "の", audioSrc: "Basics/audio/japanese/option/jp_no.mp3" },
-        { challengeId: 38, correct: false, text: "に", audioSrc: "Basics/audio/japanese/option/jp_ni.mp3" },
-    
-        { challengeId: 39, imageSrc: "/bicycle.svg", correct: true, text: "自転車", audioSrc: "Basics/audio/japanese/option/jp_bicycle.mp3" },
-        { challengeId: 39, imageSrc: "/book.svg", correct: false, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
-        { challengeId: 39, imageSrc: "/pencil.svg", correct: false, text: "鉛筆", audioSrc: "Basics/audio/japanese/option/jp_pencil.mp3" },
-    
-        // Lesson 14 Challenge Options (Japanese)
-        { challengeId: 40, imageSrc: "/pen.svg", correct: true, text: "ペン", audioSrc: "Basics/audio/japanese/option/jp_pen.mp3" },
-        { challengeId: 40, imageSrc: "/pencil.png", correct: false, text: "鉛筆", audioSrc: "Basics/audio/japanese/option/jp_pencil.mp3" },
-        { challengeId: 40, imageSrc: "/chair.svg", correct: false, text: "椅子", audioSrc: "Basics/audio/japanese/option/jp_chair.mp3" },
-    
-        { challengeId: 41, correct: true, text: "鉛筆", audioSrc: "Basics/audio/japanese/option/jp_pencil.mp3" },
-        { challengeId: 41, correct: false, text: "ペン", audioSrc: "Basics/audio/japanese/option/jp_pen.mp3" },
-        { challengeId: 41, correct: false, text: "椅子", audioSrc: "Basics/audio/japanese/option/jp_chair.mp3" },
-    
-        { challengeId: 42, imageSrc: "/chair.svg", correct: true, text: "椅子", audioSrc: "Basics/audio/japanese/option/jp_chair.mp3" },
-        { challengeId: 42, imageSrc: "/pen.svg", correct: false, text: "ペン", audioSrc: "Basics/audio/japanese/option/jp_pen.mp3" },
-        { challengeId: 42, imageSrc: "/pencil.png", correct: false, text: "鉛筆", audioSrc: "Basics/audio/japanese/option/jp_pencil.mp3" },
-    
-        // Lesson 15 Challenge Options (Japanese)
-        { challengeId: 43, imageSrc: "/computer.svg", correct: true, text: "コンピューター", audioSrc: "Basics/audio/japanese/option/jp_computer.mp3" },
-        { challengeId: 43, imageSrc: "/phone.svg", correct: false, text: "電話", audioSrc: "Basics/audio/japanese/option/jp_phone.mp3" },
-        { challengeId: 43, imageSrc: "/book.svg", correct: false, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
-    
-        { challengeId: 44, correct: true, text: "を", audioSrc: "Basics/audio/japanese/option/jp_wo.mp3" },
-        { challengeId: 44, correct: false, text: "の", audioSrc: "Basics/audio/japanese/option/jp_no.mp3" },
-        { challengeId: 44, correct: false, text: "に", audioSrc: "Basics/audio/japanese/option/jp_ni.mp3" },
-    
-        { challengeId: 45, imageSrc: "/phone.svg", correct: true, text: "電話", audioSrc: "Basics/audio/japanese/option/jp_phone.mp3" },
-        { challengeId: 45, imageSrc: "/computer.svg", correct: false, text: "コンピューター", audioSrc: "Basics/audio/japanese/option/jp_computer.mp3" },
-        { challengeId: 45, imageSrc: "/book.svg", correct: false, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
-    
-    
-        
-            { challengeId: 46, imageSrc: "/man.svg", correct: true, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
-            { challengeId: 46, imageSrc: "/woman.svg", correct: false, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
-            { challengeId: 46, imageSrc: "/robot.svg", correct: false, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
-        
-            { challengeId: 47, imageSrc: "/man.svg", correct: false, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
-            { challengeId: 47, imageSrc: "/woman.svg", correct: true, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
-            { challengeId: 47, imageSrc: "/robot.svg", correct: false, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
-        
-            { challengeId: 48, imageSrc: "/robot.svg", correct: true, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
-            { challengeId: 48, imageSrc: "/man.svg", correct: false, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
-            { challengeId: 48, imageSrc: "/woman.svg", correct: false, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
-        
-            // Lesson 2 Challenge Options (Marathi)
-            { challengeId: 49, imageSrc: "/car.svg", correct: true, text: "गाडी", audioSrc: "Basics/audio/marathi/option/mr_car.mp3" },
-            { challengeId: 49, imageSrc: "/house.svg", correct: false, text: "घर", audioSrc: "Basics/audio/marathi/option/mr_house.mp3" },
-            { challengeId: 49, imageSrc: "/bicycle.svg", correct: false, text: "सायकल", audioSrc: "Basics/audio/marathi/option/mr_bicycle.mp3" },
-        
-            { challengeId: 50, correct: true, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_to.mp3" },
-            { challengeId: 50, correct: false, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_ti.mp3" },
-            { challengeId: 50, correct: false, text: "एक", audioSrc: "Basics/audio/marathi/option/mr_ek.mp3" },
-        
-            { challengeId: 51, imageSrc: "/house.svg", correct: true, text: "घर", audioSrc: "Basics/audio/marathi/option/mr_house.mp3" },
-            { challengeId: 51, imageSrc: "/bicycle.svg", correct: false, text: "सायकल", audioSrc: "Basics/audio/marathi/option/mr_bicycle.mp3" },
-            { challengeId: 51, imageSrc: "/car.svg", correct: false, text: "गाडी", audioSrc: "Basics/audio/marathi/option/mr_car.mp3" },
-        
-            // Lesson 3 Challenge Options (Marathi)
-            { challengeId: 52, imageSrc: "/book.svg", correct: true, text: "पुस्तक", audioSrc: "Basics/audio/marathi/option/mr_book.mp3" },
-            { challengeId: 52, imageSrc: "/pencil.png", correct: false, text: "पेन्सिल", audioSrc: "Basics/audio/marathi/option/mr_pencil.mp3" },
-            { challengeId: 52, imageSrc: "/pen.svg", correct: false, text: "पेन", audioSrc: "Basics/audio/marathi/option/mr_pen.mp3" },
-        
-            { challengeId: 53, correct: true, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_to.mp3" },
-            { challengeId: 53, correct: false, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_ti.mp3" },
-            { challengeId: 53, correct: false, text: "एक", audioSrc: "Basics/audio/marathi/option/mr_ek.mp3" },
-        
-            { challengeId: 54, imageSrc: "/bicycle.svg", correct: true, text: "सायकल", audioSrc: "Basics/audio/marathi/option/mr_bicycle.mp3" },
-            { challengeId: 54, imageSrc: "/book.svg", correct: false, text: "पुस्तक", audioSrc: "Basics/audio/marathi/option/mr_book.mp3" },
-            { challengeId: 54, imageSrc: "/pencil.svg", correct: false, text: "पेन्सिल", audioSrc: "Basics/audio/marathi/option/mr_pencil.mp3" },
-        
-            // Lesson 4 Challenge Options (Marathi)
-            { challengeId: 55, imageSrc: "/pen.svg", correct: true, text: "पेन", audioSrc: "Basics/audio/marathi/option/mr_pen.mp3" },
-            { challengeId: 55, imageSrc: "/pencil.png", correct: false, text: "पेन्सिल", audioSrc: "Basics/audio/marathi/option/mr_pencil.mp3" },
-            { challengeId: 55, imageSrc: "/chair.svg", correct: false, text: "खुर्ची", audioSrc: "Basics/audio/marathi/option/mr_chair.mp3" },
-        
-            { challengeId: 56, correct: true, text: "पेन्सिल", audioSrc: "Basics/audio/marathi/option/mr_pencil.mp3" },
-            { challengeId: 56, correct: false, text: "पेन", audioSrc: "Basics/audio/marathi/option/mr_pen.mp3" },
-            { challengeId: 56, correct: false, text: "खुर्ची", audioSrc: "Basics/audio/marathi/option/mr_chair.mp3" },
-        
-            { challengeId: 57, imageSrc: "/chair.svg", correct: true, text: "खुर्ची", audioSrc: "Basics/audio/marathi/option/mr_chair.mp3" },
-            { challengeId: 57, imageSrc: "/pen.svg", correct: false, text: "पेन", audioSrc: "Basics/audio/marathi/option/mr_pen.mp3" },
-            { challengeId: 57, imageSrc: "/pencil.png", correct: false, text: "पेन्सिल", audioSrc: "Basics/audio/marathi/option/mr_pencil.mp3" },
-        
-            // Lesson 5 Challenge Options (Marathi)
-            { challengeId: 58, imageSrc: "/computer.svg", correct: true, text: "संगणक", audioSrc: "Basics/audio/marathi/option/mr_computer.mp3" },
-            { challengeId: 58, imageSrc: "/phone.svg", correct: false, text: "फोन", audioSrc: "Basics/audio/marathi/option/mr_phone.mp3" },
-            { challengeId: 58, imageSrc: "/book.svg", correct: false, text: "पुस्तक", audioSrc: "Basics/audio/marathi/option/mr_book.mp3" },
-        
-            { challengeId: 59, correct: true, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_ti.mp3" },
-            { challengeId: 59, correct: false, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_to.mp3" },
-            { challengeId: 59, correct: false, text: "एक", audioSrc: "Basics/audio/marathi/option/mr_ek.mp3" },
-        
-            { challengeId: 60, imageSrc: "/phone.svg", correct: true, text: "फोन", audioSrc: "Basics/audio/marathi/option/mr_phone.mp3" },
-            { challengeId: 60, imageSrc: "/computer.svg", correct: false, text: "संगणक", audioSrc: "Basics/audio/marathi/option/mr_computer.mp3" },
-            { challengeId: 60, imageSrc: "/book.svg", correct: false, text: "पुस्तक", audioSrc: "Basics/audio/marathi/option/mr_book.mp3" }
-        
-    
-    
-    
-    ]);
+  
+//options
+await db.insert(schema.challengeOptions).values([
+    //Spanish
+// Lesson 1 Challenge Options
+{ challengeId: 1, imageSrc: "/robot.svg", correct: false, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
+{ challengeId: 1, imageSrc: "/woman.svg", correct: false, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
+{ challengeId: 1, imageSrc: "/man.svg", correct: true, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
+
+{ challengeId: 2, imageSrc: "/man.svg", correct: false, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
+{ challengeId: 2, imageSrc: "/robot.svg", correct: false, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
+{ challengeId: 2, imageSrc: "/woman.svg", correct: true, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
+
+{ challengeId: 3, imageSrc: "/woman.svg", correct: false, text: "la mujer", audioSrc: "Basics/audio/spanish/option/es_woman.mp3" },
+{ challengeId: 3, imageSrc: "/man.svg", correct: false, text: "el hombre", audioSrc: "Basics/audio/spanish/option/es_man.mp3" },
+{ challengeId: 3, imageSrc: "/robot.svg", correct: true, text: "el robot", audioSrc: "Basics/audio/spanish/option/es_robot.mp3" },
+
+// Lesson 2 Challenge Options
+{ challengeId: 4, imageSrc: "/bicycle.svg", correct: false, text: "la bicicleta", audioSrc: "Basics/audio/spanish/option/es_bicycle.mp3" },
+{ challengeId: 4, imageSrc: "/car.svg", correct: true, text: "el carro", audioSrc: "Basics/audio/spanish/option/es_car.mp3" },
+{ challengeId: 4, imageSrc: "/house.svg", correct: false, text: "la casa", audioSrc: "Basics/audio/spanish/option/es_house.mp3" },
+
+{ challengeId: 5, imageSrc: "/car.svg", correct: false, text: "el carro", audioSrc: "Basics/audio/spanish/option/es_car.mp3" },
+{ challengeId: 5, imageSrc: "/house.svg", correct: true, text: "la casa", audioSrc: "Basics/audio/spanish/option/es_house.mp3" },
+{ challengeId: 5, imageSrc: "/bicycle.svg", correct: false, text: "la bicicleta", audioSrc: "Basics/audio/spanish/option/es_bicycle.mp3" },
+
+{ challengeId: 6, imageSrc: "/house.svg", correct: false, text: "la casa", audioSrc: "Basics/audio/spanish/option/es_house.mp3" },
+{ challengeId: 6, imageSrc: "/book.svg", correct: true, text: "el libro", audioSrc: "Basics/audio/spanish/option/es_book.mp3" },
+{ challengeId: 6, imageSrc: "/car.svg", correct: false, text: "el carro", audioSrc: "Basics/audio/spanish/option/es_car.mp3" },
+
+// Lesson 3 Challenge Options
+{ challengeId: 7, imageSrc: "/dog.svg", correct: false, text: "el perro", audioSrc: "Basics/audio/spanish/option/es_dog.mp3" },
+{ challengeId: 7, imageSrc: "/tree.svg", correct: true, text: "el árbol", audioSrc: "Basics/audio/spanish/option/es_tree.mp3" },
+{ challengeId: 7, imageSrc: "/cat.svg", correct: false, text: "el gato", audioSrc: "Basics/audio/spanish/option/es_cat.mp3" },
+
+{ challengeId: 8, imageSrc: "/cat.svg", correct: false, text: "el gato", audioSrc: "Basics/audio/spanish/option/es_cat.mp3" },
+{ challengeId: 8, imageSrc: "/dog.svg", correct: true, text: "el perro", audioSrc: "Basics/audio/spanish/option/es_dog.mp3" },
+{ challengeId: 8, imageSrc: "/tree.svg", correct: false, text: "el árbol", audioSrc: "Basics/audio/spanish/option/es_tree.mp3" },
+
+{ challengeId: 9, imageSrc: "/tree.svg", correct: false, text: "el árbol", audioSrc: "Basics/audio/spanish/option/es_tree.mp3" },
+{ challengeId: 9, imageSrc: "/dog.svg", correct: false, text: "el perro", audioSrc: "Basics/audio/spanish/option/es_dog.mp3" },
+{ challengeId: 9, imageSrc: "/cat.svg", correct: true, text: "el gato", audioSrc: "Basics/audio/spanish/option/es_cat.mp3" },
+
+// Lesson 4 Challenge Options
+{ challengeId: 10, correct: true, text: "yo", audioSrc: "Basics/audio/spanish/option/es_I.mp3" },
+{ challengeId: 10, correct: false, text: "tú", audioSrc: "Basics/audio/spanish/option/es_you.mp3" },
+{ challengeId: 10, correct: false, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+
+{ challengeId: 11, correct: true, text: "tú", audioSrc: "Basics/audio/spanish/option/es_you.mp3" },
+{ challengeId: 11, correct: false, text: "yo", audioSrc: "Basics/audio/spanish/option/es_I.mp3" },
+{ challengeId: 11, correct: false, text: "ella", audioSrc: "Basics/audio/spanish/option/es_she.mp3" },
+
+{ challengeId: 12, correct: true, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+{ challengeId: 12, correct: false, text: "ella", audioSrc: "Basics/audio/spanish/option/es_she.mp3" },
+{ challengeId: 12, correct: false, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+
+// Lesson 5 Challenge options
+{ challengeId: 13, correct: true, text: "ella", audioSrc: "Basics/audio/spanish/option/es_she.mp3" },
+{ challengeId: 13, correct: false, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+{ challengeId: 13, correct: false, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+
+{ challengeId: 14, correct: true, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+{ challengeId: 14, correct: false, text: "yo", audioSrc: "Basics/audio/spanish/option/es_I.mp3" },
+{ challengeId: 14, correct: false, text: "ella", audioSrc: "Basics/audio/spanish/option/es_she.mp3" },
+
+{ challengeId: 15, correct: true, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+{ challengeId: 15, correct: false, text: "yo", audioSrc: "Basics/audio/spanish/option/es_I.mp3" },
+{ challengeId: 15, correct: false, text: "tú", audioSrc: "Basics/audio/spanish/option/es_you.mp3" },
+
+//6
+{ challengeId: 16, correct: true, text: "ella", audioSrc: "Basics/audio/spanish/option/es_she.mp3" },
+{ challengeId: 16, correct: false, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+{ challengeId: 16, correct: false, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+
+{ challengeId: 17, correct: true, text: "nosotros", audioSrc: "Basics/audio/spanish/option/es_we.mp3" },
+{ challengeId: 17, correct: false, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+{ challengeId: 17, correct: false, text: "él", audioSrc: "Basics/audio/spanish/option/es_he.mp3" },
+
+{ challengeId: 18, correct: true, text: "ellos", audioSrc: "Basics/audio/spanish/option/es_they.mp3" },
+{ challengeId: 18, correct: false, text: "yo", audioSrc: "Basics/audio/spanish/option/es_I.mp3" },
+{ challengeId: 18, correct: false, text: "tú", audioSrc: "Basics/audio/spanish/option/es_you.mp3" },
+
+// Lesson 7 Challenge Options
+{ challengeId: 19, imageSrc: "/eat.svg", correct: true, text: "comer", audioSrc: "Basics/audio/spanish/option/es_eat.mp3" },
+{ challengeId: 19, imageSrc: "/run.svg", correct: false, text: "correr", audioSrc: "Basics/audio/spanish/option/es_run.mp3" },
+{ challengeId: 19, imageSrc: "/write.svg", correct: false, text: "escribir", audioSrc: "Basics/audio/spanish/option/es_write.mp3" },
+
+{ challengeId: 20, imageSrc: "/run.svg", correct: true, text: "correr", audioSrc: "Basics/audio/spanish/option/es_run.mp3" },
+{ challengeId: 20, imageSrc: "/walk.svg", correct: false, text: "caminar", audioSrc: "Basics/audio/spanish/option/es_walk.mp3" },
+{ challengeId: 20, imageSrc: "/eat.svg", correct: false, text: "comer", audioSrc: "Basics/audio/spanish/option/es_eat.mp3" },
+
+{ challengeId: 21, imageSrc: "/write.svg", correct: true, text: "escribir", audioSrc: "Basics/audio/spanish/option/es_write.mp3" },
+{ challengeId: 21, imageSrc: "/read.svg", correct: false, text: "leer", audioSrc: "Basics/audio/spanish/option/es_read.mp3" },
+{ challengeId: 21, imageSrc: "/speak.svg", correct: false, text: "hablar", audioSrc: "Basics/audio/spanish/option/es_speak.mp3" },
+
+{ challengeId: 22, imageSrc: "/read.svg", correct: true, text: "leer", audioSrc: "Basics/audio/spanish/option/es_read.mp3" },
+{ challengeId: 22, imageSrc: "/write.svg", correct: false, text: "escribir", audioSrc: "Basics/audio/spanish/option/es_write.mp3" },
+{ challengeId: 22, imageSrc: "/speak.svg", correct: false, text: "hablar", audioSrc: "Basics/audio/spanish/option/es_speak.mp3" },
+
+{ challengeId: 23, imageSrc: "/walk.svg", correct: true, text: "caminar", audioSrc: "Basics/audio/spanish/option/es_walk.mp3" },
+{ challengeId: 23, imageSrc: "/run.svg", correct: false, text: "correr", audioSrc: "Basics/audio/spanish/option/es_run.mp3" },
+{ challengeId: 23, imageSrc: "/eat.svg", correct: false, text: "comer", audioSrc: "Basics/audio/spanish/option/es_eat.mp3" },
+
+{ challengeId: 24, imageSrc: "/speak.svg", correct: true, text: "hablar", audioSrc: "Basics/audio/spanish/option/es_speak.mp3" },
+{ challengeId: 24, imageSrc: "/read.svg", correct: false, text: "leer", audioSrc: "Basics/audio/spanish/option/es_read.mp3" },
+{ challengeId: 24, imageSrc: "/write.svg", correct: false, text: "escribir", audioSrc: "Basics/audio/spanish/option/es_write.mp3" },
+
+{ challengeId: 25, correct: true, text: "leyendo", audioSrc: "Basics/audio/spanish/option/es_reading.mp3" },
+{ challengeId: 25, correct: false, text: "escribiendo", audioSrc: "Basics/audio/spanish/option/es_writing.mp3" },
+{ challengeId: 25, correct: false, text: "hablando", audioSrc: "Basics/audio/spanish/option/es_speaking.mp3" },
+
+{ challengeId: 26, correct: true, text: "caminando", audioSrc: "Basics/audio/spanish/option/es_walking.mp3" },
+{ challengeId: 26, correct: false, text: "corriendo", audioSrc: "Basics/audio/spanish/option/es_running.mp3" },
+{ challengeId: 26, correct: false, text: "caminando", audioSrc: "Basics/audio/spanish/option/es_walking.mp3" },
+
+{ challengeId: 27, correct: true, text: "escribiendo", audioSrc: "Basics/audio/spanish/option/es_writing.mp3" },
+{ challengeId: 27, correct: false, text: "leyendo", audioSrc: "Basics/audio/spanish/option/es_reading.mp3" },
+{ challengeId: 27, correct: false, text: "hablando", audioSrc: "Basics/audio/spanish/option/es_speaking.mp3" },
+
+// Lesson 10 Challenge Options
+{ challengeId: 28, correct: true, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+{ challengeId: 28, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+{ challengeId: 28, correct: false, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+
+{ challengeId: 29, correct: true, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+{ challengeId: 29, correct: false, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+{ challengeId: 29, correct: false, text: "lento", audioSrc: "Basics/audio/spanish/option/es_slow.mp3" },
+
+{ challengeId: 30, correct: true, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+{ challengeId: 30, correct: false, text: "fuerte", audioSrc: "Basics/audio/spanish/option/es_strong.mp3" },
+{ challengeId: 30, correct: false, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+
+// Lesson 11 Challenge Options
+{ challengeId: 28, correct: true, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+{ challengeId: 28, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+{ challengeId: 28, correct: false, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+
+{ challengeId: 29, correct: true, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+{ challengeId: 29, correct: false, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+{ challengeId: 29, correct: false, text: "lento", audioSrc: "Basics/audio/spanish/option/es_slow.mp3" },
+
+{ challengeId: 30, correct: true, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+{ challengeId: 30, correct: false, text: "lento", audioSrc: "Basics/audio/spanish/option/es_slow.mp3" },
+{ challengeId: 30, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+
+{ challengeId: 31, correct: true, text: "lento", audioSrc: "Basics/audio/spanish/option/es_slow.mp3" },
+{ challengeId: 31, correct: false, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+{ challengeId: 31, correct: false, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+
+{ challengeId: 32, correct: true, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+{ challengeId: 32, correct: false, text: "fuerte", audioSrc: "Basics/audio/spanish/option/es_strong.mp3" },
+{ challengeId: 32, correct: false, text: "rápido", audioSrc: "Basics/audio/spanish/option/es_fast.mp3" },
+
+{ challengeId: 33, correct: true, text: "fuerte", audioSrc: "Basics/audio/spanish/option/es_strong.mp3" },
+{ challengeId: 33, correct: false, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+{ challengeId: 33, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+
+{ challengeId: 34, correct: true, text: "grande", audioSrc: "Basics/audio/spanish/option/es_big.mp3" },
+{ challengeId: 34, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+{ challengeId: 34, correct: false, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+
+{ challengeId: 35, correct: true, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+{ challengeId: 35, correct: false, text: "fuerte", audioSrc: "Basics/audio/spanish/option/es_strong.mp3" },
+{ challengeId: 35, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+
+{ challengeId: 36, correct: true, text: "fuerte", audioSrc: "Basics/audio/spanish/option/es_strong.mp3" },
+{ challengeId: 36, correct: false, text: "hermoso", audioSrc: "Basics/audio/spanish/option/es_beautiful.mp3" },
+{ challengeId: 36, correct: false, text: "pequeño", audioSrc: "Basics/audio/spanish/option/es_small.mp3" },
+// Lesson 13 Challenge Options
+{ challengeId: 37, correct: true, text: "Este es un gato.", audioSrc: "Basics/audio/spanish/option/es_this_is_a_cat.mp3" },
+{ challengeId: 37, correct: false, text: "Este es un perro.", audioSrc: "Basics/audio/spanish/option/es_this_is_a_dog.mp3" },
+{ challengeId: 37, correct: false, text: "Este es un libro.", audioSrc: "Basics/audio/spanish/option/es_this_is_a_book.mp3" },
+
+
+{ challengeId: 38, correct: true, text: "El sol es brillante.", audioSrc: "Basics/audio/spanish/option/es_sun_is_bright.mp3" },
+{ challengeId: 38, correct: false, text: "El cielo es azul.", audioSrc: "Basics/audio/spanish/option/es_sky_is_blue.mp3" },
+{ challengeId: 38, correct: false, text: "La luna es grande.", audioSrc: "Basics/audio/spanish/option/es_moon_is_big.mp3" },
+
+{ challengeId: 39, correct: true, text: "Tengo un libro.", audioSrc: "Basics/audio/spanish/option/es_i_have_a_book.mp3" },
+{ challengeId: 39, correct: false, text: "Tengo una bicicleta.", audioSrc: "Basics/audio/spanish/option/es_i_have_a_bicycle.mp3" },
+{ challengeId: 39, correct: false, text: "Tengo un reloj.", audioSrc: "Basics/audio/spanish/option/es_i_have_a_watch.mp3" },
+
+{ challengeId: 40, correct: true, text: "Ella es mi hermana.", audioSrc: "Basics/audio/spanish/option/es_she_is_my_sister.mp3" },
+{ challengeId: 40, correct: false, text: "Él es mi hermano.", audioSrc: "Basics/audio/spanish/option/es_he_is_my_brother.mp3" },
+{ challengeId: 40, correct: false, text: "Ella es mi madre.", audioSrc: "Basics/audio/spanish/option/es_she_is_my_mother.mp3" },
+
+{ challengeId: 41, correct: true, text: "Somos amigos.", audioSrc: "Basics/audio/spanish/option/es_we_are_friends.mp3" },
+{ challengeId: 41, correct: false, text: "Somos enemigos.", audioSrc: "Basics/audio/spanish/option/es_we_are_enemies.mp3" },
+{ challengeId: 41, correct: false, text: "Somos estudiantes.", audioSrc: "Basics/audio/spanish/option/es_we_are_students.mp3" },
+
+{ challengeId: 42, correct: true, text: "El perro está corriendo.", audioSrc: "Basics/audio/spanish/option/es_dog_is_running.mp3" },
+{ challengeId: 42, correct: false, text: "El perro está durmiendo.", audioSrc: "Basics/audio/spanish/option/es_dog_is_sleeping.mp3" },
+{ challengeId: 42, correct: false, text: "El perro está ladrando.", audioSrc: "Basics/audio/spanish/option/es_dog_is_barking.mp3" },
+
+{ challengeId: 43, correct: true, text: "Él es un maestro.", audioSrc: "Basics/audio/spanish/option/es_he_is_a_teacher.mp3" },
+{ challengeId: 43, correct: false, text: "Él es un doctor.", audioSrc: "Basics/audio/spanish/option/es_he_is_a_doctor.mp3" },
+{ challengeId: 43, correct: false, text: "Él es un policía.", audioSrc: "Basics/audio/spanish/option/es_he_is_a_policeman.mp3" },
+
+{ challengeId: 44, correct: true, text: "La manzana es roja.", audioSrc: "Basics/audio/spanish/option/es_apple_is_red.mp3" },
+{ challengeId: 44, correct: false, text: "La manzana es amarilla.", audioSrc: "Basics/audio/spanish/option/es_apple_is_yellow.mp3" },
+{ challengeId: 44, correct: false, text: "La manzana es verde.", audioSrc: "Basics/audio/spanish/option/es_apple_is_green.mp3" },
+
+{ challengeId: 45, correct: true, text: "Me gustan los mangos.", audioSrc: "Basics/audio/spanish/option/es_i_like_mangoes.mp3" },
+{ challengeId: 45, correct: false, text: "Me gustan las manzanas.", audioSrc: "Basics/audio/spanish/option/es_i_like_apples.mp3" },
+{ challengeId: 45, correct: false, text: "Me gustan las uvas.", audioSrc: "Basics/audio/spanish/option/es_i_like_grapes.mp3" },
+
+{ challengeId: 46, correct: true, text: "Ella está feliz.", audioSrc: "Basics/audio/spanish/option/es_she_is_happy.mp3" },
+{ challengeId: 46, correct: false, text: "Ella está triste.", audioSrc: "Basics/audio/spanish/option/es_she_is_sad.mp3" },
+{ challengeId: 46, correct: false, text: "Ella está enojada.", audioSrc: "Basics/audio/spanish/option/es_she_is_angry.mp3" },
+
+// Lesson 16 Challenge Options
+{ challengeId: 47, correct: true, text: "Estoy leyendo un libro en español.", audioSrc: "Basics/audio/spanish/option/es_i_am_reading_a_spanish_book.mp3" },
+{ challengeId: 47, correct: false, text: "Estoy leyendo un libro en hindi.", audioSrc: "Basics/audio/spanish/option/es_i_am_reading_a_hindi_book.mp3" },
+{ challengeId: 47, correct: false, text: "Estoy leyendo un libro en inglés.", audioSrc: "Basics/audio/spanish/option/es_i_am_reading_an_english_book.mp3" },
+
+{ challengeId: 48, correct: true, text: "Ella está cocinando comida.", audioSrc: "Basics/audio/spanish/option/es_she_is_cooking_food.mp3" },
+{ challengeId: 48, correct: false, text: "Ella está jugando un juego.", audioSrc: "Basics/audio/spanish/option/es_she_is_playing_game.mp3" },
+{ challengeId: 48, correct: false, text: "Ella está cantando.", audioSrc: "Basics/audio/spanish/option/es_she_is_singing.mp3" },
+
+{ challengeId: 49, correct: true, text: "Los niños están jugando afuera.", audioSrc: "Basics/audio/spanish/option/es_children_are_playing_outside.mp3" },
+{ challengeId: 49, correct: false, text: "Los niños están estudiando.", audioSrc: "Basics/audio/spanish/option/es_children_are_studying.mp3" },
+{ challengeId: 49, correct: false, text: "Los niños están durmiendo.", audioSrc: "Basics/audio/spanish/option/es_children_are_sleeping.mp3" },
+
+{ challengeId: 50, correct: true, text: "Vamos a la escuela todos los días.", audioSrc: "Basics/audio/spanish/option/es_we_go_to_school_every_day.mp3" },
+{ challengeId: 50, correct: false, text: "Nunca vamos a la escuela.", audioSrc: "Basics/audio/spanish/option/es_we_never_go_to_school.mp3" },
+{ challengeId: 50, correct: false, text: "Vamos a la escuela en días festivos.", audioSrc: "Basics/audio/spanish/option/es_we_go_to_school_on_holidays.mp3" },
+
+{ challengeId: 51, correct: true, text: "A él le gusta beber té.", audioSrc: "Basics/audio/spanish/option/es_he_likes_to_drink_tea.mp3" },
+{ challengeId: 51, correct: false, text: "A él le gusta beber leche.", audioSrc: "Basics/audio/spanish/option/es_he_likes_to_drink_milk.mp3" },
+{ challengeId: 51, correct: false, text: "A él le gusta beber café.", audioSrc: "Basics/audio/spanish/option/es_he_likes_to_drink_coffee.mp3" },
+
+{ challengeId: 52, correct: true, text: "Los pájaros están volando en el cielo.", audioSrc: "Basics/audio/spanish/option/es_birds_are_flying_in_the_sky.mp3" },
+{ challengeId: 52, correct: false, text: "Los pájaros están sentados en el árbol.", audioSrc: "Basics/audio/spanish/option/es_birds_are_sitting_on_tree.mp3" },
+{ challengeId: 52, correct: false, text: "Los pájaros están caminando en el suelo.", audioSrc: "Basics/audio/spanish/option/es_birds_are_walking_on_ground.mp3" },
+
+{ challengeId: 53, correct: true, text: "Ella está usando un vestido azul.", audioSrc: "Basics/audio/spanish/option/es_she_is_wearing_a_blue_dress.mp3" },
+{ challengeId: 53, correct: false, text: "Ella está usando un vestido rojo.", audioSrc: "Basics/audio/spanish/option/es_she_is_wearing_a_red_dress.mp3" },
+{ challengeId: 53, correct: false, text: "Ella está usando un vestido amarillo.", audioSrc: "Basics/audio/spanish/option/es_she_is_wearing_a_yellow_dress.mp3" },
+
+{ challengeId: 54, correct: true, text: "El autobús llega tarde hoy.", audioSrc: "Basics/audio/spanish/option/es_the_bus_is_late_today.mp3" },
+{ challengeId: 54, correct: false, text: "El autobús llegó a tiempo.", audioSrc: "Basics/audio/spanish/option/es_the_bus_is_on_time.mp3" },
+{ challengeId: 54, correct: false, text: "El autobús no está funcionando hoy.", audioSrc: "Basics/audio/spanish/option/es_the_bus_is_not_running_today.mp3" },
+
+{ challengeId: 55, correct: true, text: "Ellos están viendo una película.", audioSrc: "Basics/audio/spanish/option/es_they_are_watching_a_movie.mp3" },
+{ challengeId: 55, correct: false, text: "Ellos están escuchando música.", audioSrc: "Basics/audio/spanish/option/es_they_are_listening_to_music.mp3" },
+{ challengeId: 55, correct: false, text: "Ellos están bailando.", audioSrc: "Basics/audio/spanish/option/es_they_are_dancing.mp3" },
+
+{ challengeId: 56, correct: true, text: "El maestro está explicando la lección.", audioSrc: "Basics/audio/spanish/option/es_the_teacher_is_explaining_the_lesson.mp3" },
+{ challengeId: 56, correct: false, text: "El maestro está cantando.", audioSrc: "Basics/audio/spanish/option/es_the_teacher_is_singing.mp3" },
+{ challengeId: 56, correct: false, text: "El maestro está escribiendo.", audioSrc: "Basics/audio/spanish/option/es_the_teacher_is_writing.mp3" },
+
+// Lesson 19 Challenge Options
+{ challengeId: 57, correct: true, text: "Si trabajas duro, tendrás éxito.", audioSrc: "Basics/audio/spanish/option/es_if_you_work_hard_you_will_succeed.mp3" },
+{ challengeId: 57, correct: false, text: "Si estudias, serás feliz.", audioSrc: "Basics/audio/spanish/option/es_if_you_study_you_will_be_happy.mp3" },
+{ challengeId: 57, correct: false, text: "Si juegas, ganarás un premio.", audioSrc: "Basics/audio/spanish/option/es_if_you_play_you_will_get_a_prize.mp3" },
+
+{ challengeId: 58, correct: true, text: "Ella fue al mercado a comprar verduras.", audioSrc: "Basics/audio/spanish/option/es_she_went_to_market_to_buy_vegetables.mp3" },
+{ challengeId: 58, correct: false, text: "Ella fue al mercado a comprar libros.", audioSrc: "Basics/audio/spanish/option/es_she_went_to_market_to_buy_books.mp3" },
+{ challengeId: 58, correct: false, text: "Ella fue al mercado a encontrarse con amigos.", audioSrc: "Basics/audio/spanish/option/es_she_went_to_market_to_meet_friends.mp3" },
+
+{ challengeId: 59, correct: true, text: "Aunque llovía, jugaron al fútbol.", audioSrc: "Basics/audio/spanish/option/es_although_it_was_raining_they_played_football.mp3" },
+{ challengeId: 59, correct: false, text: "Aunque llovía, estudiaron.", audioSrc: "Basics/audio/spanish/option/es_although_it_was_raining_they_studied.mp3" },
+{ challengeId: 59, correct: false, text: "Aunque llovía, durmieron.", audioSrc: "Basics/audio/spanish/option/es_although_it_was_raining_they_slept.mp3" },
+
+{ challengeId: 60, correct: true, text: "El maestro les pidió a los estudiantes que entregaran las tareas a tiempo.", audioSrc: "Basics/audio/spanish/option/es_teacher_asked_students_to_submit_assignments_on_time.mp3" },
+{ challengeId: 60, correct: false, text: "El maestro les pidió a los estudiantes que se fueran a casa temprano.", audioSrc: "Basics/audio/spanish/option/es_teacher_asked_students_to_go_home_early.mp3" },
+{ challengeId: 60, correct: false, text: "El maestro les pidió a los estudiantes que se quedaran después de la escuela.", audioSrc: "Basics/audio/spanish/option/es_teacher_asked_students_to_stay_after_school.mp3" },
+
+{ challengeId: 61, correct: true, text: "Él está leyendo el periódico mientras toma té.", audioSrc: "Basics/audio/spanish/option/es_he_is_reading_newspaper_while_drinking_tea.mp3" },
+{ challengeId: 61, correct: false, text: "Él está estudiando mientras bebe leche.", audioSrc: "Basics/audio/spanish/option/es_he_is_studying_while_drinking_milk.mp3" },
+{ challengeId: 61, correct: false, text: "Él está viendo televisión mientras come.", audioSrc: "Basics/audio/spanish/option/es_he_is_watching_tv_while_eating.mp3" },
+
+{ challengeId: 62, correct: true, text: "Estaba cansada, pero aún así continuó trabajando.", audioSrc: "Basics/audio/spanish/option/es_she_was_tired_yet_she_continued_working.mp3" },
+{ challengeId: 62, correct: false, text: "Estaba cansada, así que se durmió.", audioSrc: "Basics/audio/spanish/option/es_she_was_tired_so_she_slept.mp3" },
+{ challengeId: 62, correct: false, text: "Estaba fresca, pero aún así descansó.", audioSrc: "Basics/audio/spanish/option/es_she_was_fresh_yet_she_took_rest.mp3" },
+
+{ challengeId: 63, correct: true, text: "Cuando llegamos, el tren ya se había ido.", audioSrc: "Basics/audio/spanish/option/es_by_the_time_we_reached_the_train_had_already_left.mp3" },
+{ challengeId: 63, correct: false, text: "Cuando llegamos, el tren aún no había llegado.", audioSrc: "Basics/audio/spanish/option/es_by_the_time_we_reached_the_train_had_not_arrived.mp3" },
+{ challengeId: 63, correct: false, text: "Cuando llegamos, el autobús ya se había ido.", audioSrc: "Basics/audio/spanish/option/es_by_the_time_we_reached_the_bus_had_left.mp3" },
+
+{ challengeId: 64, correct: true, text: "Si no estudias, no aprobarás el examen.", audioSrc: "Basics/audio/spanish/option/es_unless_you_study_you_will_not_pass_the_exam.mp3" },
+{ challengeId: 64, correct: false, text: "Si no juegas, no ganarás.", audioSrc: "Basics/audio/spanish/option/es_unless_you_play_you_will_not_win.mp3" },
+{ challengeId: 64, correct: false, text: "Si no comes, no sentirás hambre.", audioSrc: "Basics/audio/spanish/option/es_unless_you_eat_you_will_not_feel_hungry.mp3" },
+
+{ challengeId: 65, correct: true, text: "El doctor le aconsejó que tomara su medicina regularmente.", audioSrc: "Basics/audio/spanish/option/es_doctor_advised_him_to_take_medicine_regularly.mp3" },
+{ challengeId: 65, correct: false, text: "El doctor le aconsejó que caminara.", audioSrc: "Basics/audio/spanish/option/es_doctor_advised_him_to_walk.mp3" },
+{ challengeId: 65, correct: false, text: "El doctor le aconsejó que descansara.", audioSrc: "Basics/audio/spanish/option/es_doctor_advised_him_to_take_rest.mp3" },
+
+{ challengeId: 66, correct: true, text: "El anciano que vivía solo nos contó muchas historias de su pasado.", audioSrc: "Basics/audio/spanish/option/es_the_old_man_who_lived_alone_told_us_many_stories_from_his_past.mp3" },
+{ challengeId: 66, correct: false, text: "El anciano que vivía en el pueblo nos contó nuevas historias.", audioSrc: "Basics/audio/spanish/option/es_the_old_man_who_lived_in_village_told_us_new_stories.mp3" },
+{ challengeId: 66, correct: false, text: "El anciano que era doctor nos habló sobre la salud.", audioSrc: "Basics/audio/spanish/option/es_the_old_man_who_was_a_doctor_told_us_about_health.mp3" },
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+//French
+// Lesson 22 Challenge Options
+{ challengeId: 67, imageSrc: "/man.svg", correct: false, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
+{ challengeId: 67, imageSrc: "/woman.svg", correct: false, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
+{ challengeId: 67, imageSrc: "/man.svg", correct: true, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
+
+{ challengeId: 68, imageSrc: "/man.svg", correct: false, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
+{ challengeId: 68, imageSrc: "/robot.svg", correct: false, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
+{ challengeId: 68, imageSrc: "/woman.svg", correct: true, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
+
+{ challengeId: 69, imageSrc: "/woman.svg", correct: false, text: "la femme", audioSrc: "Basics/audio/french/option/fr_woman.mp3" },
+{ challengeId: 69, imageSrc: "/man.svg", correct: false, text: "l'homme", audioSrc: "Basics/audio/french/option/fr_man.mp3" },
+{ challengeId: 69, imageSrc: "/robot.svg", correct: true, text: "le robot", audioSrc: "Basics/audio/french/option/fr_robot.mp3" },
+
+// Lesson 23 Challenge Options
+{ challengeId: 70, imageSrc: "/bicycle.svg", correct: false, text: "le vélo", audioSrc: "Basics/audio/french/option/fr_bicycle.mp3" },
+{ challengeId: 70, imageSrc: "/car.svg", correct: true, text: "la voiture", audioSrc: "Basics/audio/french/option/fr_car.mp3" },
+{ challengeId: 70, imageSrc: "/house.svg", correct: false, text: "la maison", audioSrc: "Basics/audio/french/option/fr_house.mp3" },
+
+{ challengeId: 71, imageSrc: "/car.svg", correct: false, text: "la voiture", audioSrc: "Basics/audio/french/option/fr_car.mp3" },
+{ challengeId: 71, imageSrc: "/house.svg", correct: true, text: "la maison", audioSrc: "Basics/audio/french/option/fr_house.mp3" },
+{ challengeId: 71, imageSrc: "/bicycle.svg", correct: false, text: "le vélo", audioSrc: "Basics/audio/french/option/fr_bicycle.mp3" },
+
+{ challengeId: 72, imageSrc: "/house.svg", correct: false, text: "la maison", audioSrc: "Basics/audio/french/option/fr_house.mp3" },
+{ challengeId: 72, imageSrc: "/book.svg", correct: true, text: "le livre", audioSrc: "Basics/audio/french/option/fr_book.mp3" },
+{ challengeId: 72, imageSrc: "/car.svg", correct: false, text: "la voiture", audioSrc: "Basics/audio/french/option/fr_car.mp3" },
+
+// Lesson 24 Challenge Options
+{ challengeId: 73, imageSrc: "/dog.svg", correct: false, text: "le chien", audioSrc: "Basics/audio/french/option/fr_dog.mp3" },
+{ challengeId: 73, imageSrc: "/tree.svg", correct: true, text: "l'arbre", audioSrc: "Basics/audio/french/option/fr_tree.mp3" },
+{ challengeId: 73, imageSrc: "/cat.svg", correct: false, text: "le chat", audioSrc: "Basics/audio/french/option/fr_cat.mp3" },
+
+{ challengeId: 74, imageSrc: "/cat.svg", correct: false, text: "le chat", audioSrc: "Basics/audio/french/option/fr_cat.mp3" },
+{ challengeId: 74, imageSrc: "/dog.svg", correct: true, text: "le chien", audioSrc: "Basics/audio/french/option/fr_dog.mp3" },
+{ challengeId: 74, imageSrc: "/tree.svg", correct: false, text: "l'arbre", audioSrc: "Basics/audio/french/option/fr_tree.mp3" },
+
+{ challengeId: 75, imageSrc: "/tree.svg", correct: false, text: "l'arbre", audioSrc: "Basics/audio/french/option/fr_tree.mp3" },
+{ challengeId: 75, imageSrc: "/dog.svg", correct: false, text: "le chien", audioSrc: "Basics/audio/french/option/fr_dog.mp3" },
+{ challengeId: 75, imageSrc: "/cat.svg", correct: true, text: "le chat", audioSrc: "Basics/audio/french/option/fr_cat.mp3" },
+
+// Lesson 25 Challenge Options
+{ challengeId: 76, correct: true, text: "je", audioSrc: "Basics/audio/french/option/fr_I.mp3" },
+{ challengeId: 76, correct: false, text: "tu", audioSrc: "Basics/audio/french/option/fr_you.mp3" },
+{ challengeId: 76, correct: false, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+
+{ challengeId: 77, correct: true, text: "tu", audioSrc: "Basics/audio/french/option/fr_you.mp3" },
+{ challengeId: 77, correct: false, text: "je", audioSrc: "Basics/audio/french/option/fr_I.mp3" },
+{ challengeId: 77, correct: false, text: "elle", audioSrc: "Basics/audio/french/option/fr_she.mp3" },
+
+{ challengeId: 78, correct: true, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+{ challengeId: 78, correct: false, text: "elle", audioSrc: "Basics/audio/french/option/fr_she.mp3" },
+{ challengeId: 78, correct: false, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+
+{ challengeId: 79, correct: true, text: "elle", audioSrc: "Basics/audio/french/option/fr_she.mp3" },
+{ challengeId: 79, correct: false, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+{ challengeId: 79, correct: false, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+
+{ challengeId: 80, correct: true, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+{ challengeId: 80, correct: false, text: "je", audioSrc: "Basics/audio/french/option/fr_I.mp3" },
+{ challengeId: 80, correct: false, text: "elle", audioSrc: "Basics/audio/french/option/fr_she.mp3" },
+
+{ challengeId: 81, correct: true, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+{ challengeId: 81, correct: false, text: "je", audioSrc: "Basics/audio/french/option/fr_I.mp3" },
+{ challengeId: 81, correct: false, text: "tu", audioSrc: "Basics/audio/french/option/fr_you.mp3" },
+
+{ challengeId: 82, correct: true, text: "elle", audioSrc: "Basics/audio/french/option/fr_she.mp3" },
+{ challengeId: 82, correct: false, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+{ challengeId: 82, correct: false, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+
+{ challengeId: 83, correct: true, text: "nous", audioSrc: "Basics/audio/french/option/fr_we.mp3" },
+{ challengeId: 83, correct: false, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+{ challengeId: 83, correct: false, text: "il", audioSrc: "Basics/audio/french/option/fr_he.mp3" },
+
+{ challengeId: 84, correct: true, text: "ils", audioSrc: "Basics/audio/french/option/fr_they.mp3" },
+{ challengeId: 84, correct: false, text: "je", audioSrc: "Basics/audio/french/option/fr_I.mp3" },
+{ challengeId: 84, correct: false, text: "tu", audioSrc: "Basics/audio/french/option/fr_you.mp3" },
+
+ // Lesson 28 Challenge Options
+ { challengeId: 85, imageSrc: "/eat.svg", correct: true, text: "manger", audioSrc: "Basics/audio/french/option/fr_eat.mp3" },
+ { challengeId: 85, imageSrc: "/run.svg", correct: false, text: "courir", audioSrc: "Basics/audio/french/option/fr_run.mp3" },
+ { challengeId: 85, imageSrc: "/write.svg", correct: false, text: "écrire", audioSrc: "Basics/audio/french/option/fr_write.mp3" },
+ 
+ { challengeId: 86, imageSrc: "/run.svg", correct: true, text: "courir", audioSrc: "Basics/audio/french/option/fr_run.mp3" },
+ { challengeId: 86, imageSrc: "/walk.svg", correct: false, text: "marcher", audioSrc: "Basics/audio/french/option/fr_walk.mp3" },
+ { challengeId: 86, imageSrc: "/eat.svg", correct: false, text: "manger", audioSrc: "Basics/audio/french/option/fr_eat.mp3" },
+ 
+ { challengeId: 87, imageSrc: "/write.svg", correct: true, text: "écrire", audioSrc: "Basics/audio/french/option/fr_write.mp3" },
+ { challengeId: 87, imageSrc: "/read.svg", correct: false, text: "lire", audioSrc: "Basics/audio/french/option/fr_read.mp3" },
+ { challengeId: 87, imageSrc: "/speak.svg", correct: false, text: "parler", audioSrc: "Basics/audio/french/option/fr_speak.mp3" },
+ 
+ { challengeId: 88, imageSrc: "/read.svg", correct: true, text: "lire", audioSrc: "Basics/audio/french/option/fr_read.mp3" },
+ { challengeId: 88, imageSrc: "/write.svg", correct: false, text: "écrire", audioSrc: "Basics/audio/french/option/fr_write.mp3" },
+ { challengeId: 88, imageSrc: "/speak.svg", correct: false, text: "parler", audioSrc: "Basics/audio/french/option/fr_speak.mp3" },
+ 
+ { challengeId: 89, imageSrc: "/walk.svg", correct: true, text: "marcher", audioSrc: "Basics/audio/french/option/fr_walk.mp3" },
+ { challengeId: 89, imageSrc: "/run.svg", correct: false, text: "courir", audioSrc: "Basics/audio/french/option/fr_run.mp3" },
+ { challengeId: 89, imageSrc: "/eat.svg", correct: false, text: "manger", audioSrc: "Basics/audio/french/option/fr_eat.mp3" },
+ 
+ { challengeId: 90, imageSrc: "/speak.svg", correct: true, text: "parler", audioSrc: "Basics/audio/french/option/fr_speak.mp3" },
+ { challengeId: 90, imageSrc: "/read.svg", correct: false, text: "lire", audioSrc: "Basics/audio/french/option/fr_read.mp3" },
+ { challengeId: 90, imageSrc: "/write.svg", correct: false, text: "écrire", audioSrc: "Basics/audio/french/option/fr_write.mp3" },
+ 
+ { challengeId: 91, correct: true, text: "lisant", audioSrc: "Basics/audio/french/option/fr_reading.mp3" },
+ { challengeId: 91, correct: false, text: "écrivant", audioSrc: "Basics/audio/french/option/fr_writing.mp3" },
+ { challengeId: 91, correct: false, text: "parlant", audioSrc: "Basics/audio/french/option/fr_speaking.mp3" },
+ 
+ { challengeId: 92, correct: true, text: "marchant", audioSrc: "Basics/audio/french/option/fr_walking.mp3" },
+ { challengeId: 92, correct: false, text: "courant", audioSrc: "Basics/audio/french/option/fr_running.mp3" },
+ { challengeId: 92, correct: false, text: "sautant", audioSrc: "Basics/audio/french/option/fr_jumping.mp3" },
+ 
+ { challengeId: 93, correct: true, text: "écrivant", audioSrc: "Basics/audio/french/option/fr_writing.mp3" },
+ { challengeId: 93, correct: false, text: "lisant", audioSrc: "Basics/audio/french/option/fr_reading.mp3" },
+ { challengeId: 93, correct: false, text: "parlant", audioSrc: "Basics/audio/french/option/fr_speaking.mp3" },
+ 
+// Lesson 31 Challenge Options
+{ challengeId: 94, correct: true, text: "grand", audioSrc: "Basics/audio/french/option/fr_big.mp3" },
+{ challengeId: 94, correct: false, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+{ challengeId: 94, correct: false, text: "rapide", audioSrc: "Basics/audio/french/option/fr_fast.mp3" },
+
+{ challengeId: 95, correct: true, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+{ challengeId: 95, correct: false, text: "grand", audioSrc: "Basics/audio/french/option/fr_big.mp3" },
+{ challengeId: 95, correct: false, text: "lent", audioSrc: "Basics/audio/french/option/fr_slow.mp3" },
+
+{ challengeId: 96, correct: true, text: "rapide", audioSrc: "Basics/audio/french/option/fr_fast.mp3" },
+{ challengeId: 96, correct: false, text: "lent", audioSrc: "Basics/audio/french/option/fr_slow.mp3" },
+{ challengeId: 96, correct: false, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+
+{ challengeId: 97, correct: true, text: "lent", audioSrc: "Basics/audio/french/option/fr_slow.mp3" },
+{ challengeId: 97, correct: false, text: "rapide", audioSrc: "Basics/audio/french/option/fr_fast.mp3" },
+{ challengeId: 97, correct: false, text: "grand", audioSrc: "Basics/audio/french/option/fr_big.mp3" },
+
+{ challengeId: 98, correct: true, text: "beau", audioSrc: "Basics/audio/french/option/fr_beautiful.mp3" },
+{ challengeId: 98, correct: false, text: "fort", audioSrc: "Basics/audio/french/option/fr_strong.mp3" },
+{ challengeId: 98, correct: false, text: "rapide", audioSrc: "Basics/audio/french/option/fr_fast.mp3" },
+
+{ challengeId: 99, correct: true, text: "fort", audioSrc: "Basics/audio/french/option/fr_strong.mp3" },
+{ challengeId: 99, correct: false, text: "beau", audioSrc: "Basics/audio/french/option/fr_beautiful.mp3" },
+{ challengeId: 99, correct: false, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+
+{ challengeId: 100, correct: true, text: "grande", audioSrc: "Basics/audio/french/option/fr_big.mp3" },
+{ challengeId: 100, correct: false, text: "petite", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+{ challengeId: 100, correct: false, text: "belle", audioSrc: "Basics/audio/french/option/fr_beautiful.mp3" },
+
+{ challengeId: 101, correct: true, text: "belle", audioSrc: "Basics/audio/french/option/fr_beautiful.mp3" },
+{ challengeId: 101, correct: false, text: "fort", audioSrc: "Basics/audio/french/option/fr_strong.mp3" },
+{ challengeId: 101, correct: false, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+
+{ challengeId: 102, correct: true, text: "fort", audioSrc: "Basics/audio/french/option/fr_strong.mp3" },
+{ challengeId: 102, correct: false, text: "beau", audioSrc: "Basics/audio/french/option/fr_beautiful.mp3" },
+{ challengeId: 102, correct: false, text: "petit", audioSrc: "Basics/audio/french/option/fr_small.mp3" },
+
+// Lesson 34 Challenge Options
+{ challengeId: 103, correct: true, text: "C'est un chat.", audioSrc: "Basics/audio/french/option/fr_this_is_a_cat.mp3" },
+{ challengeId: 103, correct: false, text: "C'est un chien.", audioSrc: "Basics/audio/french/option/fr_this_is_a_dog.mp3" },
+{ challengeId: 103, correct: false, text: "C'est un livre.", audioSrc: "Basics/audio/french/option/fr_this_is_a_book.mp3" },
+
+{ challengeId: 104, correct: true, text: "Le soleil est brillant.", audioSrc: "Basics/audio/french/option/fr_sun_is_bright.mp3" },
+{ challengeId: 104, correct: false, text: "Le ciel est bleu.", audioSrc: "Basics/audio/french/option/fr_sky_is_blue.mp3" },
+{ challengeId: 104, correct: false, text: "La lune est grande.", audioSrc: "Basics/audio/french/option/fr_moon_is_big.mp3" },
+
+{ challengeId: 105, correct: true, text: "J'ai un livre.", audioSrc: "Basics/audio/french/option/fr_i_have_a_book.mp3" },
+{ challengeId: 105, correct: false, text: "J'ai un vélo.", audioSrc: "Basics/audio/french/option/fr_i_have_a_bicycle.mp3" },
+{ challengeId: 105, correct: false, text: "J'ai une montre.", audioSrc: "Basics/audio/french/option/fr_i_have_a_watch.mp3" },
+
+{ challengeId: 106, correct: true, text: "Elle est ma sœur.", audioSrc: "Basics/audio/french/option/fr_she_is_my_sister.mp3" },
+{ challengeId: 106, correct: false, text: "Il est mon frère.", audioSrc: "Basics/audio/french/option/fr_he_is_my_brother.mp3" },
+{ challengeId: 106, correct: false, text: "Elle est ma mère.", audioSrc: "Basics/audio/french/option/fr_she_is_my_mother.mp3" },
+
+{ challengeId: 107, correct: true, text: "Nous sommes amis.", audioSrc: "Basics/audio/french/option/fr_we_are_friends.mp3" },
+{ challengeId: 107, correct: false, text: "Nous sommes ennemis.", audioSrc: "Basics/audio/french/option/fr_we_are_enemies.mp3" },
+{ challengeId: 107, correct: false, text: "Nous sommes étudiants.", audioSrc: "Basics/audio/french/option/fr_we_are_students.mp3" },
+
+{ challengeId: 108, correct: true, text: "Le chien court.", audioSrc: "Basics/audio/french/option/fr_dog_is_running.mp3" },
+{ challengeId: 108, correct: false, text: "Le chien dort.", audioSrc: "Basics/audio/french/option/fr_dog_is_sleeping.mp3" },
+{ challengeId: 108, correct: false, text: "Le chien aboie.", audioSrc: "Basics/audio/french/option/fr_dog_is_barking.mp3" },
+
+{ challengeId: 109, correct: true, text: "Il est professeur.", audioSrc: "Basics/audio/french/option/fr_he_is_a_teacher.mp3" },
+{ challengeId: 109, correct: false, text: "Il est docteur.", audioSrc: "Basics/audio/french/option/fr_he_is_a_doctor.mp3" },
+{ challengeId: 109, correct: false, text: "Il est policier.", audioSrc: "Basics/audio/french/option/fr_he_is_a_policeman.mp3" },
+
+{ challengeId: 110, correct: true, text: "La pomme est rouge.", audioSrc: "Basics/audio/french/option/fr_apple_is_red.mp3" },
+{ challengeId: 110, correct: false, text: "La pomme est jaune.", audioSrc: "Basics/audio/french/option/fr_apple_is_yellow.mp3" },
+{ challengeId: 110, correct: false, text: "La pomme est verte.", audioSrc: "Basics/audio/french/option/fr_apple_is_green.mp3" },
+
+{ challengeId: 111, correct: true, text: "J'aime les mangues.", audioSrc: "Basics/audio/french/option/fr_i_like_mangoes.mp3" },
+{ challengeId: 111, correct: false, text: "J'aime les pommes.", audioSrc: "Basics/audio/french/option/fr_i_like_apples.mp3" },
+{ challengeId: 111, correct: false, text: "J'aime les raisins.", audioSrc: "Basics/audio/french/option/fr_i_like_grapes.mp3" },
+
+{ challengeId: 112, correct: true, text: "Elle est heureuse.", audioSrc: "Basics/audio/french/option/fr_she_is_happy.mp3" },
+{ challengeId: 112, correct: false, text: "Elle est triste.", audioSrc: "Basics/audio/french/option/fr_she_is_sad.mp3" },
+{ challengeId: 112, correct: false, text: "Elle est en colère.", audioSrc: "Basics/audio/french/option/fr_she_is_angry.mp3" },
+
+
+// Intermediate Sentences
+// Lesson 37 Challenge Options
+{ challengeId: 113, correct: true, text: "Je lis un livre en français.", audioSrc: "Basics/audio/french/option/fr_i_am_reading_a_french_book.mp3" },
+{ challengeId: 113, correct: false, text: "Je lis un livre en anglais.", audioSrc: "Basics/audio/french/option/fr_i_am_reading_an_english_book.mp3" },
+{ challengeId: 113, correct: false, text: "Je lis un livre en espagnol.", audioSrc: "Basics/audio/french/option/fr_i_am_reading_a_spanish_book.mp3" },
+
+{ challengeId: 114, correct: true, text: "Elle cuisine.", audioSrc: "Basics/audio/french/option/fr_she_is_cooking.mp3" },
+{ challengeId: 114, correct: false, text: "Elle joue.", audioSrc: "Basics/audio/french/option/fr_she_is_playing.mp3" },
+{ challengeId: 114, correct: false, text: "Elle chante.", audioSrc: "Basics/audio/french/option/fr_she_is_singing.mp3" },
+
+{ challengeId: 115, correct: true, text: "Les enfants jouent dehors.", audioSrc: "Basics/audio/french/option/fr_children_are_playing_outside.mp3" },
+{ challengeId: 115, correct: false, text: "Les enfants étudient.", audioSrc: "Basics/audio/french/option/fr_children_are_studying.mp3" },
+{ challengeId: 115, correct: false, text: "Les enfants dorment.", audioSrc: "Basics/audio/french/option/fr_children_are_sleeping.mp3" },
+
+{ challengeId: 116, correct: true, text: "Nous allons à l'école tous les jours.", audioSrc: "Basics/audio/french/option/fr_we_go_to_school_every_day.mp3" },
+{ challengeId: 116, correct: false, text: "Nous ne allons jamais à l'école.", audioSrc: "Basics/audio/french/option/fr_we_never_go_to_school.mp3" },
+{ challengeId: 116, correct: false, text: "Nous allons à l'école pendant les vacances.", audioSrc: "Basics/audio/french/option/fr_we_go_to_school_on_holidays.mp3" },
+
+{ challengeId: 117, correct: true, text: "Il aime boire du thé.", audioSrc: "Basics/audio/french/option/fr_he_likes_to_drink_tea.mp3" },
+{ challengeId: 117, correct: false, text: "Il aime boire du lait.", audioSrc: "Basics/audio/french/option/fr_he_likes_to_drink_milk.mp3" },
+{ challengeId: 117, correct: false, text: "Il aime boire du café.", audioSrc: "Basics/audio/french/option/fr_he_likes_to_drink_coffee.mp3" },
+
+{ challengeId: 118, correct: true, text: "Les oiseaux volent dans le ciel.", audioSrc: "Basics/audio/french/option/fr_birds_are_flying_in_the_sky.mp3" },
+{ challengeId: 118, correct: false, text: "Les oiseaux sont assis sur l'arbre.", audioSrc: "Basics/audio/french/option/fr_birds_are_sitting_on_tree.mp3" },
+{ challengeId: 118, correct: false, text: "Les oiseaux marchent sur le sol.", audioSrc: "Basics/audio/french/option/fr_birds_are_walking_on_ground.mp3" },
+
+{ challengeId: 119, correct: true, text: "Elle porte une robe bleue.", audioSrc: "Basics/audio/french/option/fr_she_is_wearing_a_blue_dress.mp3" },
+{ challengeId: 119, correct: false, text: "Elle porte une robe rouge.", audioSrc: "Basics/audio/french/option/fr_she_is_wearing_a_red_dress.mp3" },
+{ challengeId: 119, correct: false, text: "Elle porte une robe jaune.", audioSrc: "Basics/audio/french/option/fr_she_is_wearing_a_yellow_dress.mp3" },
+
+{ challengeId: 120, correct: true, text: "Le bus est en retard aujourd'hui.", audioSrc: "Basics/audio/french/option/fr_the_bus_is_late_today.mp3" },
+{ challengeId: 120, correct: false, text: "Le bus est à l'heure.", audioSrc: "Basics/audio/french/option/fr_the_bus_is_on_time.mp3" },
+{ challengeId: 120, correct: false, text: "Le bus ne fonctionne pas aujourd'hui.", audioSrc: "Basics/audio/french/option/fr_the_bus_is_not_running_today.mp3" },
+
+{ challengeId: 121, correct: true, text: "Ils regardent un film.", audioSrc: "Basics/audio/french/option/fr_they_are_watching_a_movie.mp3" },
+{ challengeId: 121, correct: false, text: "Ils écoutent de la musique.", audioSrc: "Basics/audio/french/option/fr_they_are_listening_to_music.mp3" },
+{ challengeId: 121, correct: false, text: "Ils dansent.", audioSrc: "Basics/audio/french/option/fr_they_are_dancing.mp3" },
+
+{ challengeId: 122, correct: true, text: "Le professeur explique la leçon.", audioSrc: "Basics/audio/french/option/fr_the_teacher_is_explaining_the_lesson.mp3" },
+{ challengeId: 122, correct: false, text: "Le professeur chante.", audioSrc: "Basics/audio/french/option/fr_the_teacher_is_singing.mp3" },
+{ challengeId: 122, correct: false, text: "Le professeur écrit.", audioSrc: "Basics/audio/french/option/fr_the_teacher_is_writing.mp3" },
+
+// Lesson 40 Challenge Options
+{ challengeId: 123, correct: true, text: "Si vous travaillez dur, vous réussirez.", audioSrc: "Basics/audio/french/option/fr_if_you_work_hard_you_will_succeed.mp3" },
+  { challengeId: 123, correct: false, text: "Si vous étudiez, vous serez heureux.", audioSrc: "Basics/audio/french/option/fr_if_you_study_you_will_be_happy.mp3" },
+  { challengeId: 123, correct: false, text: "Si vous jouez, vous recevrez un prix.", audioSrc: "Basics/audio/french/option/fr_if_you_play_you_will_get_a_prize.mp3" },
+
+  { challengeId: 124, correct: true, text: "Elle est allée au marché pour acheter des légumes.", audioSrc: "Basics/audio/french/option/fr_she_went_to_market_to_buy_vegetables.mp3" },
+  { challengeId: 124, correct: false, text: "Elle est allée au marché pour acheter des livres.", audioSrc: "Basics/audio/french/option/fr_she_went_to_market_to_buy_books.mp3" },
+  { challengeId: 124, correct: false, text: "Elle est allée au marché pour rencontrer des amis.", audioSrc: "Basics/audio/french/option/fr_she_went_to_market_to_meet_friends.mp3" },
+
+  { challengeId: 125, correct: true, text: "Bien qu'il pleuve, ils ont joué au football.", audioSrc: "Basics/audio/french/option/fr_although_it_was_raining_they_played_football.mp3" },
+  { challengeId: 125, correct: false, text: "Bien qu'il pleuve, ils ont étudié.", audioSrc: "Basics/audio/french/option/fr_although_it_was_raining_they_studied.mp3" },
+  { challengeId: 125, correct: false, text: "Bien qu'il pleuve, ils ont dormi.", audioSrc: "Basics/audio/french/option/fr_although_it_was_raining_they_slept.mp3" },
+
+  { challengeId: 126, correct: true, text: "Le professeur a demandé aux élèves de rendre leurs devoirs à temps.", audioSrc: "Basics/audio/french/option/fr_teacher_asked_students_to_submit_assignments_on_time.mp3" },
+  { challengeId: 126, correct: false, text: "Le professeur a demandé aux élèves de rentrer chez eux tôt.", audioSrc: "Basics/audio/french/option/fr_teacher_asked_students_to_go_home_early.mp3" },
+  { challengeId: 126, correct: false, text: "Le professeur a demandé aux élèves de rester après l'école.", audioSrc: "Basics/audio/french/option/fr_teacher_asked_students_to_stay_after_school.mp3" },
+
+  { challengeId: 127, correct: true, text: "Il lit le journal en buvant du thé.", audioSrc: "Basics/audio/french/option/fr_he_is_reading_newspaper_while_drinking_tea.mp3" },
+  { challengeId: 127, correct: false, text: "Il étudie en buvant du lait.", audioSrc: "Basics/audio/french/option/fr_he_is_studying_while_drinking_milk.mp3" },
+  { challengeId: 127, correct: false, text: "Il regarde la télévision en mangeant.", audioSrc: "Basics/audio/french/option/fr_he_is_watching_tv_while_eating.mp3" },
+
+  { challengeId: 128, correct: true, text: "Elle était fatiguée, pourtant elle a continué à travailler.", audioSrc: "Basics/audio/french/option/fr_she_was_tired_yet_she_continued_working.mp3" },
+  { challengeId: 128, correct: false, text: "Elle était fatiguée, alors elle s'est endormie.", audioSrc: "Basics/audio/french/option/fr_she_was_tired_so_she_slept.mp3" },
+  { challengeId: 128, correct: false, text: "Elle était en forme, pourtant elle s'est reposée.", audioSrc: "Basics/audio/french/option/fr_she_was_fresh_yet_she_took_rest.mp3" },
+
+  { challengeId: 129, correct: true, text: "Quand nous sommes arrivés, le train était déjà parti.", audioSrc: "Basics/audio/french/option/fr_by_the_time_we_reached_the_train_had_already_left.mp3" },
+  { challengeId: 129, correct: false, text: "Quand nous sommes arrivés, le train n'était pas encore là.", audioSrc: "Basics/audio/french/option/fr_by_the_time_we_reached_the_train_had_not_arrived.mp3" },
+  { challengeId: 129, correct: false, text: "Quand nous sommes arrivés, le bus était déjà parti.", audioSrc: "Basics/audio/french/option/fr_by_the_time_we_reached_the_bus_had_left.mp3" },
+
+  { challengeId: 130, correct: true, text: "À moins que vous n'étudiiez, vous ne réussirez pas l'examen.", audioSrc: "Basics/audio/french/option/fr_unless_you_study_you_will_not_pass_the_exam.mp3" },
+  { challengeId: 130, correct: false, text: "À moins que vous ne jouiez, vous ne gagnerez pas.", audioSrc: "Basics/audio/french/option/fr_unless_you_play_you_will_not_win.mp3" },
+  { challengeId: 130, correct: false, text: "À moins que vous ne mangiez, vous n'aurez pas faim.", audioSrc: "Basics/audio/french/option/fr_unless_you_eat_you_will_not_feel_hungry.mp3" },
+
+  { challengeId: 131, correct: true, text: "Le médecin lui a conseillé de prendre ses médicaments régulièrement.", audioSrc: "Basics/audio/french/option/fr_doctor_advised_him_to_take_medicine_regularly.mp3" },
+  { challengeId: 131, correct: false, text: "Le médecin lui a conseillé de marcher.", audioSrc: "Basics/audio/french/option/fr_doctor_advised_him_to_walk.mp3" },
+  { challengeId: 131, correct: false, text: "Le médecin lui a conseillé de se reposer.", audioSrc: "Basics/audio/french/option/fr_doctor_advised_him_to_take_rest.mp3" },
+
+  { challengeId: 132, correct: true, text: "Le vieil homme qui vivait seul nous a raconté de nombreuses histoires de son passé.", audioSrc: "Basics/audio/french/option/fr_the_old_man_who_lived_alone_told_us_many_stories_from_his_past.mp3" },
+  { challengeId: 132, correct: false, text: "Le vieil homme qui vivait au village nous a raconté de nouvelles histoires.", audioSrc: "Basics/audio/french/option/fr_the_old_man_who_lived_in_village_told_us_new_stories.mp3" },
+  { challengeId: 132, correct: false, text: "Le vieil homme qui était médecin nous a parlé de la santé.", audioSrc: "Basics/audio/french/option/fr_the_old_man_who_was_a_doctor_told_us_about_health.mp3" },
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+//Japanese
+// Lesson 43 Challenge Options
+{ challengeId: 133, imageSrc: "/man.svg", correct: true, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
+{ challengeId: 133, imageSrc: "/robot.svg", correct: false, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
+{ challengeId: 133, imageSrc: "/woman.svg", correct: false, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
+
+{ challengeId: 134, imageSrc: "/woman.svg", correct: true, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
+{ challengeId: 134, imageSrc: "/man.svg", correct: false, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
+{ challengeId: 134, imageSrc: "/robot.svg", correct: false, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
+
+{ challengeId: 135, imageSrc: "/robot.svg", correct: true, text: "ロボット", audioSrc: "Basics/audio/japanese/option/jp_robot.mp3" },
+{ challengeId: 135, imageSrc: "/man.svg", correct: false, text: "男の人", audioSrc: "Basics/audio/japanese/option/jp_man.mp3" },
+{ challengeId: 135, imageSrc: "/woman.svg", correct: false, text: "女の人", audioSrc: "Basics/audio/japanese/option/jp_woman.mp3" },
+
+// Lesson 44 Challenge Options
+{ challengeId: 136, imageSrc: "/car.svg", correct: true, text: "車", audioSrc: "Basics/audio/japanese/option/jp_car.mp3" },
+{ challengeId: 136, imageSrc: "/house.svg", correct: false, text: "家", audioSrc: "Basics/audio/japanese/option/jp_house.mp3" },
+{ challengeId: 136, imageSrc: "/book.svg", correct: false, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
+
+{ challengeId: 137, imageSrc: "/house.svg", correct: true, text: "家", audioSrc: "Basics/audio/japanese/option/jp_house.mp3" },
+{ challengeId: 137, imageSrc: "/car.svg", correct: false, text: "車", audioSrc: "Basics/audio/japanese/option/jp_car.mp3" },
+{ challengeId: 137, imageSrc: "/book.svg", correct: false, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
+
+{ challengeId: 138, imageSrc: "/book.svg", correct: true, text: "本", audioSrc: "Basics/audio/japanese/option/jp_book.mp3" },
+{ challengeId: 138, imageSrc: "/car.svg", correct: false, text: "車", audioSrc: "Basics/audio/japanese/option/jp_car.mp3" },
+{ challengeId: 138, imageSrc: "/house.svg", correct: false, text: "家", audioSrc: "Basics/audio/japanese/option/jp_house.mp3" },
+
+// Lesson 45 Challenge Options
+{ challengeId: 139, imageSrc: "/tree.svg", correct: true, text: "木", audioSrc: "Basics/audio/japanese/option/jp_tree.mp3" },
+{ challengeId: 139, imageSrc: "/dog.svg", correct: false, text: "犬", audioSrc: "Basics/audio/japanese/option/jp_dog.mp3" },
+{ challengeId: 139, imageSrc: "/cat.svg", correct: false, text: "猫", audioSrc: "Basics/audio/japanese/option/jp_cat.mp3" },
+
+{ challengeId: 140, imageSrc: "/dog.svg", correct: true, text: "犬", audioSrc: "Basics/audio/japanese/option/jp_dog.mp3" },
+{ challengeId: 140, imageSrc: "/tree.svg", correct: false, text: "木", audioSrc: "Basics/audio/japanese/option/jp_tree.mp3" },
+{ challengeId: 140, imageSrc: "/cat.svg", correct: false, text: "猫", audioSrc: "Basics/audio/japanese/option/jp_cat.mp3" },
+
+{ challengeId: 141, imageSrc: "/cat.svg", correct: true, text: "猫", audioSrc: "Basics/audio/japanese/option/jp_cat.mp3" },
+{ challengeId: 141, imageSrc: "/dog.svg", correct: false, text: "犬", audioSrc: "Basics/audio/japanese/option/jp_dog.mp3" },
+{ challengeId: 141, imageSrc: "/tree.svg", correct: false, text: "木", audioSrc: "Basics/audio/japanese/option/jp_tree.mp3" },
+
+// Lesson 46 Challenge Options
+{ challengeId: 142, correct: true, text: "私", audioSrc: "Basics/audio/japanese/option/jp_I.mp3" },
+{ challengeId: 142, correct: false, text: "あなた", audioSrc: "Basics/audio/japanese/option/jp_you.mp3" },
+{ challengeId: 142, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+
+{ challengeId: 143, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+{ challengeId: 143, correct: true, text: "あなた", audioSrc: "Basics/audio/japanese/option/jp_you.mp3" },
+{ challengeId: 143, correct: false, text: "彼女", audioSrc: "Basics/audio/japanese/option/jp_she.mp3" },
+
+{ challengeId: 144, correct: false, text: "私", audioSrc: "Basics/audio/japanese/option/jp_I.mp3" },
+{ challengeId: 144, correct: false, text: "あなた", audioSrc: "Basics/audio/japanese/option/jp_you.mp3" },
+{ challengeId: 144, correct: true, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+
+// Lesson 47 Challenge Options
+{ challengeId: 145, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+{ challengeId: 145, correct: true, text: "彼女", audioSrc: "Basics/audio/japanese/option/jp_she.mp3" },
+{ challengeId: 145, correct: false, text: "彼ら", audioSrc: "Basics/audio/japanese/option/jp_they.mp3" },
+
+{ challengeId: 146, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+{ challengeId: 146, correct: false, text: "彼女", audioSrc: "Basics/audio/japanese/option/jp_she.mp3" },
+{ challengeId: 146, correct: true, text: "彼ら", audioSrc: "Basics/audio/japanese/option/jp_they.mp3" },
+
+{ challengeId: 147, correct: true, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+{ challengeId: 147, correct: false, text: "私", audioSrc: "Basics/audio/japanese/option/jp_I.mp3" },
+{ challengeId: 147, correct: false, text: "彼ら", audioSrc: "Basics/audio/japanese/option/jp_they.mp3" },
+
+// Lesson 48 Challenge Options
+{ challengeId: 148, correct: true, text: "彼女", audioSrc: "Basics/audio/japanese/option/jp_she.mp3" },
+{ challengeId: 148, correct: false, text: "私", audioSrc: "Basics/audio/japanese/option/jp_I.mp3" },
+{ challengeId: 148, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+
+{ challengeId: 149, correct: true, text: "私たち", audioSrc: "Basics/audio/japanese/option/jp_we.mp3" },
+{ challengeId: 149, correct: false, text: "彼ら", audioSrc: "Basics/audio/japanese/option/jp_they.mp3" },
+{ challengeId: 149, correct: false, text: "彼", audioSrc: "Basics/audio/japanese/option/jp_he.mp3" },
+
+{ challengeId: 150, correct: true, text: "彼ら", audioSrc: "Basics/audio/japanese/option/jp_they.mp3" },
+{ challengeId: 150, correct: false, text: "私たち", audioSrc: "Basics/audio/japanese/option/jp_we.mp3" },
+{ challengeId: 150, correct: false, text: "彼女", audioSrc: "Basics/audio/japanese/option/jp_she.mp3" },
+
+// Lesson 49 Challenge Options
+{ challengeId: 151, imageSrc: "/eat.svg", correct: true, text: "食べる", audioSrc: "Basics/audio/japanese/option/jp_eat.mp3" },
+{ challengeId: 151, imageSrc: "/run.svg", correct: false, text: "走る", audioSrc: "Basics/audio/japanese/option/jp_run.mp3" },
+{ challengeId: 151, imageSrc: "/write.svg", correct: false, text: "書く", audioSrc: "Basics/audio/japanese/option/jp_write.mp3" },
+
+{ challengeId: 152, imageSrc: "/run.svg", correct: true, text: "走る", audioSrc: "Basics/audio/japanese/option/jp_run.mp3" },
+{ challengeId: 152, imageSrc: "/eat.svg", correct: false, text: "食べる", audioSrc: "Basics/audio/japanese/option/jp_eat.mp3" },
+{ challengeId: 152, imageSrc: "/read.svg", correct: false, text: "読む", audioSrc: "Basics/audio/japanese/option/jp_read.mp3" },
+
+{ challengeId: 153, imageSrc: "/write.svg", correct: true, text: "書く", audioSrc: "Basics/audio/japanese/option/jp_write.mp3" },
+{ challengeId: 153, imageSrc: "/run.svg", correct: false, text: "走る", audioSrc: "Basics/audio/japanese/option/jp_run.mp3" },
+{ challengeId: 153, imageSrc: "/speak.svg", correct: false, text: "話す", audioSrc: "Basics/audio/japanese/option/jp_speak.mp3" },
+
+// Lesson 50 Challenge Options
+{ challengeId: 154, imageSrc: "/read.svg", correct: true, text: "読む", audioSrc: "Basics/audio/japanese/option/jp_read.mp3" },
+{ challengeId: 154, imageSrc: "/walk.svg", correct: false, text: "歩く", audioSrc: "Basics/audio/japanese/option/jp_walk.mp3" },
+{ challengeId: 154, imageSrc: "/write.svg", correct: false, text: "書く", audioSrc: "Basics/audio/japanese/option/jp_write.mp3" },
+
+{ challengeId: 155, imageSrc: "/walk.svg", correct: true, text: "歩く", audioSrc: "Basics/audio/japanese/option/jp_walk.mp3" },
+{ challengeId: 155, imageSrc: "/read.svg", correct: false, text: "読む", audioSrc: "Basics/audio/japanese/option/jp_read.mp3" },
+{ challengeId: 155, imageSrc: "/drive.svg", correct: false, text: "運転する", audioSrc: "Basics/audio/japanese/option/jp_drive.mp3" },
+
+{ challengeId: 156, imageSrc: "/speak.svg", correct: true, text: "話す", audioSrc: "Basics/audio/japanese/option/jp_speak.mp3" },
+{ challengeId: 156, imageSrc: "/write.svg", correct: false, text: "書く", audioSrc: "Basics/audio/japanese/option/jp_write.mp3" },
+{ challengeId: 156, imageSrc: "/read.svg", correct: false, text: "読む", audioSrc: "Basics/audio/japanese/option/jp_read.mp3" },
+
+// Lesson 51 Challenge Options
+{ challengeId: 157, correct: true, text: "読んでいます", audioSrc: "Basics/audio/japanese/option/jp_reading.mp3" },
+{ challengeId: 157, correct: false, text: "書いています", audioSrc: "Basics/audio/japanese/option/jp_writing.mp3" },
+{ challengeId: 157, correct: false, text: "食べています", audioSrc: "Basics/audio/japanese/option/jp_eating.mp3" },
+
+{ challengeId: 158, correct: true, text: "運転しています", audioSrc: "Basics/audio/japanese/option/jp_driving.mp3" },
+{ challengeId: 158, correct: false, text: "歩いています", audioSrc: "Basics/audio/japanese/option/jp_walking.mp3" },
+{ challengeId: 158, correct: false, text: "話しています", audioSrc: "Basics/audio/japanese/option/jp_speaking.mp3" },
+
+{ challengeId: 159, correct: true, text: "書いています", audioSrc: "Basics/audio/japanese/option/jp_writing.mp3" },
+{ challengeId: 159, correct: false, text: "読んでいます", audioSrc: "Basics/audio/japanese/option/jp_reading.mp3" },
+{ challengeId: 159, correct: false, text: "食べています", audioSrc: "Basics/audio/japanese/option/jp_eating.mp3" },
+
+// Lesson 52 Challenge Options
+{ challengeId: 160,  correct: true, text: "大きい", audioSrc: "Basics/audio/japanese/option/jp_big.mp3" },
+{ challengeId: 160,  correct: false, text: "小さい", audioSrc: "Basics/audio/japanese/option/jp_small.mp3" },
+{ challengeId: 160,  correct: false, text: "速い", audioSrc: "Basics/audio/japanese/option/jp_fast.mp3" },
+
+{ challengeId: 161, correct: true, text: "小さい", audioSrc: "Basics/audio/japanese/option/jp_small.mp3" },
+{ challengeId: 161, correct: false, text: "大きい", audioSrc: "Basics/audio/japanese/option/jp_big.mp3" },
+{ challengeId: 161, correct: false, text: "美しい", audioSrc: "Basics/audio/japanese/option/jp_beautiful.mp3" },
+
+{ challengeId: 162, correct: true, text: "速い", audioSrc: "Basics/audio/japanese/option/jp_fast.mp3" },
+{ challengeId: 162, correct: false, text: "遅い", audioSrc: "Basics/audio/japanese/option/jp_slow.mp3" },
+{ challengeId: 162, correct: false, text: "強い", audioSrc: "Basics/audio/japanese/option/jp_strong.mp3" },
+
+// Lesson 53 Challenge Options
+{ challengeId: 163, correct: true, text: "遅い", audioSrc: "Basics/audio/japanese/option/jp_slow.mp3" },
+{ challengeId: 163, correct: false, text: "速い", audioSrc: "Basics/audio/japanese/option/jp_fast.mp3" },
+{ challengeId: 163, correct: false, text: "大きい", audioSrc: "Basics/audio/japanese/option/jp_big.mp3" },
+
+{ challengeId: 164, correct: true, text: "美しい", audioSrc: "Basics/audio/japanese/option/jp_beautiful.mp3" },
+{ challengeId: 164, correct: false, text: "小さい", audioSrc: "Basics/audio/japanese/option/jp_small.mp3" },
+{ challengeId: 164, correct: false, text: "強い", audioSrc: "Basics/audio/japanese/option/jp_strong.mp3" },
+
+{ challengeId: 165, correct: true, text: "強い", audioSrc: "Basics/audio/japanese/option/jp_strong.mp3" },
+{ challengeId: 165, correct: false, text: "遅い", audioSrc: "Basics/audio/japanese/option/jp_slow.mp3" },
+{ challengeId: 165, correct: false, text: "大きい", audioSrc: "Basics/audio/japanese/option/jp_big.mp3" },
+
+// Lesson 54 Challenge Options
+{ challengeId: 166, correct: true, text: "大きいです", audioSrc: "Basics/audio/japanese/option/jp_big_sentence.mp3" },
+{ challengeId: 166, correct: false, text: "小さいです", audioSrc: "Basics/audio/japanese/option/jp_small_sentence.mp3" },
+{ challengeId: 166, correct: false, text: "速いです", audioSrc: "Basics/audio/japanese/option/jp_fast_sentence.mp3" },
+
+{ challengeId: 167, correct: true, text: "美しいです", audioSrc: "Basics/audio/japanese/option/jp_beautiful_sentence.mp3" },
+{ challengeId: 167, correct: false, text: "遅いです", audioSrc: "Basics/audio/japanese/option/jp_slow_sentence.mp3" },
+{ challengeId: 167, correct: false, text: "強いです", audioSrc: "Basics/audio/japanese/option/jp_strong_sentence.mp3" },
+
+{ challengeId: 168, correct: true, text: "強いです", audioSrc: "Basics/audio/japanese/option/jp_strong_sentence.mp3" },
+{ challengeId: 168, correct: false, text: "美しいです", audioSrc: "Basics/audio/japanese/option/jp_beautiful_sentence.mp3" },
+{ challengeId: 168, correct: false, text: "大きいです", audioSrc: "Basics/audio/japanese/option/jp_big_sentence.mp3" },
+
+// Lesson 55 Challenge Options
+{ challengeId: 169, correct: true, text: "これは猫です。", audioSrc: "Basics/audio/japanese/option/jp_this_is_a_cat.mp3" },
+{ challengeId: 169, correct: false, text: "それは犬です。", audioSrc: "Basics/audio/japanese/option/jp_that_is_a_dog.mp3" },
+{ challengeId: 169, correct: false, text: "これは本です。", audioSrc: "Basics/audio/japanese/option/jp_this_is_a_book.mp3" },
+
+{ challengeId: 170, correct: true, text: "太陽は明るいです。", audioSrc: "Basics/audio/japanese/option/jp_sun_is_bright.mp3" },
+{ challengeId: 170, correct: false, text: "月は暗いです。", audioSrc: "Basics/audio/japanese/option/jp_moon_is_dark.mp3" },
+{ challengeId: 170, correct: false, text: "星は輝いています。", audioSrc: "Basics/audio/japanese/option/jp_stars_are_shining.mp3" },
+
+{ challengeId: 171, correct: true, text: "私は本を持っています。", audioSrc: "Basics/audio/japanese/option/jp_i_have_a_book.mp3" },
+{ challengeId: 171, correct: false, text: "私はペンを持っています。", audioSrc: "Basics/audio/japanese/option/jp_i_have_a_pen.mp3" },
+{ challengeId: 171, correct: false, text: "私はカバンを持っています。", audioSrc: "Basics/audio/japanese/option/jp_i_have_a_bag.mp3" },
+
+// Lesson 56 Challenge Options
+{ challengeId: 172, correct: true, text: "彼女は私の妹です。", audioSrc: "Basics/audio/japanese/option/jp_she_is_my_sister.mp3" },
+{ challengeId: 172, correct: false, text: "彼は私の兄です。", audioSrc: "Basics/audio/japanese/option/jp_he_is_my_brother.mp3" },
+{ challengeId: 172, correct: false, text: "彼女は私の母です。", audioSrc: "Basics/audio/japanese/option/jp_she_is_my_mother.mp3" },
+
+{ challengeId: 173, correct: true, text: "私たちは友達です。", audioSrc: "Basics/audio/japanese/option/jp_we_are_friends.mp3" },
+{ challengeId: 173, correct: false, text: "彼らは先生です。", audioSrc: "Basics/audio/japanese/option/jp_they_are_teachers.mp3" },
+{ challengeId: 173, correct: false, text: "私たちは家族です。", audioSrc: "Basics/audio/japanese/option/jp_we_are_family.mp3" },
+
+{ challengeId: 174, correct: true, text: "犬は走っています。", audioSrc: "Basics/audio/japanese/option/jp_dog_is_running.mp3" },
+{ challengeId: 174, correct: false, text: "猫は歩いています。", audioSrc: "Basics/audio/japanese/option/jp_cat_is_walking.mp3" },
+{ challengeId: 174, correct: false, text: "鳥は飛んでいます。", audioSrc: "Basics/audio/japanese/option/jp_bird_is_flying.mp3" },
+
+// Lesson 57 Challenge Options
+{ challengeId: 175, correct: true, text: "彼は先生です。", audioSrc: "Basics/audio/japanese/option/jp_he_is_a_teacher.mp3" },
+{ challengeId: 175, correct: false, text: "彼は学生です。", audioSrc: "Basics/audio/japanese/option/jp_he_is_a_student.mp3" },
+{ challengeId: 175, correct: false, text: "彼は医者です。", audioSrc: "Basics/audio/japanese/option/jp_he_is_a_doctor.mp3" },
+
+{ challengeId: 176, correct: true, text: "りんごは赤いです。", audioSrc: "Basics/audio/japanese/option/jp_apple_is_red.mp3" },
+{ challengeId: 176, correct: false, text: "バナナは黄色いです。", audioSrc: "Basics/audio/japanese/option/jp_banana_is_yellow.mp3" },
+{ challengeId: 176, correct: false, text: "ぶどうは紫です。", audioSrc: "Basics/audio/japanese/option/jp_grape_is_purple.mp3" },
+
+{ challengeId: 177, correct: true, text: "私はマンゴーが好きです。", audioSrc: "Basics/audio/japanese/option/jp_i_like_mangoes.mp3" },
+{ challengeId: 177, correct: false, text: "私はりんごが好きです。", audioSrc: "Basics/audio/japanese/option/jp_i_like_apples.mp3" },
+{ challengeId: 177, correct: false, text: "私はバナナが好きです。", audioSrc: "Basics/audio/japanese/option/jp_i_like_bananas.mp3" },
+
+{ challengeId: 178, correct: true, text: "彼女は幸せです。", audioSrc: "Basics/audio/japanese/option/jp_she_is_happy.mp3" },
+{ challengeId: 178, correct: false, text: "彼女は悲しいです。", audioSrc: "Basics/audio/japanese/option/jp_she_is_sad.mp3" },
+{ challengeId: 178, correct: false, text: "彼女は怒っています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_angry.mp3" },
+
+// Lesson 58 Challenge Options
+{ challengeId: 179, correct: true, text: "私は日本語の本を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_i_am_reading_a_japanese_book.mp3" },
+{ challengeId: 179, correct: false, text: "私は英語の本を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_i_am_reading_an_english_book.mp3" },
+{ challengeId: 179, correct: false, text: "私は雑誌を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_i_am_reading_a_magazine.mp3" },
+
+{ challengeId: 180, correct: true, text: "彼女は料理を作っています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_cooking_food.mp3" },
+{ challengeId: 180, correct: false, text: "彼女は掃除をしています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_cleaning.mp3" },
+{ challengeId: 180, correct: false, text: "彼女はテレビを見ています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_watching_tv.mp3" },
+
+{ challengeId: 181, correct: true, text: "子供たちは外で遊んでいます。", audioSrc: "Basics/audio/japanese/option/jp_children_are_playing_outside.mp3" },
+{ challengeId: 181, correct: false, text: "子供たちは部屋で遊んでいます。", audioSrc: "Basics/audio/japanese/option/jp_children_are_playing_inside.mp3" },
+{ challengeId: 181, correct: false, text: "子供たちは宿題をしています。", audioSrc: "Basics/audio/japanese/option/jp_children_are_doing_homework.mp3" },
+
+// Lesson 59 Challenge Options
+{ challengeId: 182, correct: true, text: "私たちは毎日学校に行きます。", audioSrc: "Basics/audio/japanese/option/jp_we_go_to_school_every_day.mp3" },
+{ challengeId: 182, correct: false, text: "私たちは週末に学校に行きます。", audioSrc: "Basics/audio/japanese/option/jp_we_go_to_school_on_weekends.mp3" },
+{ challengeId: 182, correct: false, text: "私たちは時々学校に行きます。", audioSrc: "Basics/audio/japanese/option/jp_we_sometimes_go_to_school.mp3" },
+
+{ challengeId: 183, correct: true, text: "彼はお茶を飲むのが好きです。", audioSrc: "Basics/audio/japanese/option/jp_he_likes_to_drink_tea.mp3" },
+{ challengeId: 183, correct: false, text: "彼はコーヒーを飲むのが好きです。", audioSrc: "Basics/audio/japanese/option/jp_he_likes_to_drink_coffee.mp3" },
+{ challengeId: 183, correct: false, text: "彼は水を飲むのが好きです。", audioSrc: "Basics/audio/japanese/option/jp_he_likes_to_drink_water.mp3" },
+
+{ challengeId: 184, correct: true, text: "鳥たちは空を飛んでいます。", audioSrc: "Basics/audio/japanese/option/jp_birds_are_flying_in_the_sky.mp3" },
+{ challengeId: 184, correct: false, text: "鳥たちは木の上に座っています。", audioSrc: "Basics/audio/japanese/option/jp_birds_are_sitting_on_a_tree.mp3" },
+{ challengeId: 184, correct: false, text: "鳥たちは地面を歩いています。", audioSrc: "Basics/audio/japanese/option/jp_birds_are_walking_on_the_ground.mp3" },
+
+// Lesson 60 Challenge Options
+{ challengeId: 185, correct: true, text: "彼女は青いドレスを着ています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_wearing_a_blue_dress.mp3" },
+{ challengeId: 185, correct: false, text: "彼女は赤いドレスを着ています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_wearing_a_red_dress.mp3" },
+{ challengeId: 185, correct: false, text: "彼女は白いドレスを着ています。", audioSrc: "Basics/audio/japanese/option/jp_she_is_wearing_a_white_dress.mp3" },
+
+{ challengeId: 186, correct: true, text: "バスは今日遅れています。", audioSrc: "Basics/audio/japanese/option/jp_the_bus_is_late_today.mp3" },
+{ challengeId: 186, correct: false, text: "電車は今日遅れています。", audioSrc: "Basics/audio/japanese/option/jp_the_train_is_late_today.mp3" },
+{ challengeId: 186, correct: false, text: "飛行機は今日遅れています。", audioSrc: "Basics/audio/japanese/option/jp_the_plane_is_late_today.mp3" },
+
+{ challengeId: 187, correct: true, text: "彼らは映画を見ています。", audioSrc: "Basics/audio/japanese/option/jp_they_are_watching_a_movie.mp3" },
+{ challengeId: 187, correct: false, text: "彼らは本を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_they_are_reading_a_book.mp3" },
+{ challengeId: 187, correct: false, text: "彼らは歌を歌っています。", audioSrc: "Basics/audio/japanese/option/jp_they_are_singing_a_song.mp3" },
+
+{ challengeId: 188, correct: true, text: "先生は授業を説明しています。", audioSrc: "Basics/audio/japanese/option/jp_the_teacher_is_explaining_the_lesson.mp3" },
+{ challengeId: 188, correct: false, text: "先生は宿題を出しています。", audioSrc: "Basics/audio/japanese/option/jp_the_teacher_is_giving_homework.mp3" },
+{ challengeId: 188, correct: false, text: "先生は本を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_the_teacher_is_reading_a_book.mp3" },
+
+// Lesson 61 Challenge Options
+{ challengeId: 189, correct: true, text: "一生懸命働けば、成功します。", audioSrc: "Basics/audio/japanese/option/jp_if_you_work_hard_you_will_succeed.mp3" },
+{ challengeId: 189, correct: false, text: "一生懸命働かなければ、成功します。", audioSrc: "Basics/audio/japanese/option/jp_if_you_dont_work_hard_you_will_succeed.mp3" },
+{ challengeId: 189, correct: false, text: "一生懸命働けば、失敗します。", audioSrc: "Basics/audio/japanese/option/jp_if_you_work_hard_you_will_fail.mp3" },
+
+{ challengeId: 190, correct: true, text: "彼女は野菜を買いに市場に行きました。", audioSrc: "Basics/audio/japanese/option/jp_she_went_to_the_market_to_buy_vegetables.mp3" },
+{ challengeId: 190, correct: false, text: "彼女は果物を買いに市場に行きました。", audioSrc: "Basics/audio/japanese/option/jp_she_went_to_the_market_to_buy_fruits.mp3" },
+{ challengeId: 190, correct: false, text: "彼女は市場に行きませんでした。", audioSrc: "Basics/audio/japanese/option/jp_she_did_not_go_to_the_market.mp3" },
+
+{ challengeId: 191, correct: true, text: "雨が降っていたけど、彼らはサッカーをしました。", audioSrc: "Basics/audio/japanese/option/jp_although_it_was_raining_they_played_football.mp3" },
+{ challengeId: 191, correct: false, text: "雨が降っていたので、彼らはサッカーをしませんでした。", audioSrc: "Basics/audio/japanese/option/jp_because_it_was_raining_they_did_not_play_football.mp3" },
+{ challengeId: 191, correct: false, text: "晴れていたけど、彼らはサッカーをしました。", audioSrc: "Basics/audio/japanese/option/jp_although_it_was_sunny_they_played_football.mp3" },
+
+// Lesson 62 Challenge Options
+{ challengeId: 192, correct: true, text: "先生は生徒に課題を期限内に提出するように頼みました。", audioSrc: "Basics/audio/japanese/option/jp_teacher_asked_students_to_submit_assignments_on_time.mp3" },
+{ challengeId: 192, correct: false, text: "先生は生徒に課題を出さないように頼みました。", audioSrc: "Basics/audio/japanese/option/jp_teacher_asked_students_not_to_submit_assignments.mp3" },
+{ challengeId: 192, correct: false, text: "先生は生徒に課題を忘れるように頼みました。", audioSrc: "Basics/audio/japanese/option/jp_teacher_asked_students_to_forget_about_assignments.mp3" },
+
+{ challengeId: 193, correct: true, text: "彼はお茶を飲みながら新聞を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_he_is_reading_newspaper_while_drinking_tea.mp3" },
+{ challengeId: 193, correct: false, text: "彼はお茶を飲まずに新聞を読んでいます。", audioSrc: "Basics/audio/japanese/option/jp_he_is_reading_newspaper_without_drinking_tea.mp3" },
+{ challengeId: 193, correct: false, text: "彼はお茶を飲みながらテレビを見ています。", audioSrc: "Basics/audio/japanese/option/jp_he_is_watching_tv_while_drinking_tea.mp3" },
+
+{ challengeId: 194, correct: true, text: "彼女は疲れていましたが、働き続けました。", audioSrc: "Basics/audio/japanese/option/jp_she_was_tired_yet_she_continued_working.mp3" },
+{ challengeId: 194, correct: false, text: "彼女は疲れていたので、働きませんでした。", audioSrc: "Basics/audio/japanese/option/jp_she_was_tired_so_she_did_not_work.mp3" },
+{ challengeId: 194, correct: false, text: "彼女は元気でしたが、働きませんでした。", audioSrc: "Basics/audio/japanese/option/jp_she_was_energetic_yet_she_did_not_work.mp3" },
+
+// Lesson 63 Challenge Options
+{ challengeId: 195, correct: true, text: "私たちが着くまでに電車はすでに出発していました。", audioSrc: "Basics/audio/japanese/option/jp_by_the_time_we_reached_the_train_had_left.mp3" },
+{ challengeId: 195, correct: false, text: "私たちが着くと電車はまだ駅にいました。", audioSrc: "Basics/audio/japanese/option/jp_by_the_time_we_reached_the_train_was_still_there.mp3" },
+{ challengeId: 195, correct: false, text: "私たちが着く前に電車は壊れました。", audioSrc: "Basics/audio/japanese/option/jp_by_the_time_we_reached_the_train_was_broken.mp3" },
+
+{ challengeId: 196, correct: true, text: "勉強しなければ、試験に合格しません。", audioSrc: "Basics/audio/japanese/option/jp_unless_you_study_you_wont_pass.mp3" },
+{ challengeId: 196, correct: false, text: "勉強しなくても、試験に合格します。", audioSrc: "Basics/audio/japanese/option/jp_even_if_you_dont_study_you_will_pass.mp3" },
+{ challengeId: 196, correct: false, text: "勉強すれば、試験に落ちます。", audioSrc: "Basics/audio/japanese/option/jp_if_you_study_you_will_fail.mp3" },
+
+{ challengeId: 197, correct: true, text: "医者は彼に定期的に薬を飲むように勧めました。", audioSrc: "Basics/audio/japanese/option/jp_doctor_advised_him_to_take_medicine_regularly.mp3" },
+{ challengeId: 197, correct: false, text: "医者は彼に薬を飲まないように勧めました。", audioSrc: "Basics/audio/japanese/option/jp_doctor_advised_him_not_to_take_medicine.mp3" },
+{ challengeId: 197, correct: false, text: "医者は彼に毎日運動するように勧めました。", audioSrc: "Basics/audio/japanese/option/jp_doctor_advised_him_to_exercise_every_day.mp3" },
+
+{ challengeId: 198, correct: true, text: "一人暮らしの老人は私たちに過去の多くの話をしてくれました。", audioSrc: "Basics/audio/japanese/option/jp_old_man_who_lived_alone_told_us_many_stories.mp3" },
+{ challengeId: 198, correct: false, text: "一人暮らしの老人は何も話しませんでした。", audioSrc: "Basics/audio/japanese/option/jp_old_man_who_lived_alone_did_not_speak.mp3" },
+{ challengeId: 198, correct: false, text: "一人暮らしの老人は私たちの話を聞いてくれました。", audioSrc: "Basics/audio/japanese/option/jp_old_man_who_lived_alone_listened_to_our_stories.mp3" },
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+//Marathi
+// Lesson 64 Challenge Options
+{ challengeId: 199, imageSrc: "/robot.svg", correct: false, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
+{ challengeId: 199, imageSrc: "/woman.svg", correct: false, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
+{ challengeId: 199, imageSrc: "/man.svg", correct: true, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
+
+{ challengeId: 200, imageSrc: "/man.svg", correct: false, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
+{ challengeId: 200, imageSrc: "/robot.svg", correct: false, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
+{ challengeId: 200, imageSrc: "/woman.svg", correct: true, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
+
+{ challengeId: 201, imageSrc: "/woman.svg", correct: false, text: "स्त्री", audioSrc: "Basics/audio/marathi/option/mr_woman.mp3" },
+{ challengeId: 201, imageSrc: "/man.svg", correct: false, text: "पुरुष", audioSrc: "Basics/audio/marathi/option/mr_man.mp3" },
+{ challengeId: 201, imageSrc: "/robot.svg", correct: true, text: "रोबोट", audioSrc: "Basics/audio/marathi/option/mr_robot.mp3" },
+
+// Lesson 2 Challenge Options
+{ challengeId: 202, imageSrc: "/bicycle.svg", correct: false, text: "सायकल", audioSrc: "Basics/audio/marathi/option/mr_bicycle.mp3" },
+{ challengeId: 202, imageSrc: "/car.svg", correct: true, text: "गाडी", audioSrc: "Basics/audio/marathi/option/mr_car.mp3" },
+{ challengeId: 202, imageSrc: "/house.svg", correct: false, text: "घर", audioSrc: "Basics/audio/marathi/option/mr_house.mp3" },
+
+{ challengeId: 203, imageSrc: "/car.svg", correct: false, text: "गाडी", audioSrc: "Basics/audio/marathi/option/mr_car.mp3" },
+{ challengeId: 203, imageSrc: "/house.svg", correct: true, text: "घर", audioSrc: "Basics/audio/marathi/option/mr_house.mp3" },
+{ challengeId: 203, imageSrc: "/bicycle.svg", correct: false, text: "सायकल", audioSrc: "Basics/audio/marathi/option/mr_bicycle.mp3" },
+
+{ challengeId: 204, imageSrc: "/house.svg", correct: false, text: "घर", audioSrc: "Basics/audio/marathi/option/mr_house.mp3" },
+{ challengeId: 204, imageSrc: "/book.svg", correct: true, text: "पुस्तक", audioSrc: "Basics/audio/marathi/option/mr_book.mp3" },
+{ challengeId: 204, imageSrc: "/car.svg", correct: false, text: "गाडी", audioSrc: "Basics/audio/marathi/option/mr_car.mp3" },
+
+// Lesson 3 Challenge Options
+{ challengeId: 205, imageSrc: "/dog.svg", correct: false, text: "कुत्रा", audioSrc: "Basics/audio/marathi/option/mr_dog.mp3" },
+{ challengeId: 205, imageSrc: "/tree.svg", correct: true, text: "झाड", audioSrc: "Basics/audio/marathi/option/mr_tree.mp3" },
+{ challengeId: 205, imageSrc: "/cat.svg", correct: false, text: "मांजर", audioSrc: "Basics/audio/marathi/option/mr_cat.mp3" },
+
+{ challengeId: 206, imageSrc: "/cat.svg", correct: false, text: "मांजर", audioSrc: "Basics/audio/marathi/option/mr_cat.mp3" },
+{ challengeId: 206, imageSrc: "/dog.svg", correct: true, text: "कुत्रा", audioSrc: "Basics/audio/marathi/option/mr_dog.mp3" },
+{ challengeId: 206, imageSrc: "/tree.svg", correct: false, text: "झाड", audioSrc: "Basics/audio/marathi/option/mr_tree.mp3" },
+
+{ challengeId: 207, imageSrc: "/tree.svg", correct: false, text: "झाड", audioSrc: "Basics/audio/marathi/option/mr_tree.mp3" },
+{ challengeId: 207, imageSrc: "/dog.svg", correct: false, text: "कुत्रा", audioSrc: "Basics/audio/marathi/option/mr_dog.mp3" },
+{ challengeId: 207, imageSrc: "/cat.svg", correct: true, text: "मांजर", audioSrc: "Basics/audio/marathi/option/mr_cat.mp3" },
+
+// Lesson 67 Challenge Options
+{ challengeId: 208, correct: true, text: "मी", audioSrc: "Basics/audio/marathi/option/mr_I.mp3" },
+{ challengeId: 208, correct: false, text: "तू", audioSrc: "Basics/audio/marathi/option/mr_you.mp3" },
+{ challengeId: 208, correct: false, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+
+{ challengeId: 209, correct: true, text: "तू", audioSrc: "Basics/audio/marathi/option/mr_you.mp3" },
+{ challengeId: 209, correct: false, text: "मी", audioSrc: "Basics/audio/marathi/option/mr_I.mp3" },
+{ challengeId: 209, correct: false, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_she.mp3" },
+
+{ challengeId: 210, correct: true, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+{ challengeId: 210, correct: false, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_she.mp3" },
+{ challengeId: 210, correct: false, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+
+// Lesson 68 Challenge Options
+{ challengeId: 211, correct: true, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_she.mp3" },
+{ challengeId: 211, correct: false, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+{ challengeId: 211, correct: false, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+
+{ challengeId: 212, correct: true, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+{ challengeId: 212, correct: false, text: "मी", audioSrc: "Basics/audio/marathi/option/mr_I.mp3" },
+{ challengeId: 212, correct: false, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_she.mp3" },
+
+{ challengeId: 213, correct: true, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+{ challengeId: 213, correct: false, text: "मी", audioSrc: "Basics/audio/marathi/option/mr_I.mp3" },
+{ challengeId: 213, correct: false, text: "तू", audioSrc: "Basics/audio/marathi/option/mr_you.mp3" },
+
+// Lesson 69 Challenge Options
+{ challengeId: 214, correct: true, text: "ती", audioSrc: "Basics/audio/marathi/option/mr_she.mp3" },
+{ challengeId: 214, correct: false, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+{ challengeId: 214, correct: false, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+
+{ challengeId: 215, correct: true, text: "आम्ही", audioSrc: "Basics/audio/marathi/option/mr_we.mp3" },
+{ challengeId: 215, correct: false, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+{ challengeId: 215, correct: false, text: "तो", audioSrc: "Basics/audio/marathi/option/mr_he.mp3" },
+
+{ challengeId: 216, correct: true, text: "ते", audioSrc: "Basics/audio/marathi/option/mr_they.mp3" },
+{ challengeId: 216, correct: false, text: "मी", audioSrc: "Basics/audio/marathi/option/mr_I.mp3" },
+{ challengeId: 216, correct: false, text: "तू", audioSrc: "Basics/audio/marathi/option/mr_you.mp3" },
+
+// Lesson 70 Challenge Options
+{ challengeId: 217, imageSrc: "/eat.svg", correct: true, text: "खाणे", audioSrc: "Basics/audio/marathi/option/mr_eat.mp3" },
+{ challengeId: 217, imageSrc: "/run.svg", correct: false, text: "धावणे", audioSrc: "Basics/audio/marathi/option/mr_run.mp3" },
+{ challengeId: 217, imageSrc: "/write.svg", correct: false, text: "लिहिणे", audioSrc: "Basics/audio/marathi/option/mr_write.mp3" },
+
+{ challengeId: 218, imageSrc: "/run.svg", correct: true, text: "धावणे", audioSrc: "Basics/audio/marathi/option/mr_run.mp3" },
+{ challengeId: 218, imageSrc: "/walk.svg", correct: false, text: "चालणे", audioSrc: "Basics/audio/marathi/option/mr_walk.mp3" },
+{ challengeId: 218, imageSrc: "/eat.svg", correct: false, text: "खाणे", audioSrc: "Basics/audio/marathi/option/mr_eat.mp3" },
+
+{ challengeId: 219, imageSrc: "/write.svg", correct: true, text: "लिहिणे", audioSrc: "Basics/audio/marathi/option/mr_write.mp3" },
+{ challengeId: 219, imageSrc: "/read.svg", correct: false, text: "वाचणे", audioSrc: "Basics/audio/marathi/option/mr_read.mp3" },
+{ challengeId: 219, imageSrc: "/speak.svg", correct: false, text: "बोलणे", audioSrc: "Basics/audio/marathi/option/mr_speak.mp3" },
+
+// Lesson 71 Challenge Options
+{ challengeId: 220, imageSrc: "/read.svg", correct: true, text: "वाचणे", audioSrc: "Basics/audio/marathi/option/mr_read.mp3" },
+{ challengeId: 220, imageSrc: "/write.svg", correct: false, text: "लिहिणे", audioSrc: "Basics/audio/marathi/option/mr_write.mp3" },
+{ challengeId: 220, imageSrc: "/speak.svg", correct: false, text: "बोलणे", audioSrc: "Basics/audio/marathi/option/mr_speak.mp3" },
+
+{ challengeId: 221, imageSrc: "/walk.svg", correct: true, text: "चालणे", audioSrc: "Basics/audio/marathi/option/mr_walk.mp3" },
+{ challengeId: 221, imageSrc: "/run.svg", correct: false, text: "धावणे", audioSrc: "Basics/audio/marathi/option/mr_run.mp3" },
+{ challengeId: 221, imageSrc: "/eat.svg", correct: false, text: "खाणे", audioSrc: "Basics/audio/marathi/option/mr_eat.mp3" },
+
+{ challengeId: 222, imageSrc: "/speak.svg", correct: true, text: "बोलणे", audioSrc: "Basics/audio/marathi/option/mr_speak.mp3" },
+{ challengeId: 222, imageSrc: "/read.svg", correct: false, text: "वाचणे", audioSrc: "Basics/audio/marathi/option/mr_read.mp3" },
+{ challengeId: 222, imageSrc: "/write.svg", correct: false, text: "लिहिणे", audioSrc: "Basics/audio/marathi/option/mr_write.mp3" },
+
+// Lesson 72 Challenge Options
+{ challengeId: 223, correct: true, text: "वाचत", audioSrc: "Basics/audio/marathi/option/mr_reading.mp3" },
+{ challengeId: 223, correct: false, text: "लिहित", audioSrc: "Basics/audio/marathi/option/mr_writing.mp3" },
+{ challengeId: 223, correct: false, text: "बोलत", audioSrc: "Basics/audio/marathi/option/mr_speaking.mp3" },
+
+{ challengeId: 224, correct: true, text: "चालत", audioSrc: "Basics/audio/marathi/option/mr_walking.mp3" },
+{ challengeId: 224, correct: false, text: "धावत", audioSrc: "Basics/audio/marathi/option/mr_running.mp3" },
+{ challengeId: 224, correct: false, text: "चालत", audioSrc: "Basics/audio/marathi/option/mr_walking.mp3" },
+
+{ challengeId: 225, correct: true, text: "लिहित", audioSrc: "Basics/audio/marathi/option/mr_writing.mp3" },
+{ challengeId: 225, correct: false, text: "वाचत", audioSrc: "Basics/audio/marathi/option/mr_reading.mp3" },
+{ challengeId: 225, correct: false, text: "बोलत", audioSrc: "Basics/audio/marathi/option/mr_speaking.mp3" },
+
+// Lesson 73 Challenge Options
+{ challengeId: 226, correct: true, text: "मोठे", audioSrc: "Basics/audio/marathi/option/mr_big.mp3" },
+{ challengeId: 226, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+{ challengeId: 226, correct: false, text: "वेगवान", audioSrc: "Basics/audio/marathi/option/mr_fast.mp3" },
+
+{ challengeId: 227, correct: true, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+{ challengeId: 227, correct: false, text: "मोठे", audioSrc: "Basics/audio/marathi/option/mr_big.mp3" },
+{ challengeId: 227, correct: false, text: "मंद", audioSrc: "Basics/audio/marathi/option/mr_slow.mp3" },
+
+{ challengeId: 228, correct: true, text: "वेगवान", audioSrc: "Basics/audio/marathi/option/mr_fast.mp3" },
+{ challengeId: 228, correct: false, text: "मंद", audioSrc: "Basics/audio/marathi/option/mr_slow.mp3" },
+{ challengeId: 228, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+
+// Lesson 74 Challenge Options
+{ challengeId: 229, correct: true, text: "मंद", audioSrc: "Basics/audio/marathi/option/mr_slow.mp3" },
+{ challengeId: 229, correct: false, text: "वेगवान", audioSrc: "Basics/audio/marathi/option/mr_fast.mp3" },
+{ challengeId: 229, correct: false, text: "मोठे", audioSrc: "Basics/audio/marathi/option/mr_big.mp3" },
+
+{ challengeId: 230, correct: true, text: "सुंदर", audioSrc: "Basics/audio/marathi/option/mr_beautiful.mp3" },
+{ challengeId: 230, correct: false, text: "बलवान", audioSrc: "Basics/audio/marathi/option/mr_strong.mp3" },
+{ challengeId: 230, correct: false, text: "वेगवान", audioSrc: "Basics/audio/marathi/option/mr_fast.mp3" },
+
+{ challengeId: 231, correct: true, text: "बलवान", audioSrc: "Basics/audio/marathi/option/mr_strong.mp3" },
+{ challengeId: 231, correct: false, text: "सुंदर", audioSrc: "Basics/audio/marathi/option/mr_beautiful.mp3" },
+{ challengeId: 231, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+
+// Lesson 75 Challenge Options
+{ challengeId: 232, correct: true, text: "मोठी", audioSrc: "Basics/audio/marathi/option/mr_big.mp3" },
+{ challengeId: 232, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+{ challengeId: 232, correct: false, text: "सुंदर", audioSrc: "Basics/audio/marathi/option/mr_beautiful.mp3" },
+
+{ challengeId: 233, correct: true, text: "सुंदर", audioSrc: "Basics/audio/marathi/option/mr_beautiful.mp3" },
+{ challengeId: 233, correct: false, text: "बलवान", audioSrc: "Basics/audio/marathi/option/mr_strong.mp3" },
+{ challengeId: 233, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+
+{ challengeId: 234, correct: true, text: "बलवान", audioSrc: "Basics/audio/marathi/option/mr_strong.mp3" },
+{ challengeId: 234, correct: false, text: "सुंदर", audioSrc: "Basics/audio/marathi/option/mr_beautiful.mp3" },
+{ challengeId: 234, correct: false, text: "लहान", audioSrc: "Basics/audio/marathi/option/mr_small.mp3" },
+
+// Lesson 76 Challenge Options
+{ challengeId: 235, correct: true, text: "ही मांजर आहे.", audioSrc: "Basics/audio/marathi/option/mr_this_is_a_cat.mp3" },
+{ challengeId: 235, correct: false, text: "तो कुत्रा आहे.", audioSrc: "Basics/audio/marathi/option/mr_this_is_a_dog.mp3" },
+{ challengeId: 235, correct: false, text: "ते पुस्तक आहे.", audioSrc: "Basics/audio/marathi/option/mr_this_is_a_book.mp3" },
+
+{ challengeId: 236, correct: true, text: "सूर्य तेजस्वी आहे.", audioSrc: "Basics/audio/marathi/option/mr_sun_is_bright.mp3" },
+{ challengeId: 236, correct: false, text: "आकाश निळे आहे.", audioSrc: "Basics/audio/marathi/option/mr_sky_is_blue.mp3" },
+{ challengeId: 236, correct: false, text: "चंद्र मोठा आहे.", audioSrc: "Basics/audio/marathi/option/mr_moon_is_big.mp3" },
+
+{ challengeId: 237, correct: true, text: "माझ्याकडे एक पुस्तक आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_have_a_book.mp3" },
+{ challengeId: 237, correct: false, text: "माझ्याकडे एक सायकल आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_have_a_bicycle.mp3" },
+{ challengeId: 237, correct: false, text: "माझ्याकडे एक घड्याळ आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_have_a_watch.mp3" },
+
+// Lesson 77 Challenge Options
+{ challengeId: 238, correct: true, text: "ती माझी बहीण आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_my_sister.mp3" },
+{ challengeId: 238, correct: false, text: "तो माझा भाऊ आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_my_brother.mp3" },
+{ challengeId: 238, correct: false, text: "ती माझी आई आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_my_mother.mp3" },
+
+{ challengeId: 239, correct: true, text: "आम्ही मित्र आहोत.", audioSrc: "Basics/audio/marathi/option/mr_we_are_friends.mp3" },
+{ challengeId: 239, correct: false, text: "आम्ही शत्रू आहोत.", audioSrc: "Basics/audio/marathi/option/mr_we_are_enemies.mp3" },
+{ challengeId: 239, correct: false, text: "आम्ही विद्यार्थी आहोत.", audioSrc: "Basics/audio/marathi/option/mr_we_are_students.mp3" },
+
+{ challengeId: 240, correct: true, text: "कुत्रा धावत आहे.", audioSrc: "Basics/audio/marathi/option/mr_dog_is_running.mp3" },
+{ challengeId: 240, correct: false, text: "कुत्रा झोपला आहे.", audioSrc: "Basics/audio/marathi/option/mr_dog_is_sleeping.mp3" },
+{ challengeId: 240, correct: false, text: "कुत्रा भुंकत आहे.", audioSrc: "Basics/audio/marathi/option/mr_dog_is_barking.mp3" },
+
+// Lesson 78 Challenge Options
+{ challengeId: 241, correct: true, text: "तो शिक्षक आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_a_teacher.mp3" },
+{ challengeId: 241, correct: false, text: "तो डॉक्टर आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_a_doctor.mp3" },
+{ challengeId: 241, correct: false, text: "तो पोलीस आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_a_policeman.mp3" },
+
+{ challengeId: 242, correct: true, text: "सफरचंद लाल आहे.", audioSrc: "Basics/audio/marathi/option/mr_apple_is_red.mp3" },
+{ challengeId: 242, correct: false, text: "सफरचंद पिवळे आहे.", audioSrc: "Basics/audio/marathi/option/mr_apple_is_yellow.mp3" },
+{ challengeId: 242, correct: false, text: "सफरचंद हिरवे आहे.", audioSrc: "Basics/audio/marathi/option/mr_apple_is_green.mp3" },
+
+{ challengeId: 243, correct: true, text: "मला आंबे आवडतात.", audioSrc: "Basics/audio/marathi/option/mr_i_like_mangoes.mp3" },
+{ challengeId: 243, correct: false, text: "मला सफरचंद आवडतात.", audioSrc: "Basics/audio/marathi/option/mr_i_like_apples.mp3" },
+{ challengeId: 243, correct: false, text: "मला द्राक्षे आवडतात.", audioSrc: "Basics/audio/marathi/option/mr_i_like_grapes.mp3" },
+
+{ challengeId: 244, correct: true, text: "ती आनंदी आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_happy.mp3" },
+{ challengeId: 244, correct: false, text: "ती उदास आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_sad.mp3" },
+{ challengeId: 244, correct: false, text: "ती रागावली आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_angry.mp3" },
+
+// Lesson 79 Challenge Options
+{ challengeId: 245, correct: true, text: "मी मराठी पुस्तक वाचत आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_am_reading_a_marathi_book.mp3" },
+{ challengeId: 245, correct: false, text: "मी हिंदी पुस्तक वाचत आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_am_reading_a_hindi_book.mp3" },
+{ challengeId: 245, correct: false, text: "मी इंग्रजी पुस्तक वाचत आहे.", audioSrc: "Basics/audio/marathi/option/mr_i_am_reading_an_english_book.mp3" },
+
+{ challengeId: 246, correct: true, text: "ती अन्न शिजवत आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_cooking_food.mp3" },
+{ challengeId: 246, correct: false, text: "ती खेळ खेळत आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_playing_game.mp3" },
+{ challengeId: 246, correct: false, text: "ती गाणे गात आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_singing.mp3" },
+
+{ challengeId: 247, correct: true, text: "मुलं बाहेर खेळत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_children_are_playing_outside.mp3" },
+{ challengeId: 247, correct: false, text: "मुलं अभ्यास करत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_children_are_studying.mp3" },
+{ challengeId: 247, correct: false, text: "मुलं झोपले आहेत.", audioSrc: "Basics/audio/marathi/option/mr_children_are_sleeping.mp3" },
+
+// Lesson 80 Challenge Options
+{ challengeId: 248, correct: true, text: "आम्ही दररोज शाळेत जातो.", audioSrc: "Basics/audio/marathi/option/mr_we_go_to_school_every_day.mp3" },
+{ challengeId: 248, correct: false, text: "आम्ही कधीच शाळेत जात नाही.", audioSrc: "Basics/audio/marathi/option/mr_we_never_go_to_school.mp3" },
+{ challengeId: 248, correct: false, text: "आम्ही सुट्टीच्या दिवशी शाळेत जातो.", audioSrc: "Basics/audio/marathi/option/mr_we_go_to_school_on_holidays.mp3" },
+
+{ challengeId: 249, correct: true, text: "त्याला चहा प्यायला आवडतो.", audioSrc: "Basics/audio/marathi/option/mr_he_likes_to_drink_tea.mp3" },
+{ challengeId: 249, correct: false, text: "त्याला दूध प्यायला आवडतो.", audioSrc: "Basics/audio/marathi/option/mr_he_likes_to_drink_milk.mp3" },
+{ challengeId: 249, correct: false, text: "त्याला कॉफी प्यायला आवडते.", audioSrc: "Basics/audio/marathi/option/mr_he_likes_to_drink_coffee.mp3" },
+
+{ challengeId: 250, correct: true, text: "पक्षी आकाशात उडत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_birds_are_flying_in_the_sky.mp3" },
+{ challengeId: 250, correct: false, text: "पक्षी झाडावर बसले आहेत.", audioSrc: "Basics/audio/marathi/option/mr_birds_are_sitting_on_tree.mp3" },
+{ challengeId: 250, correct: false, text: "पक्षी जमिनीवर चालत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_birds_are_walking_on_ground.mp3" },
+
+// Lesson 81 Challenge Options
+{ challengeId: 251, correct: true, text: "ती निळा ड्रेस घालत आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_wearing_a_blue_dress.mp3" },
+{ challengeId: 251, correct: false, text: "ती लाल ड्रेस घालत आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_wearing_a_red_dress.mp3" },
+{ challengeId: 251, correct: false, text: "ती पिवळा ड्रेस घालत आहे.", audioSrc: "Basics/audio/marathi/option/mr_she_is_wearing_a_yellow_dress.mp3" },
+
+{ challengeId: 252, correct: true, text: "बस आज उशिरा आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_bus_is_late_today.mp3" },
+{ challengeId: 252, correct: false, text: "बस वेळेवर आली आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_bus_is_on_time.mp3" },
+{ challengeId: 252, correct: false, text: "बस आज बंद आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_bus_is_not_running_today.mp3" },
+
+{ challengeId: 253, correct: true, text: "ते चित्रपट पाहत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_they_are_watching_a_movie.mp3" },
+{ challengeId: 253, correct: false, text: "ते गाणे ऐकत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_they_are_listening_to_music.mp3" },
+{ challengeId: 253, correct: false, text: "ते नाचत आहेत.", audioSrc: "Basics/audio/marathi/option/mr_they_are_dancing.mp3" },
+
+{ challengeId: 254, correct: true, text: "शिक्षक धडा समजावत आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_teacher_is_explaining_the_lesson.mp3" },
+{ challengeId: 254, correct: false, text: "शिक्षक गाणे गात आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_teacher_is_singing.mp3" },
+{ challengeId: 254, correct: false, text: "शिक्षक लिहित आहे.", audioSrc: "Basics/audio/marathi/option/mr_the_teacher_is_writing.mp3" },
+
+// Lesson 82 Challenge Options
+{ challengeId: 255, correct: true, text: "जर तुम्ही मेहनत केली, तर तुम्हाला यश मिळेल.", audioSrc: "Basics/audio/marathi/option/mr_if_you_work_hard_you_will_succeed.mp3" },
+{ challengeId: 255, correct: false, text: "जर तुम्ही अभ्यास केला, तर तुम्हाला आनंद मिळेल.", audioSrc: "Basics/audio/marathi/option/mr_if_you_study_you_will_be_happy.mp3" },
+{ challengeId: 255, correct: false, text: "जर तुम्ही खेळलात, तर तुम्हाला पुरस्कार मिळेल.", audioSrc: "Basics/audio/marathi/option/mr_if_you_play_you_will_get_a_prize.mp3" },
+
+{ challengeId: 256, correct: true, text: "ती भाजी आणण्यासाठी बाजारात गेली.", audioSrc: "Basics/audio/marathi/option/mr_she_went_to_market_to_buy_vegetables.mp3" },
+{ challengeId: 256, correct: false, text: "ती पुस्तक आणण्यासाठी बाजारात गेली.", audioSrc: "Basics/audio/marathi/option/mr_she_went_to_market_to_buy_books.mp3" },
+{ challengeId: 256, correct: false, text: "ती मित्रांना भेटण्यासाठी बाजारात गेली.", audioSrc: "Basics/audio/marathi/option/mr_she_went_to_market_to_meet_friends.mp3" },
+
+{ challengeId: 257, correct: true, text: "पाऊस पडत असतानाही, त्यांनी फुटबॉल खेळला.", audioSrc: "Basics/audio/marathi/option/mr_although_it_was_raining_they_played_football.mp3" },
+{ challengeId: 257, correct: false, text: "पाऊस पडत असतानाही, त्यांनी अभ्यास केला.", audioSrc: "Basics/audio/marathi/option/mr_although_it_was_raining_they_studied.mp3" },
+{ challengeId: 257, correct: false, text: "पाऊस पडत असतानाही, त्यांनी झोप घेतली.", audioSrc: "Basics/audio/marathi/option/mr_although_it_was_raining_they_slept.mp3" },
+
+// Lesson 83 Challenge Options
+{ challengeId: 258, correct: true, text: "शिक्षकांनी विद्यार्थ्यांना वेळेवर असाइनमेंट जमा करण्यास सांगितले.", audioSrc: "Basics/audio/marathi/option/mr_teacher_asked_students_to_submit_assignments_on_time.mp3" },
+{ challengeId: 258, correct: false, text: "शिक्षकांनी विद्यार्थ्यांना घरी लवकर जाण्यास सांगितले.", audioSrc: "Basics/audio/marathi/option/mr_teacher_asked_students_to_go_home_early.mp3" },
+{ challengeId: 258, correct: false, text: "शिक्षकांनी विद्यार्थ्यांना शाळा सुटल्यावर थांबण्यास सांगितले.", audioSrc: "Basics/audio/marathi/option/mr_teacher_asked_students_to_stay_after_school.mp3" },
+
+{ challengeId: 259, correct: true, text: "तो चहा पिता-पिता वर्तमानपत्र वाचत आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_reading_newspaper_while_drinking_tea.mp3" },
+{ challengeId: 259, correct: false, text: "तो दूध पिता-पिता अभ्यास करत आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_studying_while_drinking_milk.mp3" },
+{ challengeId: 259, correct: false, text: "तो नाश्ता करता-करता टीव्ही पाहत आहे.", audioSrc: "Basics/audio/marathi/option/mr_he_is_watching_tv_while_eating.mp3" },
+
+{ challengeId: 260, correct: true, text: "ती थकली होती, तरीही तिने काम सुरू ठेवले.", audioSrc: "Basics/audio/marathi/option/mr_she_was_tired_yet_she_continued_working.mp3" },
+{ challengeId: 260, correct: false, text: "ती थकली होती, त्यामुळे ती झोपली.", audioSrc: "Basics/audio/marathi/option/mr_she_was_tired_so_she_slept.mp3" },
+{ challengeId: 260, correct: false, text: "ती ताजीतवानी होती, तरीही तिने विश्रांती घेतली.", audioSrc: "Basics/audio/marathi/option/mr_she_was_fresh_yet_she_took_rest.mp3" },
+
+// Lesson 84 Challenge Options
+{ challengeId: 261, correct: true, text: "जोपर्यंत आम्ही पोहोचलो, तोपर्यंत ट्रेन निघून गेली होती.", audioSrc: "Basics/audio/marathi/option/mr_by_the_time_we_reached_the_train_had_already_left.mp3" },
+{ challengeId: 261, correct: false, text: "जोपर्यंत आम्ही पोहोचलो, तोपर्यंत ट्रेन आली नव्हती.", audioSrc: "Basics/audio/marathi/option/mr_by_the_time_we_reached_the_train_had_not_arrived.mp3" },
+{ challengeId: 261, correct: false, text: "जोपर्यंत आम्ही पोहोचलो, तोपर्यंत बस निघून गेली होती.", audioSrc: "Basics/audio/marathi/option/mr_by_the_time_we_reached_the_bus_had_left.mp3" },
+
+{ challengeId: 262, correct: true, text: "जर तुम्ही अभ्यास केला नाही, तर तुम्ही परीक्षा पास होणार नाही.", audioSrc: "Basics/audio/marathi/option/mr_unless_you_study_you_will_not_pass_the_exam.mp3" },
+{ challengeId: 262, correct: false, text: "जर तुम्ही खेळलात नाही, तर तुम्ही जिंकणार नाही.", audioSrc: "Basics/audio/marathi/option/mr_unless_you_play_you_will_not_win.mp3" },
+{ challengeId: 262, correct: false, text: "जर तुम्ही जेवलात नाही, तर तुम्हाला भूक लागणार नाही.", audioSrc: "Basics/audio/marathi/option/mr_unless_you_eat_you_will_not_feel_hungry.mp3" },
+
+{ challengeId: 263, correct: true, text: "डॉक्टरांनी त्याला नियमितपणे औषध घेण्याचा सल्ला दिला.", audioSrc: "Basics/audio/marathi/option/mr_doctor_advised_him_to_take_medicine_regularly.mp3" },
+{ challengeId: 263, correct: false, text: "डॉक्टरांनी त्याला चालण्याचा सल्ला दिला.", audioSrc: "Basics/audio/marathi/option/mr_doctor_advised_him_to_walk.mp3" },
+{ challengeId: 263, correct: false, text: "डॉक्टरांनी त्याला विश्रांती घेण्याचा सल्ला दिला.", audioSrc: "Basics/audio/marathi/option/mr_doctor_advised_him_to_take_rest.mp3" },
+
+{ challengeId: 264, correct: true, text: "जो वृद्ध माणूस एकटा राहत होता, त्याने आम्हाला त्याच्या भूतकाळातील अनेक गोष्टी सांगितल्या.", audioSrc: "Basics/audio/marathi/option/mr_the_old_man_who_lived_alone_told_us_many_stories_from_his_past.mp3" },
+{ challengeId: 264, correct: false, text: "जो वृद्ध माणूस गावात राहत होता, त्याने आम्हाला नवीन कथा सांगितल्या.", audioSrc: "Basics/audio/marathi/option/mr_the_old_man_who_lived_in_village_told_us_new_stories.mp3" },
+{ challengeId: 264, correct: false, text: "जो वृद्ध माणूस डॉक्टर होता, त्याने आम्हाला आरोग्याबद्दल सांगितले.", audioSrc: "Basics/audio/marathi/option/mr_the_old_man_who_was_a_doctor_told_us_about_health.mp3" },
+
+
+]);
 
     
 
