@@ -16,6 +16,7 @@ import {
 import { Header } from './header';
 import { Unit } from './unit';
 import { Quests } from '@/components/quests';
+import { TidioScript } from '@/components/TidioScript'; 
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();
@@ -77,6 +78,7 @@ const LearnPage = async () => {
           </div>
         ))}
       </FeedWrapper>
+      <TidioScript />
     </div>
   );
 };
