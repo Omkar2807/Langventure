@@ -1,0 +1,44 @@
+# Node modules and package manager lock files
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Next.js build and cache directories
+.next
+.next/cache
+out
+dist
+
+# Static files (optional, if not code)
+public
+
+# TypeScript declaration files
+*.d.ts
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs and debugging files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Prettier config itself (optional)
+.prettierrc
+.prettierignore
+
+# Docker-related files (if used)
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Coverage reports (if using Jest)
+coverage
+
+# VSCode workspace settings (optional)
+.vscode

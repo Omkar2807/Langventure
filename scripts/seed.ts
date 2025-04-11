@@ -3,15 +3,15 @@ import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
 //import {AlphabetSeed} from "@/scripts/seeddata/spanish"
 
-import * as schema from "../db/schema";
+import * as schema from '../db/schema';
 
 const sql = neon(process.env.DATABASE_URL!);
 //@ts-ignore
 const db = drizzle(sql, { schema });
 
 const main = async () => {
- try {
-    console.log("Seeding database")
+  try {
+    console.log('Seeding database');
 
     await db.delete(schema.courses);
     await db.delete(schema.userProgress);
@@ -23,1077 +23,1074 @@ const main = async () => {
     await db.delete(schema.userSubscription);
 
     await db.insert(schema.courses).values([
-        {
-            id:1,
-            title: "Spanish",
-            imageSrc: "/es.svg",
-        },
-        {
-            id:2,
-            title: "French",
-            imageSrc: "/fr.svg",
-        },
-        {
-            id:3,
-            title: "Japanese",
-            imageSrc: "/jp.svg",
-        },
-        {
-            id:4,
-            title: "Marathi",
-            imageSrc:"/id_flg.png"
-        },
+      {
+        id: 1,
+        title: 'Spanish',
+        imageSrc: '/es.svg',
+      },
+      {
+        id: 2,
+        title: 'French',
+        imageSrc: '/fr.svg',
+      },
+      {
+        id: 3,
+        title: 'Japanese',
+        imageSrc: '/jp.svg',
+      },
+      {
+        id: 4,
+        title: 'Marathi',
+        imageSrc: '/id_flg.png',
+      },
     ]);
 
     await db.insert(schema.units).values([
-        {
-            id: 1,
-            courseId: 1,
-            title: "Spanish",
-            description: "Aprende lo básico de español",
-            imageSrc:"/Units/span.jpg",
-            order: 1,
-        },
-        {
-            id: 2,
-            courseId: 2,
-            title: "French",
-            description: "Maîtrisez les bases du français",
-            imageSrc:"/Units/fren.jpg",
-            order: 2,
-        },
-        {
-            id: 3,
-            courseId: 3,
-            title: "Japanese",
-            description: "日本語の基礎を学びましょう",
-            imageSrc:"/Units/japn.jpg",
-            order: 3,
-        },
-        {
-            id: 4,
-            courseId: 4,
-            title: "Marathi",
-            description: "मराठीच्या मूलभूत गोष्टी शिकूया",
-            imageSrc:"/Units/marat.jpg",
-            order: 4,
-        }
+      {
+        id: 1,
+        courseId: 1,
+        title: 'Spanish',
+        description: 'Aprende lo básico de español',
+        imageSrc: '/Units/span.jpg',
+        order: 1,
+      },
+      {
+        id: 2,
+        courseId: 2,
+        title: 'French',
+        description: 'Maîtrisez les bases du français',
+        imageSrc: '/Units/fren.jpg',
+        order: 2,
+      },
+      {
+        id: 3,
+        courseId: 3,
+        title: 'Japanese',
+        description: '日本語の基礎を学びましょう',
+        imageSrc: '/Units/japn.jpg',
+        order: 3,
+      },
+      {
+        id: 4,
+        courseId: 4,
+        title: 'Marathi',
+        description: 'मराठीच्या मूलभूत गोष्टी शिकूया',
+        imageSrc: '/Units/marat.jpg',
+        order: 4,
+      },
     ]);
     
     
     //Vocab
    
     const basicsData = [
-        // A
-        
-            { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "Manzana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Apple.mp3" },
-            { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "Hormiga", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ant.mp3" },
-            { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "Brazo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Arm.mp3" },
-            { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "Avión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Airplane.mp3" },
-            { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "Flecha", courseId: 1, audioSrc: "Basics/audio/spanish/word/Arrow.mp3" },
-            { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "Ancla", courseId: 1, audioSrc: "Basics/audio/spanish/word/Anchor.mp3" },
-            { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "Caimán", courseId: 1, audioSrc: "Basics/audio/spanish/word/Alligator.mp3" },
-            { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "Alarma", courseId: 1, audioSrc: "Basics/audio/spanish/word/Alarm.mp3" },
-            { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "Actor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Actor.mp3" },
-            { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "Arte", courseId: 1, audioSrc: "Basics/audio/spanish/word/Art.mp3" },
-        
-            // B
-            { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "Pelota", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ball.mp3" },
-            { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "Oso", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bear.mp3" },
-            { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "Pájaro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bird.mp3" },
-            { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "Mariposa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Butterfly.mp3" },
-            { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "Plátano", courseId: 1, audioSrc: "Basics/audio/spanish/word/Banana.mp3" },
-            { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "Barco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Boat.mp3" },
-            { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "Caja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Box.mp3" },
-            { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "Libro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Book.mp3" },
-            { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "Banco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bench.mp3" },
-            { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "Campana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bell.mp3" },
-        
-            // C
-            { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "Gato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cat.mp3" },
-            { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "Pastel", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cake.mp3" },
-            { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "Vela", courseId: 1, audioSrc: "Basics/audio/spanish/word/Candle.mp3" },
-            { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "Vaca", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cow.mp3" },
-            { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "Coche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Car.mp3" },
-            { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "Moneda", courseId: 1, audioSrc: "Basics/audio/spanish/word/Coin.mp3" },
-            { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "Corona", courseId: 1, audioSrc: "Basics/audio/spanish/word/Crown.mp3" },
-            { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "Cacto", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cactus.mp3" },
-            { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "Reloj", courseId: 1, audioSrc: "Basics/audio/spanish/word/Clock.mp3" },
-            { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "Nube", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cloud.mp3" },
-        
-            // D
-            { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "Perro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dog.mp3" },
-            { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "Pato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Duck.mp3" },
-            { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "Vestido", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dress.mp3" },
-            { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "Puerta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Door.mp3" },
-            { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "Diamante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Diamond.mp3" },
-            { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "Delfín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dolphin.mp3" },
-            { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "Burro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Donkey.mp3" },
-            { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "Dado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dice.mp3" },
-            { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "Tambor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Drum.mp3" },
-            { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "Gota", courseId: 1, audioSrc: "Basics/audio/spanish/word/Drop.mp3" },
-        
-            // E
-            { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "Elefante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elephant.mp3" },
-            { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "Huevo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Egg.mp3" },
-            { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "Motor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Engine.mp3" },
-            { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "Sobre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Envelope.mp3" },
-            { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "Oreja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ear.mp3" },
-            { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "Águila", courseId: 1, audioSrc: "Basics/audio/spanish/word/Eagle.mp3" },
-            { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "Tierra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Earth.mp3" },
-            { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "Ojo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Eye.mp3" },
-            { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "Elfo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elf.mp3" },
-            { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "Ascensor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elevator.mp3" },
-        
-            // F
-            { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "Pescado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fish.mp3" },
-            { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "Flor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Flower.mp3" },
-            { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "Tenedor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fork.mp3" },
-            { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "Fuego", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fire.mp3" },
-            { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "Zorro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fox.mp3" },
-            { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "Valla", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fence.mp3" },
-        
-            // G
-            { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "Guitarra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Guitar.mp3" },
-            { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "Uvas", courseId: 1, audioSrc: "Basics/audio/spanish/word/Grapes.mp3" },
-            { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "Jirafa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Giraffe.mp3" },
-            { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "Cabra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Goat.mp3" },
-            { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "Guante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Glove.mp3" },
-            { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "Jardín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Garden.mp3" },
-        
-            // H
-            { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "Sombrero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hat.mp3" },
-            { imageSrc: "/Basics/House.png", title: "House", nativenm: "Casa", courseId: 1, audioSrc: "Basics/audio/spanish/word/House.mp3" },
-            { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "Caballo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Horse.mp3" },
-            { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "Martillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hammer.mp3" },
-            { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "Mano", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hand.mp3" },
-            { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "Corazón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Heart.mp3" },
-        
-            // I
-            { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "Hielo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ice.mp3" },
-            { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "Hierro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Iron.mp3" },
-            { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "Iguana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Iguana.mp3" },
-            { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "Insecto", courseId: 1, audioSrc: "Basics/audio/spanish/word/Insect.mp3" },
-            { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "Tinta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ink.mp3" },
-            { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "Helado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ice Cream.mp3" },
-        
-            // J
-            { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "Chaqueta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jacket.mp3" },
-            { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "Selva", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jungle.mp3" },
-            { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "Saltar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jump.mp3" },
-            { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "Tarro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jar.mp3" },
-            { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "Medusa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jellyfish.mp3" },
-        
-            // K
-            { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "Kiwi", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kiwi.mp3" },
-            { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "Canguro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kangaroo.mp3" },
-            { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "Tetera", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kettle.mp3" },
-            { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "Llave", courseId: 1, audioSrc: "Basics/audio/spanish/word/Key.mp3" },
-            { imageSrc: "/Basics/King.png", title: "King", nativenm: "Rey", courseId: 1, audioSrc: "Basics/audio/spanish/word/King.mp3" },
-        
-            // L
-            { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "León", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lion.mp3" },
-            { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "Lámpara", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lamp.mp3" },
-            { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "Limón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lemon.mp3" },
-            { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "Escalera", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ladder.mp3" },
-            { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "Hoja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Leaf.mp3" },
-        
-            // M
-            { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "Rata", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mouse.mp3" },
-            { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "Mono", courseId: 1, audioSrc: "Basics/audio/spanish/word/Monkey.mp3" },
-            { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "Montaña", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mountain.mp3" },
-            { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "Leche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Milk.mp3" },
-            { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "Espejo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mirror.mp3" },
-        
-            // N
-            { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "Red", courseId: 1, audioSrc: "Basics/audio/spanish/word/Net.mp3" },
-            { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "Nariz", courseId: 1, audioSrc: "Basics/audio/spanish/word/Nose.mp3" },
-            { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "Noche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Night.mp3" },
-            { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "Nuez", courseId: 1, audioSrc: "Basics/audio/spanish/word/Nut.mp3" },
-        
-            // O
-            { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "Ostrero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ostrich.mp3" },
-            { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "Pulpo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Octopus.mp3" },
-            { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "Búho", courseId: 1, audioSrc: "Basics/audio/spanish/word/Owl.mp3" },
-            { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "Aceituna", courseId: 1, audioSrc: "Basics/audio/spanish/word/Olive.mp3" },
-            { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "Oxígeno", courseId: 1, audioSrc: "Basics/audio/spanish/word/Oxygen.mp3" },
-        
-            // P
-            { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "Pluma", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pen.mp3" },
-            { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "Piña", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pineapple.mp3" },
-            { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "Panda", courseId: 1, audioSrc: "Basics/audio/spanish/word/Panda.mp3" },
-            { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "Lápiz", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pencil.mp3" },
-            { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "Avión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Plane.mp3" },
-        
-            // Q
-            { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "Colcha", courseId: 1, audioSrc: "Basics/audio/spanish/word/Quilt.mp3" },
-            { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "Reina", courseId: 1, audioSrc: "Basics/audio/spanish/word/Queen.mp3" },
-        
-            // R
-            { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "Conejo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rabbit.mp3" },
-            { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "Lluvia", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rain.mp3" },
-            { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "Anillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ring.mp3" },
-            { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "Rosa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rose.mp3" },
-            { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "Robot", courseId: 1, audioSrc: "Basics/audio/spanish/word/Robot.mp3" },
-        
-            // S
-            { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "Sol", courseId: 1, audioSrc: "Basics/audio/spanish/word/Sun.mp3" },
-            { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "Serpiente", courseId: 1, audioSrc: "Basics/audio/spanish/word/Snake.mp3" },
-            { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "Estrella", courseId: 1, audioSrc: "Basics/audio/spanish/word/Star.mp3" },
-            { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "Calcetines", courseId: 1, audioSrc: "Basics/audio/spanish/word/Socks.mp3" },
-            { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "Arena", courseId: 1, audioSrc: "Basics/audio/spanish/word/Sand.mp3" },
-        
-            // T
-            { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "Tigre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tiger.mp3" },
-            { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "Árbol", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tree.mp3" },
-            { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "Mesa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Table.mp3" },
-            { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "Televisión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Television.mp3" },
-            { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "Diente", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tooth.mp3" },
-        
-            // U
-            { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "Paraguas", courseId: 1, audioSrc: "Basics/audio/spanish/word/Umbrella.mp3" },
-            { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "Urna", courseId: 1, audioSrc: "Basics/audio/spanish/word/Urn.mp3" },
-            { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "Tío", courseId: 1, audioSrc: "Basics/audio/spanish/word/Uncle.mp3" },
-            { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "Unicornio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Unicorn.mp3" },
-            { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "Universo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Universe.mp3" },
-            { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "Utensilio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Utensil.mp3" },
-        
-            // V
-            { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "Furgoneta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Van.mp3" },
-            { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "Buitre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vulture.mp3" },
-            { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "Aspiradora", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vacuum.mp3" },
-            { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "Víctima", courseId: 1, audioSrc: "Basics/audio/spanish/word/Victim.mp3" },
-            { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "Verdura", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vegetable.mp3" },
-            { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "Volcán", courseId: 1, audioSrc: "Basics/audio/spanish/word/Volcano.mp3" },
-            { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "Vacaciones", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vacation.mp3" },
-            { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "Vampiro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vampire.mp3" },
-        
-            // W
-            { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "Lobo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wolf.mp3" },
-            { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "Sandía", courseId: 1, audioSrc: "Basics/audio/spanish/word/Watermelon.mp3" },
-            { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "Ventana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Window.mp3" },
-            { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "Vagón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wagon.mp3" },
-            { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "Cascada", courseId: 1, audioSrc: "Basics/audio/spanish/word/Waterfall.mp3" },
-            { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "Reloj", courseId: 1, audioSrc: "Basics/audio/spanish/word/Watch.mp3" },
-            { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "Ballena", courseId: 1, audioSrc: "Basics/audio/spanish/word/Whale.mp3" },
-            { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "Invierno", courseId: 1, audioSrc: "Basics/audio/spanish/word/Winter.mp3" },
-            { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "Muñeca", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wrist.mp3" },
-            { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "Silbato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Whistle.mp3" },
-        
-            // X
-            { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "Xilófono", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xylophone.mp3" },
-            { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "Radiografía", courseId: 1, audioSrc: "Basics/audio/spanish/word/X-ray.mp3" },
-            { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "Xenón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenon.mp3" },
-            { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "Navidad", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xmas.mp3" },
-            { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "Xenofobia", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenophobia.mp3" },
-            { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "Xenial", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenial.mp3" },
-            { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "Xeón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xeon.mp3" },
-            { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "Examinar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Examine.mp3" },
-            { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "Explotar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Explode.mp3" },
-            { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "Exilio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Exile.mp3" },
-        
-            // Y
-            { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "Yak", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yak.mp3" },
-            { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "Amarillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yellow.mp3" },
-            { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "Yogur", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yogurt.mp3" },
-            { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "Hilo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yarn.mp3" },
-            { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "Yoga", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yoga.mp3" },
-            { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "Bostezo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yawn.mp3" },
-            { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "Jardín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yard.mp3" },
-            { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "Gritar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yell.mp3" },
-        
-            // Z
-            { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "Cebra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zebra.mp3" },
-            { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "Zoológico", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zoo.mp3" },
-            { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "Cenit", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zenith.mp3" },
-            { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "Cero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zero.mp3" },
-            { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "Zigzag", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zigzag.mp3" },
-            { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "Zeppelin", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zeppelin.mp3" },
-            { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "Zombi", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zombie.mp3" },
-            { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "Zona", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zone.mp3" },
-            { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "Zodiaco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zodiac.mp3" },
-            { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "Zoom", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zoom.mp3" },
-
-
-    //french dataset
-    
-        // A
-        
-            { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "Pomme", courseId: 2, audioSrc: "/Basics/audio/french/word/Apple.mp3" },
-            { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "Fourmi", courseId: 2, audioSrc: "/Basics/audio/french/word/Ant.mp3" },
-            { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "Bras", courseId: 2, audioSrc: "/Basics/audio/french/word/Arm.mp3" },
-            { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "Avion", courseId: 2, audioSrc: "/Basics/audio/french/word/Airplane.mp3" },
-            { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "Flèche", courseId: 2, audioSrc: "/Basics/audio/french/word/Arrow.mp3" },
-            { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "Ancre", courseId: 2, audioSrc: "/Basics/audio/french/word/Anchor.mp3" },
-            { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "Alligator", courseId: 2, audioSrc: "/Basics/audio/french/word/Alligator.mp3" },
-            { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "Alarme", courseId: 2, audioSrc: "/Basics/audio/french/word/Alarm.mp3" },
-            { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "Acteur", courseId: 2, audioSrc: "/Basics/audio/french/word/Actor.mp3" },
-            { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "Art", courseId: 2, audioSrc: "/Basics/audio/french/word/Art.mp3" },
-        
-            // B
-            { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "Balle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ball.mp3" },
-            { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "Ours", courseId: 2, audioSrc: "/Basics/audio/french/word/Bear.mp3" },
-            { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "Oiseau", courseId: 2, audioSrc: "/Basics/audio/french/word/Bird.mp3" },
-            { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "Papillon", courseId: 2, audioSrc: "/Basics/audio/french/word/Butterfly.mp3" },
-            { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "Banane", courseId: 2, audioSrc: "/Basics/audio/french/word/Banana.mp3" },
-            { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "Bateau", courseId: 2, audioSrc: "/Basics/audio/french/word/Boat.mp3" },
-            { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "Boîte", courseId: 2, audioSrc: "/Basics/audio/french/word/Box.mp3" },
-            { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "Livre", courseId: 2, audioSrc: "/Basics/audio/french/word/Book.mp3" },
-            { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "Banc", courseId: 2, audioSrc: "/Basics/audio/french/word/Bench.mp3" },
-            { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "Cloche", courseId: 2, audioSrc: "/Basics/audio/french/word/Bell.mp3" },
-        
-            // C
-            { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "Chat", courseId: 2, audioSrc: "/Basics/audio/french/word/Cat.mp3" },
-            { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "Gâteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Cake.mp3" },
-            { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "Bougie", courseId: 2, audioSrc: "/Basics/audio/french/word/Candle.mp3" },
-            { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "Vache", courseId: 2, audioSrc: "/Basics/audio/french/word/Cow.mp3" },
-            { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "Voiture", courseId: 2, audioSrc: "/Basics/audio/french/word/Car.mp3" },
-            { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "Pièce", courseId: 2, audioSrc: "/Basics/audio/french/word/Coin.mp3" },
-            { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "Couronne", courseId: 2, audioSrc: "/Basics/audio/french/word/Crown.mp3" },
-            { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "Cactus", courseId: 2, audioSrc: "/Basics/audio/french/word/Cactus.mp3" },
-            { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "Horloge", courseId: 2, audioSrc: "/Basics/audio/french/word/Clock.mp3" },
-            { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "Nuage", courseId: 2, audioSrc: "/Basics/audio/french/word/Cloud.mp3" },
-        
-            // D
-            { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "Chien", courseId: 2, audioSrc: "/Basics/audio/french/word/Dog.mp3" },
-            { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "Canard", courseId: 2, audioSrc: "/Basics/audio/french/word/Duck.mp3" },
-            { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "Robe", courseId: 2, audioSrc: "/Basics/audio/french/word/Dress.mp3" },
-            { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "Porte", courseId: 2, audioSrc: "/Basics/audio/french/word/Door.mp3" },
-            { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "Diamant", courseId: 2, audioSrc: "/Basics/audio/french/word/Diamond.mp3" },
-            { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "Dauphin", courseId: 2, audioSrc: "/Basics/audio/french/word/Dolphin.mp3" },
-            { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "Âne", courseId: 2, audioSrc: "/Basics/audio/french/word/Donkey.mp3" },
-            { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "Dé", courseId: 2, audioSrc: "/Basics/audio/french/word/Dice.mp3" },
-            { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "Tambour", courseId: 2, audioSrc: "/Basics/audio/french/word/Drum.mp3" },
-            { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "Goutte", courseId: 2, audioSrc: "/Basics/audio/french/word/Drop.mp3" },
-        
-            // E
-            { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "Éléphant", courseId: 2, audioSrc: "/Basics/audio/french/word/Elephant.mp3" },
-            { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "Œuf", courseId: 2, audioSrc: "/Basics/audio/french/word/Egg.mp3" },
-            { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "Moteur", courseId: 2, audioSrc: "/Basics/audio/french/word/Engine.mp3" },
-            { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "Enveloppe", courseId: 2, audioSrc: "/Basics/audio/french/word/Envelope.mp3" },
-            { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "Oreille", courseId: 2, audioSrc: "/Basics/audio/french/word/Ear.mp3" },
-            { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "Aigle", courseId: 2, audioSrc: "/Basics/audio/french/word/Eagle.mp3" },
-            { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "Terre", courseId: 2, audioSrc: "/Basics/audio/french/word/Earth.mp3" },
-            { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "Œil", courseId: 2, audioSrc: "/Basics/audio/french/word/Eye.mp3" },
-            { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "Elfe", courseId: 2, audioSrc: "/Basics/audio/french/word/Elf.mp3" },
-            { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "Ascenseur", courseId: 2, audioSrc: "/Basics/audio/french/word/Elevator.mp3" },
-        
-            // F
-            { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "Poisson", courseId: 2, audioSrc: "/Basics/audio/french/word/Fish.mp3" },
-            { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "Fleur", courseId: 2, audioSrc: "/Basics/audio/french/word/Flower.mp3" },
-            { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "Fourchette", courseId: 2, audioSrc: "/Basics/audio/french/word/Fork.mp3" },
-            { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "Feu", courseId: 2, audioSrc: "/Basics/audio/french/word/Fire.mp3" },
-            { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "Renard", courseId: 2, audioSrc: "/Basics/audio/french/word/Fox.mp3" },
-            { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "Clôture", courseId: 2, audioSrc: "/Basics/audio/french/word/Fence.mp3" },
-            { imageSrc: "/Basics/Fan.png", title: "Fan", nativenm: "Ventilateur", courseId: 2, audioSrc: "/Basics/audio/french/word/Fan.mp3" },
-            { imageSrc: "/Basics/Feather.png", title: "Feather", nativenm: "Plume", courseId: 2, audioSrc: "/Basics/audio/french/word/Feather.mp3" },
-            { imageSrc: "/Basics/Fruit.png", title: "Fruit", nativenm: "Fruit", courseId: 2, audioSrc: "/Basics/audio/french/word/Fruit.mp3" },
-            { imageSrc: "/Basics/Flag.png", title: "Flag", nativenm: "Drapeau", courseId: 2, audioSrc: "/Basics/audio/french/word/Flag.mp3" },
-        
-            // G
-            { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "Guitare", courseId: 2, audioSrc: "/Basics/audio/french/word/Guitar.mp3" },
-            { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "Raisins", courseId: 2, audioSrc: "/Basics/audio/french/word/Grapes.mp3" },
-            { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "Girafe", courseId: 2, audioSrc: "/Basics/audio/french/word/Giraffe.mp3" },
-            { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "Chèvre", courseId: 2, audioSrc: "/Basics/audio/french/word/Goat.mp3" },
-            { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "Gant", courseId: 2, audioSrc: "/Basics/audio/french/word/Glove.mp3" },
-            { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "Jardin", courseId: 2, audioSrc: "/Basics/audio/french/word/Garden.mp3" },
-            { imageSrc: "/Basics/Gate.png", title: "Gate", nativenm: "Portail", courseId: 2, audioSrc: "/Basics/audio/french/word/Gate.mp3" },
-            { imageSrc: "/Basics/Ghost.png", title: "Ghost", nativenm: "Fantôme", courseId: 2, audioSrc: "/Basics/audio/french/word/Ghost.mp3" },
-            { imageSrc: "/Basics/Gold.png", title: "Gold", nativenm: "Or", courseId: 2, audioSrc: "/Basics/audio/french/word/Gold.mp3" },
-            { imageSrc: "/Basics/Glass.png", title: "Glass", nativenm: "Verre", courseId: 2, audioSrc: "/Basics/audio/french/word/Glass.mp3" },
-        
-            // H
-            { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "Chapeau", courseId: 2, audioSrc: "/Basics/audio/french/word/Hat.mp3" },
-            { imageSrc: "/Basics/House.png", title: "House", nativenm: "Maison", courseId: 2, audioSrc: "/Basics/audio/french/word/House.mp3" },
-            { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "Cheval", courseId: 2, audioSrc: "/Basics/audio/french/word/Horse.mp3" },
-            { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "Marteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Hammer.mp3" },
-            { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "Main", courseId: 2, audioSrc: "/Basics/audio/french/word/Hand.mp3" },
-            { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "Cœur", courseId: 2, audioSrc: "/Basics/audio/french/word/Heart.mp3" },
-            { imageSrc: "/Basics/Hill.png", title: "Hill", nativenm: "Colline", courseId: 2, audioSrc: "/Basics/audio/french/word/Hill.mp3" },
-            { imageSrc: "/Basics/Honey.png", title: "Honey", nativenm: "Miel", courseId: 2, audioSrc: "/Basics/audio/french/word/Honey.mp3" },
-            { imageSrc: "/Basics/Hook.png", title: "Hook", nativenm: "Crochet", courseId: 2, audioSrc: "/Basics/audio/french/word/Hook.mp3" },
-            { imageSrc: "/Basics/Helmet.png", title: "Helmet", nativenm: "Casque", courseId: 2, audioSrc: "/Basics/audio/french/word/Helmet.mp3" },
-        
-            // I
-            { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "Glace", courseId: 2, audioSrc: "/Basics/audio/french/word/Ice.mp3" },
-            { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "Fer", courseId: 2, audioSrc: "/Basics/audio/french/word/Iron.mp3" },
-            { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "Iguane", courseId: 2, audioSrc: "/Basics/audio/french/word/Iguana.mp3" },
-            { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "Insecte", courseId: 2, audioSrc: "/Basics/audio/french/word/Insect.mp3" },
-            { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "Encre", courseId: 2, audioSrc: "/Basics/audio/french/word/Ink.mp3" },
-            { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "Glace", courseId: 2, audioSrc: "/Basics/audio/french/word/Ice Cream.mp3" },
-            { imageSrc: "/Basics/Island.png", title: "Island", nativenm: "Île", courseId: 2, audioSrc: "/Basics/audio/french/word/Island.mp3" },
-            { imageSrc: "/Basics/Idea.png", title: "Idea", nativenm: "Idée", courseId: 2, audioSrc: "/Basics/audio/french/word/Idea.mp3" },
-            { imageSrc: "/Basics/Ivory.png", title: "Ivory", nativenm: "Ivoire", courseId: 2, audioSrc: "/Basics/audio/french/word/Ivory.mp3" },
-            { imageSrc: "/Basics/Injection.png", title: "Injection", nativenm: "Injection", courseId: 2, audioSrc: "/Basics/audio/french/word/Injection.mp3" },
-        
-            // J
-            { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "Veste", courseId: 2, audioSrc: "/Basics/audio/french/word/Jacket.mp3" },
-            { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "Jungle", courseId: 2, audioSrc: "/Basics/audio/french/word/Jungle.mp3" },
-            { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "Sauter", courseId: 2, audioSrc: "/Basics/audio/french/word/Jump.mp3" },
-            { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "Bocal", courseId: 2, audioSrc: "/Basics/audio/french/word/Jar.mp3" },
-            { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "Méduse", courseId: 2, audioSrc: "/Basics/audio/french/word/Jellyfish.mp3" },
-            { imageSrc: "/Basics/Jewel.png", title: "Jewel", nativenm: "Bijou", courseId: 2, audioSrc: "/Basics/audio/french/word/Jewel.mp3" },
-            { imageSrc: "/Basics/Jet.png", title: "Jet", nativenm: "Jet", courseId: 2, audioSrc: "/Basics/audio/french/word/Jet.mp3" },
-            { imageSrc: "/Basics/Joke.png", title: "Joke", nativenm: "Blague", courseId: 2, audioSrc: "/Basics/audio/french/word/Joke.mp3" },
-            { imageSrc: "/Basics/Journal.png", title: "Journal", nativenm: "Journal", courseId: 2, audioSrc: "/Basics/audio/french/word/Journal.mp3" },
-            { imageSrc: "/Basics/Jug.png", title: "Jug", nativenm: "Cruche", courseId: 2, audioSrc: "/Basics/audio/french/word/Jug.mp3" },
-        
-            // K
-            { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "Kiwi", courseId: 2, audioSrc: "/Basics/audio/french/word/Kiwi.mp3" },
-            { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "Kangourou", courseId: 2, audioSrc: "/Basics/audio/french/word/Kangaroo.mp3" },
-            { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "Bouilloire", courseId: 2, audioSrc: "/Basics/audio/french/word/Kettle.mp3" },
-            { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "Clé", courseId: 2, audioSrc: "/Basics/audio/french/word/Key.mp3" },
-            { imageSrc: "/Basics/King.png", title: "King", nativenm: "Roi", courseId: 2, audioSrc: "/Basics/audio/french/word/King.mp3" },
-            { imageSrc: "/Basics/Kite.png", title: "Kite", nativenm: "Cerf-volant", courseId: 2, audioSrc: "/Basics/audio/french/word/Kite.mp3" },
-            { imageSrc: "/Basics/Knife.png", title: "Knife", nativenm: "Couteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Knife.mp3" },
-            { imageSrc: "/Basics/Knight.png", title: "Knight", nativenm: "Chevalier", courseId: 2, audioSrc: "/Basics/audio/french/word/Knight.mp3" },
-            { imageSrc: "/Basics/Knob.png", title: "Knob", nativenm: "Bouton", courseId: 2, audioSrc: "/Basics/audio/french/word/Knob.mp3" },
-            { imageSrc: "/Basics/Koala.png", title: "Koala", nativenm: "Koala", courseId: 2, audioSrc: "/Basics/audio/french/word/Koala.mp3" },
-        
-            // L
-            { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "Lion", courseId: 2, audioSrc: "/Basics/audio/french/word/Lion.mp3" },
-            { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "Lampe", courseId: 2, audioSrc: "/Basics/audio/french/word/Lamp.mp3" },
-            { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "Citron", courseId: 2, audioSrc: "/Basics/audio/french/word/Lemon.mp3" },
-            { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "Échelle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ladder.mp3" },
-            { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "Feuille", courseId: 2, audioSrc: "/Basics/audio/french/word/Leaf.mp3" },
-            { imageSrc: "/Basics/Light.png", title: "Light", nativenm: "Lumière", courseId: 2, audioSrc: "/Basics/audio/french/word/Light.mp3" },
-            { imageSrc: "/Basics/Lake.png", title: "Lake", nativenm: "Lac", courseId: 2, audioSrc: "/Basics/audio/french/word/Lake.mp3" },
-            { imageSrc: "/Basics/Lock.png", title: "Lock", nativenm: "Serrure", courseId: 2, audioSrc: "/Basics/audio/french/word/Lock.mp3" },
-            { imageSrc: "/Basics/Lizard.png", title: "Lizard", nativenm: "Lézard", courseId: 2, audioSrc: "/Basics/audio/french/word/Lizard.mp3" },
-            { imageSrc: "/Basics/Lollipop.png", title: "Lollipop", nativenm: "Sucette", courseId: 2, audioSrc: "/Basics/audio/french/word/Lollipop.mp3" },
-        
-            // M
-            { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "Souris", courseId: 2, audioSrc: "/Basics/audio/french/word/Mouse.mp3" },
-            { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "Singe", courseId: 2, audioSrc: "/Basics/audio/french/word/Monkey.mp3" },
-            { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "Montagne", courseId: 2, audioSrc: "/Basics/audio/french/word/Mountain.mp3" },
-            { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "Lait", courseId: 2, audioSrc: "/Basics/audio/french/word/Milk.mp3" },
-            { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "Miroir", courseId: 2, audioSrc: "/Basics/audio/french/word/Mirror.mp3" },
-            { imageSrc: "/Basics/Moon.png", title: "Moon", nativenm: "Lune", courseId: 2, audioSrc: "/Basics/audio/french/word/Moon.mp3" },
-            { imageSrc: "/Basics/Mushroom.png", title: "Mushroom", nativenm: "Champignon", courseId: 2, audioSrc: "/Basics/audio/french/word/Mushroom.mp3" },
-            { imageSrc: "/Basics/Magnet.png", title: "Magnet", nativenm: "Aimant", courseId: 2, audioSrc: "/Basics/audio/french/word/Magnet.mp3" },
-            { imageSrc: "/Basics/Mask.png", title: "Mask", nativenm: "Masque", courseId: 2, audioSrc: "/Basics/audio/french/word/Mask.mp3" },
-            { imageSrc: "/Basics/Map.png", title: "Map", nativenm: "Carte", courseId: 2, audioSrc: "/Basics/audio/french/word/Map.mp3" },
-        
-            // N
-            { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "Filet", courseId: 2, audioSrc: "/Basics/audio/french/word/Net.mp3" },
-            { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "Nez", courseId: 2, audioSrc: "/Basics/audio/french/word/Nose.mp3" },
-            { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "Nuit", courseId: 2, audioSrc: "/Basics/audio/french/word/Night.mp3" },
-            { imageSrc: "/Basics/Nest.png", title: "Nest", nativenm: "Nid", courseId: 2, audioSrc: "/Basics/audio/french/word/Nest.mp3" },
-            { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "Noix", courseId: 2, audioSrc: "/Basics/audio/french/word/Nut.mp3" },
-            { imageSrc: "/Basics/Needle.png", title: "Needle", nativenm: "Aiguille", courseId: 2, audioSrc: "/Basics/audio/french/word/Needle.mp3" },
-            { imageSrc: "/Basics/Napkin.png", title: "Napkin", nativenm: "Serviette", courseId: 2, audioSrc: "/Basics/audio/french/word/Napkin.mp3" },
-            { imageSrc: "/Basics/Nail.png", title: "Nail", nativenm: "Clou", courseId: 2, audioSrc: "/Basics/audio/french/word/Nail.mp3" },
-            { imageSrc: "/Basics/Necklace.png", title: "Necklace", nativenm: "Collier", courseId: 2, audioSrc: "/Basics/audio/french/word/Necklace.mp3" },
-            { imageSrc: "/Basics/Notebook.png", title: "Notebook", nativenm: "Carnet", courseId: 2, audioSrc: "/Basics/audio/french/word/Notebook.mp3" },
-        
-            // O
-            { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "Autruche", courseId: 2, audioSrc: "/Basics/audio/french/word/Ostrich.mp3" },
-            { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "Poulpe", courseId: 2, audioSrc: "/Basics/audio/french/word/Octopus.mp3" },
-            { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "Hibou", courseId: 2, audioSrc: "/Basics/audio/french/word/Owl.mp3" },
-            { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "Olive", courseId: 2, audioSrc: "/Basics/audio/french/word/Olive.mp3" },
-            { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "Oxygène", courseId: 2, audioSrc: "/Basics/audio/french/word/Oxygen.mp3" },
-            { imageSrc: "/Basics/Orange.png", title: "Orange", nativenm: "Orange", courseId: 2, audioSrc: "/Basics/audio/french/word/Orange.mp3" },
-            { imageSrc: "/Basics/Onion.png", title: "Onion", nativenm: "Oignon", courseId: 2, audioSrc: "/Basics/audio/french/word/Onion.mp3" },
-            { imageSrc: "/Basics/Ocean.png", title: "Ocean", nativenm: "Océan", courseId: 2, audioSrc: "/Basics/audio/french/word/Ocean.mp3" },
-            { imageSrc: "/Basics/Oil.png", title: "Oil", nativenm: "Huile", courseId: 2, audioSrc: "/Basics/audio/french/word/Oil.mp3" },
-            { imageSrc: "/Basics/Ornament.png", title: "Ornament", nativenm: "Ornement", courseId: 2, audioSrc: "/Basics/audio/french/word/Ornament.mp3" },
-        
-            // P
-            { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "Stylo", courseId: 2, audioSrc: "/Basics/audio/french/word/Pen.mp3" },
-            { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "Ananas", courseId: 2, audioSrc: "/Basics/audio/french/word/Pineapple.mp3" },
-            { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "Panda", courseId: 2, audioSrc: "/Basics/audio/french/word/Panda.mp3" },
-            { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "Crayon", courseId: 2, audioSrc: "/Basics/audio/french/word/Pencil.mp3" },
-            { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "Avion", courseId: 2, audioSrc: "/Basics/audio/french/word/Plane.mp3" },
-            { imageSrc: "/Basics/Plate.png", title: "Plate", nativenm: "Assiette", courseId: 2, audioSrc: "/Basics/audio/french/word/Plate.mp3" },
-            { imageSrc: "/Basics/Plant.png", title: "Plant", nativenm: "Plante", courseId: 2, audioSrc: "/Basics/audio/french/word/Plant.mp3" },
-            { imageSrc: "/Basics/Peacock.png", title: "Peacock", nativenm: "Paon", courseId: 2, audioSrc: "/Basics/audio/french/word/Peacock.mp3" },
-            { imageSrc: "/Basics/Potato.png", title: "Potato", nativenm: "Pomme de terre", courseId: 2, audioSrc: "/Basics/audio/french/word/Potato.mp3" },
-            { imageSrc: "/Basics/Pumpkin.png", title: "Pumpkin", nativenm: "Citrouille", courseId: 2, audioSrc: "/Basics/audio/french/word/Pumpkin.mp3" },
-        
-            // Q
-            { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "Couette", courseId: 2, audioSrc: "/Basics/audio/french/word/Quilt.mp3" },
-            { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "Reine", courseId: 2, audioSrc: "/Basics/audio/french/word/Queen.mp3" },
-            { imageSrc: "/Basics/Quail.png", title: "Quail", nativenm: "Caille", courseId: 2, audioSrc: "/Basics/audio/french/word/Quail.mp3" },
-            { imageSrc: "/Basics/Quill.png", title: "Quill", nativenm: "Plume", courseId: 2, audioSrc: "/Basics/audio/french/word/Quill.mp3" },
-            { imageSrc: "/Basics/Quartz.png", title: "Quartz", nativenm: "Quartz", courseId: 2, audioSrc: "/Basics/audio/french/word/Quartz.mp3" },
-            { imageSrc: "/Basics/Question.png", title: "Question", nativenm: "Question", courseId: 2, audioSrc: "/Basics/audio/french/word/Question.mp3" },
-            { imageSrc: "/Basics/Queue.png", title: "Queue", nativenm: "File d'attente", courseId: 2, audioSrc: "/Basics/audio/french/word/Queue.mp3" },
-            { imageSrc: "/Basics/Quiver.png", title: "Quiver", nativenm: "Carquois", courseId: 2, audioSrc: "/Basics/audio/french/word/Quiver.mp3" },
-            { imageSrc: "/Basics/Quokka.png", title: "Quokka", nativenm: "Quokka", courseId: 2, audioSrc: "/Basics/audio/french/word/Quokka.mp3" },
-            { imageSrc: "/Basics/Quiche.png", title: "Quiche", nativenm: "Quiche", courseId: 2, audioSrc: "/Basics/audio/french/word/Quiche.mp3" },
-        
-            // R
-            { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "Lapin", courseId: 2, audioSrc: "/Basics/audio/french/word/Rabbit.mp3" },
-            { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "Pluie", courseId: 2, audioSrc: "/Basics/audio/french/word/Rain.mp3" },
-            { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "Anneau", courseId: 2, audioSrc: "/Basics/audio/french/word/Ring.mp3" },
-            { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "Rose", courseId: 2, audioSrc: "/Basics/audio/french/word/Rose.mp3" },
-            { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "Robot", courseId: 2, audioSrc: "/Basics/audio/french/word/Robot.mp3" },
-            { imageSrc: "/Basics/Rocket.png", title: "Rocket", nativenm: "Fusée", courseId: 2, audioSrc: "/Basics/audio/french/word/Rocket.mp3" },
-            { imageSrc: "/Basics/River.png", title: "River", nativenm: "Rivière", courseId: 2, audioSrc: "/Basics/audio/french/word/River.mp3" },
-            { imageSrc: "/Basics/Rope.png", title: "Rope", nativenm: "Corde", courseId: 2, audioSrc: "/Basics/audio/french/word/Rope.mp3" },
-            { imageSrc: "/Basics/Roof.png", title: "Roof", nativenm: "Toit", courseId: 2, audioSrc: "/Basics/audio/french/word/Roof.mp3" },
-            { imageSrc: "/Basics/Ruler.png", title: "Ruler", nativenm: "Règle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ruler.mp3" },
-        
-            // S
-            { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "Soleil", courseId: 2, audioSrc: "/Basics/audio/french/word/Sun.mp3" },
-            { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "Serpent", courseId: 2, audioSrc: "/Basics/audio/french/word/Snake.mp3" },
-            { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "Étoile", courseId: 2, audioSrc: "/Basics/audio/french/word/Star.mp3" },
-            { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "Chaussettes", courseId: 2, audioSrc: "/Basics/audio/french/word/Socks.mp3" },
-            { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "Sable", courseId: 2, audioSrc: "/Basics/audio/french/word/Sand.mp3" },
-            { imageSrc: "/Basics/Ship.png", title: "Ship", nativenm: "Bateau", courseId: 2, audioSrc: "/Basics/audio/french/word/Ship.mp3" },
-            { imageSrc: "/Basics/Shirt.png", title: "Shirt", nativenm: "Chemise", courseId: 2, audioSrc: "/Basics/audio/french/word/Shirt.mp3" },
-            { imageSrc: "/Basics/Spoon.png", title: "Spoon", nativenm: "Cuillère", courseId: 2, audioSrc: "/Basics/audio/french/word/Spoon.mp3" },
-            { imageSrc: "/Basics/Stone.png", title: "Stone", nativenm: "Pierre", courseId: 2, audioSrc: "/Basics/audio/french/word/Stone.mp3" },
-            { imageSrc: "/Basics/Swing.png", title: "Swing", nativenm: "Balançoire", courseId: 2, audioSrc: "/Basics/audio/french/word/Swing.mp3" },
-        
-            // T
-            { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "Tigre", courseId: 2, audioSrc: "/Basics/audio/french/word/Tiger.mp3" },
-            { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "Arbre", courseId: 2, audioSrc: "/Basics/audio/french/word/Tree.mp3" },
-            { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "Table", courseId: 2, audioSrc: "/Basics/audio/french/word/Table.mp3" },
-            { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "Télévision", courseId: 2, audioSrc: "/Basics/audio/french/word/Television.mp3" },
-            { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "Dent", courseId: 2, audioSrc: "/Basics/audio/french/word/Tooth.mp3" },
-            { imageSrc: "/Basics/Train.png", title: "Train", nativenm: "Train", courseId: 2, audioSrc: "/Basics/audio/french/word/Train.mp3" },
-            { imageSrc: "/Basics/Turtle.png", title: "Turtle", nativenm: "Tortue", courseId: 2, audioSrc: "/Basics/audio/french/word/Turtle.mp3" },
-            { imageSrc: "/Basics/Tent.png", title: "Tent", nativenm: "Tente", courseId: 2, audioSrc: "/Basics/audio/french/word/Tent.mp3" },
-            { imageSrc: "/Basics/Trophy.png", title: "Trophy", nativenm: "Trophée", courseId: 2, audioSrc: "/Basics/audio/french/word/Trophy.mp3" },
-            { imageSrc: "/Basics/Tail.png", title: "Tail", nativenm: "Queue", courseId: 2, audioSrc: "/Basics/audio/french/word/Tail.mp3" },
-        
-            // U
-            { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "Parapluie", courseId: 2, audioSrc: "/Basics/audio/french/word/Umbrella.mp3" },
-            { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "Urne", courseId: 2, audioSrc: "/Basics/audio/french/word/Urn.mp3" },
-            { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "Oncle", courseId: 2, audioSrc: "/Basics/audio/french/word/Uncle.mp3" },
-            { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "Licorne", courseId: 2, audioSrc: "/Basics/audio/french/word/Unicorn.mp3" },
-            { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "Univers", courseId: 2, audioSrc: "/Basics/audio/french/word/Universe.mp3" },
-            { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "Ustensile", courseId: 2, audioSrc: "/Basics/audio/french/word/Utensil.mp3" },
-            { imageSrc: "/Basics/Uniform.png", title: "Uniform", nativenm: "Uniforme", courseId: 2, audioSrc: "/Basics/audio/french/word/Uniform.mp3" },
-            { imageSrc: "/Basics/Urchin.png", title: "Urchin", nativenm: "Oursin", courseId: 2, audioSrc: "/Basics/audio/french/word/Urchin.mp3" },
-            { imageSrc: "/Basics/Ukulele.png", title: "Ukulele", nativenm: "Ukulélé", courseId: 2, audioSrc: "/Basics/audio/french/word/Ukulele.mp3" },
-            { imageSrc: "/Basics/Update.png", title: "Update", nativenm: "Mise à jour", courseId: 2, audioSrc: "/Basics/audio/french/word/Update.mp3" },
-        
-            // V
-            { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "Fourgonnette", courseId: 2, audioSrc: "/Basics/audio/french/word/Van.mp3" },
-            { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "Vautour", courseId: 2, audioSrc: "/Basics/audio/french/word/Vulture.mp3" },
-            { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "Aspirateur", courseId: 2, audioSrc: "/Basics/audio/french/word/Vacuum.mp3" },
-            { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "Victime", courseId: 2, audioSrc: "/Basics/audio/french/word/Victim.mp3" },
-            { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "Légume", courseId: 2, audioSrc: "/Basics/audio/french/word/Vegetable.mp3" },
-            { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "Volcan", courseId: 2, audioSrc: "/Basics/audio/french/word/Volcano.mp3" },
-            { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "Vacances", courseId: 2, audioSrc: "/Basics/audio/french/word/Vacation.mp3" },
-            { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "Vampire", courseId: 2, audioSrc: "/Basics/audio/french/word/Vampire.mp3" },
-            { imageSrc: "/Basics/Vest.png", title: "Vest", nativenm: "Gilet", courseId: 2, audioSrc: "/Basics/audio/french/word/Vest.mp3" },
-            { imageSrc: "/Basics/Vine.png", title: "Vine", nativenm: "Vigne", courseId: 2, audioSrc: "/Basics/audio/french/word/Vine.mp3" },
-        
-            // W
-            { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "Loup", courseId: 2, audioSrc: "/Basics/audio/french/word/Wolf.mp3" },
-            { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "Pastèque", courseId: 2, audioSrc: "/Basics/audio/french/word/Watermelon.mp3" },
-            { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "Fenêtre", courseId: 2, audioSrc: "/Basics/audio/french/word/Window.mp3" },
-            { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "Wagon", courseId: 2, audioSrc: "/Basics/audio/french/word/Wagon.mp3" },
-            { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "Cascade", courseId: 2, audioSrc: "/Basics/audio/french/word/Waterfall.mp3" },
-            { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "Montre", courseId: 2, audioSrc: "/Basics/audio/french/word/Watch.mp3" },
-            { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "Baleine", courseId: 2, audioSrc: "/Basics/audio/french/word/Whale.mp3" },
-            { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "Hiver", courseId: 2, audioSrc: "/Basics/audio/french/word/Winter.mp3" },
-            { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "Poignet", courseId: 2, audioSrc: "/Basics/audio/french/word/Wrist.mp3" },
-            { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "Sifflet", courseId: 2, audioSrc: "/Basics/audio/french/word/Whistle.mp3" },
-        
-            // X
-            { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "Xylophone", courseId: 2, audioSrc: "/Basics/audio/french/word/Xylophone.mp3" },
-            { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "Rayon X", courseId: 2, audioSrc: "/Basics/audio/french/word/X-ray.mp3" },
-            { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "Xénon", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenon.mp3" },
-            { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "Noël", courseId: 2, audioSrc: "/Basics/audio/french/word/Xmas.mp3" },
-            { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "Xénophobie", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenophobia.mp3" },
-            { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "Xénial", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenial.mp3" },
-            { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "Xeon", courseId: 2, audioSrc: "/Basics/audio/french/word/Xeon.mp3" },
-            { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "Examiner", courseId: 2, audioSrc: "/Basics/audio/french/word/Examine.mp3" },
-            { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "Exploser", courseId: 2, audioSrc: "/Basics/audio/french/word/Explode.mp3" },
-            { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "Exil", courseId: 2, audioSrc: "/Basics/audio/french/word/Exile.mp3" },
-        
-            // Y
-            { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "Yak", courseId: 2, audioSrc: "/Basics/audio/french/word/Yak.mp3" },
-            { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "Jaune", courseId: 2, audioSrc: "/Basics/audio/french/word/Yellow.mp3" },
-            { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "Yaourt", courseId: 2, audioSrc: "/Basics/audio/french/word/Yogurt.mp3" },
-            { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "Fil", courseId: 2, audioSrc: "/Basics/audio/french/word/Yarn.mp3" },
-            { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "Yoga", courseId: 2, audioSrc: "/Basics/audio/french/word/Yoga.mp3" },
-            { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "Bâillement", courseId: 2, audioSrc: "/Basics/audio/french/word/Yawn.mp3" },
-            { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "Cour", courseId: 2, audioSrc: "/Basics/audio/french/word/Yard.mp3" },
-            { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "Crier", courseId: 2, audioSrc: "/Basics/audio/french/word/Yell.mp3" },
-            { imageSrc: "/Basics/Yolk.png", title: "Yolk", nativenm: "Jaune d'œuf", courseId: 2, audioSrc: "/Basics/audio/french/word/Yolk.mp3" },
-            { imageSrc: "/Basics/Yacht.png", title: "Yacht", nativenm: "Yacht", courseId: 2, audioSrc: "/Basics/audio/french/word/Yacht.mp3" },
-        
-            // Z
-            { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "Zèbre", courseId: 2, audioSrc: "/Basics/audio/french/word/Zebra.mp3" },
-            { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "Zoo", courseId: 2, audioSrc: "/Basics/audio/french/word/Zoo.mp3" },
-            { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "Zénith", courseId: 2, audioSrc: "/Basics/audio/french/word/Zenith.mp3" },
-            { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "Zéro", courseId: 2, audioSrc: "/Basics/audio/french/word/Zero.mp3" },
-            { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "Zigzag", courseId: 2, audioSrc: "/Basics/audio/french/word/Zigzag.mp3" },
-            { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "Zeppelin", courseId: 2, audioSrc: "/Basics/audio/french/word/Zeppelin.mp3" },
-            { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "Zombie", courseId: 2, audioSrc: "/Basics/audio/french/word/Zombie.mp3" },
-            { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "Zone", courseId: 2, audioSrc: "/Basics/audio/french/word/Zone.mp3" },
-            { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "Zodiaque", courseId: 2, audioSrc: "/Basics/audio/french/word/Zodiac.mp3" },
-            { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "Zoom", courseId: 2, audioSrc: "/Basics/audio/french/word/Zoom.mp3" },
-        
-
-        //japnese
-       
-            // A
-            { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "りんご", courseId: 3, audioSrc: "/Basics/audio/Apple.mp3" },
-            { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "あり", courseId: 3, audioSrc: "/Basics/audio/Ant.mp3" },
-            { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "うで", courseId: 3, audioSrc: "/Basics/audio/Arm.mp3" },
-            { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "ひこうき", courseId: 3, audioSrc: "/Basics/audio/Airplane.mp3" },
-            { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "やじるし", courseId: 3, audioSrc: "/Basics/audio/Arrow.mp3" },
-            { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "いかり", courseId: 3, audioSrc: "/Basics/audio/Anchor.mp3" },
-            { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "ワニ", courseId: 3, audioSrc: "/Basics/audio/Alligator.mp3" },
-            { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "アラーム", courseId: 3, audioSrc: "/Basics/audio/Alarm.mp3" },
-            { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "俳優", courseId: 3, audioSrc: "/Basics/audio/Actor.mp3" },
-            { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "芸術", courseId: 3, audioSrc: "/Basics/audio/Art.mp3" },
-        
-            // B
-            { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "ボール", courseId: 3, audioSrc: "/Basics/audio/Ball.mp3" },
-            { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "くま", courseId: 3, audioSrc: "/Basics/audio/Bear.mp3" },
-            { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "とり", courseId: 3, audioSrc: "/Basics/audio/Bird.mp3" },
-            { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "ちょうちょ", courseId: 3, audioSrc: "/Basics/audio/Butterfly.mp3" },
-            { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "バナナ", courseId: 3, audioSrc: "/Basics/audio/Banana.mp3" },
-            { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "ボート", courseId: 3, audioSrc: "/Basics/audio/Boat.mp3" },
-            { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "はこ", courseId: 3, audioSrc: "/Basics/audio/Box.mp3" },
-            { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "ほん", courseId: 3, audioSrc: "/Basics/audio/Book.mp3" },
-            { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "ベンチ", courseId: 3, audioSrc: "/Basics/audio/Bench.mp3" },
-            { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "ベル", courseId: 3, audioSrc: "/Basics/audio/Bell.mp3" },
-        
-            // C
-            { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "ねこ", courseId: 3, audioSrc: "/Basics/audio/Cat.mp3" },
-            { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "ケーキ", courseId: 3, audioSrc: "/Basics/audio/Cake.mp3" },
-            { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "ろうそく", courseId: 3, audioSrc: "/Basics/audio/Candle.mp3" },
-            { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "うし", courseId: 3, audioSrc: "/Basics/audio/Cow.mp3" },
-            { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "くるま", courseId: 3, audioSrc: "/Basics/audio/Car.mp3" },
-            { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "コイン", courseId: 3, audioSrc: "/Basics/audio/Coin.mp3" },
-            { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "おうかん", courseId: 3, audioSrc: "/Basics/audio/Crown.mp3" },
-            { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "サボテン", courseId: 3, audioSrc: "/Basics/audio/Cactus.mp3" },
-            { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "とけい", courseId: 3, audioSrc: "/Basics/audio/Clock.mp3" },
-            { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "くも", courseId: 3, audioSrc: "/Basics/audio/Cloud.mp3" },
-        
-            // D
-            { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "いぬ", courseId: 3, audioSrc: "/Basics/audio/Dog.mp3" },
-            { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "あひる", courseId: 3, audioSrc: "/Basics/audio/Duck.mp3" },
-            { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "ドレス", courseId: 3, audioSrc: "/Basics/audio/Dress.mp3" },
-            { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "ドア", courseId: 3, audioSrc: "/Basics/audio/Door.mp3" },
-            { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "ダイヤモンド", courseId: 3, audioSrc: "/Basics/audio/Diamond.mp3" },
-            { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "イルカ", courseId: 3, audioSrc: "/Basics/audio/Dolphin.mp3" },
-            { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "ロバ", courseId: 3, audioSrc: "/Basics/audio/Donkey.mp3" },
-            { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "さいころ", courseId: 3, audioSrc: "/Basics/audio/Dice.mp3" },
-            { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "ドラム", courseId: 3, audioSrc: "/Basics/audio/Drum.mp3" },
-            { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "しずく", courseId: 3, audioSrc: "/Basics/audio/Drop.mp3" },
-        
-            // E
-            { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "ぞう", courseId: 3, audioSrc: "/Basics/audio/Elephant.mp3" },
-            { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "たまご", courseId: 3, audioSrc: "/Basics/audio/Egg.mp3" },
-            { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "エンジン", courseId: 3, audioSrc: "/Basics/audio/Engine.mp3" },
-            { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "ふうとう", courseId: 3, audioSrc: "/Basics/audio/Envelope.mp3" },
-            { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "みみ", courseId: 3, audioSrc: "/Basics/audio/Ear.mp3" },
-            { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "わし", courseId: 3, audioSrc: "/Basics/audio/Eagle.mp3" },
-            { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "ちきゅう", courseId: 3, audioSrc: "/Basics/audio/Earth.mp3" },
-            { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "め", courseId: 3, audioSrc: "/Basics/audio/Eye.mp3" },
-            { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "エルフ", courseId: 3, audioSrc: "/Basics/audio/Elf.mp3" },
-            { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "エレベーター", courseId: 3, audioSrc: "/Basics/audio/Elevator.mp3" },
-        
-            // F
-            { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "さかな", courseId: 3, audioSrc: "/Basics/audio/Fish.mp3" },
-            { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "はな", courseId: 3, audioSrc: "/Basics/audio/Flower.mp3" },
-            { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "フォーク", courseId: 3, audioSrc: "/Basics/audio/Fork.mp3" },
-            { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "ひ", courseId: 3, audioSrc: "/Basics/audio/Fire.mp3" },
-            { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "きつね", courseId: 3, audioSrc: "/Basics/audio/Fox.mp3" },
-            { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "フェンス", courseId: 3, audioSrc: "/Basics/audio/Fence.mp3" },
-        
-            // G
-            { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "ギター", courseId: 3, audioSrc: "/Basics/audio/Guitar.mp3" },
-            { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "ぶどう", courseId: 3, audioSrc: "/Basics/audio/Grapes.mp3" },
-            { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "キリン", courseId: 3, audioSrc: "/Basics/audio/Giraffe.mp3" },
-            { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "やぎ", courseId: 3, audioSrc: "/Basics/audio/Goat.mp3" },
-            { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "てぶくろ", courseId: 3, audioSrc: "/Basics/audio/Glove.mp3" },
-            { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "にわ", courseId: 3, audioSrc: "/Basics/audio/Garden.mp3" },
-        
-            // H
-            { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "ぼうし", courseId: 3, audioSrc: "/Basics/audio/Hat.mp3" },
-            { imageSrc: "/Basics/House.png", title: "House", nativenm: "いえ", courseId: 3, audioSrc: "/Basics/audio/House.mp3" },
-            { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "うま", courseId: 3, audioSrc: "/Basics/audio/Horse.mp3" },
-            { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "ハンマー", courseId: 3, audioSrc: "/Basics/audio/Hammer.mp3" },
-            { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "て", courseId: 3, audioSrc: "/Basics/audio/Hand.mp3" },
-            { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "ハート", courseId: 3, audioSrc: "/Basics/audio/Heart.mp3" },
-        
-            // I
-            { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "こおり", courseId: 3, audioSrc: "/Basics/audio/Ice.mp3" },
-            { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "アイロン", courseId: 3, audioSrc: "/Basics/audio/Iron.mp3" },
-            { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "イグアナ", courseId: 3, audioSrc: "/Basics/audio/Iguana.mp3" },
-            { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "こんちゅう", courseId: 3, audioSrc: "/Basics/audio/Insect.mp3" },
-            { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "インク", courseId: 3, audioSrc: "/Basics/audio/Ink.mp3" },
-            { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "アイスクリーム", courseId: 3, audioSrc: "/Basics/audio/Ice Cream.mp3" },
-        
-            // J
-            { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "ジャケット", courseId: 3, audioSrc: "/Basics/audio/Jacket.mp3" },
-            { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "ジャングル", courseId: 3, audioSrc: "/Basics/audio/Jungle.mp3" },
-            { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "ジャンプ", courseId: 3, audioSrc: "/Basics/audio/Jump.mp3" },
-            { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "びん", courseId: 3, audioSrc: "/Basics/audio/Jar.mp3" },
-            { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "くらげ", courseId: 3, audioSrc: "/Basics/audio/Jellyfish.mp3" },
-        
-            // K
-            { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "キウイ", courseId: 3, audioSrc: "/Basics/audio/Kiwi.mp3" },
-            { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "カンガルー", courseId: 3, audioSrc: "/Basics/audio/Kangaroo.mp3" },
-            { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "やかん", courseId: 3, audioSrc: "/Basics/audio/Kettle.mp3" },
-            { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "かぎ", courseId: 3, audioSrc: "/Basics/audio/Key.mp3" },
-            { imageSrc: "/Basics/King.png", title: "King", nativenm: "おう", courseId: 3, audioSrc: "/Basics/audio/King.mp3" },
-        
-            // L
-            { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "ライオン", courseId: 3, audioSrc: "/Basics/audio/Lion.mp3" },
-            { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "ランプ", courseId: 3, audioSrc: "/Basics/audio/Lamp.mp3" },
-            { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "レモン", courseId: 3, audioSrc: "/Basics/audio/Lemon.mp3" },
-            { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "はしご", courseId: 3, audioSrc: "/Basics/audio/Ladder.mp3" },
-            { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "は", courseId: 3, audioSrc: "/Basics/audio/Leaf.mp3" },
-        
-            // M
-            { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "ねずみ", courseId: 3, audioSrc: "/Basics/audio/Mouse.mp3" },
-            { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "さる", courseId: 3, audioSrc: "/Basics/audio/Monkey.mp3" },
-            { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "やま", courseId: 3, audioSrc: "/Basics/audio/Mountain.mp3" },
-            { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "ミルク", courseId: 3, audioSrc: "/Basics/audio/Milk.mp3" },
-            { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "かがみ", courseId: 3, audioSrc: "/Basics/audio/Mirror.mp3" },
-        
-            // N
-            { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "ネット", courseId: 3, audioSrc: "/Basics/audio/Net.mp3" },
-            { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "はな", courseId: 3, audioSrc: "/Basics/audio/Nose.mp3" },
-            { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "よる", courseId: 3, audioSrc: "/Basics/audio/Night.mp3" },
-            { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "ナット", courseId: 3, audioSrc: "/Basics/audio/Nut.mp3" },
-        
-            // O
-            { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "ダチョウ", courseId: 3, audioSrc: "/Basics/audio/Ostrich.mp3" },
-            { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "たこ", courseId: 3, audioSrc: "/Basics/audio/Octopus.mp3" },
-            { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "ふくろう", courseId: 3, audioSrc: "/Basics/audio/Owl.mp3" },
-            { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "オリーブ", courseId: 3, audioSrc: "/Basics/audio/Olive.mp3" },
-            { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "さんそ", courseId: 3, audioSrc: "/Basics/audio/Oxygen.mp3" },
-        
-            // P
-            { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "ペン", courseId: 3, audioSrc: "/Basics/audio/Pen.mp3" },
-            { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "パイナップル", courseId: 3, audioSrc: "/Basics/audio/Pineapple.mp3" },
-            { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "パンダ", courseId: 3, audioSrc: "/Basics/audio/Panda.mp3" },
-            { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "えんぴつ", courseId: 3, audioSrc: "/Basics/audio/Pencil.mp3" },
-            { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "ひこうき", courseId: 3, audioSrc: "/Basics/audio/Plane.mp3" },
-        
-            // Q
-            { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "キルト", courseId: 3, audioSrc: "/Basics/audio/Quilt.mp3" },
-            { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "クイーン", courseId: 3, audioSrc: "/Basics/audio/Queen.mp3" },
-        
-            // R
-            { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "うさぎ", courseId: 3, audioSrc: "/Basics/audio/Rabbit.mp3" },
-            { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "あめ", courseId: 3, audioSrc: "/Basics/audio/Rain.mp3" },
-            { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "ゆびわ", courseId: 3, audioSrc: "/Basics/audio/Ring.mp3" },
-            { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "バラ", courseId: 3, audioSrc: "/Basics/audio/Rose.mp3" },
-            { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "ロボット", courseId: 3, audioSrc: "/Basics/audio/Robot.mp3" },
-        
-            // S
-            { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "たいよう", courseId: 3, audioSrc: "/Basics/audio/Sun.mp3" },
-            { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "へび", courseId: 3, audioSrc: "/Basics/audio/Snake.mp3" },
-            { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "ほし", courseId: 3, audioSrc: "/Basics/audio/Star.mp3" },
-            { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "くつした", courseId: 3, audioSrc: "/Basics/audio/Socks.mp3" },
-            { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "すな", courseId: 3, audioSrc: "/Basics/audio/Sand.mp3" },
-        
-            // T
-            { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "とら", courseId: 3, audioSrc: "/Basics/audio/Tiger.mp3" },
-            { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "き", courseId: 3, audioSrc: "/Basics/audio/Tree.mp3" },
-            { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "テーブル", courseId: 3, audioSrc: "/Basics/audio/Table.mp3" },
-            { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "テレビ", courseId: 3, audioSrc: "/Basics/audio/Television.mp3" },
-            { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "は", courseId: 3, audioSrc: "/Basics/audio/Tooth.mp3" },
-        
-            // U
-            { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "かさ", courseId: 3, audioSrc: "/Basics/audio/Umbrella.mp3" },
-            { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "つぼ", courseId: 3, audioSrc: "/Basics/audio/Urn.mp3" },
-            { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "おじ", courseId: 3, audioSrc: "/Basics/audio/Uncle.mp3" },
-            { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "ユニコーン", courseId: 3, audioSrc: "/Basics/audio/Unicorn.mp3" },
-            { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "うちゅう", courseId: 3, audioSrc: "/Basics/audio/Universe.mp3" },
-            { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "ようぐ", courseId: 3, audioSrc: "/Basics/audio/Utensil.mp3" },
-        
-            // V
-            { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "バン", courseId: 3, audioSrc: "/Basics/audio/Van.mp3" },
-            { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "ハゲワシ", courseId: 3, audioSrc: "/Basics/audio/Vulture.mp3" },
-            { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "そうじき", courseId: 3, audioSrc: "/Basics/audio/Vacuum.mp3" },
-            { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "ひがいしゃ", courseId: 3, audioSrc: "/Basics/audio/Victim.mp3" },
-            { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "やさい", courseId: 3, audioSrc: "/Basics/audio/Vegetable.mp3" },
-            { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "かざん", courseId: 3, audioSrc: "/Basics/audio/Volcano.mp3" },
-            { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "バケーション", courseId: 3, audioSrc: "/Basics/audio/Vacation.mp3" },
-            { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "ヴァンパイア", courseId: 3, audioSrc: "/Basics/audio/Vampire.mp3" },
-        
-            // W
-            { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "おおかみ", courseId: 3, audioSrc: "/Basics/audio/Wolf.mp3" },
-            { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "すいか", courseId: 3, audioSrc: "/Basics/audio/Watermelon.mp3" },
-            { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "まど", courseId: 3, audioSrc: "/Basics/audio/Window.mp3" },
-            { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "ワゴン", courseId: 3, audioSrc: "/Basics/audio/Wagon.mp3" },
-            { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "たき", courseId: 3, audioSrc: "/Basics/audio/Waterfall.mp3" },
-            { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "とけい", courseId: 3, audioSrc: "/Basics/audio/Watch.mp3" },
-            { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "くじら", courseId: 3, audioSrc: "/Basics/audio/Whale.mp3" },
-            { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "ふゆ", courseId: 3, audioSrc: "/Basics/audio/Winter.mp3" },
-            { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "てくび", courseId: 3, audioSrc: "/Basics/audio/Wrist.mp3" },
-            { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "くちぶえ", courseId: 3, audioSrc: "/Basics/audio/Whistle.mp3" },
-        
-            // X
-            { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "シロフォン", courseId: 3, audioSrc: "/Basics/audio/Xylophone.mp3" },
-            { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "エックスせん", courseId: 3, audioSrc: "/Basics/audio/X-ray.mp3" },
-            { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "キセノン", courseId: 3, audioSrc: "/Basics/audio/Xenon.mp3" },
-            { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "クリスマス", courseId: 3, audioSrc: "/Basics/audio/Xmas.mp3" },
-            { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "がいこくじんきょうふ", courseId: 3, audioSrc: "/Basics/audio/Xenophobia.mp3" },
-            { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "フレンドリー", courseId: 3, audioSrc: "/Basics/audio/Xenial.mp3" },
-            { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "ゼオン", courseId: 3, audioSrc: "/Basics/audio/Xeon.mp3" },
-            { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "しらべる", courseId: 3, audioSrc: "/Basics/audio/Examine.mp3" },
-            { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "ばくはつ", courseId: 3, audioSrc: "/Basics/audio/Explode.mp3" },
-            { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "ついほう", courseId: 3, audioSrc: "/Basics/audio/Exile.mp3" },
-        
-            // Y
-            { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "ヤク", courseId: 3, audioSrc: "/Basics/audio/Yak.mp3" },
-            { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "きいろ", courseId: 3, audioSrc: "/Basics/audio/Yellow.mp3" },
-            { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "ヨーグルト", courseId: 3, audioSrc: "/Basics/audio/Yogurt.mp3" },
-            { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "いと", courseId: 3, audioSrc: "/Basics/audio/Yarn.mp3" },
-            { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "ヨガ", courseId: 3, audioSrc: "/Basics/audio/Yoga.mp3" },
-            { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "あくび", courseId: 3, audioSrc: "/Basics/audio/Yawn.mp3" },
-            { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "にわ", courseId: 3, audioSrc: "/Basics/audio/Yard.mp3" },
-            { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "さけぶ", courseId: 3, audioSrc: "/Basics/audio/Yell.mp3" },
-        
-            // Z
-            { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "シマウマ", courseId: 3, audioSrc: "/Basics/audio/Zebra.mp3" },
-            { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "どうぶつえん", courseId: 3, audioSrc: "/Basics/audio/Zoo.mp3" },
-
-
-
-            //marathi data here
-            
-                { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "सफरचंद", courseId: 4, audioSrc: "Basics/audio/marathi/word/Apple.mp3" },
-                { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "मुंगी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ant.mp3" },
-                { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arm.mp3" },
-                { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Airplane.mp3" },
-                { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "बाण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arrow.mp3" },
-                { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "नांगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Anchor.mp3" },
-                { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "मगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alligator.mp3" },
-                { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "अलार्म", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alarm.mp3" },
-                { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "अभिनेता", courseId: 4, audioSrc: "Basics/audio/marathi/word/Actor.mp3" },
-                { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "कला", courseId: 4, audioSrc: "Basics/audio/marathi/word/Art.mp3" },
-            
-                // B
-                { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "चेंडू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ball.mp3" },
-                { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "अस्वल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bear.mp3" },
-                { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "पक्षी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bird.mp3" },
-                { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "फुलपाखरू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Butterfly.mp3" },
-                { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "केळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Banana.mp3" },
-                { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "बोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Boat.mp3" },
-                { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "पेटी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Box.mp3" },
-                { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "पुस्तक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Book.mp3" },
-                { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "बेंच", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bench.mp3" },
-                { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "घंटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bell.mp3" },
-            
-                // C
-                { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "मांजर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cat.mp3" },
-                { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "केक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cake.mp3" },
-                { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "मेणबत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Candle.mp3" },
-                { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "गाय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cow.mp3" },
-                { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "कार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Car.mp3" },
-                { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "नाणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Coin.mp3" },
-                { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "मुकुट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Crown.mp3" },
-                { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "कॅक्टस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cactus.mp3" },
-                { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Clock.mp3" },
-                { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "ढग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cloud.mp3" },
-            
-                // D
-                { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "कुत्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dog.mp3" },
-                { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "बदक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Duck.mp3" },
-                { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "ड्रेस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dress.mp3" },
-                { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "दरवाजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Door.mp3" },
-                { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "हिरा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Diamond.mp3" },
-                { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "डॉल्फिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dolphin.mp3" },
-                { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "गाढव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Donkey.mp3" },
-                { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "फासे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dice.mp3" },
-                { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "ड्रम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drum.mp3" },
-                { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "थेंब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drop.mp3" },
-            
-                // E
-                { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "हत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elephant.mp3" },
-                { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "अंडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Egg.mp3" },
-                { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "इंजिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Engine.mp3" },
-                { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "लिफाफा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Envelope.mp3" },
-                { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "कान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ear.mp3" },
-                { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "गरूड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eagle.mp3" },
-                { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "पृथ्वी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Earth.mp3" },
-                { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "डोळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eye.mp3" },
-                { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "एल्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elf.mp3" },
-                { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "लिफ्ट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elevator.mp3" },
-            
-                // F
-                { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "मासा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fish.mp3" },
-                { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "फूल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Flower.mp3" },
-                { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "काटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fork.mp3" },
-                { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "आग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fire.mp3" },
-                { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "कोल्हा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fox.mp3" },
-                { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "कुंपण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fence.mp3" },
-            
-                // G
-                { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "गिटार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Guitar.mp3" },
-                { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "द्राक्ष", courseId: 4, audioSrc: "Basics/audio/marathi/word/Grapes.mp3" },
-                { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "जिराफ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Giraffe.mp3" },
-                { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "शेळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Goat.mp3" },
-                { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "हातमोजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Glove.mp3" },
-                { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "बाग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Garden.mp3" },
-            
-                // H
-                { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "टोपी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hat.mp3" },
-                { imageSrc: "/Basics/House.png", title: "House", nativenm: "घर", courseId: 4, audioSrc: "Basics/audio/marathi/word/House.mp3" },
-                { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "घोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Horse.mp3" },
-                { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "हातोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hammer.mp3" },
-                { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hand.mp3" },
-                { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "हृदय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Heart.mp3" },
-            
-                // I
-    { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "बर्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice.mp3" },
-    { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "लोखंड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iron.mp3" },
-    { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "इगुआना", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iguana.mp3" },
-    { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "कीटक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Insect.mp3" },
-    { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "शाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ink.mp3" },
-    { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "आईस्क्रीम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice Cream.mp3" },
-
-    // J
-    { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "जाकीट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jacket.mp3" },
-    { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "जंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jungle.mp3" },
-    { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "उडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jump.mp3" },
-    { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "जार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jar.mp3" },
-    { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "जेलीफिश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jellyfish.mp3" },
-
-    // K
-    { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "किवी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kiwi.mp3" },
-    { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "कांगारू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kangaroo.mp3" },
-    { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "केतली", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kettle.mp3" },
-    { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "चावी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Key.mp3" },
-    { imageSrc: "/Basics/King.png", title: "King", nativenm: "राजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/King.mp3" },
-
-    // L
-    { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "सिंह", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lion.mp3" },
-    { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "दिवा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lamp.mp3" },
-    { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "लिंबू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lemon.mp3" },
-    { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "शिडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ladder.mp3" },
-    { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "पान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Leaf.mp3" },
-
-    // M
-    { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "उंदीर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mouse.mp3" },
-    { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "माकड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Monkey.mp3" },
-    { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "पर्वत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mountain.mp3" },
-    { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "दूध", courseId: 4, audioSrc: "Basics/audio/marathi/word/Milk.mp3" },
-    { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "आरसा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mirror.mp3" },
-
-    // N
-    { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "जाळे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Net.mp3" },
-    { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "नाक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nose.mp3" },
-    { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "रात्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Night.mp3" },
-    { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "काजू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nut.mp3" },
-
-    // O
-    { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "शहामृग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ostrich.mp3" },
-    { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "ऑक्टोपस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Octopus.mp3" },
-    { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "घुबड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Owl.mp3" },
-    { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "ऑलिव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Olive.mp3" },
-    { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "ऑक्सिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Oxygen.mp3" },
-
-    // P
-    { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "पेन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pen.mp3" },
-    { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "अननस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pineapple.mp3" },
-    { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "पांडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Panda.mp3" },
-    { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "पेन्सिल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pencil.mp3" },
-    { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Plane.mp3" },
-
-    // Q
-    { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "रजाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Quilt.mp3" },
-    { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "राणी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Queen.mp3" },
-
-    // R
-    { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "ससा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rabbit.mp3" },
-    { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "पाऊस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rain.mp3" },
-    { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "अंगठी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ring.mp3" },
-    { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "गुलाब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rose.mp3" },
-    { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "रोबोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Robot.mp3" },
-
-    // S
-    { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "सूर्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sun.mp3" },
-    { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "साप", courseId: 4, audioSrc: "Basics/audio/marathi/word/Snake.mp3" },
-    { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "तारा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Star.mp3" },
-    { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "मोजे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Socks.mp3" },
-    { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "वाळू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sand.mp3" },
-
-    // T
-    { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "वाघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tiger.mp3" },
-    { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "झाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tree.mp3" },
-    { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "टेबल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Table.mp3" },
-    { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "टेलिव्हिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Television.mp3" },
-    { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "दात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tooth.mp3" },
-
-    // U
-    { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "छत्री", courseId: 4, audioSrc: "Basics/audio/marathi/word/Umbrella.mp3" },
-    { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "कलश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Urn.mp3" },
-    { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "काका", courseId: 4, audioSrc: "Basics/audio/marathi/word/Uncle.mp3" },
-    { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "युनिकॉर्न", courseId: 4, audioSrc: "Basics/audio/marathi/word/Unicorn.mp3" },
-    { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "विश्व", courseId: 4, audioSrc: "Basics/audio/marathi/word/Universe.mp3" },
-    { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "भांडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Utensil.mp3" },
-
-    // V
-    { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "व्हॅन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Van.mp3" },
-    { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "गिधाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vulture.mp3" },
-    { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "व्हॅक्यूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacuum.mp3" },
-    { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "बळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Victim.mp3" },
-    { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "भाजी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vegetable.mp3" },
-    { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "ज्वालामुखी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Volcano.mp3" },
-    { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "सुट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacation.mp3" },
-    { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "व्हॅम्पायर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vampire.mp3" },
-
-    // W
-    { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "लांडगा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wolf.mp3" },
-    { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "कलिंगड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watermelon.mp3" },
-    { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "खिडकी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Window.mp3" },
-    { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "गाडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wagon.mp3" },
-    { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "धबधबा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Waterfall.mp3" },
-    { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watch.mp3" },
-    { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "तिमिंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whale.mp3" },
-    { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "हिवाळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Winter.mp3" },
-    { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "मनगट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wrist.mp3" },
-    { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "शिट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whistle.mp3" },
-
-    // X
-    { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "झायलोफोन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xylophone.mp3" },
-    { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "क्ष-किरण", courseId: 4, audioSrc: "Basics/audio/marathi/word/X-ray.mp3" },
-    { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "झेनॉन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenon.mp3" },
-    { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "ख्रिसमस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xmas.mp3" },
-    { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "परकीयभीती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenophobia.mp3" },
-    { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "मैत्रीपूर्ण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenial.mp3" },
-    { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "झिऑन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xeon.mp3" },
-    { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "परीक्षण करणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Examine.mp3" },
-    { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "स्फोट होणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Explode.mp3" },
-    { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "निर्वासन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Exile.mp3" },
-
-    // Y
-    { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "याक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yak.mp3" },
-    { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "पिवळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yellow.mp3" },
-    { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "दही", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yogurt.mp3" },
-    { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "सुत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yarn.mp3" },
-    { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "योग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yoga.mp3" },
-    { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "जांभई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yawn.mp3" },
-    { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "आंगण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yard.mp3" },
-    { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "आरडाओरडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yell.mp3" },
-
-    // Z
-    { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "झेब्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zebra.mp3" },
-    { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "प्राणीसंग्रहालय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoo.mp3" },
-    { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "परमोच्च बिंदू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zenith.mp3" },
-    { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "शून्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zero.mp3" },
-    { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "तिरपी रेघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zigzag.mp3" },
-    { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "झेपेलिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zeppelin.mp3" },
-    { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "झोंबी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zombie.mp3" },
-    { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "क्षेत्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zone.mp3" },
-    { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "राशीचक्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zodiac.mp3" },
-    { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "झूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoom.mp3" },
+      // A
       
+          { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "Manzana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Apple.mp3" },
+          { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "Hormiga", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ant.mp3" },
+          { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "Brazo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Arm.mp3" },
+          { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "Avión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Airplane.mp3" },
+          { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "Flecha", courseId: 1, audioSrc: "Basics/audio/spanish/word/Arrow.mp3" },
+          { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "Ancla", courseId: 1, audioSrc: "Basics/audio/spanish/word/Anchor.mp3" },
+          { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "Caimán", courseId: 1, audioSrc: "Basics/audio/spanish/word/Alligator.mp3" },
+          { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "Alarma", courseId: 1, audioSrc: "Basics/audio/spanish/word/Alarm.mp3" },
+          { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "Actor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Actor.mp3" },
+          { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "Arte", courseId: 1, audioSrc: "Basics/audio/spanish/word/Art.mp3" },
       
-    
-      ];
+          // B
+          { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "Pelota", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ball.mp3" },
+          { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "Oso", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bear.mp3" },
+          { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "Pájaro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bird.mp3" },
+          { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "Mariposa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Butterfly.mp3" },
+          { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "Plátano", courseId: 1, audioSrc: "Basics/audio/spanish/word/Banana.mp3" },
+          { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "Barco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Boat.mp3" },
+          { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "Caja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Box.mp3" },
+          { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "Libro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Book.mp3" },
+          { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "Banco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bench.mp3" },
+          { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "Campana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Bell.mp3" },
+      
+          // C
+          { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "Gato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cat.mp3" },
+          { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "Pastel", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cake.mp3" },
+          { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "Vela", courseId: 1, audioSrc: "Basics/audio/spanish/word/Candle.mp3" },
+          { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "Vaca", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cow.mp3" },
+          { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "Coche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Car.mp3" },
+          { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "Moneda", courseId: 1, audioSrc: "Basics/audio/spanish/word/Coin.mp3" },
+          { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "Corona", courseId: 1, audioSrc: "Basics/audio/spanish/word/Crown.mp3" },
+          { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "Cacto", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cactus.mp3" },
+          { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "Reloj", courseId: 1, audioSrc: "Basics/audio/spanish/word/Clock.mp3" },
+          { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "Nube", courseId: 1, audioSrc: "Basics/audio/spanish/word/Cloud.mp3" },
+      
+          // D
+          { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "Perro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dog.mp3" },
+          { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "Pato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Duck.mp3" },
+          { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "Vestido", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dress.mp3" },
+          { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "Puerta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Door.mp3" },
+          { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "Diamante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Diamond.mp3" },
+          { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "Delfín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dolphin.mp3" },
+          { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "Burro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Donkey.mp3" },
+          { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "Dado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Dice.mp3" },
+          { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "Tambor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Drum.mp3" },
+          { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "Gota", courseId: 1, audioSrc: "Basics/audio/spanish/word/Drop.mp3" },
+      
+          // E
+          { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "Elefante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elephant.mp3" },
+          { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "Huevo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Egg.mp3" },
+          { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "Motor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Engine.mp3" },
+          { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "Sobre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Envelope.mp3" },
+          { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "Oreja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ear.mp3" },
+          { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "Águila", courseId: 1, audioSrc: "Basics/audio/spanish/word/Eagle.mp3" },
+          { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "Tierra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Earth.mp3" },
+          { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "Ojo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Eye.mp3" },
+          { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "Elfo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elf.mp3" },
+          { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "Ascensor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Elevator.mp3" },
+      
+          // F
+          { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "Pescado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fish.mp3" },
+          { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "Flor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Flower.mp3" },
+          { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "Tenedor", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fork.mp3" },
+          { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "Fuego", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fire.mp3" },
+          { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "Zorro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fox.mp3" },
+          { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "Valla", courseId: 1, audioSrc: "Basics/audio/spanish/word/Fence.mp3" },
+      
+          // G
+          { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "Guitarra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Guitar.mp3" },
+          { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "Uvas", courseId: 1, audioSrc: "Basics/audio/spanish/word/Grapes.mp3" },
+          { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "Jirafa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Giraffe.mp3" },
+          { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "Cabra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Goat.mp3" },
+          { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "Guante", courseId: 1, audioSrc: "Basics/audio/spanish/word/Glove.mp3" },
+          { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "Jardín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Garden.mp3" },
+      
+          // H
+          { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "Sombrero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hat.mp3" },
+          { imageSrc: "/Basics/House.png", title: "House", nativenm: "Casa", courseId: 1, audioSrc: "Basics/audio/spanish/word/House.mp3" },
+          { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "Caballo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Horse.mp3" },
+          { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "Martillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hammer.mp3" },
+          { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "Mano", courseId: 1, audioSrc: "Basics/audio/spanish/word/Hand.mp3" },
+          { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "Corazón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Heart.mp3" },
+      
+          // I
+          { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "Hielo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ice.mp3" },
+          { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "Hierro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Iron.mp3" },
+          { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "Iguana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Iguana.mp3" },
+          { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "Insecto", courseId: 1, audioSrc: "Basics/audio/spanish/word/Insect.mp3" },
+          { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "Tinta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ink.mp3" },
+          { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "Helado", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ice Cream.mp3" },
+      
+          // J
+          { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "Chaqueta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jacket.mp3" },
+          { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "Selva", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jungle.mp3" },
+          { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "Saltar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jump.mp3" },
+          { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "Tarro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jar.mp3" },
+          { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "Medusa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Jellyfish.mp3" },
+      
+          // K
+          { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "Kiwi", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kiwi.mp3" },
+          { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "Canguro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kangaroo.mp3" },
+          { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "Tetera", courseId: 1, audioSrc: "Basics/audio/spanish/word/Kettle.mp3" },
+          { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "Llave", courseId: 1, audioSrc: "Basics/audio/spanish/word/Key.mp3" },
+          { imageSrc: "/Basics/King.png", title: "King", nativenm: "Rey", courseId: 1, audioSrc: "Basics/audio/spanish/word/King.mp3" },
+      
+          // L
+          { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "León", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lion.mp3" },
+          { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "Lámpara", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lamp.mp3" },
+          { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "Limón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Lemon.mp3" },
+          { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "Escalera", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ladder.mp3" },
+          { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "Hoja", courseId: 1, audioSrc: "Basics/audio/spanish/word/Leaf.mp3" },
+      
+          // M
+          { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "Rata", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mouse.mp3" },
+          { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "Mono", courseId: 1, audioSrc: "Basics/audio/spanish/word/Monkey.mp3" },
+          { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "Montaña", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mountain.mp3" },
+          { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "Leche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Milk.mp3" },
+          { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "Espejo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Mirror.mp3" },
+      
+          // N
+          { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "Red", courseId: 1, audioSrc: "Basics/audio/spanish/word/Net.mp3" },
+          { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "Nariz", courseId: 1, audioSrc: "Basics/audio/spanish/word/Nose.mp3" },
+          { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "Noche", courseId: 1, audioSrc: "Basics/audio/spanish/word/Night.mp3" },
+          { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "Nuez", courseId: 1, audioSrc: "Basics/audio/spanish/word/Nut.mp3" },
+      
+          // O
+          { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "Ostrero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ostrich.mp3" },
+          { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "Pulpo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Octopus.mp3" },
+          { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "Búho", courseId: 1, audioSrc: "Basics/audio/spanish/word/Owl.mp3" },
+          { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "Aceituna", courseId: 1, audioSrc: "Basics/audio/spanish/word/Olive.mp3" },
+          { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "Oxígeno", courseId: 1, audioSrc: "Basics/audio/spanish/word/Oxygen.mp3" },
+      
+          // P
+          { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "Pluma", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pen.mp3" },
+          { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "Piña", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pineapple.mp3" },
+          { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "Panda", courseId: 1, audioSrc: "Basics/audio/spanish/word/Panda.mp3" },
+          { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "Lápiz", courseId: 1, audioSrc: "Basics/audio/spanish/word/Pencil.mp3" },
+          { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "Avión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Plane.mp3" },
+      
+          // Q
+          { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "Colcha", courseId: 1, audioSrc: "Basics/audio/spanish/word/Quilt.mp3" },
+          { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "Reina", courseId: 1, audioSrc: "Basics/audio/spanish/word/Queen.mp3" },
+      
+          // R
+          { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "Conejo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rabbit.mp3" },
+          { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "Lluvia", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rain.mp3" },
+          { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "Anillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Ring.mp3" },
+          { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "Rosa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Rose.mp3" },
+          { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "Robot", courseId: 1, audioSrc: "Basics/audio/spanish/word/Robot.mp3" },
+      
+          // S
+          { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "Sol", courseId: 1, audioSrc: "Basics/audio/spanish/word/Sun.mp3" },
+          { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "Serpiente", courseId: 1, audioSrc: "Basics/audio/spanish/word/Snake.mp3" },
+          { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "Estrella", courseId: 1, audioSrc: "Basics/audio/spanish/word/Star.mp3" },
+          { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "Calcetines", courseId: 1, audioSrc: "Basics/audio/spanish/word/Socks.mp3" },
+          { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "Arena", courseId: 1, audioSrc: "Basics/audio/spanish/word/Sand.mp3" },
+      
+          // T
+          { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "Tigre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tiger.mp3" },
+          { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "Árbol", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tree.mp3" },
+          { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "Mesa", courseId: 1, audioSrc: "Basics/audio/spanish/word/Table.mp3" },
+          { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "Televisión", courseId: 1, audioSrc: "Basics/audio/spanish/word/Television.mp3" },
+          { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "Diente", courseId: 1, audioSrc: "Basics/audio/spanish/word/Tooth.mp3" },
+      
+          // U
+          { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "Paraguas", courseId: 1, audioSrc: "Basics/audio/spanish/word/Umbrella.mp3" },
+          { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "Urna", courseId: 1, audioSrc: "Basics/audio/spanish/word/Urn.mp3" },
+          { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "Tío", courseId: 1, audioSrc: "Basics/audio/spanish/word/Uncle.mp3" },
+          { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "Unicornio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Unicorn.mp3" },
+          { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "Universo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Universe.mp3" },
+          { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "Utensilio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Utensil.mp3" },
+      
+          // V
+          { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "Furgoneta", courseId: 1, audioSrc: "Basics/audio/spanish/word/Van.mp3" },
+          { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "Buitre", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vulture.mp3" },
+          { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "Aspiradora", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vacuum.mp3" },
+          { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "Víctima", courseId: 1, audioSrc: "Basics/audio/spanish/word/Victim.mp3" },
+          { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "Verdura", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vegetable.mp3" },
+          { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "Volcán", courseId: 1, audioSrc: "Basics/audio/spanish/word/Volcano.mp3" },
+          { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "Vacaciones", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vacation.mp3" },
+          { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "Vampiro", courseId: 1, audioSrc: "Basics/audio/spanish/word/Vampire.mp3" },
+      
+          // W
+          { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "Lobo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wolf.mp3" },
+          { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "Sandía", courseId: 1, audioSrc: "Basics/audio/spanish/word/Watermelon.mp3" },
+          { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "Ventana", courseId: 1, audioSrc: "Basics/audio/spanish/word/Window.mp3" },
+          { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "Vagón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wagon.mp3" },
+          { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "Cascada", courseId: 1, audioSrc: "Basics/audio/spanish/word/Waterfall.mp3" },
+          { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "Reloj", courseId: 1, audioSrc: "Basics/audio/spanish/word/Watch.mp3" },
+          { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "Ballena", courseId: 1, audioSrc: "Basics/audio/spanish/word/Whale.mp3" },
+          { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "Invierno", courseId: 1, audioSrc: "Basics/audio/spanish/word/Winter.mp3" },
+          { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "Muñeca", courseId: 1, audioSrc: "Basics/audio/spanish/word/Wrist.mp3" },
+          { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "Silbato", courseId: 1, audioSrc: "Basics/audio/spanish/word/Whistle.mp3" },
+      
+          // X
+          { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "Xilófono", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xylophone.mp3" },
+          { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "Radiografía", courseId: 1, audioSrc: "Basics/audio/spanish/word/X-ray.mp3" },
+          { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "Xenón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenon.mp3" },
+          { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "Navidad", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xmas.mp3" },
+          { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "Xenofobia", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenophobia.mp3" },
+          { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "Xenial", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xenial.mp3" },
+          { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "Xeón", courseId: 1, audioSrc: "Basics/audio/spanish/word/Xeon.mp3" },
+          { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "Examinar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Examine.mp3" },
+          { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "Explotar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Explode.mp3" },
+          { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "Exilio", courseId: 1, audioSrc: "Basics/audio/spanish/word/Exile.mp3" },
+      
+          // Y
+          { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "Yak", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yak.mp3" },
+          { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "Amarillo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yellow.mp3" },
+          { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "Yogur", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yogurt.mp3" },
+          { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "Hilo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yarn.mp3" },
+          { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "Yoga", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yoga.mp3" },
+          { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "Bostezo", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yawn.mp3" },
+          { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "Jardín", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yard.mp3" },
+          { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "Gritar", courseId: 1, audioSrc: "Basics/audio/spanish/word/Yell.mp3" },
+      
+          // Z
+          { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "Cebra", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zebra.mp3" },
+          { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "Zoológico", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zoo.mp3" },
+          { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "Cenit", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zenith.mp3" },
+          { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "Cero", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zero.mp3" },
+          { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "Zigzag", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zigzag.mp3" },
+          { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "Zeppelin", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zeppelin.mp3" },
+          { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "Zombi", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zombie.mp3" },
+          { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "Zona", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zone.mp3" },
+          { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "Zodiaco", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zodiac.mp3" },
+          { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "Zoom", courseId: 1, audioSrc: "Basics/audio/spanish/word/Zoom.mp3" },
+
+
+  //french dataset
+  
+      // A
+      
+          { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "Pomme", courseId: 2, audioSrc: "/Basics/audio/french/word/Apple.mp3" },
+          { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "Fourmi", courseId: 2, audioSrc: "/Basics/audio/french/word/Ant.mp3" },
+          { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "Bras", courseId: 2, audioSrc: "/Basics/audio/french/word/Arm.mp3" },
+          { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "Avion", courseId: 2, audioSrc: "/Basics/audio/french/word/Airplane.mp3" },
+          { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "Flèche", courseId: 2, audioSrc: "/Basics/audio/french/word/Arrow.mp3" },
+          { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "Ancre", courseId: 2, audioSrc: "/Basics/audio/french/word/Anchor.mp3" },
+          { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "Alligator", courseId: 2, audioSrc: "/Basics/audio/french/word/Alligator.mp3" },
+          { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "Alarme", courseId: 2, audioSrc: "/Basics/audio/french/word/Alarm.mp3" },
+          { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "Acteur", courseId: 2, audioSrc: "/Basics/audio/french/word/Actor.mp3" },
+          { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "Art", courseId: 2, audioSrc: "/Basics/audio/french/word/Art.mp3" },
+      
+          // B
+          { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "Balle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ball.mp3" },
+          { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "Ours", courseId: 2, audioSrc: "/Basics/audio/french/word/Bear.mp3" },
+          { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "Oiseau", courseId: 2, audioSrc: "/Basics/audio/french/word/Bird.mp3" },
+          { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "Papillon", courseId: 2, audioSrc: "/Basics/audio/french/word/Butterfly.mp3" },
+          { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "Banane", courseId: 2, audioSrc: "/Basics/audio/french/word/Banana.mp3" },
+          { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "Bateau", courseId: 2, audioSrc: "/Basics/audio/french/word/Boat.mp3" },
+          { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "Boîte", courseId: 2, audioSrc: "/Basics/audio/french/word/Box.mp3" },
+          { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "Livre", courseId: 2, audioSrc: "/Basics/audio/french/word/Book.mp3" },
+          { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "Banc", courseId: 2, audioSrc: "/Basics/audio/french/word/Bench.mp3" },
+          { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "Cloche", courseId: 2, audioSrc: "/Basics/audio/french/word/Bell.mp3" },
+      
+          // C
+          { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "Chat", courseId: 2, audioSrc: "/Basics/audio/french/word/Cat.mp3" },
+          { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "Gâteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Cake.mp3" },
+          { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "Bougie", courseId: 2, audioSrc: "/Basics/audio/french/word/Candle.mp3" },
+          { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "Vache", courseId: 2, audioSrc: "/Basics/audio/french/word/Cow.mp3" },
+          { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "Voiture", courseId: 2, audioSrc: "/Basics/audio/french/word/Car.mp3" },
+          { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "Pièce", courseId: 2, audioSrc: "/Basics/audio/french/word/Coin.mp3" },
+          { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "Couronne", courseId: 2, audioSrc: "/Basics/audio/french/word/Crown.mp3" },
+          { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "Cactus", courseId: 2, audioSrc: "/Basics/audio/french/word/Cactus.mp3" },
+          { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "Horloge", courseId: 2, audioSrc: "/Basics/audio/french/word/Clock.mp3" },
+          { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "Nuage", courseId: 2, audioSrc: "/Basics/audio/french/word/Cloud.mp3" },
+      
+          // D
+          { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "Chien", courseId: 2, audioSrc: "/Basics/audio/french/word/Dog.mp3" },
+          { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "Canard", courseId: 2, audioSrc: "/Basics/audio/french/word/Duck.mp3" },
+          { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "Robe", courseId: 2, audioSrc: "/Basics/audio/french/word/Dress.mp3" },
+          { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "Porte", courseId: 2, audioSrc: "/Basics/audio/french/word/Door.mp3" },
+          { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "Diamant", courseId: 2, audioSrc: "/Basics/audio/french/word/Diamond.mp3" },
+          { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "Dauphin", courseId: 2, audioSrc: "/Basics/audio/french/word/Dolphin.mp3" },
+          { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "Âne", courseId: 2, audioSrc: "/Basics/audio/french/word/Donkey.mp3" },
+          { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "Dé", courseId: 2, audioSrc: "/Basics/audio/french/word/Dice.mp3" },
+          { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "Tambour", courseId: 2, audioSrc: "/Basics/audio/french/word/Drum.mp3" },
+          { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "Goutte", courseId: 2, audioSrc: "/Basics/audio/french/word/Drop.mp3" },
+      
+          // E
+          { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "Éléphant", courseId: 2, audioSrc: "/Basics/audio/french/word/Elephant.mp3" },
+          { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "Œuf", courseId: 2, audioSrc: "/Basics/audio/french/word/Egg.mp3" },
+          { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "Moteur", courseId: 2, audioSrc: "/Basics/audio/french/word/Engine.mp3" },
+          { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "Enveloppe", courseId: 2, audioSrc: "/Basics/audio/french/word/Envelope.mp3" },
+          { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "Oreille", courseId: 2, audioSrc: "/Basics/audio/french/word/Ear.mp3" },
+          { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "Aigle", courseId: 2, audioSrc: "/Basics/audio/french/word/Eagle.mp3" },
+          { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "Terre", courseId: 2, audioSrc: "/Basics/audio/french/word/Earth.mp3" },
+          { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "Œil", courseId: 2, audioSrc: "/Basics/audio/french/word/Eye.mp3" },
+          { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "Elfe", courseId: 2, audioSrc: "/Basics/audio/french/word/Elf.mp3" },
+          { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "Ascenseur", courseId: 2, audioSrc: "/Basics/audio/french/word/Elevator.mp3" },
+      
+          // F
+          { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "Poisson", courseId: 2, audioSrc: "/Basics/audio/french/word/Fish.mp3" },
+          { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "Fleur", courseId: 2, audioSrc: "/Basics/audio/french/word/Flower.mp3" },
+          { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "Fourchette", courseId: 2, audioSrc: "/Basics/audio/french/word/Fork.mp3" },
+          { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "Feu", courseId: 2, audioSrc: "/Basics/audio/french/word/Fire.mp3" },
+          { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "Renard", courseId: 2, audioSrc: "/Basics/audio/french/word/Fox.mp3" },
+          { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "Clôture", courseId: 2, audioSrc: "/Basics/audio/french/word/Fence.mp3" },
+          { imageSrc: "/Basics/Fan.png", title: "Fan", nativenm: "Ventilateur", courseId: 2, audioSrc: "/Basics/audio/french/word/Fan.mp3" },
+          { imageSrc: "/Basics/Feather.png", title: "Feather", nativenm: "Plume", courseId: 2, audioSrc: "/Basics/audio/french/word/Feather.mp3" },
+          { imageSrc: "/Basics/Fruit.png", title: "Fruit", nativenm: "Fruit", courseId: 2, audioSrc: "/Basics/audio/french/word/Fruit.mp3" },
+          { imageSrc: "/Basics/Flag.png", title: "Flag", nativenm: "Drapeau", courseId: 2, audioSrc: "/Basics/audio/french/word/Flag.mp3" },
+      
+          // G
+          { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "Guitare", courseId: 2, audioSrc: "/Basics/audio/french/word/Guitar.mp3" },
+          { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "Raisins", courseId: 2, audioSrc: "/Basics/audio/french/word/Grapes.mp3" },
+          { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "Girafe", courseId: 2, audioSrc: "/Basics/audio/french/word/Giraffe.mp3" },
+          { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "Chèvre", courseId: 2, audioSrc: "/Basics/audio/french/word/Goat.mp3" },
+          { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "Gant", courseId: 2, audioSrc: "/Basics/audio/french/word/Glove.mp3" },
+          { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "Jardin", courseId: 2, audioSrc: "/Basics/audio/french/word/Garden.mp3" },
+          { imageSrc: "/Basics/Gate.png", title: "Gate", nativenm: "Portail", courseId: 2, audioSrc: "/Basics/audio/french/word/Gate.mp3" },
+          { imageSrc: "/Basics/Ghost.png", title: "Ghost", nativenm: "Fantôme", courseId: 2, audioSrc: "/Basics/audio/french/word/Ghost.mp3" },
+          { imageSrc: "/Basics/Gold.png", title: "Gold", nativenm: "Or", courseId: 2, audioSrc: "/Basics/audio/french/word/Gold.mp3" },
+          { imageSrc: "/Basics/Glass.png", title: "Glass", nativenm: "Verre", courseId: 2, audioSrc: "/Basics/audio/french/word/Glass.mp3" },
+      
+          // H
+          { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "Chapeau", courseId: 2, audioSrc: "/Basics/audio/french/word/Hat.mp3" },
+          { imageSrc: "/Basics/House.png", title: "House", nativenm: "Maison", courseId: 2, audioSrc: "/Basics/audio/french/word/House.mp3" },
+          { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "Cheval", courseId: 2, audioSrc: "/Basics/audio/french/word/Horse.mp3" },
+          { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "Marteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Hammer.mp3" },
+          { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "Main", courseId: 2, audioSrc: "/Basics/audio/french/word/Hand.mp3" },
+          { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "Cœur", courseId: 2, audioSrc: "/Basics/audio/french/word/Heart.mp3" },
+          { imageSrc: "/Basics/Hill.png", title: "Hill", nativenm: "Colline", courseId: 2, audioSrc: "/Basics/audio/french/word/Hill.mp3" },
+          { imageSrc: "/Basics/Honey.png", title: "Honey", nativenm: "Miel", courseId: 2, audioSrc: "/Basics/audio/french/word/Honey.mp3" },
+          { imageSrc: "/Basics/Hook.png", title: "Hook", nativenm: "Crochet", courseId: 2, audioSrc: "/Basics/audio/french/word/Hook.mp3" },
+          { imageSrc: "/Basics/Helmet.png", title: "Helmet", nativenm: "Casque", courseId: 2, audioSrc: "/Basics/audio/french/word/Helmet.mp3" },
+      
+          // I
+          { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "Glace", courseId: 2, audioSrc: "/Basics/audio/french/word/Ice.mp3" },
+          { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "Fer", courseId: 2, audioSrc: "/Basics/audio/french/word/Iron.mp3" },
+          { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "Iguane", courseId: 2, audioSrc: "/Basics/audio/french/word/Iguana.mp3" },
+          { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "Insecte", courseId: 2, audioSrc: "/Basics/audio/french/word/Insect.mp3" },
+          { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "Encre", courseId: 2, audioSrc: "/Basics/audio/french/word/Ink.mp3" },
+          { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "Glace", courseId: 2, audioSrc: "/Basics/audio/french/word/Ice Cream.mp3" },
+          { imageSrc: "/Basics/Island.png", title: "Island", nativenm: "Île", courseId: 2, audioSrc: "/Basics/audio/french/word/Island.mp3" },
+          { imageSrc: "/Basics/Idea.png", title: "Idea", nativenm: "Idée", courseId: 2, audioSrc: "/Basics/audio/french/word/Idea.mp3" },
+          { imageSrc: "/Basics/Ivory.png", title: "Ivory", nativenm: "Ivoire", courseId: 2, audioSrc: "/Basics/audio/french/word/Ivory.mp3" },
+          { imageSrc: "/Basics/Injection.png", title: "Injection", nativenm: "Injection", courseId: 2, audioSrc: "/Basics/audio/french/word/Injection.mp3" },
+      
+          // J
+          { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "Veste", courseId: 2, audioSrc: "/Basics/audio/french/word/Jacket.mp3" },
+          { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "Jungle", courseId: 2, audioSrc: "/Basics/audio/french/word/Jungle.mp3" },
+          { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "Sauter", courseId: 2, audioSrc: "/Basics/audio/french/word/Jump.mp3" },
+          { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "Bocal", courseId: 2, audioSrc: "/Basics/audio/french/word/Jar.mp3" },
+          { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "Méduse", courseId: 2, audioSrc: "/Basics/audio/french/word/Jellyfish.mp3" },
+          { imageSrc: "/Basics/Jewel.png", title: "Jewel", nativenm: "Bijou", courseId: 2, audioSrc: "/Basics/audio/french/word/Jewel.mp3" },
+          { imageSrc: "/Basics/Jet.png", title: "Jet", nativenm: "Jet", courseId: 2, audioSrc: "/Basics/audio/french/word/Jet.mp3" },
+          { imageSrc: "/Basics/Joke.png", title: "Joke", nativenm: "Blague", courseId: 2, audioSrc: "/Basics/audio/french/word/Joke.mp3" },
+          { imageSrc: "/Basics/Journal.png", title: "Journal", nativenm: "Journal", courseId: 2, audioSrc: "/Basics/audio/french/word/Journal.mp3" },
+          { imageSrc: "/Basics/Jug.png", title: "Jug", nativenm: "Cruche", courseId: 2, audioSrc: "/Basics/audio/french/word/Jug.mp3" },
+      
+          // K
+          { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "Kiwi", courseId: 2, audioSrc: "/Basics/audio/french/word/Kiwi.mp3" },
+          { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "Kangourou", courseId: 2, audioSrc: "/Basics/audio/french/word/Kangaroo.mp3" },
+          { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "Bouilloire", courseId: 2, audioSrc: "/Basics/audio/french/word/Kettle.mp3" },
+          { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "Clé", courseId: 2, audioSrc: "/Basics/audio/french/word/Key.mp3" },
+          { imageSrc: "/Basics/King.png", title: "King", nativenm: "Roi", courseId: 2, audioSrc: "/Basics/audio/french/word/King.mp3" },
+          { imageSrc: "/Basics/Kite.png", title: "Kite", nativenm: "Cerf-volant", courseId: 2, audioSrc: "/Basics/audio/french/word/Kite.mp3" },
+          { imageSrc: "/Basics/Knife.png", title: "Knife", nativenm: "Couteau", courseId: 2, audioSrc: "/Basics/audio/french/word/Knife.mp3" },
+          { imageSrc: "/Basics/Knight.png", title: "Knight", nativenm: "Chevalier", courseId: 2, audioSrc: "/Basics/audio/french/word/Knight.mp3" },
+          { imageSrc: "/Basics/Knob.png", title: "Knob", nativenm: "Bouton", courseId: 2, audioSrc: "/Basics/audio/french/word/Knob.mp3" },
+          { imageSrc: "/Basics/Koala.png", title: "Koala", nativenm: "Koala", courseId: 2, audioSrc: "/Basics/audio/french/word/Koala.mp3" },
+      
+          // L
+          { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "Lion", courseId: 2, audioSrc: "/Basics/audio/french/word/Lion.mp3" },
+          { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "Lampe", courseId: 2, audioSrc: "/Basics/audio/french/word/Lamp.mp3" },
+          { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "Citron", courseId: 2, audioSrc: "/Basics/audio/french/word/Lemon.mp3" },
+          { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "Échelle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ladder.mp3" },
+          { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "Feuille", courseId: 2, audioSrc: "/Basics/audio/french/word/Leaf.mp3" },
+          { imageSrc: "/Basics/Light.png", title: "Light", nativenm: "Lumière", courseId: 2, audioSrc: "/Basics/audio/french/word/Light.mp3" },
+          { imageSrc: "/Basics/Lake.png", title: "Lake", nativenm: "Lac", courseId: 2, audioSrc: "/Basics/audio/french/word/Lake.mp3" },
+          { imageSrc: "/Basics/Lock.png", title: "Lock", nativenm: "Serrure", courseId: 2, audioSrc: "/Basics/audio/french/word/Lock.mp3" },
+          { imageSrc: "/Basics/Lizard.png", title: "Lizard", nativenm: "Lézard", courseId: 2, audioSrc: "/Basics/audio/french/word/Lizard.mp3" },
+          { imageSrc: "/Basics/Lollipop.png", title: "Lollipop", nativenm: "Sucette", courseId: 2, audioSrc: "/Basics/audio/french/word/Lollipop.mp3" },
+      
+          // M
+          { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "Souris", courseId: 2, audioSrc: "/Basics/audio/french/word/Mouse.mp3" },
+          { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "Singe", courseId: 2, audioSrc: "/Basics/audio/french/word/Monkey.mp3" },
+          { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "Montagne", courseId: 2, audioSrc: "/Basics/audio/french/word/Mountain.mp3" },
+          { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "Lait", courseId: 2, audioSrc: "/Basics/audio/french/word/Milk.mp3" },
+          { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "Miroir", courseId: 2, audioSrc: "/Basics/audio/french/word/Mirror.mp3" },
+          { imageSrc: "/Basics/Moon.png", title: "Moon", nativenm: "Lune", courseId: 2, audioSrc: "/Basics/audio/french/word/Moon.mp3" },
+          { imageSrc: "/Basics/Mushroom.png", title: "Mushroom", nativenm: "Champignon", courseId: 2, audioSrc: "/Basics/audio/french/word/Mushroom.mp3" },
+          { imageSrc: "/Basics/Magnet.png", title: "Magnet", nativenm: "Aimant", courseId: 2, audioSrc: "/Basics/audio/french/word/Magnet.mp3" },
+          { imageSrc: "/Basics/Mask.png", title: "Mask", nativenm: "Masque", courseId: 2, audioSrc: "/Basics/audio/french/word/Mask.mp3" },
+          { imageSrc: "/Basics/Map.png", title: "Map", nativenm: "Carte", courseId: 2, audioSrc: "/Basics/audio/french/word/Map.mp3" },
+      
+          // N
+          { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "Filet", courseId: 2, audioSrc: "/Basics/audio/french/word/Net.mp3" },
+          { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "Nez", courseId: 2, audioSrc: "/Basics/audio/french/word/Nose.mp3" },
+          { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "Nuit", courseId: 2, audioSrc: "/Basics/audio/french/word/Night.mp3" },
+          { imageSrc: "/Basics/Nest.png", title: "Nest", nativenm: "Nid", courseId: 2, audioSrc: "/Basics/audio/french/word/Nest.mp3" },
+          { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "Noix", courseId: 2, audioSrc: "/Basics/audio/french/word/Nut.mp3" },
+          { imageSrc: "/Basics/Needle.png", title: "Needle", nativenm: "Aiguille", courseId: 2, audioSrc: "/Basics/audio/french/word/Needle.mp3" },
+          { imageSrc: "/Basics/Napkin.png", title: "Napkin", nativenm: "Serviette", courseId: 2, audioSrc: "/Basics/audio/french/word/Napkin.mp3" },
+          { imageSrc: "/Basics/Nail.png", title: "Nail", nativenm: "Clou", courseId: 2, audioSrc: "/Basics/audio/french/word/Nail.mp3" },
+          { imageSrc: "/Basics/Necklace.png", title: "Necklace", nativenm: "Collier", courseId: 2, audioSrc: "/Basics/audio/french/word/Necklace.mp3" },
+          { imageSrc: "/Basics/Notebook.png", title: "Notebook", nativenm: "Carnet", courseId: 2, audioSrc: "/Basics/audio/french/word/Notebook.mp3" },
+      
+          // O
+          { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "Autruche", courseId: 2, audioSrc: "/Basics/audio/french/word/Ostrich.mp3" },
+          { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "Poulpe", courseId: 2, audioSrc: "/Basics/audio/french/word/Octopus.mp3" },
+          { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "Hibou", courseId: 2, audioSrc: "/Basics/audio/french/word/Owl.mp3" },
+          { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "Olive", courseId: 2, audioSrc: "/Basics/audio/french/word/Olive.mp3" },
+          { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "Oxygène", courseId: 2, audioSrc: "/Basics/audio/french/word/Oxygen.mp3" },
+          { imageSrc: "/Basics/Orange.png", title: "Orange", nativenm: "Orange", courseId: 2, audioSrc: "/Basics/audio/french/word/Orange.mp3" },
+          { imageSrc: "/Basics/Onion.png", title: "Onion", nativenm: "Oignon", courseId: 2, audioSrc: "/Basics/audio/french/word/Onion.mp3" },
+          { imageSrc: "/Basics/Ocean.png", title: "Ocean", nativenm: "Océan", courseId: 2, audioSrc: "/Basics/audio/french/word/Ocean.mp3" },
+          { imageSrc: "/Basics/Oil.png", title: "Oil", nativenm: "Huile", courseId: 2, audioSrc: "/Basics/audio/french/word/Oil.mp3" },
+          { imageSrc: "/Basics/Ornament.png", title: "Ornament", nativenm: "Ornement", courseId: 2, audioSrc: "/Basics/audio/french/word/Ornament.mp3" },
+      
+          // P
+          { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "Stylo", courseId: 2, audioSrc: "/Basics/audio/french/word/Pen.mp3" },
+          { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "Ananas", courseId: 2, audioSrc: "/Basics/audio/french/word/Pineapple.mp3" },
+          { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "Panda", courseId: 2, audioSrc: "/Basics/audio/french/word/Panda.mp3" },
+          { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "Crayon", courseId: 2, audioSrc: "/Basics/audio/french/word/Pencil.mp3" },
+          { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "Avion", courseId: 2, audioSrc: "/Basics/audio/french/word/Plane.mp3" },
+          { imageSrc: "/Basics/Plate.png", title: "Plate", nativenm: "Assiette", courseId: 2, audioSrc: "/Basics/audio/french/word/Plate.mp3" },
+          { imageSrc: "/Basics/Plant.png", title: "Plant", nativenm: "Plante", courseId: 2, audioSrc: "/Basics/audio/french/word/Plant.mp3" },
+          { imageSrc: "/Basics/Peacock.png", title: "Peacock", nativenm: "Paon", courseId: 2, audioSrc: "/Basics/audio/french/word/Peacock.mp3" },
+          { imageSrc: "/Basics/Potato.png", title: "Potato", nativenm: "Pomme de terre", courseId: 2, audioSrc: "/Basics/audio/french/word/Potato.mp3" },
+          { imageSrc: "/Basics/Pumpkin.png", title: "Pumpkin", nativenm: "Citrouille", courseId: 2, audioSrc: "/Basics/audio/french/word/Pumpkin.mp3" },
+      
+          // Q
+          { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "Couette", courseId: 2, audioSrc: "/Basics/audio/french/word/Quilt.mp3" },
+          { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "Reine", courseId: 2, audioSrc: "/Basics/audio/french/word/Queen.mp3" },
+          { imageSrc: "/Basics/Quail.png", title: "Quail", nativenm: "Caille", courseId: 2, audioSrc: "/Basics/audio/french/word/Quail.mp3" },
+          { imageSrc: "/Basics/Quill.png", title: "Quill", nativenm: "Plume", courseId: 2, audioSrc: "/Basics/audio/french/word/Quill.mp3" },
+          { imageSrc: "/Basics/Quartz.png", title: "Quartz", nativenm: "Quartz", courseId: 2, audioSrc: "/Basics/audio/french/word/Quartz.mp3" },
+          { imageSrc: "/Basics/Question.png", title: "Question", nativenm: "Question", courseId: 2, audioSrc: "/Basics/audio/french/word/Question.mp3" },
+          { imageSrc: "/Basics/Queue.png", title: "Queue", nativenm: "File d'attente", courseId: 2, audioSrc: "/Basics/audio/french/word/Queue.mp3" },
+          { imageSrc: "/Basics/Quiver.png", title: "Quiver", nativenm: "Carquois", courseId: 2, audioSrc: "/Basics/audio/french/word/Quiver.mp3" },
+          { imageSrc: "/Basics/Quokka.png", title: "Quokka", nativenm: "Quokka", courseId: 2, audioSrc: "/Basics/audio/french/word/Quokka.mp3" },
+          { imageSrc: "/Basics/Quiche.png", title: "Quiche", nativenm: "Quiche", courseId: 2, audioSrc: "/Basics/audio/french/word/Quiche.mp3" },
+      
+          // R
+          { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "Lapin", courseId: 2, audioSrc: "/Basics/audio/french/word/Rabbit.mp3" },
+          { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "Pluie", courseId: 2, audioSrc: "/Basics/audio/french/word/Rain.mp3" },
+          { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "Anneau", courseId: 2, audioSrc: "/Basics/audio/french/word/Ring.mp3" },
+          { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "Rose", courseId: 2, audioSrc: "/Basics/audio/french/word/Rose.mp3" },
+          { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "Robot", courseId: 2, audioSrc: "/Basics/audio/french/word/Robot.mp3" },
+          { imageSrc: "/Basics/Rocket.png", title: "Rocket", nativenm: "Fusée", courseId: 2, audioSrc: "/Basics/audio/french/word/Rocket.mp3" },
+          { imageSrc: "/Basics/River.png", title: "River", nativenm: "Rivière", courseId: 2, audioSrc: "/Basics/audio/french/word/River.mp3" },
+          { imageSrc: "/Basics/Rope.png", title: "Rope", nativenm: "Corde", courseId: 2, audioSrc: "/Basics/audio/french/word/Rope.mp3" },
+          { imageSrc: "/Basics/Roof.png", title: "Roof", nativenm: "Toit", courseId: 2, audioSrc: "/Basics/audio/french/word/Roof.mp3" },
+          { imageSrc: "/Basics/Ruler.png", title: "Ruler", nativenm: "Règle", courseId: 2, audioSrc: "/Basics/audio/french/word/Ruler.mp3" },
+      
+          // S
+          { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "Soleil", courseId: 2, audioSrc: "/Basics/audio/french/word/Sun.mp3" },
+          { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "Serpent", courseId: 2, audioSrc: "/Basics/audio/french/word/Snake.mp3" },
+          { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "Étoile", courseId: 2, audioSrc: "/Basics/audio/french/word/Star.mp3" },
+          { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "Chaussettes", courseId: 2, audioSrc: "/Basics/audio/french/word/Socks.mp3" },
+          { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "Sable", courseId: 2, audioSrc: "/Basics/audio/french/word/Sand.mp3" },
+          { imageSrc: "/Basics/Ship.png", title: "Ship", nativenm: "Bateau", courseId: 2, audioSrc: "/Basics/audio/french/word/Ship.mp3" },
+          { imageSrc: "/Basics/Shirt.png", title: "Shirt", nativenm: "Chemise", courseId: 2, audioSrc: "/Basics/audio/french/word/Shirt.mp3" },
+          { imageSrc: "/Basics/Spoon.png", title: "Spoon", nativenm: "Cuillère", courseId: 2, audioSrc: "/Basics/audio/french/word/Spoon.mp3" },
+          { imageSrc: "/Basics/Stone.png", title: "Stone", nativenm: "Pierre", courseId: 2, audioSrc: "/Basics/audio/french/word/Stone.mp3" },
+          { imageSrc: "/Basics/Swing.png", title: "Swing", nativenm: "Balançoire", courseId: 2, audioSrc: "/Basics/audio/french/word/Swing.mp3" },
+      
+          // T
+          { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "Tigre", courseId: 2, audioSrc: "/Basics/audio/french/word/Tiger.mp3" },
+          { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "Arbre", courseId: 2, audioSrc: "/Basics/audio/french/word/Tree.mp3" },
+          { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "Table", courseId: 2, audioSrc: "/Basics/audio/french/word/Table.mp3" },
+          { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "Télévision", courseId: 2, audioSrc: "/Basics/audio/french/word/Television.mp3" },
+          { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "Dent", courseId: 2, audioSrc: "/Basics/audio/french/word/Tooth.mp3" },
+          { imageSrc: "/Basics/Train.png", title: "Train", nativenm: "Train", courseId: 2, audioSrc: "/Basics/audio/french/word/Train.mp3" },
+          { imageSrc: "/Basics/Turtle.png", title: "Turtle", nativenm: "Tortue", courseId: 2, audioSrc: "/Basics/audio/french/word/Turtle.mp3" },
+          { imageSrc: "/Basics/Tent.png", title: "Tent", nativenm: "Tente", courseId: 2, audioSrc: "/Basics/audio/french/word/Tent.mp3" },
+          { imageSrc: "/Basics/Trophy.png", title: "Trophy", nativenm: "Trophée", courseId: 2, audioSrc: "/Basics/audio/french/word/Trophy.mp3" },
+          { imageSrc: "/Basics/Tail.png", title: "Tail", nativenm: "Queue", courseId: 2, audioSrc: "/Basics/audio/french/word/Tail.mp3" },
+      
+          // U
+          { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "Parapluie", courseId: 2, audioSrc: "/Basics/audio/french/word/Umbrella.mp3" },
+          { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "Urne", courseId: 2, audioSrc: "/Basics/audio/french/word/Urn.mp3" },
+          { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "Oncle", courseId: 2, audioSrc: "/Basics/audio/french/word/Uncle.mp3" },
+          { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "Licorne", courseId: 2, audioSrc: "/Basics/audio/french/word/Unicorn.mp3" },
+          { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "Univers", courseId: 2, audioSrc: "/Basics/audio/french/word/Universe.mp3" },
+          { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "Ustensile", courseId: 2, audioSrc: "/Basics/audio/french/word/Utensil.mp3" },
+          { imageSrc: "/Basics/Uniform.png", title: "Uniform", nativenm: "Uniforme", courseId: 2, audioSrc: "/Basics/audio/french/word/Uniform.mp3" },
+          { imageSrc: "/Basics/Urchin.png", title: "Urchin", nativenm: "Oursin", courseId: 2, audioSrc: "/Basics/audio/french/word/Urchin.mp3" },
+          { imageSrc: "/Basics/Ukulele.png", title: "Ukulele", nativenm: "Ukulélé", courseId: 2, audioSrc: "/Basics/audio/french/word/Ukulele.mp3" },
+          { imageSrc: "/Basics/Update.png", title: "Update", nativenm: "Mise à jour", courseId: 2, audioSrc: "/Basics/audio/french/word/Update.mp3" },
+      
+          // V
+          { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "Fourgonnette", courseId: 2, audioSrc: "/Basics/audio/french/word/Van.mp3" },
+          { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "Vautour", courseId: 2, audioSrc: "/Basics/audio/french/word/Vulture.mp3" },
+          { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "Aspirateur", courseId: 2, audioSrc: "/Basics/audio/french/word/Vacuum.mp3" },
+          { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "Victime", courseId: 2, audioSrc: "/Basics/audio/french/word/Victim.mp3" },
+          { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "Légume", courseId: 2, audioSrc: "/Basics/audio/french/word/Vegetable.mp3" },
+          { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "Volcan", courseId: 2, audioSrc: "/Basics/audio/french/word/Volcano.mp3" },
+          { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "Vacances", courseId: 2, audioSrc: "/Basics/audio/french/word/Vacation.mp3" },
+          { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "Vampire", courseId: 2, audioSrc: "/Basics/audio/french/word/Vampire.mp3" },
+          { imageSrc: "/Basics/Vest.png", title: "Vest", nativenm: "Gilet", courseId: 2, audioSrc: "/Basics/audio/french/word/Vest.mp3" },
+          { imageSrc: "/Basics/Vine.png", title: "Vine", nativenm: "Vigne", courseId: 2, audioSrc: "/Basics/audio/french/word/Vine.mp3" },
+      
+          // W
+          { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "Loup", courseId: 2, audioSrc: "/Basics/audio/french/word/Wolf.mp3" },
+          { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "Pastèque", courseId: 2, audioSrc: "/Basics/audio/french/word/Watermelon.mp3" },
+          { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "Fenêtre", courseId: 2, audioSrc: "/Basics/audio/french/word/Window.mp3" },
+          { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "Wagon", courseId: 2, audioSrc: "/Basics/audio/french/word/Wagon.mp3" },
+          { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "Cascade", courseId: 2, audioSrc: "/Basics/audio/french/word/Waterfall.mp3" },
+          { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "Montre", courseId: 2, audioSrc: "/Basics/audio/french/word/Watch.mp3" },
+          { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "Baleine", courseId: 2, audioSrc: "/Basics/audio/french/word/Whale.mp3" },
+          { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "Hiver", courseId: 2, audioSrc: "/Basics/audio/french/word/Winter.mp3" },
+          { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "Poignet", courseId: 2, audioSrc: "/Basics/audio/french/word/Wrist.mp3" },
+          { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "Sifflet", courseId: 2, audioSrc: "/Basics/audio/french/word/Whistle.mp3" },
+      
+          // X
+          { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "Xylophone", courseId: 2, audioSrc: "/Basics/audio/french/word/Xylophone.mp3" },
+          { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "Rayon X", courseId: 2, audioSrc: "/Basics/audio/french/word/X-ray.mp3" },
+          { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "Xénon", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenon.mp3" },
+          { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "Noël", courseId: 2, audioSrc: "/Basics/audio/french/word/Xmas.mp3" },
+          { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "Xénophobie", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenophobia.mp3" },
+          { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "Xénial", courseId: 2, audioSrc: "/Basics/audio/french/word/Xenial.mp3" },
+          { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "Xeon", courseId: 2, audioSrc: "/Basics/audio/french/word/Xeon.mp3" },
+          { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "Examiner", courseId: 2, audioSrc: "/Basics/audio/french/word/Examine.mp3" },
+          { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "Exploser", courseId: 2, audioSrc: "/Basics/audio/french/word/Explode.mp3" },
+          { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "Exil", courseId: 2, audioSrc: "/Basics/audio/french/word/Exile.mp3" },
+      
+          // Y
+          { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "Yak", courseId: 2, audioSrc: "/Basics/audio/french/word/Yak.mp3" },
+          { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "Jaune", courseId: 2, audioSrc: "/Basics/audio/french/word/Yellow.mp3" },
+          { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "Yaourt", courseId: 2, audioSrc: "/Basics/audio/french/word/Yogurt.mp3" },
+          { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "Fil", courseId: 2, audioSrc: "/Basics/audio/french/word/Yarn.mp3" },
+          { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "Yoga", courseId: 2, audioSrc: "/Basics/audio/french/word/Yoga.mp3" },
+          { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "Bâillement", courseId: 2, audioSrc: "/Basics/audio/french/word/Yawn.mp3" },
+          { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "Cour", courseId: 2, audioSrc: "/Basics/audio/french/word/Yard.mp3" },
+          { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "Crier", courseId: 2, audioSrc: "/Basics/audio/french/word/Yell.mp3" },
+          { imageSrc: "/Basics/Yolk.png", title: "Yolk", nativenm: "Jaune d'œuf", courseId: 2, audioSrc: "/Basics/audio/french/word/Yolk.mp3" },
+          { imageSrc: "/Basics/Yacht.png", title: "Yacht", nativenm: "Yacht", courseId: 2, audioSrc: "/Basics/audio/french/word/Yacht.mp3" },
+      
+          // Z
+          { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "Zèbre", courseId: 2, audioSrc: "/Basics/audio/french/word/Zebra.mp3" },
+          { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "Zoo", courseId: 2, audioSrc: "/Basics/audio/french/word/Zoo.mp3" },
+          { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "Zénith", courseId: 2, audioSrc: "/Basics/audio/french/word/Zenith.mp3" },
+          { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "Zéro", courseId: 2, audioSrc: "/Basics/audio/french/word/Zero.mp3" },
+          { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "Zigzag", courseId: 2, audioSrc: "/Basics/audio/french/word/Zigzag.mp3" },
+          { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "Zeppelin", courseId: 2, audioSrc: "/Basics/audio/french/word/Zeppelin.mp3" },
+          { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "Zombie", courseId: 2, audioSrc: "/Basics/audio/french/word/Zombie.mp3" },
+          { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "Zone", courseId: 2, audioSrc: "/Basics/audio/french/word/Zone.mp3" },
+          { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "Zodiaque", courseId: 2, audioSrc: "/Basics/audio/french/word/Zodiac.mp3" },
+          { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "Zoom", courseId: 2, audioSrc: "/Basics/audio/french/word/Zoom.mp3" },
       
 
-    
-      await db.insert(schema.basicsdb).values(basicsData);
+      //japnese
+     
+          // A
+          { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "りんご", courseId: 3, audioSrc: "/Basics/audio/Apple.mp3" },
+          { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "あり", courseId: 3, audioSrc: "/Basics/audio/Ant.mp3" },
+          { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "うで", courseId: 3, audioSrc: "/Basics/audio/Arm.mp3" },
+          { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "ひこうき", courseId: 3, audioSrc: "/Basics/audio/Airplane.mp3" },
+          { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "やじるし", courseId: 3, audioSrc: "/Basics/audio/Arrow.mp3" },
+          { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "いかり", courseId: 3, audioSrc: "/Basics/audio/Anchor.mp3" },
+          { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "ワニ", courseId: 3, audioSrc: "/Basics/audio/Alligator.mp3" },
+          { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "アラーム", courseId: 3, audioSrc: "/Basics/audio/Alarm.mp3" },
+          { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "俳優", courseId: 3, audioSrc: "/Basics/audio/Actor.mp3" },
+          { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "芸術", courseId: 3, audioSrc: "/Basics/audio/Art.mp3" },
+      
+          // B
+          { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "ボール", courseId: 3, audioSrc: "/Basics/audio/Ball.mp3" },
+          { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "くま", courseId: 3, audioSrc: "/Basics/audio/Bear.mp3" },
+          { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "とり", courseId: 3, audioSrc: "/Basics/audio/Bird.mp3" },
+          { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "ちょうちょ", courseId: 3, audioSrc: "/Basics/audio/Butterfly.mp3" },
+          { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "バナナ", courseId: 3, audioSrc: "/Basics/audio/Banana.mp3" },
+          { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "ボート", courseId: 3, audioSrc: "/Basics/audio/Boat.mp3" },
+          { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "はこ", courseId: 3, audioSrc: "/Basics/audio/Box.mp3" },
+          { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "ほん", courseId: 3, audioSrc: "/Basics/audio/Book.mp3" },
+          { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "ベンチ", courseId: 3, audioSrc: "/Basics/audio/Bench.mp3" },
+          { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "ベル", courseId: 3, audioSrc: "/Basics/audio/Bell.mp3" },
+      
+          // C
+          { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "ねこ", courseId: 3, audioSrc: "/Basics/audio/Cat.mp3" },
+          { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "ケーキ", courseId: 3, audioSrc: "/Basics/audio/Cake.mp3" },
+          { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "ろうそく", courseId: 3, audioSrc: "/Basics/audio/Candle.mp3" },
+          { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "うし", courseId: 3, audioSrc: "/Basics/audio/Cow.mp3" },
+          { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "くるま", courseId: 3, audioSrc: "/Basics/audio/Car.mp3" },
+          { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "コイン", courseId: 3, audioSrc: "/Basics/audio/Coin.mp3" },
+          { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "おうかん", courseId: 3, audioSrc: "/Basics/audio/Crown.mp3" },
+          { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "サボテン", courseId: 3, audioSrc: "/Basics/audio/Cactus.mp3" },
+          { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "とけい", courseId: 3, audioSrc: "/Basics/audio/Clock.mp3" },
+          { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "くも", courseId: 3, audioSrc: "/Basics/audio/Cloud.mp3" },
+      
+          // D
+          { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "いぬ", courseId: 3, audioSrc: "/Basics/audio/Dog.mp3" },
+          { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "あひる", courseId: 3, audioSrc: "/Basics/audio/Duck.mp3" },
+          { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "ドレス", courseId: 3, audioSrc: "/Basics/audio/Dress.mp3" },
+          { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "ドア", courseId: 3, audioSrc: "/Basics/audio/Door.mp3" },
+          { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "ダイヤモンド", courseId: 3, audioSrc: "/Basics/audio/Diamond.mp3" },
+          { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "イルカ", courseId: 3, audioSrc: "/Basics/audio/Dolphin.mp3" },
+          { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "ロバ", courseId: 3, audioSrc: "/Basics/audio/Donkey.mp3" },
+          { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "さいころ", courseId: 3, audioSrc: "/Basics/audio/Dice.mp3" },
+          { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "ドラム", courseId: 3, audioSrc: "/Basics/audio/Drum.mp3" },
+          { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "しずく", courseId: 3, audioSrc: "/Basics/audio/Drop.mp3" },
+      
+          // E
+          { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "ぞう", courseId: 3, audioSrc: "/Basics/audio/Elephant.mp3" },
+          { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "たまご", courseId: 3, audioSrc: "/Basics/audio/Egg.mp3" },
+          { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "エンジン", courseId: 3, audioSrc: "/Basics/audio/Engine.mp3" },
+          { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "ふうとう", courseId: 3, audioSrc: "/Basics/audio/Envelope.mp3" },
+          { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "みみ", courseId: 3, audioSrc: "/Basics/audio/Ear.mp3" },
+          { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "わし", courseId: 3, audioSrc: "/Basics/audio/Eagle.mp3" },
+          { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "ちきゅう", courseId: 3, audioSrc: "/Basics/audio/Earth.mp3" },
+          { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "め", courseId: 3, audioSrc: "/Basics/audio/Eye.mp3" },
+          { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "エルフ", courseId: 3, audioSrc: "/Basics/audio/Elf.mp3" },
+          { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "エレベーター", courseId: 3, audioSrc: "/Basics/audio/Elevator.mp3" },
+      
+          // F
+          { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "さかな", courseId: 3, audioSrc: "/Basics/audio/Fish.mp3" },
+          { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "はな", courseId: 3, audioSrc: "/Basics/audio/Flower.mp3" },
+          { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "フォーク", courseId: 3, audioSrc: "/Basics/audio/Fork.mp3" },
+          { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "ひ", courseId: 3, audioSrc: "/Basics/audio/Fire.mp3" },
+          { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "きつね", courseId: 3, audioSrc: "/Basics/audio/Fox.mp3" },
+          { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "フェンス", courseId: 3, audioSrc: "/Basics/audio/Fence.mp3" },
+      
+          // G
+          { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "ギター", courseId: 3, audioSrc: "/Basics/audio/Guitar.mp3" },
+          { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "ぶどう", courseId: 3, audioSrc: "/Basics/audio/Grapes.mp3" },
+          { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "キリン", courseId: 3, audioSrc: "/Basics/audio/Giraffe.mp3" },
+          { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "やぎ", courseId: 3, audioSrc: "/Basics/audio/Goat.mp3" },
+          { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "てぶくろ", courseId: 3, audioSrc: "/Basics/audio/Glove.mp3" },
+          { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "にわ", courseId: 3, audioSrc: "/Basics/audio/Garden.mp3" },
+      
+          // H
+          { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "ぼうし", courseId: 3, audioSrc: "/Basics/audio/Hat.mp3" },
+          { imageSrc: "/Basics/House.png", title: "House", nativenm: "いえ", courseId: 3, audioSrc: "/Basics/audio/House.mp3" },
+          { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "うま", courseId: 3, audioSrc: "/Basics/audio/Horse.mp3" },
+          { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "ハンマー", courseId: 3, audioSrc: "/Basics/audio/Hammer.mp3" },
+          { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "て", courseId: 3, audioSrc: "/Basics/audio/Hand.mp3" },
+          { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "ハート", courseId: 3, audioSrc: "/Basics/audio/Heart.mp3" },
+      
+          // I
+          { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "こおり", courseId: 3, audioSrc: "/Basics/audio/Ice.mp3" },
+          { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "アイロン", courseId: 3, audioSrc: "/Basics/audio/Iron.mp3" },
+          { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "イグアナ", courseId: 3, audioSrc: "/Basics/audio/Iguana.mp3" },
+          { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "こんちゅう", courseId: 3, audioSrc: "/Basics/audio/Insect.mp3" },
+          { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "インク", courseId: 3, audioSrc: "/Basics/audio/Ink.mp3" },
+          { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "アイスクリーム", courseId: 3, audioSrc: "/Basics/audio/Ice Cream.mp3" },
+      
+          // J
+          { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "ジャケット", courseId: 3, audioSrc: "/Basics/audio/Jacket.mp3" },
+          { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "ジャングル", courseId: 3, audioSrc: "/Basics/audio/Jungle.mp3" },
+          { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "ジャンプ", courseId: 3, audioSrc: "/Basics/audio/Jump.mp3" },
+          { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "びん", courseId: 3, audioSrc: "/Basics/audio/Jar.mp3" },
+          { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "くらげ", courseId: 3, audioSrc: "/Basics/audio/Jellyfish.mp3" },
+      
+          // K
+          { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "キウイ", courseId: 3, audioSrc: "/Basics/audio/Kiwi.mp3" },
+          { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "カンガルー", courseId: 3, audioSrc: "/Basics/audio/Kangaroo.mp3" },
+          { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "やかん", courseId: 3, audioSrc: "/Basics/audio/Kettle.mp3" },
+          { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "かぎ", courseId: 3, audioSrc: "/Basics/audio/Key.mp3" },
+          { imageSrc: "/Basics/King.png", title: "King", nativenm: "おう", courseId: 3, audioSrc: "/Basics/audio/King.mp3" },
+      
+          // L
+          { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "ライオン", courseId: 3, audioSrc: "/Basics/audio/Lion.mp3" },
+          { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "ランプ", courseId: 3, audioSrc: "/Basics/audio/Lamp.mp3" },
+          { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "レモン", courseId: 3, audioSrc: "/Basics/audio/Lemon.mp3" },
+          { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "はしご", courseId: 3, audioSrc: "/Basics/audio/Ladder.mp3" },
+          { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "は", courseId: 3, audioSrc: "/Basics/audio/Leaf.mp3" },
+      
+          // M
+          { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "ねずみ", courseId: 3, audioSrc: "/Basics/audio/Mouse.mp3" },
+          { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "さる", courseId: 3, audioSrc: "/Basics/audio/Monkey.mp3" },
+          { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "やま", courseId: 3, audioSrc: "/Basics/audio/Mountain.mp3" },
+          { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "ミルク", courseId: 3, audioSrc: "/Basics/audio/Milk.mp3" },
+          { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "かがみ", courseId: 3, audioSrc: "/Basics/audio/Mirror.mp3" },
+      
+          // N
+          { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "ネット", courseId: 3, audioSrc: "/Basics/audio/Net.mp3" },
+          { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "はな", courseId: 3, audioSrc: "/Basics/audio/Nose.mp3" },
+          { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "よる", courseId: 3, audioSrc: "/Basics/audio/Night.mp3" },
+          { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "ナット", courseId: 3, audioSrc: "/Basics/audio/Nut.mp3" },
+      
+          // O
+          { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "ダチョウ", courseId: 3, audioSrc: "/Basics/audio/Ostrich.mp3" },
+          { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "たこ", courseId: 3, audioSrc: "/Basics/audio/Octopus.mp3" },
+          { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "ふくろう", courseId: 3, audioSrc: "/Basics/audio/Owl.mp3" },
+          { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "オリーブ", courseId: 3, audioSrc: "/Basics/audio/Olive.mp3" },
+          { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "さんそ", courseId: 3, audioSrc: "/Basics/audio/Oxygen.mp3" },
+      
+          // P
+          { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "ペン", courseId: 3, audioSrc: "/Basics/audio/Pen.mp3" },
+          { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "パイナップル", courseId: 3, audioSrc: "/Basics/audio/Pineapple.mp3" },
+          { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "パンダ", courseId: 3, audioSrc: "/Basics/audio/Panda.mp3" },
+          { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "えんぴつ", courseId: 3, audioSrc: "/Basics/audio/Pencil.mp3" },
+          { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "ひこうき", courseId: 3, audioSrc: "/Basics/audio/Plane.mp3" },
+      
+          // Q
+          { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "キルト", courseId: 3, audioSrc: "/Basics/audio/Quilt.mp3" },
+          { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "クイーン", courseId: 3, audioSrc: "/Basics/audio/Queen.mp3" },
+      
+          // R
+          { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "うさぎ", courseId: 3, audioSrc: "/Basics/audio/Rabbit.mp3" },
+          { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "あめ", courseId: 3, audioSrc: "/Basics/audio/Rain.mp3" },
+          { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "ゆびわ", courseId: 3, audioSrc: "/Basics/audio/Ring.mp3" },
+          { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "バラ", courseId: 3, audioSrc: "/Basics/audio/Rose.mp3" },
+          { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "ロボット", courseId: 3, audioSrc: "/Basics/audio/Robot.mp3" },
+      
+          // S
+          { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "たいよう", courseId: 3, audioSrc: "/Basics/audio/Sun.mp3" },
+          { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "へび", courseId: 3, audioSrc: "/Basics/audio/Snake.mp3" },
+          { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "ほし", courseId: 3, audioSrc: "/Basics/audio/Star.mp3" },
+          { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "くつした", courseId: 3, audioSrc: "/Basics/audio/Socks.mp3" },
+          { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "すな", courseId: 3, audioSrc: "/Basics/audio/Sand.mp3" },
+      
+          // T
+          { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "とら", courseId: 3, audioSrc: "/Basics/audio/Tiger.mp3" },
+          { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "き", courseId: 3, audioSrc: "/Basics/audio/Tree.mp3" },
+          { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "テーブル", courseId: 3, audioSrc: "/Basics/audio/Table.mp3" },
+          { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "テレビ", courseId: 3, audioSrc: "/Basics/audio/Television.mp3" },
+          { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "は", courseId: 3, audioSrc: "/Basics/audio/Tooth.mp3" },
+      
+          // U
+          { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "かさ", courseId: 3, audioSrc: "/Basics/audio/Umbrella.mp3" },
+          { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "つぼ", courseId: 3, audioSrc: "/Basics/audio/Urn.mp3" },
+          { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "おじ", courseId: 3, audioSrc: "/Basics/audio/Uncle.mp3" },
+          { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "ユニコーン", courseId: 3, audioSrc: "/Basics/audio/Unicorn.mp3" },
+          { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "うちゅう", courseId: 3, audioSrc: "/Basics/audio/Universe.mp3" },
+          { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "ようぐ", courseId: 3, audioSrc: "/Basics/audio/Utensil.mp3" },
+      
+          // V
+          { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "バン", courseId: 3, audioSrc: "/Basics/audio/Van.mp3" },
+          { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "ハゲワシ", courseId: 3, audioSrc: "/Basics/audio/Vulture.mp3" },
+          { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "そうじき", courseId: 3, audioSrc: "/Basics/audio/Vacuum.mp3" },
+          { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "ひがいしゃ", courseId: 3, audioSrc: "/Basics/audio/Victim.mp3" },
+          { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "やさい", courseId: 3, audioSrc: "/Basics/audio/Vegetable.mp3" },
+          { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "かざん", courseId: 3, audioSrc: "/Basics/audio/Volcano.mp3" },
+          { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "バケーション", courseId: 3, audioSrc: "/Basics/audio/Vacation.mp3" },
+          { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "ヴァンパイア", courseId: 3, audioSrc: "/Basics/audio/Vampire.mp3" },
+      
+          // W
+          { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "おおかみ", courseId: 3, audioSrc: "/Basics/audio/Wolf.mp3" },
+          { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "すいか", courseId: 3, audioSrc: "/Basics/audio/Watermelon.mp3" },
+          { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "まど", courseId: 3, audioSrc: "/Basics/audio/Window.mp3" },
+          { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "ワゴン", courseId: 3, audioSrc: "/Basics/audio/Wagon.mp3" },
+          { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "たき", courseId: 3, audioSrc: "/Basics/audio/Waterfall.mp3" },
+          { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "とけい", courseId: 3, audioSrc: "/Basics/audio/Watch.mp3" },
+          { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "くじら", courseId: 3, audioSrc: "/Basics/audio/Whale.mp3" },
+          { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "ふゆ", courseId: 3, audioSrc: "/Basics/audio/Winter.mp3" },
+          { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "てくび", courseId: 3, audioSrc: "/Basics/audio/Wrist.mp3" },
+          { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "くちぶえ", courseId: 3, audioSrc: "/Basics/audio/Whistle.mp3" },
+      
+          // X
+          { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "シロフォン", courseId: 3, audioSrc: "/Basics/audio/Xylophone.mp3" },
+          { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "エックスせん", courseId: 3, audioSrc: "/Basics/audio/X-ray.mp3" },
+          { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "キセノン", courseId: 3, audioSrc: "/Basics/audio/Xenon.mp3" },
+          { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "クリスマス", courseId: 3, audioSrc: "/Basics/audio/Xmas.mp3" },
+          { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "がいこくじんきょうふ", courseId: 3, audioSrc: "/Basics/audio/Xenophobia.mp3" },
+          { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "フレンドリー", courseId: 3, audioSrc: "/Basics/audio/Xenial.mp3" },
+          { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "ゼオン", courseId: 3, audioSrc: "/Basics/audio/Xeon.mp3" },
+          { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "しらべる", courseId: 3, audioSrc: "/Basics/audio/Examine.mp3" },
+          { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "ばくはつ", courseId: 3, audioSrc: "/Basics/audio/Explode.mp3" },
+          { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "ついほう", courseId: 3, audioSrc: "/Basics/audio/Exile.mp3" },
+      
+          // Y
+          { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "ヤク", courseId: 3, audioSrc: "/Basics/audio/Yak.mp3" },
+          { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "きいろ", courseId: 3, audioSrc: "/Basics/audio/Yellow.mp3" },
+          { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "ヨーグルト", courseId: 3, audioSrc: "/Basics/audio/Yogurt.mp3" },
+          { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "いと", courseId: 3, audioSrc: "/Basics/audio/Yarn.mp3" },
+          { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "ヨガ", courseId: 3, audioSrc: "/Basics/audio/Yoga.mp3" },
+          { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "あくび", courseId: 3, audioSrc: "/Basics/audio/Yawn.mp3" },
+          { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "にわ", courseId: 3, audioSrc: "/Basics/audio/Yard.mp3" },
+          { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "さけぶ", courseId: 3, audioSrc: "/Basics/audio/Yell.mp3" },
+      
+          // Z
+          { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "シマウマ", courseId: 3, audioSrc: "/Basics/audio/Zebra.mp3" },
+          { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "どうぶつえん", courseId: 3, audioSrc: "/Basics/audio/Zoo.mp3" },
 
+
+
+          //marathi data here
+          
+              { imageSrc: "/Basics/Apple.png", title: "Apple", nativenm: "सफरचंद", courseId: 4, audioSrc: "Basics/audio/marathi/word/Apple.mp3" },
+              { imageSrc: "/Basics/Ant.png", title: "Ant", nativenm: "मुंगी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ant.mp3" },
+              { imageSrc: "/Basics/Arm.png", title: "Arm", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arm.mp3" },
+              { imageSrc: "/Basics/Airplane.png", title: "Airplane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Airplane.mp3" },
+              { imageSrc: "/Basics/Arrow.png", title: "Arrow", nativenm: "बाण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Arrow.mp3" },
+              { imageSrc: "/Basics/Anchor.png", title: "Anchor", nativenm: "नांगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Anchor.mp3" },
+              { imageSrc: "/Basics/Alligator.png", title: "Alligator", nativenm: "मगर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alligator.mp3" },
+              { imageSrc: "/Basics/Alarm.png", title: "Alarm", nativenm: "अलार्म", courseId: 4, audioSrc: "Basics/audio/marathi/word/Alarm.mp3" },
+              { imageSrc: "/Basics/Actor.png", title: "Actor", nativenm: "अभिनेता", courseId: 4, audioSrc: "Basics/audio/marathi/word/Actor.mp3" },
+              { imageSrc: "/Basics/Art.png", title: "Art", nativenm: "कला", courseId: 4, audioSrc: "Basics/audio/marathi/word/Art.mp3" },
+          
+              // B
+              { imageSrc: "/Basics/Ball.png", title: "Ball", nativenm: "चेंडू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ball.mp3" },
+              { imageSrc: "/Basics/Bear.png", title: "Bear", nativenm: "अस्वल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bear.mp3" },
+              { imageSrc: "/Basics/Bird.png", title: "Bird", nativenm: "पक्षी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bird.mp3" },
+              { imageSrc: "/Basics/Butterfly.png", title: "Butterfly", nativenm: "फुलपाखरू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Butterfly.mp3" },
+              { imageSrc: "/Basics/Banana.png", title: "Banana", nativenm: "केळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Banana.mp3" },
+              { imageSrc: "/Basics/Boat.png", title: "Boat", nativenm: "बोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Boat.mp3" },
+              { imageSrc: "/Basics/Box.png", title: "Box", nativenm: "पेटी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Box.mp3" },
+              { imageSrc: "/Basics/Book.png", title: "Book", nativenm: "पुस्तक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Book.mp3" },
+              { imageSrc: "/Basics/Bench.png", title: "Bench", nativenm: "बेंच", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bench.mp3" },
+              { imageSrc: "/Basics/Bell.png", title: "Bell", nativenm: "घंटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Bell.mp3" },
+          
+              // C
+              { imageSrc: "/Basics/Cat.png", title: "Cat", nativenm: "मांजर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cat.mp3" },
+              { imageSrc: "/Basics/Cake.png", title: "Cake", nativenm: "केक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cake.mp3" },
+              { imageSrc: "/Basics/Candle.png", title: "Candle", nativenm: "मेणबत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Candle.mp3" },
+              { imageSrc: "/Basics/Cow.png", title: "Cow", nativenm: "गाय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cow.mp3" },
+              { imageSrc: "/Basics/Car.png", title: "Car", nativenm: "कार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Car.mp3" },
+              { imageSrc: "/Basics/Coin.png", title: "Coin", nativenm: "नाणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Coin.mp3" },
+              { imageSrc: "/Basics/Crown.png", title: "Crown", nativenm: "मुकुट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Crown.mp3" },
+              { imageSrc: "/Basics/Cactus.png", title: "Cactus", nativenm: "कॅक्टस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cactus.mp3" },
+              { imageSrc: "/Basics/Clock.png", title: "Clock", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Clock.mp3" },
+              { imageSrc: "/Basics/Cloud.png", title: "Cloud", nativenm: "ढग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Cloud.mp3" },
+          
+              // D
+              { imageSrc: "/Basics/Dog.png", title: "Dog", nativenm: "कुत्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dog.mp3" },
+              { imageSrc: "/Basics/Duck.png", title: "Duck", nativenm: "बदक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Duck.mp3" },
+              { imageSrc: "/Basics/Dress.png", title: "Dress", nativenm: "ड्रेस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dress.mp3" },
+              { imageSrc: "/Basics/Door.png", title: "Door", nativenm: "दरवाजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Door.mp3" },
+              { imageSrc: "/Basics/Diamond.png", title: "Diamond", nativenm: "हिरा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Diamond.mp3" },
+              { imageSrc: "/Basics/Dolphin.png", title: "Dolphin", nativenm: "डॉल्फिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dolphin.mp3" },
+              { imageSrc: "/Basics/Donkey.png", title: "Donkey", nativenm: "गाढव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Donkey.mp3" },
+              { imageSrc: "/Basics/Dice.png", title: "Dice", nativenm: "फासे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Dice.mp3" },
+              { imageSrc: "/Basics/Drum.png", title: "Drum", nativenm: "ड्रम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drum.mp3" },
+              { imageSrc: "/Basics/Drop.png", title: "Drop", nativenm: "थेंब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Drop.mp3" },
+          
+              // E
+              { imageSrc: "/Basics/Elephant.png", title: "Elephant", nativenm: "हत्ती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elephant.mp3" },
+              { imageSrc: "/Basics/Egg.png", title: "Egg", nativenm: "अंडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Egg.mp3" },
+              { imageSrc: "/Basics/Engine.png", title: "Engine", nativenm: "इंजिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Engine.mp3" },
+              { imageSrc: "/Basics/Envelope.png", title: "Envelope", nativenm: "लिफाफा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Envelope.mp3" },
+              { imageSrc: "/Basics/Ear.png", title: "Ear", nativenm: "कान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ear.mp3" },
+              { imageSrc: "/Basics/Eagle.png", title: "Eagle", nativenm: "गरूड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eagle.mp3" },
+              { imageSrc: "/Basics/Earth.png", title: "Earth", nativenm: "पृथ्वी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Earth.mp3" },
+              { imageSrc: "/Basics/Eye.png", title: "Eye", nativenm: "डोळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Eye.mp3" },
+              { imageSrc: "/Basics/Elf.png", title: "Elf", nativenm: "एल्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elf.mp3" },
+              { imageSrc: "/Basics/Elevator.png", title: "Elevator", nativenm: "लिफ्ट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Elevator.mp3" },
+          
+              // F
+              { imageSrc: "/Basics/Fish.png", title: "Fish", nativenm: "मासा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fish.mp3" },
+              { imageSrc: "/Basics/Flower.png", title: "Flower", nativenm: "फूल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Flower.mp3" },
+              { imageSrc: "/Basics/Fork.png", title: "Fork", nativenm: "काटा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fork.mp3" },
+              { imageSrc: "/Basics/Fire.png", title: "Fire", nativenm: "आग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fire.mp3" },
+              { imageSrc: "/Basics/Fox.png", title: "Fox", nativenm: "कोल्हा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fox.mp3" },
+              { imageSrc: "/Basics/Fence.png", title: "Fence", nativenm: "कुंपण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Fence.mp3" },
+          
+              // G
+              { imageSrc: "/Basics/Guitar.png", title: "Guitar", nativenm: "गिटार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Guitar.mp3" },
+              { imageSrc: "/Basics/Grapes.png", title: "Grapes", nativenm: "द्राक्ष", courseId: 4, audioSrc: "Basics/audio/marathi/word/Grapes.mp3" },
+              { imageSrc: "/Basics/Giraffe.png", title: "Giraffe", nativenm: "जिराफ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Giraffe.mp3" },
+              { imageSrc: "/Basics/Goat.png", title: "Goat", nativenm: "शेळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Goat.mp3" },
+              { imageSrc: "/Basics/Glove.png", title: "Glove", nativenm: "हातमोजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Glove.mp3" },
+              { imageSrc: "/Basics/Garden.png", title: "Garden", nativenm: "बाग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Garden.mp3" },
+          
+              // H
+              { imageSrc: "/Basics/Hat.png", title: "Hat", nativenm: "टोपी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hat.mp3" },
+              { imageSrc: "/Basics/House.png", title: "House", nativenm: "घर", courseId: 4, audioSrc: "Basics/audio/marathi/word/House.mp3" },
+              { imageSrc: "/Basics/Horse.png", title: "Horse", nativenm: "घोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Horse.mp3" },
+              { imageSrc: "/Basics/Hammer.png", title: "Hammer", nativenm: "हातोडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hammer.mp3" },
+              { imageSrc: "/Basics/Hand.png", title: "Hand", nativenm: "हात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Hand.mp3" },
+              { imageSrc: "/Basics/Heart.png", title: "Heart", nativenm: "हृदय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Heart.mp3" },
+          
+              // I
+  { imageSrc: "/Basics/Ice.png", title: "Ice", nativenm: "बर्फ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice.mp3" },
+  { imageSrc: "/Basics/Iron.png", title: "Iron", nativenm: "लोखंड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iron.mp3" },
+  { imageSrc: "/Basics/Iguana.png", title: "Iguana", nativenm: "इगुआना", courseId: 4, audioSrc: "Basics/audio/marathi/word/Iguana.mp3" },
+  { imageSrc: "/Basics/Insect.png", title: "Insect", nativenm: "कीटक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Insect.mp3" },
+  { imageSrc: "/Basics/Ink.png", title: "Ink", nativenm: "शाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ink.mp3" },
+  { imageSrc: "/Basics/Ice Cream.png", title: "Ice Cream", nativenm: "आईस्क्रीम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ice Cream.mp3" },
+
+  // J
+  { imageSrc: "/Basics/Jacket.png", title: "Jacket", nativenm: "जाकीट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jacket.mp3" },
+  { imageSrc: "/Basics/Jungle.png", title: "Jungle", nativenm: "जंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jungle.mp3" },
+  { imageSrc: "/Basics/Jump.png", title: "Jump", nativenm: "उडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jump.mp3" },
+  { imageSrc: "/Basics/Jar.png", title: "Jar", nativenm: "जार", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jar.mp3" },
+  { imageSrc: "/Basics/Jellyfish.png", title: "Jellyfish", nativenm: "जेलीफिश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Jellyfish.mp3" },
+
+  // K
+  { imageSrc: "/Basics/Kiwi.png", title: "Kiwi", nativenm: "किवी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kiwi.mp3" },
+  { imageSrc: "/Basics/Kangaroo.png", title: "Kangaroo", nativenm: "कांगारू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kangaroo.mp3" },
+  { imageSrc: "/Basics/Kettle.png", title: "Kettle", nativenm: "केतली", courseId: 4, audioSrc: "Basics/audio/marathi/word/Kettle.mp3" },
+  { imageSrc: "/Basics/Key.png", title: "Key", nativenm: "चावी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Key.mp3" },
+  { imageSrc: "/Basics/King.png", title: "King", nativenm: "राजा", courseId: 4, audioSrc: "Basics/audio/marathi/word/King.mp3" },
+
+  // L
+  { imageSrc: "/Basics/Lion.png", title: "Lion", nativenm: "सिंह", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lion.mp3" },
+  { imageSrc: "/Basics/Lamp.png", title: "Lamp", nativenm: "दिवा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lamp.mp3" },
+  { imageSrc: "/Basics/Lemon.png", title: "Lemon", nativenm: "लिंबू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Lemon.mp3" },
+  { imageSrc: "/Basics/Ladder.png", title: "Ladder", nativenm: "शिडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ladder.mp3" },
+  { imageSrc: "/Basics/Leaf.png", title: "Leaf", nativenm: "पान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Leaf.mp3" },
+
+  // M
+  { imageSrc: "/Basics/Mouse.png", title: "Mouse", nativenm: "उंदीर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mouse.mp3" },
+  { imageSrc: "/Basics/Monkey.png", title: "Monkey", nativenm: "माकड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Monkey.mp3" },
+  { imageSrc: "/Basics/Mountain.png", title: "Mountain", nativenm: "पर्वत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mountain.mp3" },
+  { imageSrc: "/Basics/Milk.png", title: "Milk", nativenm: "दूध", courseId: 4, audioSrc: "Basics/audio/marathi/word/Milk.mp3" },
+  { imageSrc: "/Basics/Mirror.png", title: "Mirror", nativenm: "आरसा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Mirror.mp3" },
+
+  // N
+  { imageSrc: "/Basics/Net.png", title: "Net", nativenm: "जाळे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Net.mp3" },
+  { imageSrc: "/Basics/Nose.png", title: "Nose", nativenm: "नाक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nose.mp3" },
+  { imageSrc: "/Basics/Night.png", title: "Night", nativenm: "रात्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Night.mp3" },
+  { imageSrc: "/Basics/Nut.png", title: "Nut", nativenm: "काजू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Nut.mp3" },
+
+  // O
+  { imageSrc: "/Basics/Ostrich.png", title: "Ostrich", nativenm: "शहामृग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ostrich.mp3" },
+  { imageSrc: "/Basics/Octopus.png", title: "Octopus", nativenm: "ऑक्टोपस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Octopus.mp3" },
+  { imageSrc: "/Basics/Owl.png", title: "Owl", nativenm: "घुबड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Owl.mp3" },
+  { imageSrc: "/Basics/Olive.png", title: "Olive", nativenm: "ऑलिव", courseId: 4, audioSrc: "Basics/audio/marathi/word/Olive.mp3" },
+  { imageSrc: "/Basics/Oxygen.png", title: "Oxygen", nativenm: "ऑक्सिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Oxygen.mp3" },
+
+  // P
+  { imageSrc: "/Basics/Pen.png", title: "Pen", nativenm: "पेन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pen.mp3" },
+  { imageSrc: "/Basics/Pineapple.png", title: "Pineapple", nativenm: "अननस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pineapple.mp3" },
+  { imageSrc: "/Basics/Panda.png", title: "Panda", nativenm: "पांडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Panda.mp3" },
+  { imageSrc: "/Basics/Pencil.png", title: "Pencil", nativenm: "पेन्सिल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Pencil.mp3" },
+  { imageSrc: "/Basics/Plane.png", title: "Plane", nativenm: "विमान", courseId: 4, audioSrc: "Basics/audio/marathi/word/Plane.mp3" },
+
+  // Q
+  { imageSrc: "/Basics/Quilt.png", title: "Quilt", nativenm: "रजाई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Quilt.mp3" },
+  { imageSrc: "/Basics/Queen.png", title: "Queen", nativenm: "राणी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Queen.mp3" },
+
+  // R
+  { imageSrc: "/Basics/Rabbit.png", title: "Rabbit", nativenm: "ससा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rabbit.mp3" },
+  { imageSrc: "/Basics/Rain.png", title: "Rain", nativenm: "पाऊस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rain.mp3" },
+  { imageSrc: "/Basics/Ring.png", title: "Ring", nativenm: "अंगठी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Ring.mp3" },
+  { imageSrc: "/Basics/Rose.png", title: "Rose", nativenm: "गुलाब", courseId: 4, audioSrc: "Basics/audio/marathi/word/Rose.mp3" },
+  { imageSrc: "/Basics/Robot.png", title: "Robot", nativenm: "रोबोट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Robot.mp3" },
+
+  // S
+  { imageSrc: "/Basics/Sun.png", title: "Sun", nativenm: "सूर्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sun.mp3" },
+  { imageSrc: "/Basics/Snake.png", title: "Snake", nativenm: "साप", courseId: 4, audioSrc: "Basics/audio/marathi/word/Snake.mp3" },
+  { imageSrc: "/Basics/Star.png", title: "Star", nativenm: "तारा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Star.mp3" },
+  { imageSrc: "/Basics/Socks.png", title: "Socks", nativenm: "मोजे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Socks.mp3" },
+  { imageSrc: "/Basics/Sand.png", title: "Sand", nativenm: "वाळू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Sand.mp3" },
+
+  // T
+  { imageSrc: "/Basics/Tiger.png", title: "Tiger", nativenm: "वाघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tiger.mp3" },
+  { imageSrc: "/Basics/Tree.png", title: "Tree", nativenm: "झाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tree.mp3" },
+  { imageSrc: "/Basics/Table.png", title: "Table", nativenm: "टेबल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Table.mp3" },
+  { imageSrc: "/Basics/Television.png", title: "Television", nativenm: "टेलिव्हिजन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Television.mp3" },
+  { imageSrc: "/Basics/Tooth.png", title: "Tooth", nativenm: "दात", courseId: 4, audioSrc: "Basics/audio/marathi/word/Tooth.mp3" },
+
+  // U
+  { imageSrc: "/Basics/Umbrella.png", title: "Umbrella", nativenm: "छत्री", courseId: 4, audioSrc: "Basics/audio/marathi/word/Umbrella.mp3" },
+  { imageSrc: "/Basics/Urn.png", title: "Urn", nativenm: "कलश", courseId: 4, audioSrc: "Basics/audio/marathi/word/Urn.mp3" },
+  { imageSrc: "/Basics/Uncle.png", title: "Uncle", nativenm: "काका", courseId: 4, audioSrc: "Basics/audio/marathi/word/Uncle.mp3" },
+  { imageSrc: "/Basics/Unicorn.png", title: "Unicorn", nativenm: "युनिकॉर्न", courseId: 4, audioSrc: "Basics/audio/marathi/word/Unicorn.mp3" },
+  { imageSrc: "/Basics/Universe.png", title: "Universe", nativenm: "विश्व", courseId: 4, audioSrc: "Basics/audio/marathi/word/Universe.mp3" },
+  { imageSrc: "/Basics/Utensil.png", title: "Utensil", nativenm: "भांडे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Utensil.mp3" },
+
+  // V
+  { imageSrc: "/Basics/Van.png", title: "Van", nativenm: "व्हॅन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Van.mp3" },
+  { imageSrc: "/Basics/Vulture.png", title: "Vulture", nativenm: "गिधाड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vulture.mp3" },
+  { imageSrc: "/Basics/Vacuum.png", title: "Vacuum", nativenm: "व्हॅक्यूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacuum.mp3" },
+  { imageSrc: "/Basics/Victim.png", title: "Victim", nativenm: "बळी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Victim.mp3" },
+  { imageSrc: "/Basics/Vegetable.png", title: "Vegetable", nativenm: "भाजी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vegetable.mp3" },
+  { imageSrc: "/Basics/Volcano.png", title: "Volcano", nativenm: "ज्वालामुखी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Volcano.mp3" },
+  { imageSrc: "/Basics/Vacation.png", title: "Vacation", nativenm: "सुट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vacation.mp3" },
+  { imageSrc: "/Basics/Vampire.png", title: "Vampire", nativenm: "व्हॅम्पायर", courseId: 4, audioSrc: "Basics/audio/marathi/word/Vampire.mp3" },
+
+  // W
+  { imageSrc: "/Basics/Wolf.png", title: "Wolf", nativenm: "लांडगा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wolf.mp3" },
+  { imageSrc: "/Basics/Watermelon.png", title: "Watermelon", nativenm: "कलिंगड", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watermelon.mp3" },
+  { imageSrc: "/Basics/Window.png", title: "Window", nativenm: "खिडकी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Window.mp3" },
+  { imageSrc: "/Basics/Wagon.png", title: "Wagon", nativenm: "गाडी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wagon.mp3" },
+  { imageSrc: "/Basics/Waterfall.png", title: "Waterfall", nativenm: "धबधबा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Waterfall.mp3" },
+  { imageSrc: "/Basics/Watch.png", title: "Watch", nativenm: "घड्याळ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Watch.mp3" },
+  { imageSrc: "/Basics/Whale.png", title: "Whale", nativenm: "तिमिंगल", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whale.mp3" },
+  { imageSrc: "/Basics/Winter.png", title: "Winter", nativenm: "हिवाळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Winter.mp3" },
+  { imageSrc: "/Basics/Wrist.png", title: "Wrist", nativenm: "मनगट", courseId: 4, audioSrc: "Basics/audio/marathi/word/Wrist.mp3" },
+  { imageSrc: "/Basics/Whistle.png", title: "Whistle", nativenm: "शिट्टी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Whistle.mp3" },
+
+  // X
+  { imageSrc: "/Basics/Xylophone.png", title: "Xylophone", nativenm: "झायलोफोन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xylophone.mp3" },
+  { imageSrc: "/Basics/X-ray.png", title: "X-ray", nativenm: "क्ष-किरण", courseId: 4, audioSrc: "Basics/audio/marathi/word/X-ray.mp3" },
+  { imageSrc: "/Basics/Xenon.png", title: "Xenon", nativenm: "झेनॉन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenon.mp3" },
+  { imageSrc: "/Basics/Xmas.png", title: "Xmas", nativenm: "ख्रिसमस", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xmas.mp3" },
+  { imageSrc: "/Basics/Xenophobia.png", title: "Xenophobia", nativenm: "परकीयभीती", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenophobia.mp3" },
+  { imageSrc: "/Basics/Xenial.png", title: "Xenial", nativenm: "मैत्रीपूर्ण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xenial.mp3" },
+  { imageSrc: "/Basics/Xeon.png", title: "Xeon", nativenm: "झिऑन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Xeon.mp3" },
+  { imageSrc: "/Basics/Examine.png", title: "Examine", nativenm: "परीक्षण करणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Examine.mp3" },
+  { imageSrc: "/Basics/Explode.png", title: "Explode", nativenm: "स्फोट होणे", courseId: 4, audioSrc: "Basics/audio/marathi/word/Explode.mp3" },
+  { imageSrc: "/Basics/Exile.png", title: "Exile", nativenm: "निर्वासन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Exile.mp3" },
+
+  // Y
+  { imageSrc: "/Basics/Yak.png", title: "Yak", nativenm: "याक", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yak.mp3" },
+  { imageSrc: "/Basics/Yellow.png", title: "Yellow", nativenm: "पिवळा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yellow.mp3" },
+  { imageSrc: "/Basics/Yogurt.png", title: "Yogurt", nativenm: "दही", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yogurt.mp3" },
+  { imageSrc: "/Basics/Yarn.png", title: "Yarn", nativenm: "सुत", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yarn.mp3" },
+  { imageSrc: "/Basics/Yoga.png", title: "Yoga", nativenm: "योग", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yoga.mp3" },
+  { imageSrc: "/Basics/Yawn.png", title: "Yawn", nativenm: "जांभई", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yawn.mp3" },
+  { imageSrc: "/Basics/Yard.png", title: "Yard", nativenm: "आंगण", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yard.mp3" },
+  { imageSrc: "/Basics/Yell.png", title: "Yell", nativenm: "आरडाओरडा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Yell.mp3" },
+
+  // Z
+  { imageSrc: "/Basics/Zebra.png", title: "Zebra", nativenm: "झेब्रा", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zebra.mp3" },
+  { imageSrc: "/Basics/Zoo.png", title: "Zoo", nativenm: "प्राणीसंग्रहालय", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoo.mp3" },
+  { imageSrc: "/Basics/Zenith.png", title: "Zenith", nativenm: "परमोच्च बिंदू", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zenith.mp3" },
+  { imageSrc: "/Basics/Zero.png", title: "Zero", nativenm: "शून्य", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zero.mp3" },
+  { imageSrc: "/Basics/Zigzag.png", title: "Zigzag", nativenm: "तिरपी रेघ", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zigzag.mp3" },
+  { imageSrc: "/Basics/Zeppelin.png", title: "Zeppelin", nativenm: "झेपेलिन", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zeppelin.mp3" },
+  { imageSrc: "/Basics/Zombie.png", title: "Zombie", nativenm: "झोंबी", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zombie.mp3" },
+  { imageSrc: "/Basics/Zone.png", title: "Zone", nativenm: "क्षेत्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zone.mp3" },
+  { imageSrc: "/Basics/Zodiac.png", title: "Zodiac", nativenm: "राशीचक्र", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zodiac.mp3" },
+  { imageSrc: "/Basics/Zoom.png", title: "Zoom", nativenm: "झूम", courseId: 4, audioSrc: "Basics/audio/marathi/word/Zoom.mp3" },
+    
+    
+  
+    ];
+
+    await db.insert(schema.basicsdb).values(basicsData);
 
       await db.insert(schema.basicsdbcore).values([
         
@@ -1427,11 +1424,11 @@ const main = async () => {
 
 { id: 13, lessonId: 5, type: "ASSIST", order: 1, question: "How do you say 'she' in Spanish?" },
 { id: 14, lessonId: 5, type: "ASSIST", order: 2, question: "How do you say 'they' in Spanish?" },
-{ id: 15, lessonId: 5, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ está corriendo.'" },
+{ id: 15, lessonId: 5, type: "ASSIST", order: 3, question: "Complete: 'He is running.' → '__ está corriendo.'" },
 
-{ id: 16, lessonId: 6, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → 'Ella __ comiendo.'" },
-{ id: 17, lessonId: 6, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → 'Nosotros __ jugando.'" },
-{ id: 18, lessonId: 6, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → 'Ellos __ estudiando.'" },
+{ id: 16, lessonId: 6, type: "ASSIST", order: 1, question: "Complete: 'She is eating.' → 'Ella __ comiendo.'" },
+{ id: 17, lessonId: 6, type: "ASSIST", order: 2, question: "Complete: 'We are playing.' → 'Nosotros __ jugando.'" },
+{ id: 18, lessonId: 6, type: "ASSIST", order: 3, question: "Complete: 'They are studying.' → 'Ellos __ estudiando.'" },
 
   // Verbs
 { id: 19, lessonId: 7, type: "SELECT", order: 1, question: "How do you say 'to eat' in Spanish?" },
@@ -1455,9 +1452,9 @@ const main = async () => {
 { id: 32, lessonId: 11, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Spanish?" },
 { id: 33, lessonId: 11, type: "ASSIST", order: 3, question: "How do you say 'strong' in Spanish?" },
 
-{ id: 34, lessonId: 12, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'El coche es __.'" },
-{ id: 35, lessonId: 12, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'La flor es __.'" },
-{ id: 36, lessonId: 12, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'El niño es __.'" },
+{ id: 34, lessonId: 12, type: "ASSIST", order: 1, question: "Complete: 'The car is big.' → 'El coche es __.'" },
+{ id: 35, lessonId: 12, type: "ASSIST", order: 2, question: "Complete: 'The flower is beautiful.' → 'La flor es __.'" },
+{ id: 36, lessonId: 12, type: "ASSIST", order: 3, question: "Complete: 'The boy is strong.' → 'El niño es __.'" },
 
 // Sentences
 // Easy Sentences
@@ -1465,42 +1462,44 @@ const main = async () => {
 { id: 38, lessonId: 13, type: "ASSIST", order: 2, question: "Translate: The sun is bright." },
 { id: 39, lessonId: 13, type: "ASSIST", order: 3, question: "Translate: I have a book." },
 
-{ id: 40, lessonId: 14, type: "ASSIST", order: 1, question: "Translate: 'She is my sister." },
-{ id: 41, lessonId: 14, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → 'Somos amigos.'" },
-{ id: 42, lessonId: 14, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → 'El perro está corriendo.'" },
+{ id: 40, lessonId: 14, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.'" },
+{ id: 41, lessonId: 14, type: "ASSIST", order: 2, question: "Translate: 'We are friends.'" },
+{ id: 42, lessonId: 14, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.'" },
 
-{ id: 43, lessonId: 15, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → 'Él es un maestro.'" },
-{ id: 44, lessonId: 15, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'La manzana es roja.'" },
-{ id: 45, lessonId: 15, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → 'Me gustan los mangos.'" },
-{ id: 46, lessonId: 15, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → 'Ella está feliz.'" },
+{ id: 43, lessonId: 15, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.'" },
+{ id: 44, lessonId: 15, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.'" },
+{ id: 45, lessonId: 15, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.'" },
+{ id: 46, lessonId: 15, type: "ASSIST", order: 4, question: "Translate: 'She is happy.'" },
 
 // Intermediate Sentences
 { id: 47, lessonId: 16, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Spanish book.'" },
-{ id: 48, lessonId: 16, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → 'Ella está cocinando comida.'" },
-{ id: 49, lessonId: 16, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → 'Los niños están jugando afuera.'" },
+{ id: 48, lessonId: 16, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.'" },
+{ id: 49, lessonId: 16, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.'" },
 
-{ id: 50, lessonId: 17, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → 'Vamos a la escuela todos los días.'" },
-{ id: 51, lessonId: 17, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → 'Le gusta tomar té.'" },
-{ id: 52, lessonId: 17, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → 'Los pájaros están volando en el cielo.'" },
+{ id: 50, lessonId: 17, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.'" },
+{ id: 51, lessonId: 17, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.'" },
+{ id: 52, lessonId: 17, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.'" },
 
-{ id: 53, lessonId: 18, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → 'Ella está usando un vestido azul.'" },
-{ id: 54, lessonId: 18, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'El autobús está tarde hoy.'" },
-{ id: 55, lessonId: 18, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → 'Ellos están viendo una película.'" },
-{ id: 56, lessonId: 18, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → 'El maestro está explicando la lección.'" },
+{ id: 53, lessonId: 18, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.'" },
+{ id: 54, lessonId: 18, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.'" },
+{ id: 55, lessonId: 18, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.'" },
+{ id: 56, lessonId: 18, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.'" },
 
 // Difficult Sentences
-{ id: 57, lessonId: 19, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → 'Si trabajas duro, tendrás éxito.'" },
-{ id: 58, lessonId: 19, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → 'Ella fue al mercado a comprar verduras.'" },
-{ id: 59, lessonId: 19, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → 'Aunque estaba lloviendo, ellos jugaron al fútbol.'" },
+{ id: 57, lessonId: 19, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.'" },
+{ id: 58, lessonId: 19, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.'" },
+{ id: 59, lessonId: 19, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.'" },
 
-{ id: 60, lessonId: 20, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → 'El maestro pidió a los estudiantes que entregaran sus tareas a tiempo.'" },
-{ id: 61, lessonId: 20, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → 'Él está leyendo un periódico mientras toma té.'" },
-{ id: 62, lessonId: 20, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → 'Ella estaba cansada, sin embargo, siguió trabajando.'" },
+{ id: 60, lessonId: 20, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.'" },
+{ id: 61, lessonId: 20, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.'" },
+{ id: 62, lessonId: 20, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.'" },
 
-{ id: 63, lessonId: 21, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → 'Para cuando llegamos, el tren ya se había ido.'" },
-{ id: 64, lessonId: 21, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → 'A menos que estudies, no aprobarás el examen.'" },
-{ id: 65, lessonId: 21, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → 'El doctor le aconsejó que tomara medicina regularmente.'" },
-{ id: 66, lessonId: 21, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → 'El anciano, que vivía solo, nos contó muchas historias de su pasado.'" },
+{ id: 63, lessonId: 21, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.'" },
+{ id: 64, lessonId: 21, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.'" },
+{ id: 65, lessonId: 21, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.'" },
+{ id: 66, lessonId: 21, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.'" },
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //French
 // Nouns
@@ -1523,11 +1522,11 @@ const main = async () => {
 
 { id: 79, lessonId: 26, type: "ASSIST", order: 1, question: "How do you say 'she' in French?" },
 { id: 80, lessonId: 26, type: "ASSIST", order: 2, question: "How do you say 'they' in French?" },
-{ id: 81, lessonId: 26, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ court.'" },
+{ id: 81, lessonId: 26, type: "ASSIST", order: 3, question: "Complete: 'He is running.' → '__ court.'" },
 
-{ id: 82, lessonId: 27, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → 'Elle __ mange.'" },
-{ id: 83, lessonId: 27, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → 'Nous __ jouons.'" },
-{ id: 84, lessonId: 27, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → 'Ils __ étudient.'" },
+{ id: 82, lessonId: 27, type: "ASSIST", order: 1, question: "Complete: 'She is eating.' → '___ mange.'" },
+{ id: 83, lessonId: 27, type: "ASSIST", order: 2, question: "Complete: 'We are playing.' → '___ jouons.'" },
+{ id: 84, lessonId: 27, type: "ASSIST", order: 3, question: "Complete: 'They are studying.' → '___ étudient.'" },
 
 // Verbs
 { id: 85, lessonId: 28, type: "SELECT", order: 1, question: "How do you say 'to eat' in French?" },
@@ -1551,53 +1550,55 @@ const main = async () => {
 { id: 98, lessonId: 32, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in French?" },
 { id: 99, lessonId: 32, type: "ASSIST", order: 3, question: "How do you say 'strong' in French?" },
 
-{ id: 100, lessonId: 33, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'La voiture est __.'" },
-{ id: 101, lessonId: 33, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'La fleur est __.'" },
-{ id: 102, lessonId: 33, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'Le garçon est __.'" },
+{ id: 100, lessonId: 33, type: "ASSIST", order: 1, question: "Complete: 'The car is big.' → 'La voiture est ___.'" },
+{ id: 101, lessonId: 33, type: "ASSIST", order: 2, question: "Complete: 'The flower is beautiful.' → 'La fleur est ___.'" },
+{ id: 102, lessonId: 33, type: "ASSIST", order: 3, question: "Complete: 'The boy is strong.' → 'Le garçon est ___.'" },
 
 // Sentences
 // Easy Sentences
-{ id: 103, lessonId: 34, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.' → 'C'est un chat.'" },
-{ id: 104, lessonId: 34, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.' → 'Le soleil est brillant.'" },
-{ id: 105, lessonId: 34, type: "ASSIST", order: 3, question: "Translate: 'I have a book.' → 'J'ai un livre.'" },
+{ id: 103, lessonId: 34, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.'" },
+{ id: 104, lessonId: 34, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.'" },
+{ id: 105, lessonId: 34, type: "ASSIST", order: 3, question: "Translate: 'I have a book.'" },
 
-{ id: 106, lessonId: 35, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.' → 'Elle est ma sœur.'" },
-{ id: 107, lessonId: 35, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → 'Nous sommes amis.'" },
-{ id: 108, lessonId: 35, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → 'Le chien court.'" },
+{ id: 106, lessonId: 35, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.'" },
+{ id: 107, lessonId: 35, type: "ASSIST", order: 2, question: "Translate: 'We are friends.'" },
+{ id: 108, lessonId: 35, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.'" },
 
-{ id: 109, lessonId: 36, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → 'Il est professeur.'" },
-{ id: 110, lessonId: 36, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'La pomme est rouge.'" },
-{ id: 111, lessonId: 36, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → 'J'aime les mangues.'" },
-{ id: 112, lessonId: 36, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → 'Elle est heureuse.'" },
+{ id: 109, lessonId: 36, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.'" },
+{ id: 110, lessonId: 36, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.'" },
+{ id: 111, lessonId: 36, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.'" },
+{ id: 112, lessonId: 36, type: "ASSIST", order: 4, question: "Translate: 'She is happy.'" },
 
 // Intermediate Sentences
-{ id: 113, lessonId: 37, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Spanish book.' → 'Je lis un livre en espagnol.'" },
-{ id: 114, lessonId: 37, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → 'Elle cuisine de la nourriture.'" },
-{ id: 115, lessonId: 37, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → 'Les enfants jouent dehors.'" },
+{ id: 113, lessonId: 37, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Spanish book.'" },
+{ id: 114, lessonId: 37, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.'" },
+{ id: 115, lessonId: 37, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.'" },
 
-{ id: 116, lessonId: 38, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → 'Nous allons à l'école tous les jours.'" },
-{ id: 117, lessonId: 38, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → 'Il aime boire du thé.'" },
-{ id: 118, lessonId: 38, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → 'Les oiseaux volent dans le ciel.'" },
+{ id: 116, lessonId: 38, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.'" },
+{ id: 117, lessonId: 38, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.'" },
+{ id: 118, lessonId: 38, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.'" },
 
-{ id: 119, lessonId: 39, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → 'Elle porte une robe bleue.'" },
-{ id: 120, lessonId: 39, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'Le bus est en retard aujourd'hui.'" },
-{ id: 121, lessonId: 39, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → 'Ils regardent un film.'" },
-{ id: 122, lessonId: 39, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → 'Le professeur explique la leçon.'" },
+{ id: 119, lessonId: 39, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.'" },
+{ id: 120, lessonId: 39, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.'" },
+{ id: 121, lessonId: 39, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.'" },
+{ id: 122, lessonId: 39, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.'" },
 
 // Difficult Sentences
-{ id: 123, lessonId: 40, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → 'Si vous travaillez dur, vous réussirez.'" },
-{ id: 124, lessonId: 40, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → 'Elle est allée au marché pour acheter des légumes.'" },
-{ id: 125, lessonId: 40, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → 'Bien qu'il pleuvait, ils ont joué au football.'" },
+{ id: 123, lessonId: 40, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.'" },
+{ id: 124, lessonId: 40, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.'" },
+{ id: 125, lessonId: 40, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.'" },
 
-{ id: 126, lessonId: 41, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → 'Le professeur a demandé aux élèves de rendre leurs devoirs à temps.'" },
-{ id: 127, lessonId: 41, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → 'Il lit un journal en buvant du thé.'" },
-{ id: 128, lessonId: 41, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → 'Elle était fatiguée, mais elle a continué à travailler.'" },
+{ id: 126, lessonId: 41, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.'" },
+{ id: 127, lessonId: 41, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.'" },
+{ id: 128, lessonId: 41, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.'" },
 
-{ id: 129, lessonId: 42, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → 'Quand nous sommes arrivés, le train était déjà parti.'" },
-{ id: 130, lessonId: 42, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → 'À moins d'étudier, vous ne réussirez pas l'examen.'" },
-{ id: 131, lessonId: 42, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → 'Le médecin lui a conseillé de prendre des médicaments régulièrement.'" },
-{ id: 132, lessonId: 42, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → 'Le vieil homme, qui vivait seul, nous a raconté de nombreuses histoires de son passé.'" },
+{ id: 129, lessonId: 42, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.'" },
+{ id: 130, lessonId: 42, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.'" },
+{ id: 131, lessonId: 42, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.'" },
+{ id: 132, lessonId: 42, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.'" },
         
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 // Japanese
 // Nouns
 { id: 133, lessonId: 43, type: "SELECT", order: 1, question: "How do you say 'the man' in Japanese?" },
@@ -1619,11 +1620,12 @@ const main = async () => {
     
 { id: 145, lessonId: 47, type: "ASSIST", order: 1, question: "How do you say 'she' in Japanese?" },
 { id: 146, lessonId: 47, type: "ASSIST", order: 2, question: "How do you say 'they' in Japanese?" },
-{ id: 147, lessonId: 47, type: "ASSIST", order: 3, question: "Translate: 'He is running.' → '__ は走っています。'" },
+{ id: 147, lessonId: 47, type: "ASSIST", order: 3, question: "Complete: 'He is running.' → '__ は走っています。'" },
     
-{ id: 148, lessonId: 48, type: "ASSIST", order: 1, question: "Translate: 'She is eating.' → '彼女は食べています。'" },
-{ id: 149, lessonId: 48, type: "ASSIST", order: 2, question: "Translate: 'We are playing.' → '私たちは遊んでいます。'" },
-{ id: 150, lessonId: 48, type: "ASSIST", order: 3, question: "Translate: 'They are studying.' → '彼らは勉強しています。'" },
+{ id: 148, lessonId: 48, type: "ASSIST", order: 1, question: "Complete: 'She is eating.' → '___食べています。'" },
+{ id: 149, lessonId: 48, type: "ASSIST", order: 2, question: "Complete: 'We are playing.' → '___遊んでいます。'" },
+{ id: 150, lessonId: 48, type: "ASSIST", order: 3, question: "Complete: 'They are studying.' → '___勉強しています。'" },
+
     
 // Verbs
 { id: 151, lessonId: 49, type: "SELECT", order: 1, question: "How do you say 'to eat' in Japanese?" },
@@ -1634,9 +1636,9 @@ const main = async () => {
 { id: 155, lessonId: 50, type: "SELECT", order: 2, question: "How do you say 'to walk' in Japanese?" },
 { id: 156, lessonId: 50, type: "SELECT", order: 3, question: "How do you say 'to speak' in Japanese?" },
     
-{ id: 157, lessonId: 51, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am reading the book.' → '私は本を読んでいます。'" },
-{ id: 158, lessonId: 51, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am driving the car.' → '私は車を運転しています。'" },
-{ id: 159, lessonId: 51, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is writing a letter.' → '彼女は手紙を書いています。'" },
+{ id: 157, lessonId: 51, type: "ASSIST", order: 1, question: "Complete the sentence: 'I am ___ the book.' → '私は本を読んでいます。'" },
+{ id: 158, lessonId: 51, type: "ASSIST", order: 2, question: "Complete the sentence: 'I am ___ the car.' → '私は車を運転しています。'" },
+{ id: 159, lessonId: 51, type: "ASSIST", order: 3, question: "Complete the sentence: 'She is ___ a letter.' → '彼女は手紙を書いています。'" },
     
 // Adjectives
 { id: 160, lessonId: 52, type: "ASSIST", order: 1, question: "How do you say 'big' in Japanese?" },
@@ -1647,52 +1649,54 @@ const main = async () => {
 { id: 164, lessonId: 53, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Japanese?" },
 { id: 165, lessonId: 53, type: "ASSIST", order: 3, question: "How do you say 'strong' in Japanese?" },
     
-{ id: 166, lessonId: 54, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → '車は大きいです。'" },
-{ id: 167, lessonId: 54, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → '花は美しいです。'" },
-{ id: 168, lessonId: 54, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → '男の子は強いです。'" },
+{ id: 166, lessonId: 54, type: "ASSIST", order: 1, question: "Complete: 'The car is big.' → '車は___です。'" },
+{ id: 167, lessonId: 54, type: "ASSIST", order: 2, question: "Complete: 'The flower is beautiful.' → '花は___です。'" },
+{ id: 168, lessonId: 54, type: "ASSIST", order: 3, question: "Complete: 'The boy is strong.' → '男の子は___です。'" },
     
 // Sentences
 // Easy Sentences (continued)
-{ id: 169, lessonId: 55, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.' → 'これは猫です。'" },
-{ id: 170, lessonId: 55, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.' → '太陽は明るいです。'" },
-{ id: 171, lessonId: 55, type: "ASSIST", order: 3, question: "Translate: 'I have a book.' → '私は本を持っています。'" },
+{ id: 169, lessonId: 55, type: "ASSIST", order: 1, question: "Translate: 'This is a cat.'" },
+{ id: 170, lessonId: 55, type: "ASSIST", order: 2, question: "Translate: 'The sun is bright.'" },
+{ id: 171, lessonId: 55, type: "ASSIST", order: 3, question: "Translate: 'I have a book.'" },
         
-{ id: 172, lessonId: 56, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.' → '彼女は私の妹です。'" },
-{ id: 173, lessonId: 56, type: "ASSIST", order: 2, question: "Translate: 'We are friends.' → '私たちは友達です。'" },
-{ id: 174, lessonId: 56, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.' → '犬は走っています。'" },
+{ id: 172, lessonId: 56, type: "ASSIST", order: 1, question: "Translate: 'She is my sister.'" },
+{ id: 173, lessonId: 56, type: "ASSIST", order: 2, question: "Translate: 'We are friends.'" },
+{ id: 174, lessonId: 56, type: "ASSIST", order: 3, question: "Translate: 'The dog is running.'" },
         
-{ id: 175, lessonId: 57, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' → '彼は先生です。'" },
-{ id: 176, lessonId: 57, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.' → 'りんごは赤いです。'" },
-{ id: 177, lessonId: 57, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.' → '私はマンゴーが好きです。'" },
-{ id: 178, lessonId: 57, type: "ASSIST", order: 4, question: "Translate: 'She is happy.' → '彼女は幸せです。'" },
+{ id: 175, lessonId: 57, type: "ASSIST", order: 1, question: "Translate: 'He is a teacher.' " },
+{ id: 176, lessonId: 57, type: "ASSIST", order: 2, question: "Translate: 'The apple is red.'" },
+{ id: 177, lessonId: 57, type: "ASSIST", order: 3, question: "Translate: 'I like mangoes.'" },
+{ id: 178, lessonId: 57, type: "ASSIST", order: 4, question: "Translate: 'She is happy.'" },
         
 // Intermediate Sentences
-{ id: 179, lessonId: 58, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Japanese book.' → '私は日本語の本を読んでいます。'" },
-{ id: 180, lessonId: 58, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.' → '彼女は料理を作っています。'" },
-{ id: 181, lessonId: 58, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.' → '子供たちは外で遊んでいます。'" },
+{ id: 179, lessonId: 58, type: "ASSIST", order: 1, question: "Translate: 'I am reading a Japanese book.'" },
+{ id: 180, lessonId: 58, type: "ASSIST", order: 2, question: "Translate: 'She is cooking food.'" },
+{ id: 181, lessonId: 58, type: "ASSIST", order: 3, question: "Translate: 'The children are playing outside.'" },
         
-{ id: 182, lessonId: 59, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.' → '私たちは毎日学校に行きます。'" },
-{ id: 183, lessonId: 59, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.' → '彼はお茶を飲むのが好きです。'" },
-{ id: 184, lessonId: 59, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.' → '鳥たちは空を飛んでいます。'" },
+{ id: 182, lessonId: 59, type: "ASSIST", order: 1, question: "Translate: 'We go to school every day.'" },
+{ id: 183, lessonId: 59, type: "ASSIST", order: 2, question: "Translate: 'He likes to drink tea.'" },
+{ id: 184, lessonId: 59, type: "ASSIST", order: 3, question: "Translate: 'The birds are flying in the sky.'" },
         
-{ id: 185, lessonId: 60, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.' → '彼女は青いドレスを着ています。'" },
-{ id: 186, lessonId: 60, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.' → 'バスは今日遅れています。'" },
-{ id: 187, lessonId: 60, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.' → '彼らは映画を見ています。'" },
-{ id: 188, lessonId: 60, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.' → '先生は授業を説明しています。'" },
+{ id: 185, lessonId: 60, type: "ASSIST", order: 1, question: "Translate: 'She is wearing a blue dress.'" },
+{ id: 186, lessonId: 60, type: "ASSIST", order: 2, question: "Translate: 'The bus is late today.'" },
+{ id: 187, lessonId: 60, type: "ASSIST", order: 3, question: "Translate: 'They are watching a movie.'" },
+{ id: 188, lessonId: 60, type: "ASSIST", order: 4, question: "Translate: 'The teacher is explaining the lesson.'" },
         
 // Difficult Sentences
-{ id: 189, lessonId: 61, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.' → '一生懸命働けば、成功します。'" },
-{ id: 190, lessonId: 61, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.' → '彼女は野菜を買いに市場に行きました。'" },
-{ id: 191, lessonId: 61, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.' → '雨が降っていたけど、彼らはサッカーをしました。'" },
+{ id: 189, lessonId: 61, type: "ASSIST", order: 1, question: "Translate: 'If you work hard, you will succeed.'" },
+{ id: 190, lessonId: 61, type: "ASSIST", order: 2, question: "Translate: 'She went to the market to buy vegetables.'" },
+{ id: 191, lessonId: 61, type: "ASSIST", order: 3, question: "Translate: 'Although it was raining, they played football.'" },
         
-{ id: 192, lessonId: 62, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.' → '先生は生徒に課題を期限内に提出するように頼みました。'" },
-{ id: 193, lessonId: 62, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.' → '彼はお茶を飲みながら新聞を読んでいます。'" },
-{ id: 194, lessonId: 62, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.' → '彼女は疲れていましたが、働き続けました。'" },
+{ id: 192, lessonId: 62, type: "ASSIST", order: 1, question: "Translate: 'The teacher asked the students to submit their assignments on time.'" },
+{ id: 193, lessonId: 62, type: "ASSIST", order: 2, question: "Translate: 'He is reading a newspaper while drinking tea.'" },
+{ id: 194, lessonId: 62, type: "ASSIST", order: 3, question: "Translate: 'She was tired, yet she continued working.'" },
         
-{ id: 195, lessonId: 63, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left.' → '私たちが着くまでに電車はすでに出発していました。'" },
-{ id: 196, lessonId: 63, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.' → '勉強しなければ、試験に合格しません。'" },
-{ id: 197, lessonId: 63, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.' → '医者は彼に定期的に薬を飲むように勧めました。'" },
-{ id: 198, lessonId: 63, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.' → '一人暮らしの老人は私たちに過去の多くの話をしてくれました。'" },
+{ id: 195, lessonId: 63, type: "ASSIST", order: 1, question: "Translate: 'By the time we reached, the train had already left." },
+{ id: 196, lessonId: 63, type: "ASSIST", order: 2, question: "Translate: 'Unless you study, you will not pass the exam.'" },
+{ id: 197, lessonId: 63, type: "ASSIST", order: 3, question: "Translate: 'The doctor advised him to take medicine regularly.'" },
+{ id: 198, lessonId: 63, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.'" },
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //Marathi
 // Nouns
@@ -1743,9 +1747,9 @@ const main = async () => {
 { id: 230, lessonId: 74, type: "ASSIST", order: 2, question: "How do you say 'beautiful' in Marathi?" },
 { id: 231, lessonId: 74, type: "ASSIST", order: 3, question: "How do you say 'strong' in Marathi?" },
         
-{ id: 232, lessonId: 75, type: "ASSIST", order: 1, question: "Translate: 'The car is big.' → 'गाडी __ आहे.'" },
-{ id: 233, lessonId: 75, type: "ASSIST", order: 2, question: "Translate: 'The flower is beautiful.' → 'फूल __ आहे.'" },
-{ id: 234, lessonId: 75, type: "ASSIST", order: 3, question: "Translate: 'The boy is strong.' → 'मुलगा __ आहे.'" },
+{ id: 232, lessonId: 75, type: "ASSIST", order: 1, question: "Complete: 'The car is big.' → 'गाडी __ आहे.'" },
+{ id: 233, lessonId: 75, type: "ASSIST", order: 2, question: "Complete: 'The flower is beautiful.' → 'फूल __ आहे.'" },
+{ id: 234, lessonId: 75, type: "ASSIST", order: 3, question: "Complete: 'The boy is strong.' → 'मुलगा __ आहे.'" },
     
 // Sentences
 // Easy Sentences
@@ -1791,7 +1795,8 @@ const main = async () => {
 { id: 264, lessonId: 84, type: "ASSIST", order: 4, question: "Translate: 'The old man, who lived alone, told us many stories from his past.'" },
 ]);
     
-    
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/     
   
 //options
 await db.insert(schema.challengeOptions).values([
@@ -2943,7 +2948,7 @@ await db.insert(schema.challengeOptions).values([
 
     
 
-   /* await db.insert(schema.challenges).values([
+    /* await db.insert(schema.challenges).values([
         // Lesson 2 Challenges
         {
             id: 4,
@@ -3034,13 +3039,11 @@ await db.insert(schema.challengeOptions).values([
         }
     ]);*/
 
-
-
-    console.log("Seeding finished");
- } catch (error) {
+    console.log('Seeding finished');
+  } catch (error) {
     console.error(error);
-    throw new Error("Failed to seed the database")
- }
+    throw new Error('Failed to seed the database');
+  }
 };
 
 main();

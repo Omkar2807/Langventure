@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth } from '@clerk/nextjs/server';
 
 const adminIds = [
     "user_2jvnweZ0MsvTcqCVJQkiMWxI9fN",
@@ -7,11 +7,11 @@ const adminIds = [
 ];
 
 export const isAdmin = () => {
-    const { userId } = auth();
+  const { userId } = auth();
 
-    if (!userId) {
-        return false;
-    }
+  if (!userId) {
+    return false;
+  }
 
-    return adminIds.indexOf(userId) !== -1;
+  return adminIds.indexOf(userId) !== -1;
 };

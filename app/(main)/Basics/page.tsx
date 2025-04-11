@@ -1,83 +1,80 @@
-import { redirect } from "next/navigation";
-import Cardchart from "./cardchart";
-import { basicsdb,basicsdbcore,lessons, units as unitsSchema } from "@/db/schema";
-import { Promo } from "@/components/promo";
-import { FeedWrapper } from "@/components/feed-wrapper";
-import { UserProgress } from "@/components/user-progress";
-import { StickyWrapper } from "@/components/sticky-wrapper";
-import { 
-    getCourseProgress,
-    getLessonPercentage,
-    getUnits,
-    getUserProgress,
-    getUserSubscription,
-    getBasicsdb,
-    getBasicsdbcore
-} from "@/db/queries";
+import { redirect } from 'next/navigation';
+import Cardchart from './cardchart';
+import {
+  basicsdb,
+  basicsdbcore,
+  lessons,
+  units as unitsSchema,
+} from '@/db/schema';
+import { Promo } from '@/components/promo';
+import { FeedWrapper } from '@/components/feed-wrapper';
+import { UserProgress } from '@/components/user-progress';
+import { StickyWrapper } from '@/components/sticky-wrapper';
+import {
+  getCourseProgress,
+  getLessonPercentage,
+  getUnits,
+  getUserProgress,
+  getUserSubscription,
+  getBasicsdb,
+  getBasicsdbcore,
+} from '@/db/queries';
 
-import { Header } from "./header";
+import { Header } from './header';
 
-import { Quests } from "@/components/quests";
+import { Quests } from '@/components/quests';
 
 const LearnPage = async () => {
-    const userProgressData = getUserProgress();
-    const courseProgressData = getCourseProgress();
-    const lessonPercentageData = getLessonPercentage();
-    const unitsData = getUnits();
-    const userSubscriptionData = getUserSubscription();
-    const BasicsVocabdata =  getBasicsdb();
-    const BasicsCoredata = getBasicsdbcore();
-    
-    const[        
-        userProgress,
-        units,
-        courseProgress,
-        lessonPercentage,
-        userSubscription,
-    ] = await Promise.all([
-        userProgressData,
-        unitsData,
-        courseProgressData,
-        lessonPercentageData,
-        userSubscriptionData 
-    ]);
+  const userProgressData = getUserProgress();
+  const courseProgressData = getCourseProgress();
+  const lessonPercentageData = getLessonPercentage();
+  const unitsData = getUnits();
+  const userSubscriptionData = getUserSubscription();
+  const BasicsVocabdata = getBasicsdb();
+  const BasicsCoredata = getBasicsdbcore();
 
-    // for vocab retrival and Basicscore 
-        const[
-            Basicvovabdata,
-            Basiccore
-           
-        ] = await Promise.all([
-            BasicsVocabdata,
-            BasicsCoredata
-        ]);
+  const [
+    userProgress,
+    units,
+    courseProgress,
+    lessonPercentage,
+    userSubscription,
+  ] = await Promise.all([
+    userProgressData,
+    unitsData,
+    courseProgressData,
+    lessonPercentageData,
+    userSubscriptionData,
+  ]);
 
-        // console.log(Basicvovabdata);
-        // console.log(typeof BasicsVocabdata);
+  // for vocab retrival and Basicscore
+  const [Basicvovabdata, Basiccore] = await Promise.all([
+    BasicsVocabdata,
+    BasicsCoredata,
+  ]);
 
-    if (!userProgress || !userProgress.activeCourse){
-        redirect("/courses");
-    }
+  // console.log(Basicvovabdata);
+  // console.log(typeof BasicsVocabdata);
 
-    if(!courseProgress){
-        redirect("/courses");
-    }
+  if (!userProgress || !userProgress.activeCourse) {
+    redirect('/courses');
+  }
 
-    const isPro = !!userSubscription?.isActive;;
+  if (!courseProgress) {
+    redirect('/courses');
+  }
 
-    return (
-        <div className="flex flex-row-reverse gap-[48px] px-6">
-            
-            <FeedWrapper>
-                <Header title={userProgress.activeCourse.title} />
-                
-                <Cardchart Basicvovabdata={Basicvovabdata} Basiccore={Basiccore}/>
-                
-            </FeedWrapper>
-            
+  const isPro = !!userSubscription?.isActive;
 
-        </div>
-    );
-}
+  return (
+    <div className="flex flex-row-reverse gap-[48px] px-6">
+      <FeedWrapper>
+        <Header title={userProgress.activeCourse.title} />
+
+        <Cardchart Basicvovabdata={Basicvovabdata} Basiccore={Basiccore} />
+      </FeedWrapper>
+    </div>
+  );
+};
 
 export default LearnPage;

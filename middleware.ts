@@ -1,14 +1,14 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
-import { NextRequest, NextResponse } from "next/server";
+import { clerkMiddleware } from '@clerk/nextjs/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 // Define public routes
-const publicRoutes = ["/", "/api/webhooks/stripe/"];
+const publicRoutes = ['/', '/api/webhooks/stripe/'];
 
 export default clerkMiddleware((auth, req: NextRequest) => {
   const pathname = req.nextUrl.pathname;
 
   // Allow access to public routes
-  if (publicRoutes.some((route) => pathname.startsWith(route))) {
+  if (publicRoutes.some(route => pathname.startsWith(route))) {
     return NextResponse.next();
   }
 
@@ -23,4 +23,3 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 };
-

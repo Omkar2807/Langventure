@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface CardProps {
   img: string;
@@ -7,7 +7,7 @@ interface CardProps {
   soundSrc: string | null;
 }
 
-const Card: React.FC<CardProps> = ({ img, name,title, soundSrc }) => {
+const Card: React.FC<CardProps> = ({ img, name, title, soundSrc }) => {
   const playSound = () => {
     if (soundSrc) {
       const audio = new Audio(soundSrc);
@@ -15,7 +15,10 @@ const Card: React.FC<CardProps> = ({ img, name,title, soundSrc }) => {
     }
   };
   return (
-    <div className="h-full border-2 rounded-xl border-b-4 hover:bg-black/5 hover:scale-110 p-4 lg:p-6 cursor-pointer active:border-b-2 " onClick={playSound}>
+    <div
+      className="h-full border-2 rounded-xl border-b-4 hover:bg-black/5 hover:scale-110 p-4 lg:p-6 cursor-pointer active:border-b-2 "
+      onClick={playSound}
+    >
       <div className="flex justify-center">
         <img src={img} alt={name} className="h-40 w-32 object-contain" />
       </div>
